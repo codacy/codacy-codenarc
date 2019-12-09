@@ -8,3 +8,4 @@
 .bloop
 .DS_Store
 *.iml
+.codenarc-version

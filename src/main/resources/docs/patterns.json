@@ -1,0 +1,17 @@
+{
+  "name": "codenarc",
+  "version": "1.5",
+  "patterns": [
+    {
+      "patternId": "AssignmentInConditional",
+      "level": "Error",
+      "category": "CodeStyle",
+      "parameters": [
+        {
+          "name": "AssignmentInConditional",
+          "default": ""
+        }
+      ]
+    }
+  ]
+}
