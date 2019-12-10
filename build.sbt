@@ -1,7 +1,10 @@
 import sjsonnew._
 import sjsonnew.BasicJsonProtocol._
 import sjsonnew.support.scalajson.unsafe._
+<<<<<<< HEAD
 
+=======
+>>>>>>> Call CodeNarc tool with passed configuration
 import com.typesafe.sbt.packager.Keys.{
   daemonUser,
   defaultLinuxInstallLocation,
@@ -46,6 +49,7 @@ toolVersion := {
 libraryDependencies ++= Seq(
   "com.codacy" %% "codacy-engine-scala-seed" % "3.1.0",
   "org.codenarc" % "CodeNarc" % toolVersion.value,
+  "org.scala-lang.modules" %% "scala-xml" % "1.2.0",
   "org.specs2" %% "specs2-core" % "4.6.0" % Test
 )
 
@@ -74,7 +78,7 @@ mappings in Universal ++= {
       path <- src.allPaths.get if !path.isDirectory
     } yield path -> path.toString.replaceFirst(src.toString, dest)
   }
-}.value
+  }.value
 
 
 // Docker
