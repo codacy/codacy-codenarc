@@ -1,5 +1,7 @@
 package codacy.codenarc
 
+import java.io.{FileOutputStream, PrintStream}
+
 import com.codacy.plugins.api.{Options, Source}
 import com.codacy.plugins.api.results.{Pattern, Result, Tool}
 import com.codacy.tools.scala.seed.utils.FileHelper._
@@ -55,6 +57,9 @@ object CodeNarc extends Tool {
       case None => ""
     }
 
+    // required so that codenarc printlns dont appear on console
+    System.setOut(new PrintStream(new FileOutputStream(File.newTemporaryFile("out").toJava)))
+
     // 2. Call CodeNarc tool
     org.codenarc.CodeNarc.main(ruleConfigParam, "-basedir=" + source.path, s"-report=$codeNarcResultFileType:$codeNarcResultFilename")
 
@@ -65,6 +70,7 @@ object CodeNarc extends Tool {
 
   /**
    * Convert CodeNarcOutput object into Result.Issue object
+   *
    * @param codeNarcOutput List of CodeNarcOutput
    * @return List of Result.Issue
    */
@@ -77,6 +83,7 @@ object CodeNarc extends Tool {
 
   /**
    * Convert list of CodeNarcOutput objects into list of Result.Issue objects
+   *
    * @param codeNarcOutput List of CodeNarcOutput
    * @return List of Result.Issue
    */

@@ -50,6 +50,7 @@ libraryDependencies ++= Seq(
   "com.codacy" %% "codacy-engine-scala-seed" % "3.1.0",
   "org.codenarc" % "CodeNarc" % toolVersion.value,
   "org.scala-lang.modules" %% "scala-xml" % "1.2.0",
+  "org.slf4j" % "slf4j-nop" % "1.7.12",
   "org.specs2" %% "specs2-core" % "4.6.0" % Test
 )
 
