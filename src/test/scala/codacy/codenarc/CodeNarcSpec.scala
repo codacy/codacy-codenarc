@@ -1,8 +1,8 @@
 package codacy.codenarc
 
-import org.specs2.mutable.Specification
+import org.scalatest._
 
-class CodeNarcSpec extends Specification {
+class CodeNarcSpec extends WordSpec {
   "ruleFileFromPatterns" should {
     "return a valid CodeNarc rule file" in {
       val patterns: List[CodeNarc.PatternTuple] = List(
@@ -16,7 +16,7 @@ class CodeNarcSpec extends Specification {
            |BigDecimalInstantiation
            |}""".stripMargin
 
-      CodeNarc.ruleFileContentFromPatterns(patterns) must beEqualTo(expectedValue)
+      assert(CodeNarc.ruleFileContentFromPatterns(patterns) == expectedValue)
     }
   }
 }

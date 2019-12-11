@@ -1,9 +1,9 @@
 package codacy.codenarc
 
 import better.files.File
-import org.specs2.mutable.Specification
+import org.scalatest._
 
-class CodeNarcOutputSpec extends Specification {
+class CodeNarcOutputSpec extends WordSpec {
   val codeNarcXmlResult = <CodeNarc version="1.5" url="http://www.codenarc.org">
     <Report timestamp="Dec 11, 2019 10:06:54 AM"/>
     <Project title="">
@@ -51,30 +51,30 @@ class CodeNarcOutputSpec extends Specification {
   "parsing the XML result file" should {
     "return the XML document" in {
       val outputRead = CodeNarcOutput.loadXMLResult(resultFile)
-      outputRead.text must beEqualTo(codeNarcXmlResult.text)
+      assert(outputRead.text == codeNarcXmlResult.text)
     }
 
     "not contain 0 elements" in {
       val xmlResult = CodeNarcOutput.parseXmlResult(codeNarcXmlResult)
-      xmlResult.size mustNotEqual (0)
+      assert(xmlResult.nonEmpty)
     }
 
     "return as the first element the violation NoTabCharacter on GroovyDeveloper.groovy file (line 0)" in {
       val xmlResult = CodeNarcOutput.parseXmlResult(codeNarcXmlResult)
       val firstFileViolation = xmlResult.toList.head
-      firstFileViolation.file mustEqual "src/main/groovy/com/nick/GroovyDeveloper.groovy"
-      firstFileViolation.ruleName mustEqual "NoTabCharacter"
-      firstFileViolation.message mustEqual "The tab character is not allowed in source files"
-      firstFileViolation.line mustEqual 0
+      assert(firstFileViolation.file == "src/main/groovy/com/nick/GroovyDeveloper.groovy")
+      assert(firstFileViolation.ruleName == "NoTabCharacter")
+      assert(firstFileViolation.message == "The tab character is not allowed in source files")
+      assert(firstFileViolation.line == 0)
     }
 
     "return as the second element the violation UnnecessarySemicolon on GroovyDeveloper.groovy file (line 2)" in {
       val xmlResult = CodeNarcOutput.parseXmlResult(codeNarcXmlResult)
       val firstFileViolation = xmlResult.toList(1)
-      firstFileViolation.file mustEqual "src/main/groovy/com/nick/GroovyDeveloper.groovy"
-      firstFileViolation.ruleName mustEqual "UnnecessarySemicolon"
-      firstFileViolation.message mustEqual "Semi-colons as line endings can be removed safely"
-      firstFileViolation.line mustEqual 2
+      assert(firstFileViolation.file == "src/main/groovy/com/nick/GroovyDeveloper.groovy")
+      assert(firstFileViolation.ruleName == "UnnecessarySemicolon")
+      assert(firstFileViolation.message == "Semi-colons as line endings can be removed safely")
+      assert(firstFileViolation.line == 2)
     }
   }
 }

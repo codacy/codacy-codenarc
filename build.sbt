@@ -51,7 +51,7 @@ libraryDependencies ++= Seq(
   "org.codenarc" % "CodeNarc" % toolVersion.value,
   "org.scala-lang.modules" %% "scala-xml" % "1.2.0",
   "org.slf4j" % "slf4j-nop" % "1.7.12",
-  "org.specs2" %% "specs2-core" % "4.6.0" % Test
+  "org.scalatest" % "scalatest_2.12" % "3.1.0" % Test
 )
 
 scalacOptions.in(Compile, console) --= Seq("-Ywarn-unused",
@@ -81,12 +81,10 @@ mappings in Universal ++= {
   }
   }.value
 
-
 // Docker
 val defaultDockerInstallationPath = "/opt/docker"
 mainClass in Compile := Some("codacy.Engine")
 packageName in Docker := name.value
-version in Docker := version.value
 maintainer in Docker := "José Melo <jose@codacy.com>"
 dockerBaseImage := "library/openjdk:8-jre-alpine"
 dockerUpdateLatest := true
