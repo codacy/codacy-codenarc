@@ -70,6 +70,8 @@ lazy val codeNarcVersionFile = Def.setting {
   f
 }
 
+resourceDirectory in IntegrationTest := (baseDirectory apply {baseDir: File => baseDir / "test/resources"}).value
+
 mappings in Universal ++= {
   (resourceDirectory in Compile) map { resourceDir: File =>
     val src = resourceDir / "docs"
