@@ -39,14 +39,20 @@ object CodeNarcOutput {
 
   private def getPackagePathFromFileNode(packageNode: Node) = (packageNode \ packagePathValue).text
 
-  private def parseXmlResult(resultXml: Elem): Seq[CodeNarcOutput] =
+  private def getListOfPackages(resultXml: Elem) = resultXml \ packageNode
+
+  private def getListOfFilesInsidePackage(pkg: Node) = pkg \ fileNode
+
+  private def getListOfViolationsInsideFile(file: Node) = file \ violationNode
+
+  def parseXmlResult(resultXml: Elem): Seq[CodeNarcOutput] =
     for {
       // go over all packages
-      pkg <- resultXml \ packageNode
+      pkg <- getListOfPackages(resultXml)
       // go over files inside each package
-      file <- pkg \ fileNode
+      file <- getListOfFilesInsidePackage(pkg)
       // get all violations for each file
-      violation <- file \ violationNode
+      violation <- getListOfViolationsInsideFile(file)
     } yield {
       val packagePath = getPackagePathFromFileNode(pkg)
       val filename = getFilenameFromFileNode(file, packagePath)
