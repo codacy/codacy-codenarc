@@ -27,11 +27,13 @@ object CodeNarc extends Tool {
 
   def ruleFileContentFromPatterns(patterns: List[PatternTuple]): String = s"ruleset {\n${patterns.map(_.id).mkString("\n")}\n}"
 
-  def generateConfigurationFile(patterns: List[PatternTuple]): File = File
-    .newTemporaryFile("codacy-codenarc", ".txt")
-    .write(ruleFileContentFromPatterns(patterns))
+  def generateConfigurationFile(patterns: List[PatternTuple]): File = generateConfigurationFile(ruleFileContentFromPatterns(patterns))
 
-  def getConfigurationFilePath(configuration: Option[List[Pattern.Definition]], source: Source.Directory): Option[Path] =
+  def generateConfigurationFile(content: String): File = File
+    .newTemporaryFile("codacycodenarc", ".txt")
+    .write(content)
+
+  def getConfigurationFilePath(configuration: Option[List[Pattern.Definition]], source: Source.Directory): Path =
     configuration.map {
       config =>
         // generate configuration file from patterns passed
@@ -47,21 +49,28 @@ object CodeNarc extends Tool {
     }.orElse {
       // otherwise, check if configuration is inside source dir
       sourceCodeRepositoryContainsConfigFile(source)
+    }.getOrElse {
+      val defaultConfigContent = scala.io.Source.fromResource("docs/default_config/default.txt").mkString
+      generateConfigurationFile(defaultConfigContent).path
     }
 
+  def filesToAnalyse(filesOpt: Option[Set[Source.File]]) = filesOpt match {
+    case Some(filesList) => "-includes=" + filesList.mkString(",")
+    case None => "-includes=**/*.groovy"
+  }
 
-  def run(source: Source.Directory, configurationFilePath: Option[Path], filesOpt: Option[Set[Source.File]]) = {
+  def run(source: Source.Directory, configurationFilePath: Path, filesOpt: Option[Set[Source.File]]) = {
     // 1. Set ruleset file to use when calling the tool
-    val ruleConfigParam = configurationFilePath match {
-      case Some(fileLocation) => "-rulesetfiles=file:" + fileLocation.toString
-      case None => ""
-    }
+    val ruleConfigParam = "-rulesetfiles=file:" + configurationFilePath.toString
+
+    // files to include in analysis
+    val filesToInclude = filesToAnalyse(filesOpt)
 
     // required so that codenarc printlns dont appear on console
     System.setOut(new PrintStream(new FileOutputStream(File.newTemporaryFile("out").toJava)))
 
     // 2. Call CodeNarc tool
-    org.codenarc.CodeNarc.main(ruleConfigParam, "-basedir=" + source.path, s"-report=$codeNarcResultFileType:$codeNarcResultFilename")
+    org.codenarc.CodeNarc.main(ruleConfigParam, filesToInclude, "-basedir=" + source.path, s"-report=$codeNarcResultFileType:$codeNarcResultFilename")
 
     // 3. Parse CodeNarc tool XML result
     val resultFile = File(codeNarcResultFilename)
