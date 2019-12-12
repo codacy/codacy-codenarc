@@ -5,7 +5,8 @@ import com.codacy.plugins.api.results.{Pattern, Result, Tool}
 import play.api.libs.json.{JsObject, Json}
 
 import scala.util.matching.Regex
-
+import scala.collection.JavaConverters._
+import org.reflections.Reflections
 
 object DocGenerator {
   private val toolName = "codenarc"
@@ -18,7 +19,29 @@ object DocGenerator {
 
   private val codeNarcDocumentationStartingPoint = "codenarc-rule-index.md"
 
-  case class PatternInformation(patternId: Pattern.Id, description: String, descriptionExtended: String = "")
+
+  case class RuleInformation(patternId: Pattern.Id, description: String, descriptionExtended: String = "", priority: Option[RulePriority])
+
+  case class RulePriority(priority: Option[String], priorityType: Option[String])
+
+  private val defaultPriority = "3"
+  private val defaultRuleType = "CodeStyle"
+  private val defaultRulePriority = RulePriority(Some(defaultPriority), Some(defaultRuleType))
+
+  /**
+   * Converts from CodeNarc's complexity to Codacy level
+   */
+  val levelFromPriority: PartialFunction[Option[String], Result.Level.Value] = {
+    case Some("1") => Result.Level.Err
+    case Some("2") => Result.Level.Warn
+    case Some("3") => Result.Level.Info
+    case _ => Result.Level.Info
+  }
+  val categoryTypeFromCategory: PartialFunction[Option[String], Pattern.Category.Value] = {
+    case Some("security") => Pattern.Category.Security
+    case Some("unused") => Pattern.Category.UnusedCode
+    case _ => Pattern.Category.CodeStyle
+  }
 
   /**
    * returns the regex to get information from markdown file for a rule
@@ -93,10 +116,11 @@ object DocGenerator {
 
   /**
    * Get list of all CodeNarc's supported rules from git repos documentation
+   *
    * @param toolVersion CodeNarc's version
    * @return
    */
-  def listRulesSupportedFromGitDocumentation(toolVersion: String): Seq[PatternInformation] = GitHelper.withRepository(codeNarcGitRepository, toolVersion)(directory => {
+  def listRulesSupportedFromGitDocumentation(toolVersion: String): Seq[RuleInformation] = GitHelper.withRepository(codeNarcGitRepository, toolVersion)(directory => {
     val documentationFolder = s"$directory/docs/"
 
     val documentationStartingPoint = File(s"$documentationFolder$codeNarcDocumentationStartingPoint")
@@ -110,36 +134,65 @@ object DocGenerator {
       val ruleName = a.text
       val ruleInfoLocation = (a \ "@href").text
 
+      val priority = rulePriority(ruleName)
       val ruleInformationMdFile = extractMdFilenameFromHref(ruleInfoLocation)
       val ruleExtendedInfo = getRuleExtendedInfoFromMarkdown(documentationFolder, ruleName, ruleInformationMdFile)
       val ruleBasicDescription = getRuleBasicDescription(directory.toString, ruleName)
 
-      PatternInformation(Pattern.Id(ruleName), ruleBasicDescription.getOrElse(""), ruleExtendedInfo)
+      RuleInformation(Pattern.Id(ruleName), ruleBasicDescription.getOrElse(""), ruleExtendedInfo, priority)
     }
   })
 
   /**
    * Get the tool specification with all required information (name, version, patterns list)
+   *
    * @param patternsList List of patterns to be converted into Pattern.Specification list
    * @param toolName
    * @param toolVersion
    * @return
    */
-  def toolSpec(patternsList: Seq[PatternInformation], toolName: String, toolVersion: String): Tool.Specification = {
+  def toolSpec(patternsList: Seq[RuleInformation], toolName: String, toolVersion: String): Tool.Specification = {
     val patterns = patternsList.map(rule => {
-      Pattern.Specification(rule.patternId, Result.Level.Info, Pattern.Category.CodeStyle, None)
+      val rulePriority = rule.priority.getOrElse(defaultRulePriority)
+      Pattern.Specification(
+        rule.patternId,
+        levelFromPriority(rulePriority.priority),
+        categoryTypeFromCategory(rulePriority.priorityType),
+        None)
     })
     Tool.Specification(Tool.Name(toolName), Some(Tool.Version(toolVersion)), patterns.toSet)
   }
 
   /**
    * Get the list of Pattern.Description with each pattern required information
+   *
    * @param patternsList
    * @return
    */
-  def patternsDescription(patternsList: Seq[PatternInformation]): Seq[Pattern.Description] = patternsList.map(rule => {
+  def patternsDescription(patternsList: Seq[RuleInformation]): Seq[Pattern.Description] = patternsList.map(rule => {
     Pattern.Description(rule.patternId, Pattern.Title(rule.patternId.value), Some(Pattern.DescriptionText(rule.description)), None, None)
   })
+
+  private val reflections = new Reflections("org.codenarc.rule")
+  private val subTypes = asScalaSet(reflections.getSubTypesOf(classOf[org.codenarc.rule.AbstractAstVisitorRule]))
+
+  /**
+   * Get CodeNarc's rule priority
+   *
+   * @param ruleName Name of the rule
+   * @return
+   */
+  def rulePriority(ruleName: String): Option[RulePriority] = {
+    val ruleClassImplementation = subTypes.find(_.getName.contains(ruleName))
+
+    ruleClassImplementation.map { rci =>
+      val instance = rci.newInstance
+      val ruleCategory = rci.getPackage.getName.split("\\.").last
+      val priority = instance.getPriority
+
+      RulePriority(Some(priority.toString), Some(ruleCategory))
+    }
+  }
 
   def main(args: Array[String]): Unit = {
     val toolVersion: String = versionFromArgs(args)
