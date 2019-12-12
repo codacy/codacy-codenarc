@@ -1,4 +1,4 @@
-package codacy.codenarc
+package codacy.codenarc.docs
 
 import java.io.InputStream
 import java.net.URL
