@@ -1,5 +1,3 @@
-
-
 organization := "com.codacy"
 
 name := "codacy-codenarc"

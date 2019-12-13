@@ -10,6 +10,7 @@ import laika.parse.markup.DocumentParser.ParserError
 import scala.xml.{Elem, XML}
 
 object MarkdownHelper {
+
   def markdownToHtml(markdownString: String): String = {
     val transformer = Transformer
       .from(Markdown)
