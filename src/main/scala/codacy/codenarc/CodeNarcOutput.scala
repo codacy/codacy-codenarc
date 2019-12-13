@@ -3,7 +3,7 @@ package codacy.codenarc
 import better.files.File
 
 import scala.util.Try
-import scala.xml.{Elem, XML, Node}
+import scala.xml.{Elem, Node, XML}
 
 object CodeNarcOutput {
 
@@ -31,11 +31,14 @@ object CodeNarcOutput {
 
   private def violationMessage(violationNode: Node) = (violationNode \ violationMessageNode).text
 
-  private def violationLine(violationNode: Node) = Try((violationNode \ violationLineNumber).toString.toInt).getOrElse(0)
+  private def violationLine(violationNode: Node) =
+    Try((violationNode \ violationLineNumber).toString.toInt).getOrElse(0)
 
-  private def getViolationInfo(violation: Node): CodeNarcViolation = CodeNarcViolation(violationRuleName(violation), violationMessage(violation), violationLine(violation))
+  private def getViolationInfo(violation: Node): CodeNarcViolation =
+    CodeNarcViolation(violationRuleName(violation), violationMessage(violation), violationLine(violation))
 
-  private def getFilenameFromFileNode(fileNode: Node, packagePath: String) = s"$packagePath/${(fileNode \ fileNameValue).text}"
+  private def getFilenameFromFileNode(fileNode: Node, packagePath: String) =
+    s"$packagePath/${(fileNode \ fileNameValue).text}"
 
   private def getPackagePathFromFileNode(packageNode: Node) = (packageNode \ packagePathValue).text
 

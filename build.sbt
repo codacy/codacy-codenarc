@@ -1,10 +1,6 @@
 import sjsonnew._
 import sjsonnew.BasicJsonProtocol._
 import sjsonnew.support.scalajson.unsafe._
-<<<<<<< HEAD
-
-=======
->>>>>>> Call CodeNarc tool with passed configuration
 import com.typesafe.sbt.packager.Keys.{
   daemonUser,
   defaultLinuxInstallLocation,
