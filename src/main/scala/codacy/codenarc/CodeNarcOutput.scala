@@ -20,10 +20,8 @@ object CodeNarcOutput {
 
   case class CodeNarcViolation(ruleName: String, message: String, line: Int)
 
-  def loadXMLResult(resultFile: File): Elem = XML.loadString(resultFile.contentAsString)
-
   def parseResult(resultFile: File): List[CodeNarcOutput] = {
-    val xmlResult = loadXMLResult(resultFile)
+    val xmlResult = XML.loadFile(resultFile.toJava)
     parseXmlResult(xmlResult).toList
   }
 
@@ -37,8 +35,12 @@ object CodeNarcOutput {
   private def getViolationInfo(violation: Node): CodeNarcViolation =
     CodeNarcViolation(violationRuleName(violation), violationMessage(violation), violationLine(violation))
 
-  private def getFilenameFromFileNode(fileNode: Node, packagePath: String) =
-    s"$packagePath/${(fileNode \ fileNameValue).text}"
+  private def getFilenameFromFileNode(fileNode: Node): String = (fileNode \ fileNameValue).text
+
+  private def getFilenameWithPackageFromFileNode(fileNode: Node, packagePath: String): String = {
+    val filename = getFilenameFromFileNode(fileNode)
+    s"$packagePath/${filename}"
+  }
 
   private def getPackagePathFromFileNode(packageNode: Node) = (packageNode \ packagePathValue).text
 
@@ -50,15 +52,12 @@ object CodeNarcOutput {
 
   def parseXmlResult(resultXml: Elem): Seq[CodeNarcOutput] =
     for {
-      // go over all packages
       pkg <- getListOfPackages(resultXml)
-      // go over files inside each package
       file <- getListOfFilesInsidePackage(pkg)
-      // get all violations for each file
       violation <- getListOfViolationsInsideFile(file)
     } yield {
       val packagePath = getPackagePathFromFileNode(pkg)
-      val filename = getFilenameFromFileNode(file, packagePath)
+      val filename = getFilenameWithPackageFromFileNode(file, packagePath)
       val violationInfo = getViolationInfo(violation)
 
       CodeNarcOutput(filename, violationInfo.message, violationInfo.ruleName, violationInfo.line)

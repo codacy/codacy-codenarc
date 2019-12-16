@@ -3,11 +3,13 @@ package codacy.codenarc
 import java.io.{FileOutputStream, PrintStream}
 
 import com.codacy.plugins.api.{Options, Source}
-import com.codacy.plugins.api.results.{Pattern, Result, Tool}
+import com.codacy.plugins.api.results.{Result, Tool}
 import com.codacy.tools.scala.seed.utils.FileHelper._
 import java.nio.file.{Path, Paths}
 
+import com.codacy.plugins
 import better.files.File
+import play.api.libs.json.JsValue
 
 import scala.util.Try
 
@@ -16,31 +18,56 @@ object CodeNarc extends Tool {
 
   private val codeNarcResultFileType = "xml"
   private val codeNarcResultFilename = s"CodeNarcResult.$codeNarcResultFileType"
+  private val codeNarcDefaultConfigPath = "docs/default_config/default.txt"
 
-  case class PatternTuple(id: String, parameter: String)
+  private[codenarc] case class Pattern(id: String, parameters: Set[PatternParameter])
+  private[codenarc] case class PatternParameter(name: String, value: Any)
 
   /**
     * Check if source code repos contains CodeNarc's configuration file.
     * @param source
     * @return Option with configuration file path
     */
-  def sourceCodeRepositoryContainsConfigFile(source: Source.Directory): Option[Path] =
+  private def sourceCodeRepositoryContainsConfigFile(source: Source.Directory): Option[Path] =
     findConfigurationFile(Paths.get(source.path), configFileNames)
+
+  private def paramValueAsString(paramValue: Any) =
+    if (paramValue.isInstanceOf[String]) s"'$paramValue'"
+    else paramValue
+
+  private def patternParamConfigString(param: PatternParameter): String = {
+    val value = paramValueAsString(param.value)
+    s"${param.name} = $value"
+  }
+
+  private def patternConfigurationString(pattern: Pattern): String =
+    if (pattern.parameters.isEmpty) pattern.id
+    else {
+      val parameters = pattern.parameters
+        .map(param => patternParamConfigString(param))
+        .mkString("\n")
+
+      s"""${pattern.id} {
+         |$parameters
+         |}""".stripMargin
+    }
 
   /**
     * Get the configuration file content from list of patterns to analyze
     * @param patterns
     * @return
     */
-  def ruleFileContentFromPatterns(patterns: List[PatternTuple]): String =
-    s"ruleset {\n${patterns.map(_.id).mkString("\n")}\n}"
+  def ruleFileContentFromPatterns(patterns: List[Pattern]): String = {
+    val patternsAsString = patterns
+      .map(patternConfigurationString)
+      .mkString("\n")
 
-  /**
-    * Generate configuration file from the list of patterns to analyse
-    * @param patterns
-    * @return
-    */
-  def generateConfigurationFile(patterns: List[PatternTuple]): File =
+    s"""ruleset {
+       |$patternsAsString
+       |}""".stripMargin
+  }
+
+  private def generateConfigurationFile(patterns: List[Pattern]): File =
     saveConfigurationFile(ruleFileContentFromPatterns(patterns))
 
   private def saveConfigurationFile(content: String): File =
@@ -48,34 +75,36 @@ object CodeNarc extends Tool {
       .newTemporaryFile("codacycodenarc", ".txt")
       .write(content)
 
-  /**
-    * Get CodeNarc's configuration file path
-    * @param configuration
-    * @param source
-    * @return
-    */
-  def getConfigurationFilePath(configuration: Option[List[Pattern.Definition]], source: Source.Directory): Path =
+  def patternDefinitionToCodeNarcPattern(pattern: plugins.api.results.Pattern.Definition): Pattern = {
+    val parameters: Set[PatternParameter] =
+      pattern.parameters
+        .map(
+          optionParamSet =>
+            optionParamSet.map(param => {
+              val valueAsJsValue: JsValue = param.value
+              PatternParameter(param.name.value, valueAsJsValue)
+            })
+        )
+        .getOrElse(Set())
+
+    Pattern(pattern.patternId.value, parameters)
+  }
+
+  def getConfigurationFilePath(
+      configuration: Option[List[plugins.api.results.Pattern.Definition]],
+      source: Source.Directory
+  ): Path =
     configuration
       .map { config =>
-        // generate configuration file from patterns passed
-        val patterns = config.map { pattern =>
-          val parameter = pattern.parameters
-            .flatMap(_.headOption.map { param =>
-              param.value.toString
-            })
-            .getOrElse("")
+        val codeNarcPatterns = config.map(patternDefinitionToCodeNarcPattern)
 
-          PatternTuple(pattern.patternId.value, parameter)
-        }
-        // generate configuration file as temp file and return its path
-        generateConfigurationFile(patterns).path
+        generateConfigurationFile(codeNarcPatterns).path
       }
       .orElse {
-        // otherwise, check if configuration is inside source dir
         sourceCodeRepositoryContainsConfigFile(source)
       }
       .getOrElse {
-        val defaultConfigContent = scala.io.Source.fromResource("docs/default_config/default.txt").mkString
+        val defaultConfigContent = scala.io.Source.fromResource(codeNarcDefaultConfigPath).mkString
         saveConfigurationFile(defaultConfigContent).path
       }
 
@@ -89,29 +118,34 @@ object CodeNarc extends Tool {
     case None => "-includes=**/*.groovy"
   }
 
+  /**
+    * CodeNarc makes some println's which we need to ignore
+    */
+  def codeNarcPrintlnIgnore(): Unit =
+    System.setOut(new PrintStream(new FileOutputStream(File.newTemporaryFile("out").toJava)))
+
+  def ruleConfigFileParameter(configurationFilePath: Path): String =
+    s"-rulesetfiles=file:${configurationFilePath.toString}"
+
+  def baseDirParameter(source: Source.Directory): String = s"-basedir=${source.path}"
+
+  def reportResultFileParam(): String = s"-report=$codeNarcResultFileType:$codeNarcResultFilename"
+
   def run(
       source: Source.Directory,
       configurationFilePath: Path,
       filesOpt: Option[Set[Source.File]]
   ): List[CodeNarcOutput.CodeNarcOutput] = {
-    // 1. Set ruleset file to use when calling the tool
-    val ruleConfigParam = s"-rulesetfiles=file:${configurationFilePath.toString}"
-
-    // files to include in analysis
+    val ruleConfigParam = ruleConfigFileParameter(configurationFilePath)
     val filesToInclude = filesToAnalyseParameter(filesOpt)
+    val baseDirParam = baseDirParameter(source)
+    val reportFinalFileParam = reportResultFileParam()
 
-    // required so that codenarc printlns dont appear on console
-    System.setOut(new PrintStream(new FileOutputStream(File.newTemporaryFile("out").toJava)))
+    codeNarcPrintlnIgnore()
 
-    // 2. Call CodeNarc tool
-    org.codenarc.CodeNarc.main(
-      ruleConfigParam,
-      filesToInclude,
-      s"-basedir=${source.path}",
-      s"-report=$codeNarcResultFileType:$codeNarcResultFilename"
-    )
+    org.codenarc.CodeNarc
+      .main(ruleConfigParam, filesToInclude, baseDirParam, reportFinalFileParam)
 
-    // 3. Parse CodeNarc tool XML result
     val resultFile = File(codeNarcResultFilename)
     CodeNarcOutput.parseResult(resultFile)
   }
@@ -125,29 +159,20 @@ object CodeNarc extends Tool {
   def codeNarcOutputToResult(codeNarcOutput: CodeNarcOutput.CodeNarcOutput): Result.Issue = Result.Issue(
     Source.File(codeNarcOutput.file),
     Result.Message(codeNarcOutput.message),
-    Pattern.Id(codeNarcOutput.ruleName),
+    plugins.api.results.Pattern.Id(codeNarcOutput.ruleName),
     Source.Line(codeNarcOutput.line)
   )
 
-  /**
-    * Convert list of CodeNarcOutput objects into list of Result.Issue objects
-    *
-    * @param codeNarcOutput List of CodeNarcOutput
-    * @return List of Result.Issue
-    */
-  def codeNarcOutputToToolResult(codeNarcOutput: List[CodeNarcOutput.CodeNarcOutput]): List[Result.Issue] =
-    codeNarcOutput.map(codeNarcOutputToResult)
-
   override def apply(
       source: Source.Directory,
-      configuration: Option[List[Pattern.Definition]],
+      configuration: Option[List[plugins.api.results.Pattern.Definition]],
       files: Option[Set[Source.File]],
       options: Map[Options.Key, Options.Value]
   )(implicit specification: Tool.Specification): Try[List[Result]] = {
     Try {
       val configurationFileLocation = getConfigurationFilePath(configuration, source)
       val codeNarcResult = run(source, configurationFileLocation, files)
-      val toolResult = codeNarcOutputToToolResult(codeNarcResult)
+      val toolResult = codeNarcResult.map(codeNarcOutputToResult)
 
       toolResult
     }
