@@ -1,7 +1,7 @@
 package codacy.codenarc.docs
 
 import better.files.File
-import com.codacy.plugins.api.results.{Pattern, Result, Tool}
+import com.codacy.plugins.api.results.{Parameter, Pattern, Result, Tool}
 import play.api.libs.json.{JsObject, Json}
 
 import scala.util.matching.Regex
@@ -19,6 +19,9 @@ object DocGenerator {
 
   private val codeNarcDocumentationStartingPoint = "codenarc-rule-index.md"
 
+  private val reflections = new Reflections("org.codenarc.rule")
+  private val subTypes = asScalaSet(reflections.getSubTypesOf(classOf[org.codenarc.rule.AbstractAstVisitorRule]))
+
   case class RuleInformation(
       patternId: Pattern.Id,
       description: String,
@@ -26,11 +29,11 @@ object DocGenerator {
       priority: Option[RulePriority]
   )
 
-  case class RulePriority(priority: Option[String], priorityType: Option[String])
+  case class RulePriority(priority: Option[String], priorityType: Option[String], parameters: Option[Set[String]])
 
   private val defaultPriority = "3"
   private val defaultRuleType = "CodeStyle"
-  private val defaultRulePriority = RulePriority(Some(defaultPriority), Some(defaultRuleType))
+  private val defaultRulePriority = RulePriority(Some(defaultPriority), Some(defaultRuleType), None)
 
   /**
     * Converts from CodeNarc's complexity to Codacy level
@@ -47,6 +50,16 @@ object DocGenerator {
     case Some("unused") => Pattern.Category.UnusedCode
     case _ => Pattern.Category.CodeStyle
   }
+
+  /**
+    * Convert from list of parameters to Parameter.Specification list
+    */
+  def parameterSpecificationFromParametersStringList(
+      parameters: Option[Set[String]]
+  ): Option[Set[Parameter.Specification]] =
+    parameters.map(
+      paramList => paramList.map(param => Parameter.Specification(Parameter.Name(param), Parameter.Value("")))
+    )
 
   /**
     * returns the regex to get information from markdown file for a rule
@@ -164,7 +177,7 @@ object DocGenerator {
         rule.patternId,
         levelFromPriority(rulePriority.priority),
         categoryTypeFromCategory(rulePriority.priorityType),
-        None
+        parameterSpecificationFromParametersStringList(rulePriority.parameters)
       )
     })
     Tool.Specification(Tool.Name(toolName), Some(Tool.Version(toolVersion)), patterns.toSet)
@@ -187,9 +200,6 @@ object DocGenerator {
       )
     })
 
-  private val reflections = new Reflections("org.codenarc.rule")
-  private val subTypes = asScalaSet(reflections.getSubTypesOf(classOf[org.codenarc.rule.AbstractAstVisitorRule]))
-
   /**
     * Get CodeNarc's rule priority
     *
@@ -200,11 +210,19 @@ object DocGenerator {
     val ruleClassImplementation = subTypes.find(_.getName.contains(ruleName))
 
     ruleClassImplementation.map { rci =>
+      val parameters = rci.getDeclaredFields
+        .filter(
+          x =>
+            (x.getType.toString == "int" || x.getType.toString == "class java.lang.String") && x.getName != "name" && x.getName != "priority"
+              && x.getName.toUpperCase != x.getName
+        )
+        .map(_.getName)
+
       val instance = rci.newInstance
       val ruleCategory = rci.getPackage.getName.split("\\.").last
       val priority = instance.getPriority
 
-      RulePriority(Some(priority.toString), Some(ruleCategory))
+      RulePriority(Some(priority.toString), Some(ruleCategory), Some(parameters.toSet))
     }
   }
 
