@@ -11,6 +11,7 @@ import org.reflections.Reflections
 object DocGenerator {
   private val toolName = "codenarc"
 
+  private val codeNarcVersionFile = ".codenarc-version"
   private val codeNarcGitRepository = "github.com/CodeNarc/CodeNarc"
   private val patternsJsonFile = "patterns.json"
   private val descriptionJsonFile = "description.json"
@@ -79,7 +80,7 @@ object DocGenerator {
     args.headOption
       .orElse {
         ResourceHelper
-          .getResourceContent(s"$docsFolder/$patternsJsonFile")
+          .getResourceContent(s"$docsFolder/$codeNarcVersionFile")
           .toOption
           .flatMap { lines =>
             Json.parse(lines.mkString("\n")).as[JsObject].\("version").asOpt[String]
