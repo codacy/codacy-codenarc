@@ -23,14 +23,17 @@ scalaVersion := "2.12.10"
 
 // Tool version
 lazy val toolVersion = settingKey[String]("The version of the underlying tool")
-toolVersion := "1.5"
+toolVersion := {
+  val version = IO.readLines(new File(".codenarc-version"))
+  version.mkString("")
+}
 
 libraryDependencies ++= Seq(
   "com.codacy" %% "codacy-engine-scala-seed" % "3.1.0",
   "org.codenarc" % "CodeNarc" % toolVersion.value,
   "org.scala-lang.modules" %% "scala-xml" % "1.2.0",
   "org.slf4j" % "slf4j-nop" % "1.7.12",
-  "org.scalatest" % "scalatest_2.12" % "3.1.0" % Test
+  "org.scalatest" %% "scalatest" % "3.1.0" % Test
 )
 
 scalacOptions.in(Compile, console) --= Seq("-Ywarn-unused", "-Ywarn-unused:imports", "-Xfatal-warnings")
@@ -40,32 +43,22 @@ enablePlugins(JavaAppPackaging)
 enablePlugins(DockerPlugin)
 enablePlugins(AshScriptPlugin)
 
-// write codenarc version into .codenarc-version
-lazy val codeNarcVersionFile = Def.setting {
-  val f = (resourceDirectory in Compile).value / "docs" / ".codenarc-version"
-  IO.write(f, toolVersion.value)
-  f
-}
-
 resourceDirectory in IntegrationTest := (baseDirectory apply { baseDir: File =>
   baseDir / "test/resources"
 }).value
 
 mappings in Universal ++=
-  (resourceDirectory in Compile)
-    .zip(codeNarcVersionFile)
-    .map {
-      case (resourceDir: File, versionFile: File) =>
-        val src = resourceDir / "docs"
-        val dest = "/docs"
+  (resourceDirectory in Compile).map {
+    case (resourceDir: File) =>
+      val src = resourceDir / "docs"
+      val dest = "/docs"
 
-        val docFiles = for {
-          path <- src.allPaths.get if !path.isDirectory
-        } yield path -> path.toString.replaceFirst(src.toString, dest)
+      val docFiles = for {
+        path <- src.allPaths.get if !path.isDirectory
+      } yield path -> path.toString.replaceFirst(src.toString, dest)
 
-        docFiles ++ Seq((versionFile, versionFile.getPath))
-    }
-    .value
+      docFiles
+  }.value
 
 // Docker
 mainClass in Compile := Some("codacy.Engine")
