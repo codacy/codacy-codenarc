@@ -2,7 +2,7 @@ package codacy.codenarc.docs
 
 import better.files.File
 import com.codacy.plugins.api.results.{Parameter, Pattern, Result, Tool}
-import play.api.libs.json.{JsObject, Json}
+import play.api.libs.json.{Json}
 
 import scala.util.matching.Regex
 import scala.collection.JavaConverters._
@@ -79,12 +79,10 @@ object DocGenerator {
   def versionFromArgs(args: Array[String]): String =
     args.headOption
       .orElse {
-        ResourceHelper
-          .getResourceContent(s"$docsFolder/$codeNarcVersionFile")
-          .toOption
-          .flatMap { lines =>
-            Json.parse(lines.mkString("\n")).as[JsObject].\("version").asOpt[String]
-          }
+        val sourceFile = io.Source.fromFile(s"$codeNarcVersionFile")
+        val resourceContent = sourceFile.getLines.mkString("")
+        sourceFile.close()
+        Some(resourceContent)
       }
       .getOrElse {
         throw new Exception("No version provided")
