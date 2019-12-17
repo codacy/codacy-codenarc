@@ -9,6 +9,8 @@ import java.nio.file.{Path, Paths}
 
 import com.codacy.plugins
 import better.files.File
+import org.codenarc.CodeNarcRunner
+import org.codenarc.analyzer.FilesystemSourceAnalyzer
 import play.api.libs.json.JsValue
 
 import scala.util.Try
@@ -16,8 +18,6 @@ import scala.util.Try
 object CodeNarc extends Tool {
   private lazy val configFileNames = Set(".codenarcrc")
 
-  private val codeNarcResultFileType = "xml"
-  private val codeNarcResultFilename = s"CodeNarcResult.$codeNarcResultFileType"
   private val codeNarcDefaultConfigPath = "docs/default_config/default.txt"
 
   private[codenarc] case class Pattern(id: String, parameters: Set[PatternParameter])
@@ -108,15 +108,12 @@ object CodeNarc extends Tool {
         saveConfigurationFile(defaultConfigContent).path
       }
 
-  /**
-    * Get the parameter string to pass to CodeNarc tool which specifies the files to be analyzed
-    * @param filesOpt List of files to inclue
-    * @return
-    */
-  def filesToAnalyseParameter(filesOpt: Option[Set[Source.File]]): String = filesOpt match {
-    case Some(filesList) => s"-includes=${filesList.mkString(",")}"
-    case None => "-includes=**/*.groovy"
+  def filesToAnalyse(filesOpt: Option[Set[Source.File]]): String = filesOpt match {
+    case Some(filesList) => filesList.mkString(",")
+    case None => "**/*.groovy"
   }
+
+  def ruleConfigFile(configurationFilePath: Path): String = s"file:${configurationFilePath.toString}"
 
   /**
     * CodeNarc makes some println's which we need to ignore
@@ -124,30 +121,31 @@ object CodeNarc extends Tool {
   def codeNarcPrintlnIgnore(): Unit =
     System.setOut(new PrintStream(new FileOutputStream(File.newTemporaryFile("out").toJava)))
 
-  def ruleConfigFileParameter(configurationFilePath: Path): String =
-    s"-rulesetfiles=file:${configurationFilePath.toString}"
-
-  def baseDirParameter(source: Source.Directory): String = s"-basedir=${source.path}"
-
-  def reportResultFileParam(): String = s"-report=$codeNarcResultFileType:$codeNarcResultFilename"
-
   def run(
       source: Source.Directory,
       configurationFilePath: Path,
       filesOpt: Option[Set[Source.File]]
   ): List[CodeNarcOutput.CodeNarcOutput] = {
-    val ruleConfigParam = ruleConfigFileParameter(configurationFilePath)
-    val filesToInclude = filesToAnalyseParameter(filesOpt)
-    val baseDirParam = baseDirParameter(source)
-    val reportFinalFileParam = reportResultFileParam()
+    val filesToInclude = filesToAnalyse(filesOpt)
+    val ruleConfiguration = ruleConfigFile(configurationFilePath)
 
     codeNarcPrintlnIgnore()
 
-    org.codenarc.CodeNarc
-      .main(ruleConfigParam, filesToInclude, baseDirParam, reportFinalFileParam)
+    val result = runCodeNarc(source.path, ruleConfiguration, filesToInclude)
 
-    val resultFile = File(codeNarcResultFilename)
-    CodeNarcOutput.parseResult(resultFile)
+    CodeNarcOutput.parseResult(result)
+  }
+
+  private def runCodeNarc(sourceDir: String, rulesList: String, includesFiles: String) = {
+    val codeNarcRunner = new CodeNarcRunner()
+    codeNarcRunner.setRuleSetFiles(rulesList)
+    val sourceAnalyzer = new FilesystemSourceAnalyzer
+    sourceAnalyzer.setBaseDirectory(sourceDir)
+    sourceAnalyzer.setIncludes(includesFiles)
+
+    codeNarcRunner.setSourceAnalyzer(sourceAnalyzer)
+
+    codeNarcRunner.execute()
   }
 
   /**
