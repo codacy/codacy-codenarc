@@ -18,7 +18,7 @@ import scala.util.Try
 object CodeNarc extends Tool {
   private lazy val configFileNames = Set(".codenarcrc")
 
-  private val codeNarcDefaultConfigPath = "docs/default_config/default.txt"
+  private val codeNarcDefaultConfigPath = "default_config/default.txt"
 
   private[codenarc] case class Pattern(id: String, parameters: Set[PatternParameter])
   private[codenarc] case class PatternParameter(name: String, value: Any)
