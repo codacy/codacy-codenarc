@@ -11,7 +11,7 @@ import com.codacy.plugins
 import better.files.File
 import org.codenarc.CodeNarcRunner
 import org.codenarc.analyzer.FilesystemSourceAnalyzer
-import play.api.libs.json.JsValue
+import play.api.libs.json.{JsString, JsValue}
 
 import scala.util.Try
 
@@ -21,7 +21,7 @@ object CodeNarc extends Tool {
   private val codeNarcDefaultConfigPath = "default_config/default.txt"
 
   private[codenarc] case class Pattern(id: String, parameters: Set[PatternParameter])
-  private[codenarc] case class PatternParameter(name: String, value: Any)
+  private[codenarc] case class PatternParameter(name: String, value: JsValue)
 
   /**
     * Check if source code repos contains CodeNarc's configuration file.
@@ -31,9 +31,11 @@ object CodeNarc extends Tool {
   private def sourceCodeRepositoryContainsConfigFile(source: Source.Directory): Option[Path] =
     findConfigurationFile(Paths.get(source.path), configFileNames)
 
-  private def paramValueAsString(paramValue: Any) =
-    if (paramValue.isInstanceOf[String]) s"'$paramValue'"
-    else paramValue
+  private def paramValueAsString(paramValue: JsValue): String =
+    paramValue match {
+      case JsString(value) => s"'$value'"
+      case v => v.toString
+    }
 
   private def patternParamConfigString(param: PatternParameter): String = {
     val value = paramValueAsString(param.value)

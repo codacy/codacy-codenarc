@@ -3,6 +3,7 @@ package codacy.codenarc
 import codacy.codenarc.CodeNarc.PatternParameter
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
+import play.api.libs.json.{JsNumber, JsString}
 
 class CodeNarcSpec extends AnyWordSpec with Matchers {
   "ruleFileFromPatterns" should {
@@ -11,7 +12,7 @@ class CodeNarcSpec extends AnyWordSpec with Matchers {
         List(
           CodeNarc.Pattern(
             "AssignmentInConditional",
-            Set(PatternParameter("Example", 2), PatternParameter("Param", "exampleVal"))
+            Set(PatternParameter("Example", JsNumber(2)), PatternParameter("Param", JsString("exampleVal")))
           ),
           CodeNarc.Pattern("BigDecimalInstantiation", Set())
         )
