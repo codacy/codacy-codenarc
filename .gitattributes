@@ -1,3 +1,4 @@
-docs/description/* linguist-generated=true
-docs/patterns.json linguist-generated=true
-docs/tool-description.md linguist-generated=true
+src/main/resources/docs/description/* linguist-generated=true -diff
+src/main/resources/docs/patterns.json linguist-generated=true -diff
+src/main/resources/docs/tool-description.md linguist-generated=true -diff
+

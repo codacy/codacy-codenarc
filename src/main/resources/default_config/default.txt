@@ -1,9 +1,5 @@
 ruleset {
 
-    description '''
-        Default configuration uses basic rules
-        '''
-
     AssertWithinFinallyBlock
     AssignmentInConditional
     BigDecimalInstantiation

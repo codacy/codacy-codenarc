@@ -1,17 +1,2300 @@
 {
-  "name": "codenarc",
-  "version": "1.5",
-  "patterns": [
-    {
-      "patternId": "AssignmentInConditional",
-      "level": "Error",
-      "category": "CodeStyle",
-      "parameters": [
-        {
-          "name": "AssignmentInConditional",
-          "default": ""
-        }
-      ]
-    }
-  ]
+  "name" : "codenarc",
+  "version" : "1.5",
+  "patterns" : [ {
+    "patternId" : "AbcMetric",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "maxMethodAbcScore",
+      "default" : ""
+    }, {
+      "name" : "maxClassAverageMethodAbcScore",
+      "default" : ""
+    }, {
+      "name" : "maxClassAbcScore",
+      "default" : ""
+    }, {
+      "name" : "ignoreMethodNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "AbstractClassName",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "regex",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "AbstractClassWithPublicConstructor",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "AbstractClassWithoutAbstractMethod",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "AddEmptyString",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "AssertWithinFinallyBlock",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "AssignCollectionSort",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "AssignCollectionUnique",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "AssignmentInConditional",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "AssignmentToStaticFieldFromInstanceMethod",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "BigDecimalInstantiation",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "BitwiseOperatorInConditional",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "BlankLineBeforePackage",
+    "level" : "Info",
+    "category" : "CodeStyle"
+  }, {
+    "patternId" : "BlockEndsWithBlankLine",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "BlockStartsWithBlankLine",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "BooleanGetBoolean",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "BooleanMethodReturnsNull",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "BracesForClass",
+    "level" : "Info",
+    "category" : "CodeStyle"
+  }, {
+    "patternId" : "BracesForForLoop",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "BracesForIfElse",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "BracesForMethod",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "BracesForTryCatchFinally",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "BrokenNullCheck",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "BrokenOddnessCheck",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "BuilderMethodWithSideEffects",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "methodNameRegex",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "BusyWait",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "CatchArrayIndexOutOfBoundsException",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "CatchError",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "CatchException",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "CatchIllegalMonitorStateException",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "CatchIndexOutOfBoundsException",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "CatchNullPointerException",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "CatchRuntimeException",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "CatchThrowable",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ChainedTest",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToClassNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "ClassEndsWithBlankLine",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ClassForName",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ClassJavadoc",
+    "level" : "Info",
+    "category" : "CodeStyle"
+  }, {
+    "patternId" : "ClassName",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ClassNameSameAsFilename",
+    "level" : "Info",
+    "category" : "CodeStyle"
+  }, {
+    "patternId" : "ClassNameSameAsSuperclass",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ClassSize",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "maxLines",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "ClassStartsWithBlankLine",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "CloneWithoutCloneable",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "compilerPhase",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "CloneableWithoutClone",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "CloseWithoutCloseable",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ClosureAsLastMethodParameter",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ClosureStatementOnOpeningLineOfMultipleLineClosure",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "CollectAllIsDeprecated",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "CompareToWithoutComparable",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ComparisonOfTwoConstants",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ComparisonWithSelf",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "CompileStatic",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ConfusingClassNamedException",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ConfusingMethodName",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ConfusingMultipleReturns",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ConfusingTernary",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ConsecutiveBlankLines",
+    "level" : "Info",
+    "category" : "CodeStyle"
+  }, {
+    "patternId" : "ConsecutiveLiteralAppends",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ConsecutiveStringConcatenation",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ConstantAssertExpression",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ConstantIfExpression",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ConstantTernaryExpression",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ConstantsOnlyInterface",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "CouldBeElvis",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "CouldBeSwitchStatement",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "errorMessage",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "CoupledTestCase",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToClassNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "CrapMetric",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "coberturaXmlFile",
+      "default" : ""
+    }, {
+      "name" : "ignoreMethodNames",
+      "default" : ""
+    }, {
+      "name" : "crapMetricClassName",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "CyclomaticComplexity",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "maxMethodComplexity",
+      "default" : ""
+    }, {
+      "name" : "maxClassComplexity",
+      "default" : ""
+    }, {
+      "name" : "maxClassAverageMethodComplexity",
+      "default" : ""
+    }, {
+      "name" : "ignoreMethodNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "DeadCode",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "DirectConnectionManagement",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "DoubleCheckedLocking",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "DoubleNegative",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "DuplicateCaseStatement",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "DuplicateImport",
+    "level" : "Info",
+    "category" : "CodeStyle"
+  }, {
+    "patternId" : "DuplicateListLiteral",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "doNotApplyToFilesMatching",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "DuplicateMapKey",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "DuplicateMapLiteral",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "doNotApplyToFilesMatching",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "DuplicateNumberLiteral",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "doNotApplyToFilesMatching",
+      "default" : ""
+    }, {
+      "name" : "ignoreNumbers",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "DuplicateSetValue",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "DuplicateStringLiteral",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "doNotApplyToFilesMatching",
+      "default" : ""
+    }, {
+      "name" : "ignoreStrings",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "ElseBlockBraces",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "EmptyCatchBlock",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreRegex",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "EmptyClass",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "EmptyElseBlock",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "EmptyFinallyBlock",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "EmptyForStatement",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "EmptyIfStatement",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "EmptyInstanceInitializer",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "EmptyMethod",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "EmptyMethodInAbstractClass",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "EmptyStaticInitializer",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "EmptySwitchStatement",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "EmptySynchronizedStatement",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "EmptyTryBlock",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "EmptyWhileStatement",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "EnumCustomSerializationIgnored",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "EqualsAndHashCode",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "EqualsOverloaded",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ExceptionExtendsError",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ExceptionExtendsThrowable",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ExceptionNotThrown",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ExplicitArrayListInstantiation",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ExplicitCallToAndMethod",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ExplicitCallToCompareToMethod",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ExplicitCallToDivMethod",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ExplicitCallToEqualsMethod",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ExplicitCallToGetAtMethod",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ExplicitCallToLeftShiftMethod",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ExplicitCallToMinusMethod",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ExplicitCallToModMethod",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ExplicitCallToMultiplyMethod",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ExplicitCallToOrMethod",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ExplicitCallToPlusMethod",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ExplicitCallToPowerMethod",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ExplicitCallToPutAtMethod",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ExplicitCallToRightShiftMethod",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ExplicitCallToXorMethod",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ExplicitGarbageCollection",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ExplicitHashMapInstantiation",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ExplicitHashSetInstantiation",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ExplicitLinkedHashMapInstantiation",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ExplicitLinkedListInstantiation",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ExplicitStackInstantiation",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ExplicitTreeSetInstantiation",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "FactoryMethodName",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "regex",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "FieldName",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "staticRegex",
+      "default" : ""
+    }, {
+      "name" : "ignoreFieldNames",
+      "default" : ""
+    }, {
+      "name" : "finalRegex",
+      "default" : ""
+    }, {
+      "name" : "staticFinalRegex",
+      "default" : ""
+    }, {
+      "name" : "privateStaticFinalRegex",
+      "default" : ""
+    }, {
+      "name" : "regex",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "FieldTypeRequired",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreFieldNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "FileCreateTempFile",
+    "level" : "Warning",
+    "category" : "Security",
+    "parameters" : [ {
+      "name" : "doNotApplyToFilesMatching",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "FileEndsWithoutNewline",
+    "level" : "Info",
+    "category" : "CodeStyle"
+  }, {
+    "patternId" : "FinalClassWithProtectedMember",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ForLoopShouldBeWhileLoop",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ForStatementBraces",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "GStringAsMapKey",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "GStringExpressionWithinString",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "GetterMethodCouldBeProperty",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "GrailsDomainHasEquals",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToFilesMatching",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "GrailsDomainHasToString",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToFilesMatching",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "GrailsDomainReservedSqlKeywordName",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToFilesMatching",
+      "default" : ""
+    }, {
+      "name" : "additionalReservedSqlKeywords",
+      "default" : ""
+    }, {
+      "name" : "additionalHibernateBasicTypes",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "GrailsDomainStringPropertyMaxSize",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToFilesMatching",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "GrailsDomainWithServiceReference",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToFilesMatching",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "GrailsDuplicateConstraint",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToFilesMatching",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "GrailsDuplicateMapping",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToFilesMatching",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "GrailsMassAssignment",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "GrailsPublicControllerMethod",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreMethodNames",
+      "default" : ""
+    }, {
+      "name" : "applyToFilesMatching",
+      "default" : ""
+    }, {
+      "name" : "applyToClassNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "GrailsServletContextReference",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToFilesMatching",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "GrailsStatelessService",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToFilesMatching",
+      "default" : ""
+    }, {
+      "name" : "applyToClassNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "GroovyLangImmutable",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "HardCodedWindowsFileSeparator",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "HardCodedWindowsRootDirectory",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "HashtableIsObsolete",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "IfStatementBraces",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "IfStatementCouldBeTernary",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "IllegalClassMember",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "illegalPropertyModifiersString",
+      "default" : ""
+    }, {
+      "name" : "allowedMethodModifiersString",
+      "default" : ""
+    }, {
+      "name" : "ignoreMethodNames",
+      "default" : ""
+    }, {
+      "name" : "illegalMethodModifiersString",
+      "default" : ""
+    }, {
+      "name" : "illegalFieldModifiersString",
+      "default" : ""
+    }, {
+      "name" : "allowedFieldModifiersString",
+      "default" : ""
+    }, {
+      "name" : "allowedPropertyModifiersString",
+      "default" : ""
+    }, {
+      "name" : "ignoreMethodsWithAnnotationNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "IllegalClassReference",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "classNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "IllegalPackageReference",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "packageNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "IllegalRegex",
+    "level" : "Info",
+    "category" : "CodeStyle"
+  }, {
+    "patternId" : "IllegalString",
+    "level" : "Info",
+    "category" : "CodeStyle"
+  }, {
+    "patternId" : "IllegalSubclass",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "superclassNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "ImplementationAsType",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ImplicitClosureParameter",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ImportFromSamePackage",
+    "level" : "Info",
+    "category" : "CodeStyle"
+  }, {
+    "patternId" : "ImportFromSunPackages",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "InconsistentPropertyLocking",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "InconsistentPropertySynchronization",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "Indentation",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "spacesPerIndentLevel",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "InsecureRandom",
+    "level" : "Warning",
+    "category" : "Security",
+    "parameters" : [ {
+      "name" : "doNotApplyToFilesMatching",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "Instanceof",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "doNotApplyToFilesMatching",
+      "default" : ""
+    }, {
+      "name" : "ignoreTypeNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "IntegerGetInteger",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "InterfaceName",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "regex",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "InterfaceNameSameAsSuperInterface",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "InvertedCondition",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "InvertedIfElse",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "JUnitAssertAlwaysFails",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToClassNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "JUnitAssertAlwaysSucceeds",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToClassNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "JUnitAssertEqualsConstantActualValue",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToFilesMatching",
+      "default" : ""
+    }, {
+      "name" : "compilerPhase",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "JUnitFailWithoutMessage",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToClassNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "JUnitLostTest",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToClassNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "JUnitPublicField",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToClassNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "JUnitPublicNonTestMethod",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToClassNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "JUnitPublicProperty",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToClassNames",
+      "default" : ""
+    }, {
+      "name" : "ignorePropertyNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "JUnitSetUpCallsSuper",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToClassNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "JUnitStyleAssertions",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToClassNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "JUnitTearDownCallsSuper",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToClassNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "JUnitTestMethodWithoutAssert",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "assertMethodPatterns",
+      "default" : ""
+    }, {
+      "name" : "applyToClassNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "JUnitUnnecessarySetUp",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToClassNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "JUnitUnnecessaryTearDown",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToClassNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "JUnitUnnecessaryThrowsException",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToClassNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "JavaIoPackageAccess",
+    "level" : "Warning",
+    "category" : "Security",
+    "parameters" : [ {
+      "name" : "doNotApplyToFilesMatching",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "JavadocConsecutiveEmptyLines",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "JavadocEmptyAuthorTag",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "JavadocEmptyExceptionTag",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "JavadocEmptyFirstLine",
+    "level" : "Info",
+    "category" : "CodeStyle"
+  }, {
+    "patternId" : "JavadocEmptyLastLine",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "JavadocEmptyParamTag",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "JavadocEmptyReturnTag",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "JavadocEmptySeeTag",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "JavadocEmptySinceTag",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "JavadocEmptyThrowsTag",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "JavadocEmptyVersionTag",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "JavadocMissingExceptionDescription",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "JavadocMissingParamDescription",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "JavadocMissingThrowsDescription",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "JdbcConnectionReference",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "JdbcResultSetReference",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "JdbcStatementReference",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "LineLength",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "length",
+      "default" : ""
+    }, {
+      "name" : "ignoreLineRegex",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "LocaleSetDefault",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "LoggerForDifferentClass",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "LoggerWithWrongModifiers",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "LoggingSwallowsStacktrace",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "LongLiteralWithLowerCaseL",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "MethodCount",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "maxMethods",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "MethodName",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "regex",
+      "default" : ""
+    }, {
+      "name" : "ignoreMethodNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "MethodParameterTypeRequired",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "MethodReturnTypeRequired",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "MethodSize",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "maxLines",
+      "default" : ""
+    }, {
+      "name" : "ignoreMethodNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "MisorderedStaticImports",
+    "level" : "Info",
+    "category" : "CodeStyle"
+  }, {
+    "patternId" : "MissingBlankLineAfterImports",
+    "level" : "Info",
+    "category" : "CodeStyle"
+  }, {
+    "patternId" : "MissingBlankLineAfterPackage",
+    "level" : "Info",
+    "category" : "CodeStyle"
+  }, {
+    "patternId" : "MissingNewInThrowStatement",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "MissingOverrideAnnotation",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "compilerPhase",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "MultipleLoggers",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "MultipleUnaryOperators",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "NestedBlockDepth",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "maxNestedBlockDepth",
+      "default" : ""
+    }, {
+      "name" : "ignoreRegex",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "NestedForLoop",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "NestedSynchronization",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "NoDef",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "NoDouble",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "NoFloat",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "NoJavaUtilDate",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "NoTabCharacter",
+    "level" : "Info",
+    "category" : "CodeStyle"
+  }, {
+    "patternId" : "NoWildcardImports",
+    "level" : "Info",
+    "category" : "CodeStyle"
+  }, {
+    "patternId" : "NonFinalPublicField",
+    "level" : "Warning",
+    "category" : "Security",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "NonFinalSubclassOfSensitiveInterface",
+    "level" : "Warning",
+    "category" : "Security",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ObjectFinalize",
+    "level" : "Warning",
+    "category" : "Security",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ObjectOverrideMisspelledMethodName",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "PackageName",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "regex",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "PackageNameMatchesFilePath",
+    "level" : "Info",
+    "category" : "CodeStyle"
+  }, {
+    "patternId" : "ParameterCount",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "maxParameters",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "ParameterName",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "regex",
+      "default" : ""
+    }, {
+      "name" : "ignoreParameterNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "ParameterReassignment",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "PrintStackTrace",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "Println",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "PrivateFieldCouldBeFinal",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreFieldNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "PropertyName",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "staticRegex",
+      "default" : ""
+    }, {
+      "name" : "ignorePropertyNames",
+      "default" : ""
+    }, {
+      "name" : "finalRegex",
+      "default" : ""
+    }, {
+      "name" : "staticFinalRegex",
+      "default" : ""
+    }, {
+      "name" : "regex",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "PublicFinalizeMethod",
+    "level" : "Warning",
+    "category" : "Security",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "PublicInstanceField",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "PublicMethodsBeforeNonPublicMethods",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "RandomDoubleCoercedToZero",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "RemoveAllOnSelf",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "RequiredRegex",
+    "level" : "Info",
+    "category" : "CodeStyle"
+  }, {
+    "patternId" : "RequiredString",
+    "level" : "Info",
+    "category" : "CodeStyle"
+  }, {
+    "patternId" : "ReturnFromFinallyBlock",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ReturnNullFromCatchBlock",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ReturnsNullInsteadOfEmptyArray",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ReturnsNullInsteadOfEmptyCollection",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SerialPersistentFields",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SerialVersionUID",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SerializableClassMustDefineSerialVersionUID",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SimpleDateFormatMissingLocale",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SpaceAfterCatch",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SpaceAfterClosingBrace",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SpaceAfterComma",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SpaceAfterFor",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SpaceAfterIf",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SpaceAfterOpeningBrace",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SpaceAfterSemicolon",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SpaceAfterSwitch",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SpaceAfterWhile",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SpaceAroundClosureArrow",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SpaceAroundMapEntryColon",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "characterBeforeColonRegex",
+      "default" : ""
+    }, {
+      "name" : "characterAfterColonRegex",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "SpaceAroundOperator",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SpaceBeforeClosingBrace",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SpaceBeforeOpeningBrace",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SpockIgnoreRestUsed",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "specificationSuperclassNames",
+      "default" : ""
+    }, {
+      "name" : "specificationClassNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "StatelessClass",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreFieldNames",
+      "default" : ""
+    }, {
+      "name" : "ignoreFieldTypes",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "StatelessSingleton",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "instanceRegex",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "StaticCalendarField",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "StaticConnection",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "StaticDateFormatField",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "StaticFieldsBeforeInstanceFields",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "StaticMatcherField",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "StaticMethodsBeforeInstanceMethods",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "StaticSimpleDateFormatField",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SwallowThreadDeath",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SynchronizedMethod",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SynchronizedOnBoxedPrimitive",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SynchronizedOnGetClass",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SynchronizedOnReentrantLock",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SynchronizedOnString",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SynchronizedOnThis",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SynchronizedReadObjectMethod",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SystemErrPrint",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SystemExit",
+    "level" : "Warning",
+    "category" : "Security",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SystemOutPrint",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "SystemRunFinalizersOnExit",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "TernaryCouldBeElvis",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ThisReferenceEscapesConstructor",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ThreadGroup",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ThreadLocalNotStaticFinal",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ThreadYield",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ThrowError",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ThrowException",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ThrowExceptionFromFinallyBlock",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ThrowNullPointerException",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ThrowRuntimeException",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ThrowThrowable",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "ToStringReturnsNull",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "TrailingComma",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "TrailingWhitespace",
+    "level" : "Info",
+    "category" : "CodeStyle"
+  }, {
+    "patternId" : "UnnecessaryBigDecimalInstantiation",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryBigIntegerInstantiation",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryBooleanExpression",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryBooleanInstantiation",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryCallForLastElement",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryCallToSubstring",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryCast",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryCatchBlock",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryCollectCall",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryCollectionCall",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryConstructor",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryDefInFieldDeclaration",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryDefInMethodDeclaration",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryDefInVariableDeclaration",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryDotClass",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryDoubleInstantiation",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryElseStatement",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryFail",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToClassNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "UnnecessaryFinalOnPrivateMethod",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryFloatInstantiation",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryGString",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryGetter",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreMethodNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "UnnecessaryGroovyImport",
+    "level" : "Info",
+    "category" : "CodeStyle"
+  }, {
+    "patternId" : "UnnecessaryIfStatement",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryInstanceOfCheck",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryInstantiationToGetClass",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryIntegerInstantiation",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryLongInstantiation",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryModOne",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryNullCheck",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryNullCheckBeforeInstanceOf",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryObjectReferences",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "maxReferencesAllowed",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "UnnecessaryOverridingMethod",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryPackageReference",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryParenthesesForMethodCallWithClosure",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryPublicModifier",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryReturnKeyword",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessarySafeNavigationOperator",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessarySelfAssignment",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessarySemicolon",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "excludePattern",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "UnnecessarySetter",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryStringInstantiation",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessarySubstring",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryTernaryExpression",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryToString",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnnecessaryTransientModifier",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnsafeArrayDeclaration",
+    "level" : "Warning",
+    "category" : "Security",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnsafeImplementationAsMap",
+    "level" : "Warning",
+    "category" : "Security",
+    "parameters" : [ {
+      "name" : "compilerPhase",
+      "default" : ""
+    }, {
+      "name" : "doNotApplyToFilesMatching",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "UnusedArray",
+    "level" : "Warning",
+    "category" : "UnusedCode",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UnusedImport",
+    "level" : "Info",
+    "category" : "CodeStyle"
+  }, {
+    "patternId" : "UnusedMethodParameter",
+    "level" : "Warning",
+    "category" : "UnusedCode",
+    "parameters" : [ {
+      "name" : "ignoreRegex",
+      "default" : ""
+    }, {
+      "name" : "ignoreClassRegex",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "UnusedObject",
+    "level" : "Warning",
+    "category" : "UnusedCode",
+    "parameters" : [ {
+      "name" : "doNotApplyToFilesMatching",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "UnusedPrivateField",
+    "level" : "Warning",
+    "category" : "UnusedCode",
+    "parameters" : [ {
+      "name" : "ignoreFieldNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "UnusedPrivateMethod",
+    "level" : "Warning",
+    "category" : "UnusedCode",
+    "parameters" : [ {
+      "name" : "ignoreRegex",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "UnusedPrivateMethodParameter",
+    "level" : "Warning",
+    "category" : "UnusedCode",
+    "parameters" : [ {
+      "name" : "ignoreRegex",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "UnusedVariable",
+    "level" : "Warning",
+    "category" : "UnusedCode",
+    "parameters" : [ {
+      "name" : "ignoreVariableNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "UseAssertEqualsInsteadOfAssertTrue",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToClassNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "UseAssertFalseInsteadOfNegation",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToClassNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "UseAssertNullInsteadOfAssertEquals",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToClassNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "UseAssertSameInsteadOfAssertTrue",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToClassNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "UseAssertTrueInsteadOfAssertEquals",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToClassNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "UseAssertTrueInsteadOfNegation",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToClassNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "UseCollectMany",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UseCollectNested",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "UseOfNotifyMethod",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "VariableName",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "regex",
+      "default" : ""
+    }, {
+      "name" : "finalRegex",
+      "default" : ""
+    }, {
+      "name" : "ignoreVariableNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "VariableTypeRequired",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreVariableNames",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "VectorIsObsolete",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "VolatileArrayField",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "VolatileLongOrDoubleField",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "WaitOutsideOfWhileLoop",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  }, {
+    "patternId" : "WhileStatementBraces",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ]
+  } ]
 }

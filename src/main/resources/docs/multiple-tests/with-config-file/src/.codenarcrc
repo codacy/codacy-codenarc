@@ -1,0 +1,10 @@
+ruleset {
+  ConsecutiveBlankLines
+  UnnecessarySemicolon
+  NoTabCharacter
+  MissingBlankLineAfterPackage
+  MisorderedStaticImports
+  Indentation {
+    spacesPerIndentLevel = 4
+  }
+}

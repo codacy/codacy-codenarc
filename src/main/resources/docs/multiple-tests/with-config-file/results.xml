@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<checkstyle version="1.5">
+    <file name="ConsecutiveBlankLines.groovy">
+        <error source="ConsecutiveBlankLines" line="2"
+               message="File ConsecutiveBlankLines.groovy has consecutive blank lines" severity="info"/>
+    </file>
+    <file name="ConsecutiveBlankLines.groovy">
+        <error source="UnnecessarySemicolon" line="9"
+               message="Semi-colons as line endings can be removed safely" severity="info"/>
+    </file>
+    <file name="ConsecutiveBlankLines.groovy">
+        <error source="UnnecessarySemicolon" line="12"
+               message="Semi-colons as line endings can be removed safely" severity="info"/>
+    </file>
+    <file name="ConsecutiveBlankLines.groovy">
+        <error source="UnnecessarySemicolon" line="13"
+               message="Semi-colons as line endings can be removed safely" severity="info"/>
+    </file>
+    <file name="Imports.groovy">
+        <error source="MissingBlankLineAfterPackage" line="3"
+               message="Missing blank line after package statement in file Imports.groovy" severity="info"/>
+    </file>
+    <file name="Imports.groovy">
+        <error source="MisorderedStaticImports" line="6"
+               message="Static imports should appear before normal imports" severity="info"/>
+    </file>
+    <file name="Imports.groovy">
+        <error source="UnnecessarySemicolon" line="15"
+               message="Semi-colons as line endings can be removed safely" severity="info"/>
+    </file>
+    <file name="Imports.groovy">
+        <error source="UnnecessarySemicolon" line="18"
+               message="Semi-colons as line endings can be removed safely" severity="info"/>
+    </file>
+</checkstyle>
