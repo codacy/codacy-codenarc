@@ -33,6 +33,7 @@ libraryDependencies ++= Seq(
   "org.codenarc" % "CodeNarc" % toolVersion.value,
   "org.scala-lang.modules" %% "scala-xml" % "1.2.0",
   "org.slf4j" % "slf4j-nop" % "1.7.12",
+  "org.reflections" % "reflections" % "0.9.10",
   "org.scalatest" %% "scalatest" % "3.1.0" % Test
 )
 

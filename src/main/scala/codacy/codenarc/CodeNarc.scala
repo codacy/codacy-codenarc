@@ -43,8 +43,9 @@ object CodeNarc extends Tool {
   }
 
   private def patternConfigurationString(pattern: Pattern): String =
-    if (pattern.parameters.isEmpty) pattern.id
-    else {
+    if (pattern.parameters.isEmpty) {
+      pattern.id
+    } else {
       val parameters = pattern.parameters
         .map(param => patternParamConfigString(param))
         .mkString("\n")
