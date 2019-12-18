@@ -29,14 +29,15 @@ object DocGenerator {
       patternId: Pattern.Id,
       description: String,
       descriptionExtended: String = "",
-      priority: Option[RulePriority]
+      priority: Option[RulePriority],
+      parameters: Option[Set[String]]
   )
 
-  case class RulePriority(priority: Option[String], priorityType: Option[String], parameters: Option[Set[String]])
+  case class RulePriority(priority: Option[String], priorityType: Option[String])
 
   private val defaultPriority = "3"
   private val defaultRuleType = "CodeStyle"
-  private val defaultRulePriority = RulePriority(Some(defaultPriority), Some(defaultRuleType), None)
+  private val defaultRulePriority = RulePriority(Some(defaultPriority), Some(defaultRuleType))
 
   /**
     * Converts from CodeNarc's complexity to Codacy level
@@ -172,11 +173,18 @@ object DocGenerator {
         val ruleInfoLocation = (a \ "@href").text
 
         val priority = rulePriority(ruleName)
+        val parameters = ruleParameters(ruleName)
         val ruleInformationMdFile = extractMdFilenameFromHref(ruleInfoLocation)
         val ruleExtendedInfo = getRuleExtendedInfoFromMarkdown(documentationFolder, ruleName, ruleInformationMdFile)
         val ruleBasicDescription = getRuleBasicDescription(directory.toString, ruleName)
 
-        RuleInformation(Pattern.Id(ruleName), ruleBasicDescription.getOrElse(""), ruleExtendedInfo, priority)
+        RuleInformation(
+          Pattern.Id(ruleName),
+          ruleBasicDescription.getOrElse(""),
+          ruleExtendedInfo,
+          priority,
+          parameters
+        )
       }
     })
 
@@ -195,7 +203,7 @@ object DocGenerator {
         rule.patternId,
         levelFromPriority(rulePriority.priority),
         categoryTypeFromCategory(rulePriority.priorityType),
-        parameterSpecificationFromParametersStringList(rulePriority.parameters)
+        parameterSpecificationFromParametersStringList(rule.parameters)
       )
     })
     Tool.Specification(Tool.Name(toolName), Some(Tool.Version(toolVersion)), patterns.toSet)
@@ -209,15 +217,29 @@ object DocGenerator {
     */
   def patternsDescription(patternsList: Seq[RuleInformation]): Seq[Pattern.Description] =
     patternsList.map(rule => {
-      val rulePriority = rule.priority.getOrElse(defaultRulePriority)
       Pattern.Description(
         rule.patternId,
         Pattern.Title(rule.patternId.value),
         Some(Pattern.DescriptionText(rule.description)),
         None,
-        parameterDescriptionFromParametersStringList(rulePriority.parameters)
+        parameterDescriptionFromParametersStringList(rule.parameters)
       )
     })
+
+  def ruleParameters(ruleName: String): Option[Set[String]] = {
+    val ruleClassImplementation = subTypes.find(_.getName.contains(ruleName))
+
+    ruleClassImplementation.map { rci =>
+      rci.getDeclaredFields
+        .filter(
+          x =>
+            (x.getType.toString == "int" || x.getType.toString == "class java.lang.String") && x.getName != "name" && x.getName != "priority"
+              && x.getName.toUpperCase != x.getName
+        )
+        .map(_.getName)
+        .toSet
+    }
+  }
 
   /**
     * Get CodeNarc's rule priority
@@ -229,19 +251,11 @@ object DocGenerator {
     val ruleClassImplementation = subTypes.find(_.getName.contains(ruleName))
 
     ruleClassImplementation.map { rci =>
-      val parameters = rci.getDeclaredFields
-        .filter(
-          x =>
-            (x.getType.toString == "int" || x.getType.toString == "class java.lang.String") && x.getName != "name" && x.getName != "priority"
-              && x.getName.toUpperCase != x.getName
-        )
-        .map(_.getName)
-
       val instance = rci.getDeclaredConstructor().newInstance()
       val ruleCategory = rci.getPackage.getName.split("\\.").last
       val priority = instance.getPriority
 
-      RulePriority(Some(priority.toString), Some(ruleCategory), Some(parameters.toSet))
+      RulePriority(Some(priority.toString), Some(ruleCategory))
     }
   }
 
