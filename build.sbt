@@ -1,6 +1,3 @@
-import sjsonnew._
-import sjsonnew.BasicJsonProtocol._
-import sjsonnew.support.scalajson.unsafe._
 import com.typesafe.sbt.packager.Keys.{
   daemonUser,
   defaultLinuxInstallLocation,
@@ -13,41 +10,55 @@ import com.typesafe.sbt.packager.Keys.{
 }
 import com.typesafe.sbt.packager.docker.{Cmd, ExecCmd}
 
-organization := "com.codacy"
-
-name := "codacy-codenarc"
-
-version := "1.0.0-SNAPSHOT"
-
-scalaVersion := "2.13.1"
-
 // Tool version
 lazy val toolVersion = settingKey[String]("The version of the underlying tool")
-toolVersion := {
+toolVersion in Global := {
   val version = IO.readLines(new File(".codenarc-version"))
   version.mkString("")
 }
 
-libraryDependencies ++= Seq(
-  "com.codacy" %% "codacy-engine-scala-seed" % "3.1.0",
-  "org.codenarc" % "CodeNarc" % toolVersion.value,
-  "org.scala-lang.modules" %% "scala-xml" % "1.2.0",
-  "org.slf4j" % "slf4j-nop" % "1.7.12",
-  "org.reflections" % "reflections" % "0.9.10",
-  "org.scalatest" %% "scalatest" % "3.1.0" % Test
+lazy val commonSettings = Seq(
+  organization := "com.codacy",
+  version := "1.0.0-SNAPSHOT",
+  scalaVersion := "2.13.1",
+  libraryDependencies ++= Seq(
+    "org.codenarc" % "CodeNarc" % toolVersion.value,
+    "com.codacy" %% "codacy-engine-scala-seed" % "3.1.0",
+  )
 )
 
+lazy val docGenerator = (project in file("docgenerator"))
+    .settings(
+      commonSettings,
+      name := "docgenerator",
+      moduleName := "docgenerator",
+      libraryDependencies ++= Seq(
+        "org.codenarc" % "CodeNarc" % toolVersion.value,
+        "org.scala-lang.modules" %% "scala-xml" % "1.2.0",
+        "org.reflections" % "reflections" % "0.9.10",
+      )
+    )
+
+lazy val root = (project in file("."))
+  .settings(
+    commonSettings,
+    name := "codacy-codenarc",
+    moduleName := "codacy-codenarc",
+    libraryDependencies ++= Seq(
+      "org.slf4j" % "slf4j-nop" % "1.7.12",
+      "org.scalatest" %% "scalatest" % "3.1.0" % Test
+    )
+  ).enablePlugins(DockerPlugin)
+  .enablePlugins(AshScriptPlugin)
+
 enablePlugins(JavaAppPackaging)
-enablePlugins(DockerPlugin)
-enablePlugins(AshScriptPlugin)
 
 resourceDirectory in IntegrationTest := (baseDirectory apply { baseDir: File =>
   baseDir / "test/resources"
 }).value
 
 mappings in Universal ++=
-  (resourceDirectory in Compile).map {
-    case (resourceDir: File) =>
+  (resourceDirectory in Compile).map { resourceDir =>
       val src = resourceDir / "docs"
       val dest = "/docs"
 
