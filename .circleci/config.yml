@@ -17,6 +17,7 @@ workflows:
                  scalafmt::test;
                  test:scalafmt::test;
                  sbt:scalafmt::test;
+                 test;
                  set name := \"$CIRCLE_PROJECT_REPONAME\";
                  set version in Docker := \"latest\";
                  docker:publishLocal"

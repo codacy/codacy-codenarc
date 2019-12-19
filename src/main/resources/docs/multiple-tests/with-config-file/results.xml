@@ -32,4 +32,8 @@
         <error source="UnnecessarySemicolon" line="18"
                message="Semi-colons as line endings can be removed safely" severity="info"/>
     </file>
+    <file name="Indentation.groovy">
+        <error source="Indentation" line="6"
+               message="The field output in class docs.tests.Indentation is at the incorrect indent level: Expected column 5 but was 3" severity="info"/>
+    </file>
 </checkstyle>

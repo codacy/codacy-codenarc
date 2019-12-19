@@ -97,7 +97,6 @@ ruleset {
     WaitOutsideOfWhileLoop
 
     // rulesets/convention.xml
-    CompileStatic
     ConfusingTernary
     CouldBeElvis
     CouldBeSwitchStatement
@@ -110,7 +109,6 @@ ruleset {
     LongLiteralWithLowerCaseL
     MethodParameterTypeRequired
     MethodReturnTypeRequired
-    NoDef
     NoDouble
     NoFloat
     NoJavaUtilDate
@@ -191,7 +189,6 @@ ruleset {
     BracesForIfElse
     BracesForMethod
     BracesForTryCatchFinally
-    ClassEndsWithBlankLine
     ClassStartsWithBlankLine
     ClosureStatementOnOpeningLineOfMultipleLineClosure
     ConsecutiveBlankLines

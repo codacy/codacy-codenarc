@@ -20,4 +20,28 @@
         <error source="AssignmentInConditional" line="7"
                message="Assignment used as conditional value, which always results in true. Use the == operator instead" severity="warning"/>
     </file>
+    <file name="AssignmentInConditional.groovy">
+        <error source="ClassJavadoc" line="4"
+               message="Class docs.tests.AssignmentInConditional missing Javadoc" severity="info"/>
+    </file>
+    <file name="AssignmentInConditional.groovy">
+        <error source="MethodName" line="5"
+               message="Violation in class AssignmentInConditional. The method name ConsecutiveBlankLines in class docs.tests.AssignmentInConditional does not match [a-z]\w*" severity="warning"/>
+    </file>
+    <file name="AssignmentInConditional.groovy">
+        <error source="UnnecessaryPublicModifier" line="5"
+               message="The public keyword is unnecessary for methods" severity="info"/>
+    </file>
+    <file name="AssignmentInConditional.groovy">
+        <error source="ClassStartsWithBlankLine" line="5"
+               message="Class does not start with a blank line after the opening brace" severity="info"/>
+    </file>
+    <file name="AssignmentInConditional.groovy">
+        <error source="UnnecessaryGString" line="8"
+               message="The String 'ERROR' can be wrapped in single quotes instead of double quotes" severity="info"/>
+    </file>
+    <file name="AssignmentInConditional.groovy">
+        <error source="MethodReturnTypeRequired" line="5"
+               message="Method &quot;ConsecutiveBlankLines&quot; has a dynamic return type" severity="info"/>
+    </file>
 </checkstyle>
