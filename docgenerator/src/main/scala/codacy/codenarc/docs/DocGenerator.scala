@@ -11,6 +11,7 @@ import scala.jdk.CollectionConverters._
 import org.reflections.Reflections
 
 import scala.annotation.tailrec
+import scala.util.Try
 
 object DocGenerator {
   private val toolName = "codenarc"
@@ -243,8 +244,12 @@ object DocGenerator {
       .toSet
   }
 
+  // Check if rule is implemented by class type passed
+  private def isRuleImplementedBy(ruleName: String, classType: Class[_ <: org.codenarc.rule.AbstractAstVisitorRule]) =
+    Try(classType.getDeclaredConstructor().newInstance().getName == ruleName).getOrElse(false)
+
   def ruleParameters(ruleName: String): Option[Set[String]] = {
-    val ruleClassImplementation = subTypes.find(_.getName.endsWith(s".$ruleName"))
+    val ruleClassImplementation = subTypes.find(isRuleImplementedBy(ruleName, _))
 
     ruleClassImplementation
       .map(getParametersFromType(_))
@@ -258,7 +263,7 @@ object DocGenerator {
     * @return
     */
   def rulePriority(ruleName: String): Option[RulePriority] = {
-    val ruleClassImplementation = subTypes.find(_.getName.contains(ruleName))
+    val ruleClassImplementation = subTypes.find(isRuleImplementedBy(ruleName, _))
 
     ruleClassImplementation.map { rci =>
       val instance = rci.getDeclaredConstructor().newInstance()

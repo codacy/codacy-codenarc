@@ -73,7 +73,11 @@
 }, {
   "patternId" : "EmptyCatchBlock",
   "title" : "EmptyCatchBlock",
-  "description" : "EmptyCatchBlock.description=In most cases, exceptions should not be caught and ignored (swallowed)."
+  "description" : "EmptyCatchBlock.description=In most cases, exceptions should not be caught and ignored (swallowed).",
+  "parameters" : [ {
+    "name" : "ignoreRegex",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "EmptyClass",
   "title" : "EmptyClass",
@@ -365,11 +369,19 @@
 }, {
   "patternId" : "CouldBeSwitchStatement",
   "title" : "CouldBeSwitchStatement",
-  "description" : "CouldBeSwitchStatement.description=Checks for multiple if statements that could be converted to a switch"
+  "description" : "CouldBeSwitchStatement.description=Checks for multiple if statements that could be converted to a switch",
+  "parameters" : [ {
+    "name" : "errorMessage",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "FieldTypeRequired",
   "title" : "FieldTypeRequired",
-  "description" : "FieldTypeRequired.description=Checks that field types are explicitly specified (and not using def)."
+  "description" : "FieldTypeRequired.description=Checks that field types are explicitly specified (and not using def).",
+  "parameters" : [ {
+    "name" : "ignoreFieldNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "HashtableIsObsolete",
   "title" : "HashtableIsObsolete",
@@ -449,7 +461,11 @@
 }, {
   "patternId" : "VariableTypeRequired",
   "title" : "VariableTypeRequired",
-  "description" : "VariableTypeRequired.description=Checks that variable types are explicitly specified in declarations (and not using def)"
+  "description" : "VariableTypeRequired.description=Checks that variable types are explicitly specified in declarations (and not using def)",
+  "parameters" : [ {
+    "name" : "ignoreVariableNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "VectorIsObsolete",
   "title" : "VectorIsObsolete",
@@ -473,7 +489,11 @@
 }, {
   "patternId" : "BuilderMethodWithSideEffects",
   "title" : "BuilderMethodWithSideEffects",
-  "description" : "BuilderMethodWithSideEffects.description=A builder method is defined as one that creates objects. As such, they should never be of void return type. If a method is named build, create, or make, then it should always return a value."
+  "description" : "BuilderMethodWithSideEffects.description=A builder method is defined as one that creates objects. As such, they should never be of void return type. If a method is named build, create, or make, then it should always return a value.",
+  "parameters" : [ {
+    "name" : "methodNameRegex",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "CloneableWithoutClone",
   "title" : "CloneableWithoutClone",
@@ -505,7 +525,14 @@
 }, {
   "patternId" : "Instanceof",
   "title" : "Instanceof",
-  "description" : "Instanceof.description=Checks for use of the instanceof operator. Use the ignoreTypeNames property to configure ignored type names."
+  "description" : "Instanceof.description=Checks for use of the instanceof operator. Use the ignoreTypeNames property to configure ignored type names.",
+  "parameters" : [ {
+    "name" : "doNotApplyToFilesMatching",
+    "description" : ""
+  }, {
+    "name" : "ignoreTypeNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "LocaleSetDefault",
   "title" : "LocaleSetDefault",
@@ -517,7 +544,11 @@
 }, {
   "patternId" : "PrivateFieldCouldBeFinal",
   "title" : "PrivateFieldCouldBeFinal",
-  "description" : "PrivateFieldCouldBeFinal.description=Checks for private fields that are only set within a constructor or field initializer. Such fields can safely be made final."
+  "description" : "PrivateFieldCouldBeFinal.description=Checks for private fields that are only set within a constructor or field initializer. Such fields can safely be made final.",
+  "parameters" : [ {
+    "name" : "ignoreFieldNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "PublicInstanceField",
   "title" : "PublicInstanceField",
@@ -537,7 +568,11 @@
 }, {
   "patternId" : "StatelessSingleton",
   "title" : "StatelessSingleton",
-  "description" : "StatelessSingleton.description=There is no point in creating a stateless Singleton because there is nothing within the class that needs guarding and no side effects to calling the constructor. Just create new instances of the object or write a Utility class with static methods."
+  "description" : "StatelessSingleton.description=There is no point in creating a stateless Singleton because there is nothing within the class that needs guarding and no side effects to calling the constructor. Just create new instances of the object or write a Utility class with static methods.",
+  "parameters" : [ {
+    "name" : "instanceRegex",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "ToStringReturnsNull",
   "title" : "ToStringReturnsNull",
@@ -545,35 +580,79 @@
 }, {
   "patternId" : "DuplicateListLiteral",
   "title" : "DuplicateListLiteral",
-  "description" : "DuplicateListLiteral.description=Code containing duplicate List literals can usually be improved by declaring the List as a constant field."
+  "description" : "DuplicateListLiteral.description=Code containing duplicate List literals can usually be improved by declaring the List as a constant field.",
+  "parameters" : [ {
+    "name" : "doNotApplyToFilesMatching",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "DuplicateMapLiteral",
   "title" : "DuplicateMapLiteral",
-  "description" : "DuplicateMapLiteral.description=Code containing duplicate Map literals can usually be improved by declaring the Map as a constant field."
+  "description" : "DuplicateMapLiteral.description=Code containing duplicate Map literals can usually be improved by declaring the Map as a constant field.",
+  "parameters" : [ {
+    "name" : "doNotApplyToFilesMatching",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "DuplicateNumberLiteral",
   "title" : "DuplicateNumberLiteral",
-  "description" : "DuplicateNumberLiteral.description=Code containing duplicate number literals can usually be improved by declaring the number as a constant field.  The ignoreNumbers property (${rule.ignoreNumbers}) can optionally specify a comma-separated list of numbers to ignore."
+  "description" : "DuplicateNumberLiteral.description=Code containing duplicate number literals can usually be improved by declaring the number as a constant field.  The ignoreNumbers property (${rule.ignoreNumbers}) can optionally specify a comma-separated list of numbers to ignore.",
+  "parameters" : [ {
+    "name" : "doNotApplyToFilesMatching",
+    "description" : ""
+  }, {
+    "name" : "ignoreNumbers",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "DuplicateStringLiteral",
   "title" : "DuplicateStringLiteral",
-  "description" : "DuplicateStringLiteral.description=Code containing duplicate String literals can usually be improved by declaring the String as a constant field. The ignoreStrings property (${rule.ignoreStrings}) can optionally specify a comma-separated list of Strings to ignore."
+  "description" : "DuplicateStringLiteral.description=Code containing duplicate String literals can usually be improved by declaring the String as a constant field. The ignoreStrings property (${rule.ignoreStrings}) can optionally specify a comma-separated list of Strings to ignore.",
+  "parameters" : [ {
+    "name" : "doNotApplyToFilesMatching",
+    "description" : ""
+  }, {
+    "name" : "ignoreStrings",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "CloneWithoutCloneable",
   "title" : "CloneWithoutCloneable",
-  "description" : "CloneWithoutCloneable.description=The method clone() should only be declared if the class implements the Cloneable interface."
+  "description" : "CloneWithoutCloneable.description=The method clone() should only be declared if the class implements the Cloneable interface.",
+  "parameters" : [ {
+    "name" : "compilerPhase",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "JUnitAssertEqualsConstantActualValue",
   "title" : "JUnitAssertEqualsConstantActualValue",
-  "description" : "JUnitAssertEqualsConstantActualValue.description=Reports usages of org.junit.Assert.assertEquals([message,] expected, actual) where the 'actual' parameter is a constant or a literal. Most likely it was intended to be the 'expected' value."
+  "description" : "JUnitAssertEqualsConstantActualValue.description=Reports usages of org.junit.Assert.assertEquals([message,] expected, actual) where the 'actual' parameter is a constant or a literal. Most likely it was intended to be the 'expected' value.",
+  "parameters" : [ {
+    "name" : "applyToFilesMatching",
+    "description" : ""
+  }, {
+    "name" : "compilerPhase",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "MissingOverrideAnnotation",
   "title" : "MissingOverrideAnnotation",
-  "description" : "MissingOverrideAnnotation.description=Checks for methods that override a method in a super class or implement a method in an interface but are not annotated with @Override."
+  "description" : "MissingOverrideAnnotation.description=Checks for methods that override a method in a super class or implement a method in an interface but are not annotated with @Override.",
+  "parameters" : [ {
+    "name" : "compilerPhase",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "UnsafeImplementationAsMap",
   "title" : "UnsafeImplementationAsMap",
-  "description" : "UnsafeImplementationAsMap.description=Reports incomplete interface implementations created by map-to-interface coercions. Example: [hasNext: { ... }] as Iterator (Not all Iterator methods are implemented. An UnsupportedOperationException will be thrown upon call to e.g. next().) By default, this rule does not apply to test files."
+  "description" : "UnsafeImplementationAsMap.description=Reports incomplete interface implementations created by map-to-interface coercions. Example: [hasNext: { ... }] as Iterator (Not all Iterator methods are implemented. An UnsupportedOperationException will be thrown upon call to e.g. next().) By default, this rule does not apply to test files.",
+  "parameters" : [ {
+    "name" : "compilerPhase",
+    "description" : ""
+  }, {
+    "name" : "doNotApplyToFilesMatching",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "CatchArrayIndexOutOfBoundsException",
   "title" : "CatchArrayIndexOutOfBoundsException",
@@ -709,11 +788,22 @@
 }, {
   "patternId" : "Indentation",
   "title" : "Indentation",
-  "description" : "Indentation.description=Check indentation for class and method declarations, and initial statements."
+  "description" : "Indentation.description=Check indentation for class and method declarations, and initial statements.",
+  "parameters" : [ {
+    "name" : "spacesPerIndentLevel",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "LineLength",
   "title" : "LineLength",
-  "description" : "LineLength.description=Checks the maximum length for each line of source code. It checks for number of characters, so lines that include tabs may appear longer than the allowed number when viewing the file. The maximum line length can be configured by setting the length property, which defaults to 120."
+  "description" : "LineLength.description=Checks the maximum length for each line of source code. It checks for number of characters, so lines that include tabs may appear longer than the allowed number when viewing the file. The maximum line length can be configured by setting the length property, which defaults to 120.",
+  "parameters" : [ {
+    "name" : "length",
+    "description" : ""
+  }, {
+    "name" : "ignoreLineRegex",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "MissingBlankLineAfterImports",
   "title" : "MissingBlankLineAfterImports",
@@ -765,7 +855,14 @@
 }, {
   "patternId" : "SpaceAroundMapEntryColon",
   "title" : "SpaceAroundMapEntryColon",
-  "description" : "SpaceAroundMapEntryColon.description=Check for configured formatting of whitespace around colons for literal Map entries. The characterBeforeColonRegex and characterAfterColonRegex properties specify a regular expression that must match the character before/after the colon."
+  "description" : "SpaceAroundMapEntryColon.description=Check for configured formatting of whitespace around colons for literal Map entries. The characterBeforeColonRegex and characterAfterColonRegex properties specify a regular expression that must match the character before/after the colon.",
+  "parameters" : [ {
+    "name" : "characterBeforeColonRegex",
+    "description" : ""
+  }, {
+    "name" : "characterAfterColonRegex",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "SpaceAroundOperator",
   "title" : "SpaceAroundOperator",
@@ -785,15 +882,48 @@
 }, {
   "patternId" : "IllegalClassMember",
   "title" : "IllegalClassMember",
-  "description" : "IllegalClassMember.description=Checks for classes containing fields/properties/methods matching configured illegal member modifiers or not matching any of the configured allowed member modifiers."
+  "description" : "IllegalClassMember.description=Checks for classes containing fields/properties/methods matching configured illegal member modifiers or not matching any of the configured allowed member modifiers.",
+  "parameters" : [ {
+    "name" : "allowedFieldModifiersString",
+    "description" : ""
+  }, {
+    "name" : "illegalPropertyModifiersString",
+    "description" : ""
+  }, {
+    "name" : "ignoreMethodsWithAnnotationNames",
+    "description" : ""
+  }, {
+    "name" : "ignoreMethodNames",
+    "description" : ""
+  }, {
+    "name" : "illegalMethodModifiersString",
+    "description" : ""
+  }, {
+    "name" : "illegalFieldModifiersString",
+    "description" : ""
+  }, {
+    "name" : "allowedPropertyModifiersString",
+    "description" : ""
+  }, {
+    "name" : "allowedMethodModifiersString",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "IllegalClassReference",
   "title" : "IllegalClassReference",
-  "description" : "IllegalClassReference.description=Checks for reference to any of the classes configured in classNames."
+  "description" : "IllegalClassReference.description=Checks for reference to any of the classes configured in classNames.",
+  "parameters" : [ {
+    "name" : "classNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "IllegalPackageReference",
   "title" : "IllegalPackageReference",
-  "description" : "IllegalPackageReference.description=Checks for reference to any of the packages configured in packageNames."
+  "description" : "IllegalPackageReference.description=Checks for reference to any of the packages configured in packageNames.",
+  "parameters" : [ {
+    "name" : "packageNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "IllegalRegex",
   "title" : "IllegalRegex",
@@ -805,7 +935,11 @@
 }, {
   "patternId" : "IllegalSubclass",
   "title" : "IllegalSubclass",
-  "description" : "IllegalSubclass.description=Checks for classes that extend one of the specified set of illegal superclasses configured in superclassNames."
+  "description" : "IllegalSubclass.description=Checks for classes that extend one of the specified set of illegal superclasses configured in superclassNames.",
+  "parameters" : [ {
+    "name" : "superclassNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "RequiredRegex",
   "title" : "RequiredRegex",
@@ -817,35 +951,76 @@
 }, {
   "patternId" : "StatelessClass",
   "title" : "StatelessClass",
-  "description" : "StatelessClass.description=Checks for fields on classes that should remain \"stateless\" and reentrant. The ignoreFieldNames property (${rule.ignoreFieldNames}) specifies one or more field names that should be ignored. The ignoreFieldTypes property specifies one or more field type names that should be ignored. Both can optionally contain wildcard characters ('*' or '?')."
+  "description" : "StatelessClass.description=Checks for fields on classes that should remain \"stateless\" and reentrant. The ignoreFieldNames property (${rule.ignoreFieldNames}) specifies one or more field names that should be ignored. The ignoreFieldTypes property specifies one or more field type names that should be ignored. Both can optionally contain wildcard characters ('*' or '?').",
+  "parameters" : [ {
+    "name" : "ignoreFieldNames",
+    "description" : ""
+  }, {
+    "name" : "ignoreFieldTypes",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "GrailsDomainHasEquals",
   "title" : "GrailsDomainHasEquals",
-  "description" : "GrailsDomainHasEquals.description=Checks that Grails domain classes redefine equals()."
+  "description" : "GrailsDomainHasEquals.description=Checks that Grails domain classes redefine equals().",
+  "parameters" : [ {
+    "name" : "applyToFilesMatching",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "GrailsDomainHasToString",
   "title" : "GrailsDomainHasToString",
-  "description" : "GrailsDomainHasToString.description=Checks that Grails domain classes redefine toString()"
+  "description" : "GrailsDomainHasToString.description=Checks that Grails domain classes redefine toString()",
+  "parameters" : [ {
+    "name" : "applyToFilesMatching",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "GrailsDomainReservedSqlKeywordName",
   "title" : "GrailsDomainReservedSqlKeywordName",
-  "description" : "GrailsDomainReservedSqlKeywordName.description=Forbids usage of SQL reserved keywords as class or field names in Grails domain classes. Naming a domain class (or its field) with such a keyword causes SQL schema creation errors and/or redundant table/column name mappings."
+  "description" : "GrailsDomainReservedSqlKeywordName.description=Forbids usage of SQL reserved keywords as class or field names in Grails domain classes. Naming a domain class (or its field) with such a keyword causes SQL schema creation errors and/or redundant table/column name mappings.",
+  "parameters" : [ {
+    "name" : "applyToFilesMatching",
+    "description" : ""
+  }, {
+    "name" : "additionalReservedSqlKeywords",
+    "description" : ""
+  }, {
+    "name" : "additionalHibernateBasicTypes",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "GrailsDomainStringPropertyMaxSize",
   "title" : "GrailsDomainStringPropertyMaxSize",
-  "description" : "GrailsDomainStringPropertyMaxSize.description=String properties in Grails domain classes have to define maximum size otherwise the property is mapped to VARCHAR(255) causing runtime exceptions to occur"
+  "description" : "GrailsDomainStringPropertyMaxSize.description=String properties in Grails domain classes have to define maximum size otherwise the property is mapped to VARCHAR(255) causing runtime exceptions to occur",
+  "parameters" : [ {
+    "name" : "applyToFilesMatching",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "GrailsDomainWithServiceReference",
   "title" : "GrailsDomainWithServiceReference",
-  "description" : "GrailsDomainWithServiceReference.description=Checks that Grails domain classes do not have service classes injected."
+  "description" : "GrailsDomainWithServiceReference.description=Checks that Grails domain classes do not have service classes injected.",
+  "parameters" : [ {
+    "name" : "applyToFilesMatching",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "GrailsDuplicateConstraint",
   "title" : "GrailsDuplicateConstraint",
-  "description" : "GrailsDuplicateConstraint.description=Check for duplicate entry in domain class constraints"
+  "description" : "GrailsDuplicateConstraint.description=Check for duplicate entry in domain class constraints",
+  "parameters" : [ {
+    "name" : "applyToFilesMatching",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "GrailsDuplicateMapping",
   "title" : "GrailsDuplicateMapping",
-  "description" : "GrailsDuplicateMapping.description=Check for duplicate name in a domain class mapping"
+  "description" : "GrailsDuplicateMapping.description=Check for duplicate name in a domain class mapping",
+  "parameters" : [ {
+    "name" : "applyToFilesMatching",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "GrailsMassAssignment",
   "title" : "GrailsMassAssignment",
@@ -853,15 +1028,36 @@
 }, {
   "patternId" : "GrailsPublicControllerMethod",
   "title" : "GrailsPublicControllerMethod",
-  "description" : "GrailsPublicControllerMethod.description=Checks for public methods on Grails controller classes. Static methods are ignored."
+  "description" : "GrailsPublicControllerMethod.description=Checks for public methods on Grails controller classes. Static methods are ignored.",
+  "parameters" : [ {
+    "name" : "ignoreMethodNames",
+    "description" : ""
+  }, {
+    "name" : "applyToFilesMatching",
+    "description" : ""
+  }, {
+    "name" : "applyToClassNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "GrailsServletContextReference",
   "title" : "GrailsServletContextReference",
-  "description" : "GrailsServletContextReference.description=Checks for references to the servletContext object from within Grails controller and taglib classes."
+  "description" : "GrailsServletContextReference.description=Checks for references to the servletContext object from within Grails controller and taglib classes.",
+  "parameters" : [ {
+    "name" : "applyToFilesMatching",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "GrailsStatelessService",
   "title" : "GrailsStatelessService",
-  "description" : "GrailsStatelessService.description=Checks for fields on Grails service classes. Grails service classes are singletons, by default, and so they should be reentrant and typically stateless. The ignoreFieldNames property (${rule.ignoreFieldNames}) specifies one or more field names that should be ignored. The ignoreFieldTypes property (${rule.ignoreFieldTypes}) specifies one or more field type names that should be ignored. Both can optionally contain wildcard characters ('*' or '?')."
+  "description" : "GrailsStatelessService.description=Checks for fields on Grails service classes. Grails service classes are singletons, by default, and so they should be reentrant and typically stateless. The ignoreFieldNames property (${rule.ignoreFieldNames}) specifies one or more field names that should be ignored. The ignoreFieldTypes property (${rule.ignoreFieldTypes}) specifies one or more field type names that should be ignored. Both can optionally contain wildcard characters ('*' or '?').",
+  "parameters" : [ {
+    "name" : "applyToFilesMatching",
+    "description" : ""
+  }, {
+    "name" : "applyToClassNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "AssignCollectionSort",
   "title" : "AssignCollectionSort",
@@ -1041,99 +1237,204 @@
 }, {
   "patternId" : "ChainedTest",
   "title" : "ChainedTest",
-  "description" : "ChainedTest.description=A test method that invokes another test method is a chained test; the methods are dependent on one another. Tests should be isolated, and not be dependent on one another."
+  "description" : "ChainedTest.description=A test method that invokes another test method is a chained test; the methods are dependent on one another. Tests should be isolated, and not be dependent on one another.",
+  "parameters" : [ {
+    "name" : "applyToClassNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "CoupledTestCase",
   "title" : "CoupledTestCase",
-  "description" : "CoupledTestCase.description=This rule finds test cases that are coupled to other test cases, either by invoking static methods on another test case or by creating instances of another test case. If you require shared logic in test cases then extract that logic to a new class where it can properly be reused."
+  "description" : "CoupledTestCase.description=This rule finds test cases that are coupled to other test cases, either by invoking static methods on another test case or by creating instances of another test case. If you require shared logic in test cases then extract that logic to a new class where it can properly be reused.",
+  "parameters" : [ {
+    "name" : "applyToClassNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "JUnitAssertAlwaysFails",
   "title" : "JUnitAssertAlwaysFails",
-  "description" : "JUnitAssertAlwaysFails.description=Checks for JUnit assert() method calls with constant arguments such that the assertion always fails. This includes: assertTrue(false), assertFalse(true) and assertNull(CONSTANT)."
+  "description" : "JUnitAssertAlwaysFails.description=Checks for JUnit assert() method calls with constant arguments such that the assertion always fails. This includes: assertTrue(false), assertFalse(true) and assertNull(CONSTANT).",
+  "parameters" : [ {
+    "name" : "applyToClassNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "JUnitAssertAlwaysSucceeds",
   "title" : "JUnitAssertAlwaysSucceeds",
-  "description" : "JUnitAssertAlwaysSucceeds.description=Checks for JUnit assert() method calls with constant arguments such that the assertion always succeeds. This includes: assertTrue(true), assertFalse(false) and assertNull(null)."
+  "description" : "JUnitAssertAlwaysSucceeds.description=Checks for JUnit assert() method calls with constant arguments such that the assertion always succeeds. This includes: assertTrue(true), assertFalse(false) and assertNull(null).",
+  "parameters" : [ {
+    "name" : "applyToClassNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "JUnitFailWithoutMessage",
   "title" : "JUnitFailWithoutMessage",
-  "description" : "JUnitFailWithoutMessage.description=This rule detects JUnit calling the fail() method without an argument. For better error reporting you should always provide a message."
+  "description" : "JUnitFailWithoutMessage.description=This rule detects JUnit calling the fail() method without an argument. For better error reporting you should always provide a message.",
+  "parameters" : [ {
+    "name" : "applyToClassNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "JUnitLostTest",
   "title" : "JUnitLostTest",
-  "description" : "JUnitLostTest.description=Checks for classes that import JUnit 4 classes and contain a public, instance, void, no-arg method named test* that is not annotated with @Test."
+  "description" : "JUnitLostTest.description=Checks for classes that import JUnit 4 classes and contain a public, instance, void, no-arg method named test* that is not annotated with @Test.",
+  "parameters" : [ {
+    "name" : "applyToClassNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "JUnitPublicField",
   "title" : "JUnitPublicField",
-  "description" : "JUnitPublicField.description=Checks for public field on a JUnit test class"
+  "description" : "JUnitPublicField.description=Checks for public field on a JUnit test class",
+  "parameters" : [ {
+    "name" : "applyToClassNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "JUnitPublicNonTestMethod",
   "title" : "JUnitPublicNonTestMethod",
-  "description" : "JUnitPublicNonTestMethod.description=Checks if a JUnit test class contains public methods other than standard test methods, JUnit framework methods or methods with JUnit annotations."
+  "description" : "JUnitPublicNonTestMethod.description=Checks if a JUnit test class contains public methods other than standard test methods, JUnit framework methods or methods with JUnit annotations.",
+  "parameters" : [ {
+    "name" : "applyToClassNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "JUnitPublicProperty",
   "title" : "JUnitPublicProperty",
-  "description" : "JUnitPublicProperty.description=Checks for public properties defined on JUnit test classes. There should be no need to expose a public property on a test class."
+  "description" : "JUnitPublicProperty.description=Checks for public properties defined on JUnit test classes. There should be no need to expose a public property on a test class.",
+  "parameters" : [ {
+    "name" : "applyToClassNames",
+    "description" : ""
+  }, {
+    "name" : "ignorePropertyNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "JUnitSetUpCallsSuper",
   "title" : "JUnitSetUpCallsSuper",
-  "description" : "JUnitSetUpCallsSuper.description=Checks that if the JUnit setUp() method is defined, that it includes a call to super.setUp()."
+  "description" : "JUnitSetUpCallsSuper.description=Checks that if the JUnit setUp() method is defined, that it includes a call to super.setUp().",
+  "parameters" : [ {
+    "name" : "applyToClassNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "JUnitStyleAssertions",
   "title" : "JUnitStyleAssertions",
-  "description" : "JUnitStyleAssertions.description=This rule detects calling JUnit style assertions like assertEquals, assertTrue, assertFalse, assertNull, assertNotNull. Groovy 1.7 ships with a feature called the \"power assert\", which is an assert statement with better error reporting. This is preferable to the JUnit assertions."
+  "description" : "JUnitStyleAssertions.description=This rule detects calling JUnit style assertions like assertEquals, assertTrue, assertFalse, assertNull, assertNotNull. Groovy 1.7 ships with a feature called the \"power assert\", which is an assert statement with better error reporting. This is preferable to the JUnit assertions.",
+  "parameters" : [ {
+    "name" : "applyToClassNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "JUnitTearDownCallsSuper",
   "title" : "JUnitTearDownCallsSuper",
-  "description" : "JUnitTearDownCallsSuper.description=Checks that if the JUnit tearDown() method is defined, that it includes a call to super.tearDown()."
+  "description" : "JUnitTearDownCallsSuper.description=Checks that if the JUnit tearDown() method is defined, that it includes a call to super.tearDown().",
+  "parameters" : [ {
+    "name" : "applyToClassNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "JUnitTestMethodWithoutAssert",
   "title" : "JUnitTestMethodWithoutAssert",
-  "description" : "JUnitTestMethodWithoutAssert.description=This rule searches for test methods that do not contain assert statements. Either the test method is missing assert statements, which is an error, or the test method contains custom assert statements that do not follow a proper assert naming convention. Test methods are defined as public void methods that begin with the work test or have a @Test annotation"
+  "description" : "JUnitTestMethodWithoutAssert.description=This rule searches for test methods that do not contain assert statements. Either the test method is missing assert statements, which is an error, or the test method contains custom assert statements that do not follow a proper assert naming convention. Test methods are defined as public void methods that begin with the work test or have a @Test annotation",
+  "parameters" : [ {
+    "name" : "assertMethodPatterns",
+    "description" : ""
+  }, {
+    "name" : "applyToClassNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "JUnitUnnecessarySetUp",
   "title" : "JUnitUnnecessarySetUp",
-  "description" : "JUnitUnnecessarySetUp.description=Checks for JUnit setUp() methods that contain only a call to super.setUp()."
+  "description" : "JUnitUnnecessarySetUp.description=Checks for JUnit setUp() methods that contain only a call to super.setUp().",
+  "parameters" : [ {
+    "name" : "applyToClassNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "JUnitUnnecessaryTearDown",
   "title" : "JUnitUnnecessaryTearDown",
-  "description" : "JUnitUnnecessaryTearDown.description=Checks for JUnit tearDown() methods that contain only a call to super.tearDown()."
+  "description" : "JUnitUnnecessaryTearDown.description=Checks for JUnit tearDown() methods that contain only a call to super.tearDown().",
+  "parameters" : [ {
+    "name" : "applyToClassNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "JUnitUnnecessaryThrowsException",
   "title" : "JUnitUnnecessaryThrowsException",
-  "description" : "JUnitUnnecessaryThrowsException.description=Check for throws clauses on JUnit test methods. That is not necessary in Groovy."
+  "description" : "JUnitUnnecessaryThrowsException.description=Check for throws clauses on JUnit test methods. That is not necessary in Groovy.",
+  "parameters" : [ {
+    "name" : "applyToClassNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "SpockIgnoreRestUsed",
   "title" : "SpockIgnoreRestUsed",
-  "description" : "SpockIgnoreRestUsed.description=If Spock's @IgnoreRest appears on any method, all non-annotated test methods are not executed. This behaviour is almost always unintended. It's fine to use @IgnoreRest locally during development, but when committing code, it should be removed."
+  "description" : "SpockIgnoreRestUsed.description=If Spock's @IgnoreRest appears on any method, all non-annotated test methods are not executed. This behaviour is almost always unintended. It's fine to use @IgnoreRest locally during development, but when committing code, it should be removed.",
+  "parameters" : [ {
+    "name" : "specificationSuperclassNames",
+    "description" : ""
+  }, {
+    "name" : "specificationClassNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "UnnecessaryFail",
   "title" : "UnnecessaryFail",
-  "description" : "UnnecessaryFail.description=In a unit test, catching an exception and immediately calling Assert.fail() is pointless and hides the stack trace. It is better to rethrow the exception or not catch the exception at all."
+  "description" : "UnnecessaryFail.description=In a unit test, catching an exception and immediately calling Assert.fail() is pointless and hides the stack trace. It is better to rethrow the exception or not catch the exception at all.",
+  "parameters" : [ {
+    "name" : "applyToClassNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "UseAssertEqualsInsteadOfAssertTrue",
   "title" : "UseAssertEqualsInsteadOfAssertTrue",
-  "description" : "UseAssertEqualsInsteadOfAssertTrue.description=This rule detects JUnit assertions in object equality. These assertions should be made by more specific methods, like assertEquals."
+  "description" : "UseAssertEqualsInsteadOfAssertTrue.description=This rule detects JUnit assertions in object equality. These assertions should be made by more specific methods, like assertEquals.",
+  "parameters" : [ {
+    "name" : "applyToClassNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "UseAssertFalseInsteadOfNegation",
   "title" : "UseAssertFalseInsteadOfNegation",
-  "description" : "UseAssertFalseInsteadOfNegation.description=In unit tests, if a condition is expected to be false then there is no sense using assertTrue with the negation operator. For instance, assertTrue(!condition) can always be simplified to assertFalse(condition)"
+  "description" : "UseAssertFalseInsteadOfNegation.description=In unit tests, if a condition is expected to be false then there is no sense using assertTrue with the negation operator. For instance, assertTrue(!condition) can always be simplified to assertFalse(condition)",
+  "parameters" : [ {
+    "name" : "applyToClassNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "UseAssertNullInsteadOfAssertEquals",
   "title" : "UseAssertNullInsteadOfAssertEquals",
-  "description" : "UseAssertNullInsteadOfAssertEquals.description=This rule detects JUnit calling assertEquals where the first or second parameter is null. These assertion should be made against the assertNull method instead."
+  "description" : "UseAssertNullInsteadOfAssertEquals.description=This rule detects JUnit calling assertEquals where the first or second parameter is null. These assertion should be made against the assertNull method instead.",
+  "parameters" : [ {
+    "name" : "applyToClassNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "UseAssertSameInsteadOfAssertTrue",
   "title" : "UseAssertSameInsteadOfAssertTrue",
-  "description" : "UseAssertSameInsteadOfAssertTrue.description=This rule detects JUnit calling assertTrue where the first or second parameter is an Object#is() call testing for reference equality. These assertion should be made against the assertSame method instead."
+  "description" : "UseAssertSameInsteadOfAssertTrue.description=This rule detects JUnit calling assertTrue where the first or second parameter is an Object#is() call testing for reference equality. These assertion should be made against the assertSame method instead.",
+  "parameters" : [ {
+    "name" : "applyToClassNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "UseAssertTrueInsteadOfAssertEquals",
   "title" : "UseAssertTrueInsteadOfAssertEquals",
-  "description" : "UseAssertTrueInsteadOfAssertEquals.description=This rule detects JUnit calling assertEquals where the first parameter is a boolean. These assertions should be made by more specific methods, like assertTrue or assertFalse."
+  "description" : "UseAssertTrueInsteadOfAssertEquals.description=This rule detects JUnit calling assertEquals where the first parameter is a boolean. These assertions should be made by more specific methods, like assertTrue or assertFalse.",
+  "parameters" : [ {
+    "name" : "applyToClassNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "UseAssertTrueInsteadOfNegation",
   "title" : "UseAssertTrueInsteadOfNegation",
-  "description" : "UseAssertTrueInsteadOfNegation.description=In unit tests, if a condition is expected to be true then there is no sense using assertFalse with the negation operator. For instance, assertFalse(!condition) can always be simplified to assertTrue(condition)"
+  "description" : "UseAssertTrueInsteadOfNegation.description=In unit tests, if a condition is expected to be true then there is no sense using assertFalse with the negation operator. For instance, assertFalse(!condition) can always be simplified to assertTrue(condition)",
+  "parameters" : [ {
+    "name" : "applyToClassNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "LoggerForDifferentClass",
   "title" : "LoggerForDifferentClass",
@@ -1169,11 +1470,19 @@
 }, {
   "patternId" : "AbstractClassName",
   "title" : "AbstractClassName",
-  "description" : "AbstractClassName.description=Verifies that the name of an abstract class matches a regular expression specified in the regex property. If that property is null or empty, then this rule is not applied (i.e., it does nothing). It defaults to null, so this rule must be explicitly configured to be active. This rule ignores interfaces."
+  "description" : "AbstractClassName.description=Verifies that the name of an abstract class matches a regular expression specified in the regex property. If that property is null or empty, then this rule is not applied (i.e., it does nothing). It defaults to null, so this rule must be explicitly configured to be active. This rule ignores interfaces.",
+  "parameters" : [ {
+    "name" : "regex",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "ClassName",
   "title" : "ClassName",
-  "description" : "ClassName.description=Verifies that the name of an abstract class matches a regular expression specified in the regex property. If that property is null or empty, then this rule is not applied (i.e., it does nothing). It defaults to null, so this rule must be explicitly configured to be active. This rule ignores interfaces."
+  "description" : "ClassName.description=Verifies that the name of an abstract class matches a regular expression specified in the regex property. If that property is null or empty, then this rule is not applied (i.e., it does nothing). It defaults to null, so this rule must be explicitly configured to be active. This rule ignores interfaces.",
+  "parameters" : [ {
+    "name" : "regex",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "ClassNameSameAsFilename",
   "title" : "ClassNameSameAsFilename",
@@ -1189,15 +1498,42 @@
 }, {
   "patternId" : "FactoryMethodName",
   "title" : "FactoryMethodName",
-  "description" : "FactoryMethodName.description=A factory method is a method that creates objects, and they are typically named either buildFoo(), makeFoo(), or createFoo(). This rule enforces that only one naming convention is used. It defaults to makeFoo(), but that can be changed using the property 'regex'."
+  "description" : "FactoryMethodName.description=A factory method is a method that creates objects, and they are typically named either buildFoo(), makeFoo(), or createFoo(). This rule enforces that only one naming convention is used. It defaults to makeFoo(), but that can be changed using the property 'regex'.",
+  "parameters" : [ {
+    "name" : "regex",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "FieldName",
   "title" : "FieldName",
-  "description" : "FieldName.description=Verifies that the name of each field matches a regular expression. By default it checks that non-'final' field names start with a lowercase letter and contains only letters or numbers, and 'final' field names start with an uppercase letter and contain only uppercase letters, numbers and underscores. The regex property specifies the default regular expression used to validate field names"
+  "description" : "FieldName.description=Verifies that the name of each field matches a regular expression. By default it checks that non-'final' field names start with a lowercase letter and contains only letters or numbers, and 'final' field names start with an uppercase letter and contain only uppercase letters, numbers and underscores. The regex property specifies the default regular expression used to validate field names",
+  "parameters" : [ {
+    "name" : "privateStaticFinalRegex",
+    "description" : ""
+  }, {
+    "name" : "finalRegex",
+    "description" : ""
+  }, {
+    "name" : "ignoreFieldNames",
+    "description" : ""
+  }, {
+    "name" : "staticRegex",
+    "description" : ""
+  }, {
+    "name" : "regex",
+    "description" : ""
+  }, {
+    "name" : "staticFinalRegex",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "InterfaceName",
   "title" : "InterfaceName",
-  "description" : "InterfaceName.description=Verifies that the name of an interface matches a regular expression specified in the regex property. If that property is null or empty, then this rule is not applied (i.e., it does nothing). It defaults to null, so this rule must be explicitly configured to be active."
+  "description" : "InterfaceName.description=Verifies that the name of an interface matches a regular expression specified in the regex property. If that property is null or empty, then this rule is not applied (i.e., it does nothing). It defaults to null, so this rule must be explicitly configured to be active.",
+  "parameters" : [ {
+    "name" : "regex",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "InterfaceNameSameAsSuperInterface",
   "title" : "InterfaceNameSameAsSuperInterface",
@@ -1205,7 +1541,14 @@
 }, {
   "patternId" : "MethodName",
   "title" : "MethodName",
-  "description" : "MethodName.description=A factory method is a method that creates objects, and they are typically named either buildFoo(), makeFoo(), or createFoo(). This rule enforces that only one naming convention is used. It defaults to makeFoo(), but that can be changed using the property 'regex'."
+  "description" : "MethodName.description=A factory method is a method that creates objects, and they are typically named either buildFoo(), makeFoo(), or createFoo(). This rule enforces that only one naming convention is used. It defaults to makeFoo(), but that can be changed using the property 'regex'.",
+  "parameters" : [ {
+    "name" : "regex",
+    "description" : ""
+  }, {
+    "name" : "ignoreMethodNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "ObjectOverrideMisspelledMethodName",
   "title" : "ObjectOverrideMisspelledMethodName",
@@ -1213,7 +1556,11 @@
 }, {
   "patternId" : "PackageName",
   "title" : "PackageName",
-  "description" : "PackageName.description=Verifies that the package name for a class matches a regular expression. By default it checks that the package name consists of only lowercase letters, separated by periods. The regex property specifies the regular expression used to validate the package name. The packageNameRequired property indicates whether a package name declaration is required for all classes."
+  "description" : "PackageName.description=Verifies that the package name for a class matches a regular expression. By default it checks that the package name consists of only lowercase letters, separated by periods. The regex property specifies the regular expression used to validate the package name. The packageNameRequired property indicates whether a package name declaration is required for all classes.",
+  "parameters" : [ {
+    "name" : "regex",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "PackageNameMatchesFilePath",
   "title" : "PackageNameMatchesFilePath",
@@ -1221,27 +1568,72 @@
 }, {
   "patternId" : "ParameterName",
   "title" : "ParameterName",
-  "description" : "ParameterName.description=Verifies that the name of each parameter matches a regular expression. This rule applies to method parameters, constructor parameters and closure parameters. By default it checks that parameter names start with a lowercase letter and contains only letters or numbers. The regex property specifies the default regular expression used to validate the parameter name.  The ignoreParameterNames property (${rule"
+  "description" : "ParameterName.description=Verifies that the name of each parameter matches a regular expression. This rule applies to method parameters, constructor parameters and closure parameters. By default it checks that parameter names start with a lowercase letter and contains only letters or numbers. The regex property specifies the default regular expression used to validate the parameter name.  The ignoreParameterNames property (${rule",
+  "parameters" : [ {
+    "name" : "regex",
+    "description" : ""
+  }, {
+    "name" : "ignoreParameterNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "PropertyName",
   "title" : "PropertyName",
-  "description" : "PropertyName.description=Verifies that the name of each property matches a regular expression. By default it checks that property names other than 'static final' start with a lowercase letter and contains only letters or numbers, and 'static final' property names start with an uppercase letter and contain only uppercase letters, numbers and underscores. The regex property specifies the default regular expression used to validate property names"
+  "description" : "PropertyName.description=Verifies that the name of each property matches a regular expression. By default it checks that property names other than 'static final' start with a lowercase letter and contains only letters or numbers, and 'static final' property names start with an uppercase letter and contain only uppercase letters, numbers and underscores. The regex property specifies the default regular expression used to validate property names",
+  "parameters" : [ {
+    "name" : "finalRegex",
+    "description" : ""
+  }, {
+    "name" : "ignorePropertyNames",
+    "description" : ""
+  }, {
+    "name" : "staticRegex",
+    "description" : ""
+  }, {
+    "name" : "regex",
+    "description" : ""
+  }, {
+    "name" : "staticFinalRegex",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "VariableName",
   "title" : "VariableName",
-  "description" : "VariableName.description=Verifies that the name of each method matches a regular expression. By default it checks that non-'final' variable names start with a lowercase letter and contains only letters or numbers, and 'final' variable names start with an uppercase letter and contain only uppercase letters, numbers and underscores. The regex property specifies the default regular expression used to validate a non-'final' variable name"
+  "description" : "VariableName.description=Verifies that the name of each method matches a regular expression. By default it checks that non-'final' variable names start with a lowercase letter and contains only letters or numbers, and 'final' variable names start with an uppercase letter and contain only uppercase letters, numbers and underscores. The regex property specifies the default regular expression used to validate a non-'final' variable name",
+  "parameters" : [ {
+    "name" : "regex",
+    "description" : ""
+  }, {
+    "name" : "finalRegex",
+    "description" : ""
+  }, {
+    "name" : "ignoreVariableNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "FileCreateTempFile",
   "title" : "FileCreateTempFile",
-  "description" : "FileCreateTempFile.description=The File.createTempFile() method is insecure, and has been deprecated by the ESAPI secure coding library. It has been replaced by the ESAPI Randomizer.getRandomFilename(String) method."
+  "description" : "FileCreateTempFile.description=The File.createTempFile() method is insecure, and has been deprecated by the ESAPI secure coding library. It has been replaced by the ESAPI Randomizer.getRandomFilename(String) method.",
+  "parameters" : [ {
+    "name" : "doNotApplyToFilesMatching",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "InsecureRandom",
   "title" : "InsecureRandom",
-  "description" : "InsecureRandom.description=Reports usages of java.util.Random, which can produce very predictable results. If two instances of Random are created with the same seed and sequence of method calls, they will generate the exact same results. Use java.security.SecureRandom instead, which provides a cryptographically strong random number generator. SecureRandom uses PRNG, which means they are using a deterministic algorithm to produce a pseudo-random number from a true random seed"
+  "description" : "InsecureRandom.description=Reports usages of java.util.Random, which can produce very predictable results. If two instances of Random are created with the same seed and sequence of method calls, they will generate the exact same results. Use java.security.SecureRandom instead, which provides a cryptographically strong random number generator. SecureRandom uses PRNG, which means they are using a deterministic algorithm to produce a pseudo-random number from a true random seed",
+  "parameters" : [ {
+    "name" : "doNotApplyToFilesMatching",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "JavaIoPackageAccess",
   "title" : "JavaIoPackageAccess",
-  "description" : "JavaIoPackageAccess.description=This rule reports violations of the Enterprise JavaBeans specification by using the java.io package to access files or the file system."
+  "description" : "JavaIoPackageAccess.description=This rule reports violations of the Enterprise JavaBeans specification by using the java.io package to access files or the file system.",
+  "parameters" : [ {
+    "name" : "doNotApplyToFilesMatching",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "NonFinalPublicField",
   "title" : "NonFinalPublicField",
@@ -1285,35 +1677,97 @@
 }, {
   "patternId" : "AbcMetric",
   "title" : "AbcMetric",
-  "description" : "AbcMetric.description=Checks the ABC size metric for methods/classes. \\"
+  "description" : "AbcMetric.description=Checks the ABC size metric for methods/classes. \\",
+  "parameters" : [ {
+    "name" : "maxMethodAbcScore",
+    "description" : ""
+  }, {
+    "name" : "maxClassAverageMethodAbcScore",
+    "description" : ""
+  }, {
+    "name" : "maxClassAbcScore",
+    "description" : ""
+  }, {
+    "name" : "ignoreMethodNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "ClassSize",
   "title" : "ClassSize",
-  "description" : "ClassSize.description=Checks if the size of a class exceeds the number of lines specified by the maxLines property (${rule.maxLines})."
+  "description" : "ClassSize.description=Checks if the size of a class exceeds the number of lines specified by the maxLines property (${rule.maxLines}).",
+  "parameters" : [ {
+    "name" : "maxLines",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "CrapMetric",
   "title" : "CrapMetric",
-  "description" : "CrapMetric.description=Checks the CRAP (Change Risk Anti-Patterns) score for methods/classes. \\"
+  "description" : "CrapMetric.description=Checks the CRAP (Change Risk Anti-Patterns) score for methods/classes. \\",
+  "parameters" : [ {
+    "name" : "coberturaXmlFile",
+    "description" : ""
+  }, {
+    "name" : "ignoreMethodNames",
+    "description" : ""
+  }, {
+    "name" : "crapMetricClassName",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "CyclomaticComplexity",
   "title" : "CyclomaticComplexity",
-  "description" : "CyclomaticComplexity.description=Checks the cyclomatic complexity for methods/classes.\\"
+  "description" : "CyclomaticComplexity.description=Checks the cyclomatic complexity for methods/classes.\\",
+  "parameters" : [ {
+    "name" : "maxMethodComplexity",
+    "description" : ""
+  }, {
+    "name" : "maxClassComplexity",
+    "description" : ""
+  }, {
+    "name" : "maxClassAverageMethodComplexity",
+    "description" : ""
+  }, {
+    "name" : "ignoreMethodNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "MethodCount",
   "title" : "MethodCount",
-  "description" : "MethodCount.description=A class with too many methods is probably a good suspect for refactoring, in order to reduce its \\"
+  "description" : "MethodCount.description=A class with too many methods is probably a good suspect for refactoring, in order to reduce its \\",
+  "parameters" : [ {
+    "name" : "maxMethods",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "MethodSize",
   "title" : "MethodSize",
-  "description" : "MethodSize.description=Checks if the size of a method exceeds the number of lines specified by the maxLines property (${rule.maxLines})."
+  "description" : "MethodSize.description=Checks if the size of a method exceeds the number of lines specified by the maxLines property (${rule.maxLines}).",
+  "parameters" : [ {
+    "name" : "maxLines",
+    "description" : ""
+  }, {
+    "name" : "ignoreMethodNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "NestedBlockDepth",
   "title" : "NestedBlockDepth",
-  "description" : "NestedBlockDepth.description=Checks for blocks or closures nested more than maxNestedBlockDepth (${rule.maxNestedBlockDepth}) levels deep."
+  "description" : "NestedBlockDepth.description=Checks for blocks or closures nested more than maxNestedBlockDepth (${rule.maxNestedBlockDepth}) levels deep.",
+  "parameters" : [ {
+    "name" : "maxNestedBlockDepth",
+    "description" : ""
+  }, {
+    "name" : "ignoreRegex",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "ParameterCount",
   "title" : "ParameterCount",
-  "description" : "ParameterCount.description=Checks if the number of parameters in method/constructor exceeds the number of parameters specified by the maxParameters property."
+  "description" : "ParameterCount.description=Checks if the number of parameters in method/constructor exceeds the number of parameters specified by the maxParameters property.",
+  "parameters" : [ {
+    "name" : "maxParameters",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "AddEmptyString",
   "title" : "AddEmptyString",
@@ -1409,7 +1863,11 @@
 }, {
   "patternId" : "UnnecessaryGetter",
   "title" : "UnnecessaryGetter",
-  "description" : "UnnecessaryGetter.description=Checks for explicit calls to getter/accessor methods which can, for the most part, be replaced by property access. A getter is defined as a method call that matches get[A-Z] but not getClass() or get[A-Z][A-Z] such as getURL(). Getters do not take method arguments. The ignoreMethodNames property (${rule.ignoreMethodNames}) can specify method names that should be ignored, optionally containing wildcard characters ('*' or '?')."
+  "description" : "UnnecessaryGetter.description=Checks for explicit calls to getter/accessor methods which can, for the most part, be replaced by property access. A getter is defined as a method call that matches get[A-Z] but not getClass() or get[A-Z][A-Z] such as getURL(). Getters do not take method arguments. The ignoreMethodNames property (${rule.ignoreMethodNames}) can specify method names that should be ignored, optionally containing wildcard characters ('*' or '?').",
+  "parameters" : [ {
+    "name" : "ignoreMethodNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "UnnecessaryIfStatement",
   "title" : "UnnecessaryIfStatement",
@@ -1445,7 +1903,11 @@
 }, {
   "patternId" : "UnnecessaryObjectReferences",
   "title" : "UnnecessaryObjectReferences",
-  "description" : "UnnecessaryObjectReferences.description=Violations are triggered when an excessive set of consecutive statements all reference the same variable. This can be made more readable by using a with or identity block."
+  "description" : "UnnecessaryObjectReferences.description=Violations are triggered when an excessive set of consecutive statements all reference the same variable. This can be made more readable by using a with or identity block.",
+  "parameters" : [ {
+    "name" : "maxReferencesAllowed",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "UnnecessaryOverridingMethod",
   "title" : "UnnecessaryOverridingMethod",
@@ -1477,7 +1939,11 @@
 }, {
   "patternId" : "UnnecessarySemicolon",
   "title" : "UnnecessarySemicolon",
-  "description" : "UnnecessarySemicolon.description=Semicolons as line terminators are not required in Groovy: remove them. Do not use a semicolon as a replacement for empty braces on for and while loops; this is a confusing practice."
+  "description" : "UnnecessarySemicolon.description=Semicolons as line terminators are not required in Groovy: remove them. Do not use a semicolon as a replacement for empty braces on for and while loops; this is a confusing practice.",
+  "parameters" : [ {
+    "name" : "excludePattern",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "UnnecessarySetter",
   "title" : "UnnecessarySetter",
@@ -1509,25 +1975,52 @@
 }, {
   "patternId" : "UnusedMethodParameter",
   "title" : "UnusedMethodParameter",
-  "description" : "UnusedMethodParameter.description=This rule finds instances of method parameters not being used. It does not analyze private methods (that is done by the UnusedPrivateMethodParameter rule) or methods marked @Override."
+  "description" : "UnusedMethodParameter.description=This rule finds instances of method parameters not being used. It does not analyze private methods (that is done by the UnusedPrivateMethodParameter rule) or methods marked @Override.",
+  "parameters" : [ {
+    "name" : "ignoreRegex",
+    "description" : ""
+  }, {
+    "name" : "ignoreClassRegex",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "UnusedObject",
   "title" : "UnusedObject",
-  "description" : "UnusedObject.description=Checks for object allocations that are not assigned or used, unless it is the last statement within a block."
+  "description" : "UnusedObject.description=Checks for object allocations that are not assigned or used, unless it is the last statement within a block.",
+  "parameters" : [ {
+    "name" : "doNotApplyToFilesMatching",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "UnusedPrivateField",
   "title" : "UnusedPrivateField",
-  "description" : "UnusedPrivateField.description=Checks for private fields that are not referenced within the same class."
+  "description" : "UnusedPrivateField.description=Checks for private fields that are not referenced within the same class.",
+  "parameters" : [ {
+    "name" : "ignoreFieldNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "UnusedPrivateMethod",
   "title" : "UnusedPrivateMethod",
-  "description" : "UnusedPrivateMethod.description=Checks for private methods that are not referenced within the same class."
+  "description" : "UnusedPrivateMethod.description=Checks for private methods that are not referenced within the same class.",
+  "parameters" : [ {
+    "name" : "ignoreMethodsWithAnnotationNames",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "UnusedPrivateMethodParameter",
   "title" : "UnusedPrivateMethodParameter",
-  "description" : "UnusedPrivateMethodParameter.description=Checks for parameters to private methods that are not referenced within the method body."
+  "description" : "UnusedPrivateMethodParameter.description=Checks for parameters to private methods that are not referenced within the method body.",
+  "parameters" : [ {
+    "name" : "ignoreRegex",
+    "description" : ""
+  } ]
 }, {
   "patternId" : "UnusedVariable",
   "title" : "UnusedVariable",
-  "description" : "UnusedVariable.description=Checks for variables that are never referenced. The ignoreVariableNames property (${rule.ignoreVariableNames}) specifies one or more variable names that should be ignored, optionally containing wildcard characters ('*' or '?')."
+  "description" : "UnusedVariable.description=Checks for variables that are never referenced. The ignoreVariableNames property (${rule.ignoreVariableNames}) specifies one or more variable names that should be ignored, optionally containing wildcard characters ('*' or '?').",
+  "parameters" : [ {
+    "name" : "ignoreVariableNames",
+    "description" : ""
+  } ]
 } ]
