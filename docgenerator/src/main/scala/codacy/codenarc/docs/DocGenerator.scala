@@ -135,6 +135,7 @@ object DocGenerator {
   def getRuleBasicDescription(directory: String, patternId: String): String = {
     // This method trims the description to a max length of 500.
     // The basic description has a limit of 500 chars, so it is required to trim if it is longer than that
+    // The trim is being done by removing a sentence from the end each time until it has less than 500 length.
     @tailrec
     def descriptionTrimAux(description: String): String = {
       if (description.length < 500) {
