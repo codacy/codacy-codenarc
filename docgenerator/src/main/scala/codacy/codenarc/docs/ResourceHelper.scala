@@ -1,6 +1,5 @@
 package codacy.codenarc.docs
 
-import java.io.InputStream
 import java.net.URL
 import java.nio.charset.{CodingErrorAction, StandardCharsets}
 import java.nio.file.{Files, Path, StandardOpenOption}
@@ -10,9 +9,10 @@ import scala.util.{Failure, Properties, Try}
 
 object ResourceHelper {
 
-  implicit val codec: Codec = Codec.UTF8
-  codec.onMalformedInput(CodingErrorAction.REPLACE)
-  codec.onUnmappableCharacter(CodingErrorAction.REPLACE)
+  implicit val codec: Codec =
+    Codec.UTF8
+      .onMalformedInput(CodingErrorAction.REPLACE)
+      .onUnmappableCharacter(CodingErrorAction.REPLACE)
 
   def getResourceContent(path: String): Try[List[String]] = {
     Option(getClass.getClassLoader.getResource(path))
@@ -25,7 +25,7 @@ object ResourceHelper {
   }
 
   private def getResourceContent(url: URL): Try[List[String]] = {
-    getResourceStream(url).flatMap { stream =>
+    Try(url.openStream()).flatMap { stream =>
       val lines = Try {
         Source
           .fromInputStream(stream)
@@ -38,16 +38,6 @@ object ResourceHelper {
 
       lines
     }
-  }
-
-  private def getResourceStream(url: URL): Try[InputStream] = {
-    Some(url)
-      .map { file =>
-        Try(file.openStream())
-      }
-      .getOrElse {
-        Failure(new Exception("The URL provided is not valid"))
-      }
   }
 
   def writeFile(path: Path, content: String): Try[Path] = {
