@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<module name="root">
+    <module name="Indentation">
+        <property name="spacesPerIndentLevel" value="4"/>
+    </module>
+    <module name="ConsecutiveBlankLines" />
+    <module name="MissingBlankLineAfterPackage" />
+    <module name="UnnecessarySemicolon" />
+    <module name="AssignmentInConditional" />
+    <module name="MisorderedStaticImports" />
+</module>
