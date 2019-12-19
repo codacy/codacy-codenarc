@@ -234,19 +234,21 @@ object DocGenerator {
   private def isNotNameOrPriority(value: Field) =
     value.getName != "name" && value.getName != "priority" && value.getName.toUpperCase != value.getName
 
-  def ruleParameters(ruleName: String): Option[Set[String]] = {
-    val ruleClassImplementation = subTypes.find(_.getName.contains(ruleName))
+  private def getParametersFromType[T](classType: Class[T]) = {
+    classType.getDeclaredFields
+      .filter(x => {
+        isIntOrString(x) && isNotNameOrPriority(x)
+      })
+      .map(_.getName)
+      .toSet
+  }
 
-    ruleClassImplementation.map { rci =>
-      rci.getDeclaredFields
-        .filter(
-          x =>
-            isIntOrString(x)
-              && isNotNameOrPriority(x)
-        )
-        .map(_.getName)
-        .toSet
-    }
+  def ruleParameters(ruleName: String): Option[Set[String]] = {
+    val ruleClassImplementation = subTypes.find(_.getName.endsWith(s".$ruleName"))
+
+    ruleClassImplementation
+      .map(getParametersFromType(_))
+      .flatMap(x => if (x.isEmpty) None else Some(x))
   }
 
   /**
