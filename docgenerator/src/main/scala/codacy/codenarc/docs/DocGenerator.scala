@@ -1,5 +1,7 @@
 package codacy.codenarc.docs
 
+import java.lang.reflect.Field
+
 import better.files.File
 import com.codacy.plugins.api.results.{Parameter, Pattern, Result, Tool}
 import play.api.libs.json.Json
@@ -130,23 +132,28 @@ object DocGenerator {
     * @param patternId rule/pattern name
     * @return Simplified Description
     */
-  def getRuleBasicDescription(directory: String, patternId: String): Option[String] = {
+  def getRuleBasicDescription(directory: String, patternId: String): String = {
+    // This method trims the description to a max length of 500.
+    // The basic description has a limit of 500 chars, so it is required to trim if it is longer than that
     @tailrec
-    def descriptionTrimAux(description: String): Some[String] =
+    def descriptionTrimAux(description: String): String = {
       if (description.length < 500) {
-        Some(description)
+        description
       } else {
         descriptionTrimAux(description.substring(0, description.lastIndexOf(".")))
       }
+    }
 
     val resourcesFolder = s"$directory/src/main/resources"
     val messagesFileContent = File(s"$resourcesFolder/codenarc-base-messages.properties").contentAsString
 
     val descriptionRegexFinder = new Regex(s"$patternId.description=(.*)")
 
-    val description = (descriptionRegexFinder.findAllIn(messagesFileContent).matchData map { m =>
-      m.group(1)
-    }).toList.headOption.getOrElse("")
+    val description = descriptionRegexFinder
+      .findFirstIn(messagesFileContent)
+      .toList
+      .headOption
+      .getOrElse("")
 
     descriptionTrimAux(description)
   }
@@ -178,13 +185,7 @@ object DocGenerator {
         val ruleExtendedInfo = getRuleExtendedInfoFromMarkdown(documentationFolder, ruleName, ruleInformationMdFile)
         val ruleBasicDescription = getRuleBasicDescription(directory.toString, ruleName)
 
-        RuleInformation(
-          Pattern.Id(ruleName),
-          ruleBasicDescription.getOrElse(""),
-          ruleExtendedInfo,
-          priority,
-          parameters
-        )
+        RuleInformation(Pattern.Id(ruleName), ruleBasicDescription, ruleExtendedInfo, priority, parameters)
       }
     })
 
@@ -226,6 +227,12 @@ object DocGenerator {
       )
     })
 
+  private def isIntOrString(value: Field) =
+    TypeComparisonHelper.isInt(value.getType) || value.getType == classOf[String]
+
+  private def isNotNameOrPriority(value: Field) =
+    value.getName != "name" && value.getName != "priority" && value.getName.toUpperCase != value.getName
+
   def ruleParameters(ruleName: String): Option[Set[String]] = {
     val ruleClassImplementation = subTypes.find(_.getName.contains(ruleName))
 
@@ -233,8 +240,8 @@ object DocGenerator {
       rci.getDeclaredFields
         .filter(
           x =>
-            (x.getType.toString == "int" || x.getType.toString == "class java.lang.String") && x.getName != "name" && x.getName != "priority"
-              && x.getName.toUpperCase != x.getName
+            isIntOrString(x)
+              && isNotNameOrPriority(x)
         )
         .map(_.getName)
         .toSet
