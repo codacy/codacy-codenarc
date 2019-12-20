@@ -2,11 +2,10 @@ package codacy.codenarc.docs
 
 import java.lang.reflect.Field
 
-import better.files.File
+import better.files._
 import com.codacy.plugins.api.results.{Parameter, Pattern, Result, Tool}
 import play.api.libs.json.Json
 
-import scala.util.matching.Regex
 import scala.jdk.CollectionConverters._
 import org.reflections.Reflections
 
@@ -81,7 +80,7 @@ object DocGenerator {
     * @param ruleName Name of the rule to get information
     * @return
     */
-  def ruleInfoRegex(ruleName: String) = new Regex("## " + ruleName + "([\\n\\S\\s\\w\\d][^##])*")
+  def ruleInfoRegex(ruleName: String) = s"## $ruleName([\\n\\S\\s\\w\\d][^##])*".r
 
   /**
     * Gets the tool version from the pattern.json file
@@ -92,7 +91,7 @@ object DocGenerator {
   def versionFromArgs(args: Array[String]): String =
     args.headOption
       .orElse {
-        val sourceFile = io.Source.fromFile(s"$codeNarcVersionFile")
+        val sourceFile = io.Source.fromFile(codeNarcVersionFile)
         val resourceContent = sourceFile.getLines.mkString("")
         sourceFile.close()
         Some(resourceContent)
@@ -119,11 +118,11 @@ object DocGenerator {
     * @return
     */
   def getRuleExtendedInfoFromMarkdown(docsFolder: String, ruleName: String, ruleFilename: String): String = {
-    val ruleInfoMarkdown = File(s"$docsFolder$ruleFilename").contentAsString
+    val ruleInfoMarkdown = (docsFolder / ruleFilename).contentAsString
 
     val regexPattern = ruleInfoRegex(ruleName)
     val regexMatch = regexPattern.findFirstIn(ruleInfoMarkdown).getOrElse("")
-    regexMatch.substring(regexMatch.indexOf('\n') + 1) // remove the title
+    regexMatch.substring(regexMatch.indexOf(System.lineSeparator) + 1) // remove the title
   }
 
   /**
@@ -147,9 +146,11 @@ object DocGenerator {
     }
 
     val resourcesFolder = s"$directory/src/main/resources"
-    val messagesFileContent = File(s"$resourcesFolder/codenarc-base-messages.properties").contentAsString
+    val messagesFiles =
+      File(resourcesFolder) / directory / "src" / "main" / "resources" / "codenarc-base-messages.properties"
+    val messagesFileContent = messagesFiles.contentAsString
 
-    val descriptionRegexFinder = new Regex(s"$patternId.description=(.*)")
+    val descriptionRegexFinder = s"$patternId.description=(.*)".r
 
     val description = descriptionRegexFinder
       .findFirstIn(messagesFileContent)
