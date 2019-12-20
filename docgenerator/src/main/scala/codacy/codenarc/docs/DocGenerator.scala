@@ -170,9 +170,9 @@ object DocGenerator {
     */
   def listRulesSupportedFromGitDocumentation(toolVersion: String): Seq[RuleInformation] =
     GitHelper.withRepository(codeNarcGitRepository, toolVersion)(directory => {
-      val documentationFolder = s"$directory/docs/"
+      val documentationFolder = directory / "docs"
 
-      val documentationStartingPoint = File(s"$documentationFolder$codeNarcDocumentationStartingPoint")
+      val documentationStartingPoint = documentationFolder / codeNarcDocumentationStartingPoint
       val htmlListOfRules = MarkdownHelper.markdownToHtmlXml(documentationStartingPoint)
 
       // patterns list
@@ -186,7 +186,8 @@ object DocGenerator {
         val priority = rulePriority(ruleName)
         val parameters = ruleParameters(ruleName)
         val ruleInformationMdFile = extractMdFilenameFromHref(ruleInfoLocation)
-        val ruleExtendedInfo = getRuleExtendedInfoFromMarkdown(documentationFolder, ruleName, ruleInformationMdFile)
+        val ruleExtendedInfo =
+          getRuleExtendedInfoFromMarkdown(documentationFolder.pathAsString, ruleName, ruleInformationMdFile)
         val ruleBasicDescription = getRuleBasicDescription(directory.toString, ruleName)
 
         RuleInformation(Pattern.Id(ruleName), ruleBasicDescription, ruleExtendedInfo, priority, parameters)
@@ -296,20 +297,21 @@ object DocGenerator {
     val jsonDescriptions = Json.prettyPrint(Json.toJson(patternDescriptions))
 
     // create all files objects required to save documentation info
-    val repoRoot = new java.io.File(".")
-    val docsRoot = new java.io.File(repoRoot, s"src/main/resources/$docsFolder")
-    val patternsFile = new java.io.File(docsRoot, patternsJsonFile)
-    val descriptionsRoot = new java.io.File(docsRoot, descriptionFolder)
-    val descriptionsFile = new java.io.File(descriptionsRoot, descriptionJsonFile)
+    val repoRoot = File(".")
+    val docsFolderPath = repoRoot / "src" / "main" / "resources" / docsFolder
+    val docsRoot = File(repoRoot, docsFolderPath.pathAsString)
+    val patternsFile = File(docsRoot, patternsJsonFile)
+    val descriptionsRoot = File(docsRoot, descriptionFolder)
+    val descriptionsFile = File(descriptionsRoot, descriptionJsonFile)
 
     // write patterns.json and descriptions.json
-    ResourceHelper.writeFile(patternsFile.toPath, jsonSpecifications)
-    ResourceHelper.writeFile(descriptionsFile.toPath, jsonDescriptions)
+    ResourceHelper.writeFile(patternsFile.path, jsonSpecifications)
+    ResourceHelper.writeFile(descriptionsFile.path, jsonDescriptions)
 
     // write patterns extended descriptions to markdown files
     patternsList.foreach(description => {
-      val descriptionMdFile = new java.io.File(descriptionsRoot, s"${description.patternId}.md")
-      ResourceHelper.writeFile(descriptionMdFile.toPath, description.descriptionExtended)
+      val descriptionMdFile = File(descriptionsRoot, s"${description.patternId}.md")
+      ResourceHelper.writeFile(descriptionMdFile.path, description.descriptionExtended)
     })
   }
 }
