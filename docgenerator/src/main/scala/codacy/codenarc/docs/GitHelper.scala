@@ -11,7 +11,6 @@ object GitHelper {
     } yield {
       s"git clone git://$repository --depth 1 -b v$version $directory".!!
       val result = block(directory)
-      directory.delete()
       result
     }
     res.get

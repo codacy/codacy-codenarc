@@ -153,7 +153,8 @@ object DocGenerator {
     val descriptionRegexFinder = s"$patternId.description=(.*)".r
 
     val description = descriptionRegexFinder
-      .findFirstIn(messagesFileContent)
+      .findFirstMatchIn(messagesFileContent)
+      .map(_.group(1))
       .toList
       .headOption
       .getOrElse("")
