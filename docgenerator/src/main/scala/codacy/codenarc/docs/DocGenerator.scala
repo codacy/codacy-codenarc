@@ -230,7 +230,7 @@ object DocGenerator {
     })
 
   private def isIntOrString(value: Field) =
-    TypeComparisonHelper.isInt(value.getType) || value.getType == classOf[String]
+    value.getType == classOf[Int] || value.getType == classOf[String]
 
   private def isNotNameOrPriority(value: Field) =
     value.getName != "name" && value.getName != "priority" && value.getName.toUpperCase != value.getName
