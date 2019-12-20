@@ -234,8 +234,10 @@ object DocGenerator {
   private def isIntOrString(value: Field) =
     value.getType == classOf[Int] || value.getType == classOf[String]
 
+  // value.getName.exists(_.isLower) -----> check if it is a constant (constants are all uppercase)
+  //                                                   if it is not a constant, it should not be all uppercase
   private def isNotNameOrPriority(value: Field) =
-    value.getName != "name" && value.getName != "priority" && value.getName.toUpperCase != value.getName
+    value.getName != "name" && value.getName != "priority" && value.getName.exists(_.isLower)
 
   private def getParametersFromType[T](classType: Class[T]) = {
     classType.getDeclaredFields
