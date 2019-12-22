@@ -2,15 +2,14 @@ package codacy.codenarc.docs
 
 import better.files.File
 
-import scala.xml.{Elem, XML}
+import scala.xml.Elem
 import sys.process._
 
 object MarkdownHelper {
 
   def markdownToHtml(markdownFile: File): String = {
-    val html = Seq("pandoc", "-f", "markdown", "-t", "html", markdownFile.path.toString).!!
-    val htmlContent = html.replaceAllLiterally("<br>", "").replaceAllLiterally("<hr>", "")
-    s"<html>$htmlContent</html>"
+    val htmlContent = Seq("pandoc", "-f", "markdown", "-t", "html", markdownFile.path.toString).!!
+    s"<div>$htmlContent</div>"
   }
 
   def markdownToHtmlXml(markdownFile: File): Elem = {

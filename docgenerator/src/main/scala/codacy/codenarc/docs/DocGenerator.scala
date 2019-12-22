@@ -4,15 +4,26 @@ import java.lang.reflect.Field
 
 import better.files._
 import com.codacy.plugins.api.results.{Parameter, Pattern, Result, Tool}
+import org.codenarc.rule.AbstractAstVisitorRule
 import play.api.libs.json.Json
 
 import scala.jdk.CollectionConverters._
 import org.reflections.Reflections
 
 import scala.annotation.tailrec
-import scala.util.Try
+import scala.util.matching.Regex
+import scala.util.{Try, Using}
 
 object DocGenerator {
+
+  case class RulePriority(priority: String, priorityType: String)
+
+  case class RulePatternInformation(
+      patternSpecification: Pattern.Specification,
+      patternDescription: Pattern.Description,
+      descriptionMarkdown: String
+  )
+
   private val toolName = "codenarc"
 
   private val codeNarcVersionFile = ".codenarc-version"
@@ -27,31 +38,17 @@ object DocGenerator {
   private val reflections = new Reflections("org.codenarc.rule")
   private val subTypes = reflections.getSubTypesOf(classOf[org.codenarc.rule.AbstractAstVisitorRule]).asScala
 
-  case class RuleInformation(
-      patternId: Pattern.Id,
-      description: String,
-      descriptionExtended: String = "",
-      priority: Option[RulePriority],
-      parameters: Option[Set[String]]
-  )
-
-  case class RulePriority(priority: Option[String], priorityType: Option[String])
-
-  private val defaultPriority = "3"
-  private val defaultRuleType = "CodeStyle"
-  private val defaultRulePriority = RulePriority(Some(defaultPriority), Some(defaultRuleType))
-
   /**
     * Converts from CodeNarc's complexity to Codacy level
     */
-  val levelFromPriority: PartialFunction[Option[String], Result.Level.Value] = {
+  def levelFromPriority(priority: Option[String]): Result.Level.Value = priority match {
     case Some("1") => Result.Level.Err
     case Some("2") => Result.Level.Warn
     case Some("3") => Result.Level.Info
     case _ => Result.Level.Info
   }
 
-  val categoryTypeFromCategory: PartialFunction[Option[String], Pattern.Category.Value] = {
+  def categoryTypeFromPriorityType(priorityType: Option[String]): Pattern.Category.Value = priorityType match {
     case Some("security") => Pattern.Category.Security
     case Some("unused") => Pattern.Category.UnusedCode
     case _ => Pattern.Category.CodeStyle
@@ -80,7 +77,7 @@ object DocGenerator {
     * @param ruleName Name of the rule to get information
     * @return
     */
-  def ruleInfoRegex(ruleName: String) = s"## $ruleName([\\n\\S\\s\\w\\d][^##])*".r
+  def ruleInfoRegex(ruleName: String): Regex = s"## $ruleName([\\n\\S\\s\\w\\d][^##])*".r
 
   /**
     * Gets the tool version from the pattern.json file
@@ -90,15 +87,11 @@ object DocGenerator {
     */
   def versionFromArgs(args: Array[String]): String =
     args.headOption
-      .orElse {
-        val sourceFile = io.Source.fromFile(codeNarcVersionFile)
-        val resourceContent = sourceFile.getLines.mkString("")
-        sourceFile.close()
-        Some(resourceContent)
-      }
-      .getOrElse {
-        throw new Exception("No version provided")
-      }
+      .getOrElse({
+        Using.resource(io.Source.fromFile(codeNarcVersionFile)) { sourceFile =>
+          sourceFile.getLines.mkString("")
+        }
+      })
 
   /**
     * Gets the documentation markdown name from the href element value
@@ -168,7 +161,7 @@ object DocGenerator {
     * @param toolVersion CodeNarc's version
     * @return
     */
-  def listRulesSupportedFromGitDocumentation(toolVersion: String): Seq[RuleInformation] =
+  def listRulesSupportedFromGitDocumentation(toolVersion: String): Seq[RulePatternInformation] =
     GitHelper.withRepository(codeNarcGitRepository, toolVersion)(directory => {
       val documentationFolder = directory / "docs"
 
@@ -179,19 +172,37 @@ object DocGenerator {
       for {
         li <- htmlListOfRules \\ "li"
         a <- li \ "a"
-      } yield {
-        val ruleName = a.text
-        val ruleInfoLocation = (a \ "@href").text
 
-        val priority = rulePriority(ruleName)
-        val parameters = ruleParameters(ruleName)
-        val ruleInformationMdFile = extractMdFilenameFromHref(ruleInfoLocation)
-        val ruleExtendedInfo =
-          getRuleExtendedInfoFromMarkdown(documentationFolder.pathAsString, ruleName, ruleInformationMdFile)
-        val ruleBasicDescription = getRuleBasicDescription(directory.toString, ruleName)
+        ruleName = a.text
+        ruleInfoLocation = (a \ "@href").text
 
-        RuleInformation(Pattern.Id(ruleName), ruleBasicDescription, ruleExtendedInfo, priority, parameters)
-      }
+        rulePriority = getRulePriority(ruleName)
+        parameters = getRuleParameters(ruleName)
+
+        ruleInformationMdFile = extractMdFilenameFromHref(ruleInfoLocation)
+        ruleExtendedInfo = getRuleExtendedInfoFromMarkdown(
+          documentationFolder.pathAsString,
+          ruleName,
+          ruleInformationMdFile
+        )
+        ruleBasicDescription = getRuleBasicDescription(directory.toString, ruleName)
+
+        patternSpec = Pattern.Specification(
+          Pattern.Id(ruleName),
+          levelFromPriority(rulePriority.map(_.priority)),
+          categoryTypeFromPriorityType(rulePriority.map(_.priorityType)),
+          parameterSpecificationFromParametersStringList(parameters)
+        )
+
+        patternDescription = Pattern.Description(
+          Pattern.Id(ruleName),
+          Pattern.Title(ruleName),
+          Some(Pattern.DescriptionText(ruleBasicDescription)),
+          None,
+          parameterDescriptionFromParametersStringList(parameters)
+        )
+      } yield RulePatternInformation(patternSpec, patternDescription, ruleExtendedInfo)
+
     })
 
   /**
@@ -202,16 +213,8 @@ object DocGenerator {
     * @param toolVersion
     * @return
     */
-  def toolSpec(patternsList: Seq[RuleInformation], toolName: String, toolVersion: String): Tool.Specification = {
-    val patterns = patternsList.map(rule => {
-      val rulePriority = rule.priority.getOrElse(defaultRulePriority)
-      Pattern.Specification(
-        rule.patternId,
-        levelFromPriority(rulePriority.priority),
-        categoryTypeFromCategory(rulePriority.priorityType),
-        parameterSpecificationFromParametersStringList(rule.parameters)
-      )
-    })
+  def toolSpec(patternsList: Seq[RulePatternInformation], toolName: String, toolVersion: String): Tool.Specification = {
+    val patterns = patternsList.map(_.patternSpecification)
     Tool.Specification(Tool.Name(toolName), Some(Tool.Version(toolVersion)), patterns.toSet)
   }
 
@@ -221,30 +224,21 @@ object DocGenerator {
     * @param patternsList
     * @return
     */
-  def patternsDescription(patternsList: Seq[RuleInformation]): Seq[Pattern.Description] =
-    patternsList.map(rule => {
-      Pattern.Description(
-        rule.patternId,
-        Pattern.Title(rule.patternId.value),
-        Some(Pattern.DescriptionText(rule.description)),
-        None,
-        parameterDescriptionFromParametersStringList(rule.parameters)
-      )
-    })
+  def patternsDescription(patternsList: Seq[RulePatternInformation]): Seq[Pattern.Description] =
+    patternsList.map(_.patternDescription)
 
   private def isIntOrString(value: Field) =
     value.getType == classOf[Int] || value.getType == classOf[String]
 
-  // value.getName.exists(_.isLower) -----> check if it is a constant (constants are all uppercase)
-  //                                                   if it is not a constant, it should not be all uppercase
+  // value.getName.exists(_.isLower):
+  //    -> check if it is a constant (constants are all uppercase).
+  //             if it is not a constant, it should not be all uppercase
   private def isNotNameOrPriority(value: Field) =
     value.getName != "name" && value.getName != "priority" && value.getName.exists(_.isLower)
 
   private def getParametersFromType[T](classType: Class[T]) = {
     classType.getDeclaredFields
-      .filter(x => {
-        isIntOrString(x) && isNotNameOrPriority(x)
-      })
+      .filter(x => isIntOrString(x) && isNotNameOrPriority(x))
       .map(_.getName)
       .toSet
   }
@@ -253,8 +247,11 @@ object DocGenerator {
   private def isRuleImplementedBy(ruleName: String, classType: Class[_ <: org.codenarc.rule.AbstractAstVisitorRule]) =
     Try(classType.getDeclaredConstructor().newInstance().getName == ruleName).getOrElse(false)
 
-  def ruleParameters(ruleName: String): Option[Set[String]] = {
-    val ruleClassImplementation = subTypes.find(isRuleImplementedBy(ruleName, _))
+  def ruleImplementationClass(ruleName: String): Option[Class[_ <: AbstractAstVisitorRule]] =
+    subTypes.find(isRuleImplementedBy(ruleName, _))
+
+  def getRuleParameters(ruleName: String): Option[Set[String]] = {
+    val ruleClassImplementation = ruleImplementationClass(ruleName)
 
     ruleClassImplementation
       .map(getParametersFromType(_))
@@ -267,17 +264,24 @@ object DocGenerator {
     * @param ruleName Name of the rule
     * @return
     */
-  def rulePriority(ruleName: String): Option[RulePriority] = {
-    val ruleClassImplementation = subTypes.find(isRuleImplementedBy(ruleName, _))
+  def getRulePriority(ruleName: String): Option[RulePriority] = {
+    val ruleClassImplementation = ruleImplementationClass(ruleName)
 
     ruleClassImplementation.map { rci =>
       val instance = rci.getDeclaredConstructor().newInstance()
       val ruleCategory = rci.getPackage.getName.split("\\.").last
       val priority = instance.getPriority
 
-      RulePriority(Some(priority.toString), Some(ruleCategory))
+      RulePriority(priority.toString, ruleCategory)
     }
   }
+
+  def writePatternsExtendedInfoToMarkdown(patternsList: Seq[RulePatternInformation], descriptionsRoot: File): Unit =
+    patternsList.foreach(description => {
+      val patternId = description.patternSpecification.patternId.value
+      val descriptionMdFile = File(descriptionsRoot, s"$patternId.md")
+      ResourceHelper.writeFile(descriptionMdFile.path, description.descriptionMarkdown)
+    })
 
   def main(args: Array[String]): Unit = {
     val toolVersion: String = versionFromArgs(args)
@@ -308,10 +312,6 @@ object DocGenerator {
     ResourceHelper.writeFile(patternsFile.path, jsonSpecifications)
     ResourceHelper.writeFile(descriptionsFile.path, jsonDescriptions)
 
-    // write patterns extended descriptions to markdown files
-    patternsList.foreach(description => {
-      val descriptionMdFile = File(descriptionsRoot, s"${description.patternId}.md")
-      ResourceHelper.writeFile(descriptionMdFile.path, description.descriptionExtended)
-    })
+    writePatternsExtendedInfoToMarkdown(patternsList, descriptionsRoot)
   }
 }
