@@ -13,4 +13,3 @@ Known limitations:
   * Does not recognize invoking private method of another instance (i.e. other than `this`)
   * Does not differentiate between multiple private methods with the same name but different parameters (i.e., overloaded)
   * Does not check for unused constructors
-

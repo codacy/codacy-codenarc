@@ -36,4 +36,3 @@ within model classes:
 
 A RuleSet can contain any number of instances of this rule, but each should be configured
 with a unique rule *name* and *classNames*, and (optionally) customized *violationMessage* and *priority*.
-

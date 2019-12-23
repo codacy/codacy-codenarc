@@ -10,4 +10,3 @@ a poor usage pattern. Example:
         public static final String CONSTANT_2 = "1"
     }
 ```
-

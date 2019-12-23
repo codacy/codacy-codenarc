@@ -9,4 +9,3 @@ Examples of violations:
     if(true) { }                            // violation
     if  (true) { }                          // violation
 ```
-

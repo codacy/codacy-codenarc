@@ -8,4 +8,3 @@ configured to ignore `this.rightShift(Object)` using the *ignoreThisReference* p
 
 This rule also ignores all calls to `super.rightShift(Object)`.
 
-

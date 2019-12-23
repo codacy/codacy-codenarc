@@ -20,4 +20,3 @@ expression value if appropriate.
 This rule also sets the default value of `applyToClassNames` to only match class names
 ending in 'Controller'. You can override this with a different class name pattern
 (String with wildcards) if appropriate.
-

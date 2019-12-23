@@ -13,4 +13,3 @@ Example of violations:
     int k = +~8             // violation
 ```
 
-

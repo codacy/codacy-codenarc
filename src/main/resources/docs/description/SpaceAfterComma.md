@@ -21,4 +21,3 @@ Examples of violations:
 
     def map1 = [a:1,b:2, c:3]                   // violation on map element b:2
 ```
-

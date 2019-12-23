@@ -11,4 +11,3 @@ Example of violations:
     def x = 1l
     def y = 55l
 ```
-

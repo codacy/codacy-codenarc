@@ -8,4 +8,3 @@ even `plus(x)` will trigger a violation.
 
 This rule also ignores all calls to `super.plus(Object)`.
 
-

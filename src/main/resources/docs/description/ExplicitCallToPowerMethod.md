@@ -7,4 +7,3 @@ configured to ignore `this.power(Object)` using the *ignoreThisReference* proper
 even `power(x)` will trigger a violation.
 
 This rule also ignores all calls to `super.power(Object)`.
-

@@ -15,4 +15,3 @@ Example of violations:
     Object objectReturningMethod() {       // OK
     }
 ```
-

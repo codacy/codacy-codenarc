@@ -8,4 +8,3 @@ An empty static initializer was found. It is safe to remove it. Example:
         static { }
     }
 ```
-

@@ -13,4 +13,3 @@ Example of violations:
     list.collectNested { it * 2 }   // replacement
 ```
 
-

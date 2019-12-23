@@ -25,4 +25,3 @@ Example of violations:
   def x = myList.unique(true, comparator)   // Two arguments: boolean true and Comparator
   def y = myList.unique(true) { it }        // Two arguments: boolean true and Closure
 ```
-

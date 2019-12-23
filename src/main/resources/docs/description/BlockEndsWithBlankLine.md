@@ -66,4 +66,3 @@ Example of violations:
         }
     ]
 ```
-

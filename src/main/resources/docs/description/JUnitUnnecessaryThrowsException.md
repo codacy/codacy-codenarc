@@ -25,4 +25,3 @@ Example of violations:
 
 ```
 
-

@@ -36,4 +36,3 @@ Examples of violations include:
 
     result = ![a,b]                     // Negation of List literal
 ```
-

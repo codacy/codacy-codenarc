@@ -8,4 +8,3 @@ configured to ignore `minus.xor(Object)` using the *ignoreThisReference* propert
 
 This rule also ignores all calls to `super.minus(Object)`.
 
-

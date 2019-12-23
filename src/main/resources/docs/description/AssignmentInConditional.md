@@ -24,4 +24,3 @@ Example of violations:
     value == true ? x : y
     value == true ?: x
 ```
-

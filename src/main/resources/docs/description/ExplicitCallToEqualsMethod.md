@@ -9,4 +9,3 @@ configured to ignore `this.equals(Object)` using the *ignoreThisReference* prope
 
 This rule also ignores all calls to `super.equals(Object)`.
 
-

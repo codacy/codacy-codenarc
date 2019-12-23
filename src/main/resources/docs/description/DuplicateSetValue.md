@@ -20,4 +20,3 @@ Example of violations:
     def b = ['1', '2', '3', '4'] as Set
     def c = [1, '1'] as Set
 ```
-

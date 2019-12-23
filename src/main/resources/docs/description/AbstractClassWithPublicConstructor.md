@@ -11,4 +11,3 @@ The following code produces a violation:
     }
 ```
 
-

@@ -6,4 +6,3 @@ class name starts with an uppercase letter and is followed by zero or more word 
 | Property                    | Description            | Default Value    |
 |-----------------------------|------------------------|------------------|
 | regex                       | Specifies the regular expression used to validate the class name. It is required and cannot be null or empty. | (\[A-Z\]\\w*\\$?)* |
-

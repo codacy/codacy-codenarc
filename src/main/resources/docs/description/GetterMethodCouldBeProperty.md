@@ -46,4 +46,3 @@ Example of violations:
         static final String name = 'MyName'     // this is cleaner
     }
 ```
-

@@ -32,4 +32,3 @@ Examples of violations and exceptions:
     def names = records.findAll { it.age * 1 }*.name    // no violation for spread operator
     list?.collect { it?.type }?.join(',')               // no violation for null-safe operator
 ```
-

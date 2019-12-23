@@ -41,4 +41,3 @@ Example of correct usage:
         }
     }
 ```
-

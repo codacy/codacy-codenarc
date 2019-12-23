@@ -15,4 +15,3 @@ Example of violations:
    person.properties = params
    person.save()
 ```
-

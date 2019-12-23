@@ -45,4 +45,3 @@ Example of violations:
     }
 
 ```
-

@@ -16,4 +16,3 @@ Example of violations:
     def var6 = ["a":1, "b":1, "c":1]
 ```
 
-

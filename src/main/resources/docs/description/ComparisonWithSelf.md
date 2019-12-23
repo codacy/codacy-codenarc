@@ -18,4 +18,3 @@ Here are examples of code that produces a violation:
     println isReady = x.equals(x)   // violation
     println x.compareTo(x)          // violation
 ```
-

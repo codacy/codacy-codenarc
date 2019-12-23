@@ -7,4 +7,3 @@ configured to ignore `this.multiply(Object)` using the *ignoreThisReference* pro
 *false*, so even `multiply(x)` will trigger a violation.
 
 This rule also ignores all calls to `super.multiply(Object)`.
-

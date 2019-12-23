@@ -13,4 +13,3 @@ Here is an example of code that produces a violation:
         System.runFinalizersOnExit(true)
     }
 ```
-

@@ -11,4 +11,3 @@ Example of violations:
     def myMap = new Hashtable()           // violation
 ```
 
-

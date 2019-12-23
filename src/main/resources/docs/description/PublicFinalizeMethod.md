@@ -12,4 +12,3 @@ access.
 References:
   * Standards Mapping - Common Weakness Enumeration - (CWE) CWE ID 583
   * G. McGraw Securing Java. Chapter 7: Java Security Guidelines
-

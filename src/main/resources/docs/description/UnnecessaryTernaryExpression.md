@@ -23,4 +23,3 @@ the same constant or variable. Examples include:
     x ? MAX_VALUE : MAX_VALUE      // can be replaced by: MAX_VALUE
     ready ? minValue : minValue    // can be replaced by: minValue
 ```
-

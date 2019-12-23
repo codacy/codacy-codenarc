@@ -19,4 +19,3 @@ Example of violations:
     Class.forName(aClassName, true, aClassLoader)
 ```
 
-

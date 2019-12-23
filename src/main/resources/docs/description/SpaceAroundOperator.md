@@ -30,4 +30,3 @@ Examples of violations:
         [1,2]as String              // violation
     }
 ```
-

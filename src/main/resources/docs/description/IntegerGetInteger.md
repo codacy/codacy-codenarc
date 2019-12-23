@@ -17,4 +17,3 @@ Example of violations:
     Integer.getInteger(value, radix, locale)
 ```
 
-

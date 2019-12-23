@@ -37,4 +37,3 @@ Example of violations:
     new RandomAccessFile(name, parent)
 ```
 
-

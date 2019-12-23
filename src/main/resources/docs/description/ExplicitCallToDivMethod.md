@@ -8,4 +8,3 @@ so even `div(x)` will trigger a violation.
 
 This rule also ignores all calls to `super.div(Object)`.
 
-

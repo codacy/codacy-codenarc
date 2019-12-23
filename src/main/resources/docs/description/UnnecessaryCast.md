@@ -13,4 +13,3 @@ Example of violations:
     def list = (List)[1, 2, 3]              // violation
     def map = (Map)[a:1]                    // violation
 ```
-

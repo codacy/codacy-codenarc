@@ -14,4 +14,3 @@ Example of violations:
     DriverManager.getConnection()
     java.sql.DriverManager.getConnection()
 ```
-

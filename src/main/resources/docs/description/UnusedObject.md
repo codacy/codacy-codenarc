@@ -25,4 +25,3 @@ or 'TestCase.groovy'. Invoking constructors without using the result is a common
 
     def closure = { new Date() }    // OK (last statement in block)
 ```
-

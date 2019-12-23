@@ -15,4 +15,3 @@ Example of violations:
     void methodWithObjectParameter(Object parameter)              // OK
 ```
 
-

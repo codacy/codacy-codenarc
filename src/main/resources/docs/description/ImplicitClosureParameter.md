@@ -15,4 +15,3 @@ Example of violations:
     def closureWithViolationBecauseOfExplicitItParameter = { it -* it * 10}
 ```
 
-

@@ -16,4 +16,3 @@ Example of violations:
     def closure4 = { count-* println 123 }          // violation
     def closure5 = { count, name -*println 123 }    // violation
 ```
-

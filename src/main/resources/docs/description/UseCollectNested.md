@@ -22,4 +22,3 @@ println list.collect([8]) {
 
 println list.collectNested { it * 2 } // same functionality, better readability
 ```
-

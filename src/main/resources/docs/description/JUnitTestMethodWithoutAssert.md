@@ -24,4 +24,3 @@ If you'd like to add any method starting with 'ensure' to the ignores then you w
     'assert.*,should.*,fail.*,verify.*,ensure.*'
 ```
 
-

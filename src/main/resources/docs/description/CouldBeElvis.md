@@ -19,4 +19,3 @@ Example of violations:
 
     x ?: 'some value'           // OK
 ```
-

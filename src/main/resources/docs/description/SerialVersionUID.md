@@ -8,4 +8,3 @@ no modifier creates a *Property* and Groovy generates a *getter*, which is proba
 From API javadoc for `java.io.Serializable`: *It is also strongly advised that explicit serialVersionUID declarations
 use the private modifier where possible, since such declarations apply only to the immediately declaring
 class--serialVersionUID fields are not useful as inherited members.*
-

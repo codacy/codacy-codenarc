@@ -8,4 +8,3 @@ An empty class instance initializer was found. It is safe to remove it. Example:
         { }     // empty instance initializer, not a closure
     }
 ```
-

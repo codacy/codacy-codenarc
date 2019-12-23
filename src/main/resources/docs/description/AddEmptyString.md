@@ -15,4 +15,3 @@ Examples:
     def d = property?.toString() ?: ""
 ```
 
-

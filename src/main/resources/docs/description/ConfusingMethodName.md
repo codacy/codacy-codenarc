@@ -16,4 +16,3 @@ Also, violations are triggered when methods and fields have very similar names.
     }
 ```
 
-

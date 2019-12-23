@@ -9,4 +9,3 @@ Here is an example of code that produces a violation:
 ```
     Map map = ["${someRef}" : 'invalid' ]       // violation
 ```
-

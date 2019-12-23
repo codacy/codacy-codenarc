@@ -7,4 +7,3 @@ active. This rule ignores interfaces and is applied only to abstract classes.
 | Property                    | Description            | Default Value    |
 |-----------------------------|------------------------|------------------|
 | regex                       | Specifies the regular expression used to validate the abstract class name. If null or empty, then this rule does nothing. | `null` |
-

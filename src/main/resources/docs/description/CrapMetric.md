@@ -27,4 +27,3 @@ NOTE: This rule does NOT treat *closure fields* as methods (unlike some of the o
 | maxClassAverageMethodCrapScore | The maximum *CRAP* average metric value allowed for a class, calculated as the average CRAP value of its methods. If zero or *null*, then do not check the average class-level CRAP value.  | 30 |
 | maxClassCrapScore              | The maximum total *CRAP* metric value allowed for a class, calculated as the total CRAP value of its methods. If zero or *null*, then do not check class-level CRAP value.      | 0 |
 | ignoreMethodNames              | Specifies one or more (comma-separated) method names that that should not cause a rule violation. The names may optionally contain wildcards (*,?). Note that the ignored methods still contribute to the class complexity value. | `null` |
-

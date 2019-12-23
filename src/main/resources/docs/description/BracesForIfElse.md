@@ -10,4 +10,3 @@ line, but the `sameLine` property can be set to false to override this.
 | validateElse                | To enable else checking, set the property to `true` | `false`            |
 | elseOnSameLineAsClosingBrace| If `true`, then the else statement should be on the same line the same as sameLine as closing brace (\}) | the same as *sameline* |
 | elseOnSameLineAsOpeningBrace| If `true`, then the else statement should be on the same line the same as sameLine as opening brace (\{) | the same as *sameline* |
-

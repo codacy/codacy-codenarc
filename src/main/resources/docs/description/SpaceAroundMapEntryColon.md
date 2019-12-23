@@ -20,4 +20,3 @@ Example of violations:
                 b:[(Integer): 33]]      // violation on Integer (after colon)
 ```
 
-

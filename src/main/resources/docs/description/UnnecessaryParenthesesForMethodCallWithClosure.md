@@ -9,4 +9,3 @@ Example of violations:
     [1,2,3].each() { println it }
 ```
 
-

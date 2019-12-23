@@ -63,4 +63,3 @@ Here are examples of code that does NOT cause violations:
         private static log6 = LogFactory.getLog(MyClass.class.name)             // ok
     }
 ```
-

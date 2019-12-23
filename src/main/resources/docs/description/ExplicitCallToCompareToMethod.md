@@ -18,4 +18,3 @@ property. It defaults to `false`, so even `compareTo(x)` will trigger a violatio
 
 This rule also ignores all calls to `super.compareTo(Object)`.
 
-

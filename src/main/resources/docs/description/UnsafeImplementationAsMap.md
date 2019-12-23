@@ -15,4 +15,3 @@ Example of violations:
     //not all MouseListener methods are implemented which can lead to UnsupportedOperationException-s
 ```
 
-

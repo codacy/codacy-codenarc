@@ -41,4 +41,3 @@ The following code does not produce violations:
     [1, 2, 3]*.multiply(2)
     ["1", "2", "3"]*.bytes
 ```
-

@@ -22,4 +22,3 @@ include:
     def closure = { new Date[3] }   // OK (last statement in block)
 ```
 
-

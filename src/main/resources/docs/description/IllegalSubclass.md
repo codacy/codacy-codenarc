@@ -10,4 +10,3 @@ Checks for classes that extend one of the specified set of illegal superclasses.
 A RuleSet can contain any number of instances of this rule, but each should be configured
 with a unique rule *name* and *string*, and (optionally) customized *violationMessage* and *priority*.
 
-

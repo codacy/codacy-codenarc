@@ -7,4 +7,3 @@ configured to ignore `this.xor(Object)` using the *ignoreThisReference* property
 even `xor(x)` will trigger a violation.
 
 This rule also ignores all calls to `super.xor(Object)`.
-

@@ -12,4 +12,3 @@ Example of violations:
     // Ok, unnecessary '.class' identifier has been excluded
     def x = String
 ```
-

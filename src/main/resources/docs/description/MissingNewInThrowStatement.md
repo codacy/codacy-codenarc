@@ -21,4 +21,3 @@ The following code will not cause any exceptions:
     throw runtimeFailure()      // first letter lowercase, assumed to be method call
 ```
 
-

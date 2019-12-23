@@ -77,7 +77,7 @@ object DocGenerator {
     * @param ruleName Name of the rule to get information
     * @return
     */
-  def ruleInfoRegex(ruleName: String): Regex = s"## $ruleName([\\n\\S\\s\\w\\d][^##])*".r
+  def ruleInfoRegex(ruleName: String): Regex = s"(## $ruleName)([\\n\\S\\s\\w\\d][^##])*".r
 
   /**
     * Gets the tool version from the pattern.json file
@@ -111,7 +111,10 @@ object DocGenerator {
 
     val regexPattern = ruleInfoRegex(ruleName)
     val regexMatch = regexPattern.findFirstIn(ruleInfoMarkdown).getOrElse("")
-    regexMatch.substring(regexMatch.indexOf(System.lineSeparator) + 1) // remove the title
+    regexMatch.linesIterator.toList match {
+      case _ :: rest => rest.mkString(System.lineSeparator)
+      case Nil => ""
+    }
   }
 
   /**

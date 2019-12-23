@@ -21,4 +21,3 @@ Example:
         // this is OK and causes no violation because the x.isValid() requires a non null reference
     }
 ```
-

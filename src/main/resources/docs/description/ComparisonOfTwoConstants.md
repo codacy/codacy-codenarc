@@ -22,4 +22,3 @@ Here are examples of code that produces a violation:
     [a:false, b:true].compareTo(['a':34.5, b:Boolean.TRUE]  // violation
 ```
 
-

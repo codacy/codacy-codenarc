@@ -19,4 +19,3 @@ Known limitations:
 
   * Will cause an incorrect violation if the source code is referring to a different `Date` class from the current package. In that case, it may be better to just disable this rule (either per class or globally).
 
-

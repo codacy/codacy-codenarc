@@ -7,4 +7,3 @@ configured to ignore `this.mod(Object)` using the *ignoreThisReference* property
 even `mod(x)` will trigger a violation.
 
 This rule also ignores all calls to `super.mod(Object)`.
-

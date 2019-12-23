@@ -55,4 +55,3 @@ Here are examples of code that produces violations:
     }
 ```
 
-

@@ -41,4 +41,3 @@ Example of valid use of @Immutable:
     class MyClass { }
 
 ```
-

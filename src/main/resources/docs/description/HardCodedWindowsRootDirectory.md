@@ -11,4 +11,3 @@ Example of violations:
    new File('c:\\dir')
    new File('E:\\dir')
 ```
-

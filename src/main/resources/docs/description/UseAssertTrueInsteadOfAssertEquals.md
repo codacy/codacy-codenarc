@@ -30,4 +30,3 @@ All of the following examples can be simplified to assertTrue or remove the true
     assert foo() == false : "message"       // violation only if checkAssertStatements == true
 ```
 
-

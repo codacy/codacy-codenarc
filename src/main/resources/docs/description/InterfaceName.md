@@ -7,4 +7,3 @@ active.
 | Property                    | Description            | Default Value    |
 |-----------------------------|------------------------|------------------|
 | regex                       | Specifies the regular expression used to validate the name of an interface. If null or empty, then this rule does nothing.   | `null` |
-

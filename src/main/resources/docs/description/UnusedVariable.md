@@ -11,4 +11,3 @@ For instance, to ignore fields named 'unused', set the property to 'unused'.
 Known limitations:
   * Incorrectly considers a variable referenced if another variable with the same name is referenced
     elsewhere (in another scope/block).
-

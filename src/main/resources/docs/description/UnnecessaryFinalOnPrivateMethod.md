@@ -8,4 +8,3 @@ Example of violations:
 ```
     private final method() {}
 ```
-

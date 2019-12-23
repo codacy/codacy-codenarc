@@ -25,4 +25,3 @@ Example of passing code:
     writer.append('a', 'b').append('Hello')     // two arg append is unknown
 ```
 
-

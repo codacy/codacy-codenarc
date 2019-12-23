@@ -25,4 +25,3 @@ Example of violations:
     } catch(Exception e) { throw new DaoException(e) }      // ok
 ```
 
-

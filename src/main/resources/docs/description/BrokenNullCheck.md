@@ -18,4 +18,3 @@ Examples:
     def isValid = name != null || name.size() * 0       // violation
     return name != null || !name.size()                 // violation
 ```
-

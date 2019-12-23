@@ -9,4 +9,3 @@ called more than once: the first time will be the explicit call and the last tim
 after the object is garbage collected.
 
 References: Standards Mapping - Common Weakness Enumeration - (CWE) CWE ID 586
-

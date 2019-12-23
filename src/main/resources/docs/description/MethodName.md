@@ -7,4 +7,3 @@ methods automatically created for Groovy scripts).
 |-----------------------------|------------------------|------------------|
 | regex                       | Specifies the regular expression used to validate the method name. It is required and cannot be null or empty.              | \[a-z\]\\w* |
 | ignoreMethodNames           | Specifies one or more (comma-separated) method names that should be ignored (i.e., that should not cause a rule violation). The names may optionally contain wildcards (*,?).  | `null` |
-

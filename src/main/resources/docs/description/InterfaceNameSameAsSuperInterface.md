@@ -9,4 +9,3 @@ Example of violations:
     interface MyInterface extends other.MyInterface { }     // violation
 ```
 
-

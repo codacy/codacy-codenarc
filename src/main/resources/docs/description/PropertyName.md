@@ -21,4 +21,3 @@ The order of precedence for the regular expression properties is: **staticFinalR
 **staticRegex** and finally **regex**. In other words, the first regex in that list matching the
 modifiers for the property is the one that is applied for the field name validation.
 
-

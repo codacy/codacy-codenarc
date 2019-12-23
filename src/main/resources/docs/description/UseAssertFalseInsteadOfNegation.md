@@ -7,4 +7,3 @@ For instance, `assertTrue(!condition)` can always be simplified to `assertFalse(
 This rule sets the default value of the *applyToClassNames* property to only match class names
 ending in 'Spec', 'Test', 'Tests' or 'TestCase'.
 
-

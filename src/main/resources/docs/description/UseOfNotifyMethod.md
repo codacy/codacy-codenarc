@@ -6,4 +6,3 @@ for multiple conditions. Calling `notify()` only wakes up one thread, meaning th
 thread might not be the one waiting for the condition that the caller just satisfied.
 
 Also see [**Java_Concurrency_in_Practice**](http://www.javaconcurrencyinpractice.com/), Brian Goetz, p 303.
-

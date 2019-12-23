@@ -13,4 +13,3 @@ Examples of violations:
         case 1: println 'one'
     }
 ```
-

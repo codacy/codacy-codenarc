@@ -55,4 +55,3 @@ Example of violations:
         }
     }
 ```
-

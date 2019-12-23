@@ -10,4 +10,3 @@ complexity and find a way to have more fine grained objects.
 |-----------------------------|------------------------|------------------|
 | maxMethods                  | The maximum number of methods allowed in a class definition.   | 30                     |
 
-

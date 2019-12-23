@@ -18,4 +18,3 @@ then that Closure is analyzed and checked just like a method.
 | maxClassAverageMethodComplexity | The maximum average *cyclomatic complexity* value allowed for a class, calculated as the average complexity of its methods or "closure fields". If zero or *null*, then do not check average class-level complexity. | 20 |
 | maxClassComplexity              | The maximum total *cyclomatic complexity* value allowed for a class, calculated as the total complexity of its methods or "closure fields". If zero or *null*, then do not check total class-level complexity. | 0 |
 | ignoreMethodNames               | Specifies one or more (comma-separated) method names that that should not cause a rule violation. The names may optionally contain wildcards (*,?). Note that the ignored methods still contribute to the class complexity value.        | `null` |
-

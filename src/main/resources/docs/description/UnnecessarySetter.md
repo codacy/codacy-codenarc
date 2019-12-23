@@ -23,4 +23,3 @@ These bits of code do not:
   if (!file.setExecutable(true)) { }    // Set method called within expression
   def count = x.setCount(92)            // Set method called within expression
 ```
-

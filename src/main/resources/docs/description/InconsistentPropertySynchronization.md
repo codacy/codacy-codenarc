@@ -58,4 +58,3 @@ Example of violations:
         }
     }
 ```
-

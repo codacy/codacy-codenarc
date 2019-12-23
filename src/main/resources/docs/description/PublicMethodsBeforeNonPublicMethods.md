@@ -17,4 +17,3 @@ Example of violations:
         private int method3(int id) { }
     }
 ```
-

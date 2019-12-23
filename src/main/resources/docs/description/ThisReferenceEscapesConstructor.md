@@ -18,4 +18,3 @@ Example of violations:
     }
 ```
 
-

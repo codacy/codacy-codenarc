@@ -6,4 +6,3 @@ package name consists of only lowercase letters and numbers, separated by period
 |-----------------------------|------------------------|------------------|
 | regex                       | Specifies the regular expression used to validate the package  |   | name. It is required and cannot be null or empty.              | \[a-z\]+\[a-z0-9\]*(\\.\[a-z0-9\]+)* |
 | packageNameRequired         | Indicates whether a package name declaration is required for all classes.  | `false`                     |
-

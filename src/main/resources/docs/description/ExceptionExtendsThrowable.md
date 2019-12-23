@@ -10,4 +10,3 @@ Example of violations:
     class MyException extends Throwable { }   // violation
 ```
 
-

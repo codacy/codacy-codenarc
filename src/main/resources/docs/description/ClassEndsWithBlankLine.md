@@ -61,4 +61,3 @@ If *ignoreSingleLineClasses* is `false` and *blankLineRequired* is `false`
 
             }
 ```
-

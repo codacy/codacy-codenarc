@@ -14,4 +14,3 @@ References:
   * Standards Mapping - SANS Top 25 2009 - (SANS 2009) Insecure Interaction - CWE ID 362
   * Standards Mapping - SANS Top 25 2010 - (SANS 2010) Insecure Interaction - CWE ID 362
   * Java 2 Platform Enterprise Edition Specification, v1.4 Sun Microsystems
-

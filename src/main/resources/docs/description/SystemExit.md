@@ -12,4 +12,3 @@ code or code imported from a non-J2EE application.
 
   - [4] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 - (PCI 1.1) Requirement 6.5.9
 
-

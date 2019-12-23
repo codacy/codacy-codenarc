@@ -45,4 +45,3 @@ Examples of violations:
 
     shouldFail(Exception) { doStuff()}          // violation
 ```
-

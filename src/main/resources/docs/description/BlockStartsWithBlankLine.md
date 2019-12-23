@@ -59,4 +59,3 @@ Example of violations:
 
 ```
 
-

@@ -8,4 +8,3 @@ even `and(x)` will not trigger a violation. The default is *true* because `and` 
 criteria.
 
 This rule also ignores all calls to `super.and(Object)`.
-

@@ -7,4 +7,3 @@ This method can be invoked as though it returned a value of type `boolean`, and 
 insert automatic *unboxing* of the `Boolean` value. If a `null` value is returned, this will
 result in a `NullPointerException`.
 
-

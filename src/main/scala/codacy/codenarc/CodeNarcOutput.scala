@@ -32,5 +32,7 @@ object CodeNarcOutput {
         dirResult.getChildren.toArray.flatMap {
           case res: Results => parseResult(res)
         }.toList
+
+      case _ => List()
     }
 }

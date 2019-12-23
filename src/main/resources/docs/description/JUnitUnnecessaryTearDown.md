@@ -15,4 +15,3 @@ Here is an example of a violation:
     }
 ```
 
-

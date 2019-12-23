@@ -27,4 +27,3 @@ Example of violations:
     // this code is OK
     println(value); println (otherValue)
 ```
-

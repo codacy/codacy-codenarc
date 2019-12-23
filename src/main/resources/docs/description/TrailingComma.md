@@ -32,4 +32,3 @@ Example of violations:
                   2 // there is no trailing comma
                  ]
 ```
-

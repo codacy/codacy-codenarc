@@ -7,4 +7,3 @@ configured to ignore `this.getAt(Object)` using the *ignoreThisReference* proper
 so even `getAt(x)` will trigger a violation.
 
 This rule also ignores all calls to `super.getAt(Object)`.
-

@@ -14,4 +14,3 @@ Here is an example of code that produces a violation:
     def b2 = new java.math.BigDecimal(23.45d)  // violation
 ```
 
-

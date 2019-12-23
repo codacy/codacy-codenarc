@@ -22,4 +22,3 @@ Example of violations:
         new Long(100)?.class    // violation
     }
 ```
-

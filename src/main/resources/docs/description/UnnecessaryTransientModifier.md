@@ -22,4 +22,3 @@ Examples:
         transient String property
     }
 ```
-

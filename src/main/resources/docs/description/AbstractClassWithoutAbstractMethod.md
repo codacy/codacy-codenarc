@@ -31,4 +31,3 @@ This rule has a single `enhancedMode` property which defaults to `false`. When s
 will run in [enhanced mode](./codenarc-enhanced-classpath-rules.html) and will not produce a violation when an
 abstract class extends an abstract superclass.
 
-

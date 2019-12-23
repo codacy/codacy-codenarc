@@ -44,4 +44,3 @@ Examples of acceptable code:
     // rule is not so complex yet...
     (obj != null && obj.prop && obj.method()) ? x : y
 ```
-

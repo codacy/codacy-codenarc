@@ -9,4 +9,3 @@ from manipulating or gaining unauthorized access to the internal state of the Ap
 References:
   * Standards Mapping - Common Weakness Enumeration - (CWE) CWE ID 493
   * G. McGraw Securing Java. Chapter 7: Java Security Guidelines
-

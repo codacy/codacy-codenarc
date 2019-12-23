@@ -16,4 +16,3 @@ Example of violations:
     assertEquals("Message", result, 2.3d, 0.5d)
 ```
 
-

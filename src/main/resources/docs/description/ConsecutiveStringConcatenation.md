@@ -27,4 +27,3 @@ Examples:
     def i = 'Hello' + method()  // OK because not a string
     def j = 'Hello' - "$World"  // OK because not +
 ```
-

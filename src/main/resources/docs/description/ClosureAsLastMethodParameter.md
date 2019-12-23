@@ -13,4 +13,3 @@ Example of violations:
     // no violation
     [1,2,3].each { println it }
 ```
-

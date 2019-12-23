@@ -21,4 +21,3 @@ Example of violations:
         def maxSoFar = -1L                      // violation
     }
 ```
-

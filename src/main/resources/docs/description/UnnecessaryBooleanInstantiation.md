@@ -16,4 +16,3 @@ Here is an example of code that produces a violation:
     def b4 = Boolean.valueOf(false)        // violation
 ```
 
-

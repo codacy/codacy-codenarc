@@ -11,4 +11,3 @@ Example of violations:
     class MyClass extends other.MyClass         // violation
 ```
 
-

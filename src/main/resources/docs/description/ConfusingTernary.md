@@ -23,4 +23,3 @@ Example:
     // this is OK, because of GroovyTruth there is no inverse of != false
     (x != false) ? diff : same
 ```
-

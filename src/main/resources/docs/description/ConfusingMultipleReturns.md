@@ -18,4 +18,3 @@ Example of violations:
     def (f, g) = [1, 2]    // ok
     (a, b, c) = [1, 2, 3]  // ok
 ```
-

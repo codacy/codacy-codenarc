@@ -10,4 +10,3 @@ Examples of violations:
     try { } catch  (Exception e) { }        // violation
 ```
 
-

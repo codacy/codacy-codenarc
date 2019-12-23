@@ -21,4 +21,3 @@ Example of violations:
         void testMe() { }
     }
 ```
-

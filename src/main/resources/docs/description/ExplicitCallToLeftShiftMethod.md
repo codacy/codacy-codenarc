@@ -7,4 +7,3 @@ configured to ignore `this.leftShift(Object)` using the *ignoreThisReference* pr
 *false*, so even `leftShift(x)` will trigger a violation.
 
 This rule also ignores all calls to `super.leftShift(Object)`.
-

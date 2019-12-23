@@ -26,4 +26,3 @@ Examples of violations:
         def MyClass() {}    // def is redundant
     }
 ```
-

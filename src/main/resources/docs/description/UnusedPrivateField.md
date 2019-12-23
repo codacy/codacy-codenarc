@@ -15,4 +15,3 @@ Known limitations:
   * Does not recognize field access when field name is a GString (e.g. `this."${fieldName}"`)
   * Does not recognize access of private field of another instance (i.e. other than `this`)
 
-

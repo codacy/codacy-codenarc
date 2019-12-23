@@ -13,4 +13,3 @@ An example of a missing serialVersionUID:
         // missing serialVersionUID
     }
 ```
-

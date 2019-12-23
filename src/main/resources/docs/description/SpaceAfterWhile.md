@@ -10,4 +10,3 @@ Examples of violations:
     while  (true) { }           // violation
 ```
 
-

@@ -12,4 +12,3 @@ Example of violations:
         10 == value.size()  // violation
     }
 ```
-

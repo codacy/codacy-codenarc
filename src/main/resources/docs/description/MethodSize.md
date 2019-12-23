@@ -9,4 +9,3 @@ Checks if the size of a method exceeds the number of lines specified by the **ma
 Known Limitations:
 
   * Annotations on a method are included in the size (line count) for that method.
-

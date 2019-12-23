@@ -66,4 +66,3 @@ Known limitations:
   * Does not catch unnecessary package references if they are the types of anonymous inner class
     definitions, for older versions of Groovy (* 1.7.10?). For instance,
     `def runnable = new java.lang.Runnable() { ... }`.
-

@@ -17,4 +17,3 @@ will always pass or always fail, depending on the constant/literal value. Exampl
     assert [a:123, b:456]
     assert [a, b, c]
 ```
-

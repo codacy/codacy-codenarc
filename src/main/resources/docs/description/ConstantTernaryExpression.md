@@ -28,4 +28,3 @@ ternary expressions, also known as the "Elvis" operator, e.g.:
     [:] ?: y
     [a, b, c] ?: y
 ```
-

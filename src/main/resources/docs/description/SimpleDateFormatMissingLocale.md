@@ -16,4 +16,3 @@ date and time differently if the Locale varies.
     // OK, includes a variable that perhaps is a locale
     new SimpleDateFormat('pattern', locale)
 ```
-

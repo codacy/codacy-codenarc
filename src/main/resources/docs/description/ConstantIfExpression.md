@@ -17,4 +17,3 @@ can be simplified or avoided altogether. Examples of violations include:
     if ([a:123, b:456]) { .. }
     if ([a, b, c]) { .. }
 ```
-

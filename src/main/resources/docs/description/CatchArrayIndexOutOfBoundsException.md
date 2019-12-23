@@ -5,4 +5,3 @@ Checks for catching a `ArrayIndexOutOfBoundsException`. Catching `ArrayIndexOutO
 be avoided in the first place by checking the array size before accessing an array element. Catching the
 exception may mask underlying errors.
 
-

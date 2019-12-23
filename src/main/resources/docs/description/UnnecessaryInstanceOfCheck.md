@@ -16,4 +16,3 @@ Example of violations:
     // this code is OK
     if (!(variable instanceof String)) { ... }
 ```
-

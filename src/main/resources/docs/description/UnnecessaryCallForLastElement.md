@@ -31,4 +31,3 @@ All of this code is fine though:
     def f = x.getAt(z.size() -1)   // different objects
 ```
 
-

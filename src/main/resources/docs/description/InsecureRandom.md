@@ -20,4 +20,3 @@ Example of violations:
      new java.security.SecureRandom()
      new SecureRandom()
 ```
-

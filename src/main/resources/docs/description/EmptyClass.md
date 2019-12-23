@@ -5,4 +5,3 @@ Reports classes without methods, fields or properties. Why would you need a clas
 
 This rule ignores interfaces, abstract classes, enums, anonymous inner classes, subclasses (extends), and classes with annotations.
 
-

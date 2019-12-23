@@ -31,4 +31,3 @@ behavior. The method will only be called *once*, rather than *twice*. But relyin
 *side-effects* as part of a ternary expression behavior is confusing, error-prone and just a
 bad idea. In any case, that code should be refactored to move the reliance on the side-effects
 out of the ternary expression.
-

@@ -16,4 +16,3 @@ applyToFilesMatching and doNotApplyToFilesMatching.
 | ignoreImportStatements      | If `true`, then do not apply this rule to import statements. | `true` |
 | ignorePackageStatements     | If `true`, then do not apply this rule to package statements.| `true` |
 | ignoreLineRegex             | If specified, then ignore lines matching this regular expression.| `null` |
-

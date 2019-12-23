@@ -23,4 +23,3 @@ Example of violations:
     }
 ```
 
-

@@ -10,4 +10,3 @@ Example of violations:
         public String name
     }
 ```
-

@@ -1,16 +1,18 @@
 package codacy.codenarc
 
-import java.io.{FileOutputStream, PrintStream}
-
-import com.codacy.plugins.api.{Options, Source}
-import com.codacy.plugins.api.results.{Result, Tool}
-import com.codacy.tools.scala.seed.utils.FileHelper._
-import java.nio.file.{Path, Paths}
+import better.files.File
 
 import com.codacy.plugins
-import better.files.File
+import com.codacy.plugins.api.{Options, Source}
+import com.codacy.plugins.api.results.{Result, Tool}
+import com.codacy.tools.scala.seed.utils.FileHelper.findConfigurationFile
+
+import java.io.{FileOutputStream, PrintStream}
+import java.nio.file.{Path, Paths}
+
 import org.codenarc.CodeNarcRunner
 import org.codenarc.analyzer.FilesystemSourceAnalyzer
+
 import play.api.libs.json.{JsString, JsValue}
 
 import scala.util.Try
@@ -134,12 +136,12 @@ object CodeNarc extends Tool {
 
     codeNarcPrintlnIgnore()
 
-    val result = runCodeNarc(source.path, ruleConfiguration, filesToInclude)
+    val result = runAnalysis(source.path, ruleConfiguration, filesToInclude)
 
     CodeNarcOutput.parseResult(result)
   }
 
-  private def runCodeNarc(sourceDir: String, rulesList: String, includesFiles: String) = {
+  private def runAnalysis(sourceDir: String, rulesList: String, includesFiles: String) = {
     val codeNarcRunner = new CodeNarcRunner()
     codeNarcRunner.setRuleSetFiles(rulesList)
     val sourceAnalyzer = new FilesystemSourceAnalyzer

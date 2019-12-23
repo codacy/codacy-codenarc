@@ -13,4 +13,3 @@ Examples:
     if (exp % 2) {}     // ok
 ```
 
-

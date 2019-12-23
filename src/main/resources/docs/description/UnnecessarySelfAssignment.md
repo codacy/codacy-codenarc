@@ -18,4 +18,3 @@ Examples:
     a.b = a.zz          // acceptable
     a.b = a().b         // acceptable
 ```
-

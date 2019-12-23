@@ -27,4 +27,3 @@ This rule sets the default value of `applyToFilesMatching` to only match files u
 This rule also sets the default value of `applyToClassNames` to only match class names
 ending in 'Service'. You can override this with a different class name pattern (String with wildcards)
 if appropriate.
-

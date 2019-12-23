@@ -40,4 +40,3 @@ Examples of non-violations:
     def var1 = [a:7+5]
     def var2 = [a:7+5]      // not a violation; contains a non-constant/literal expression
 ```
-

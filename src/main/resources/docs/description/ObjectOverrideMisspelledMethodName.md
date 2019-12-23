@@ -22,4 +22,3 @@ Here are some examples of code that produces violations:
     String tostring(int value) {}               // ok; not empty params
 ```
 
-

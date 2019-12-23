@@ -8,4 +8,3 @@ Set the *bracesRequiredForElseIf* property to true to require braces is that sit
 |-----------------------------|------------------------|------------------|
 | bracesRequiredForElseIf     | Set to `true` to require braces for an *else* block followed immediately by an *if* statement. |  `false` |
 
-

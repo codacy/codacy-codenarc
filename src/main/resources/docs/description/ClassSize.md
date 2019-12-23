@@ -5,4 +5,3 @@ Checks if the size of a class exceeds the number of lines specified by the **max
 |-----------------------------|------------------------|------------------|
 | maxLines                    | The maximum number of lines allowed in a class definition.     | 1000 |
 
-

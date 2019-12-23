@@ -65,4 +65,3 @@ in the following code has no effect and can be removed:
     }
 ```
 
-

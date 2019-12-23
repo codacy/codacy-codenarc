@@ -56,4 +56,3 @@ Example of code that does not cause violations:
         static main(args) { }
     }
 ```
-
