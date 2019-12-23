@@ -87,11 +87,7 @@ object DocGenerator {
     */
   def versionFromArgs(args: Array[String]): String =
     args.headOption
-      .getOrElse({
-        Using.resource(io.Source.fromFile(codeNarcVersionFile)) { sourceFile =>
-          sourceFile.getLines.mkString("")
-        }
-      })
+      .getOrElse(Using.resource(io.Source.fromFile(codeNarcVersionFile))(_.getLines.mkString("")))
 
   /**
     * Gets the documentation markdown name from the href element value
