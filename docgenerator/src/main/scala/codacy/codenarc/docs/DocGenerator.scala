@@ -134,9 +134,7 @@ object DocGenerator {
       }
     }
 
-    val resourcesFolder = s"$directory/src/main/resources"
-    val messagesFiles =
-      File(resourcesFolder) / directory / "src" / "main" / "resources" / "codenarc-base-messages.properties"
+    val messagesFiles = directory / "src" / "main" / "resources" / "codenarc-base-messages.properties"
     val messagesFileContent = messagesFiles.contentAsString
 
     val descriptionRegexFinder = s"$patternId.description=(.*)".r
