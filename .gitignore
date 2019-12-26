@@ -2,9 +2,10 @@
 /project/*-shim.sbt
 /project/project/
 /project/target/
-/target/
+target/
 .idea
 .metals
 .bloop
 .DS_Store
 *.iml
+.codacyrc
