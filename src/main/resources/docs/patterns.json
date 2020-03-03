@@ -638,6 +638,7 @@
     "patternId" : "FileCreateTempFile",
     "level" : "Warning",
     "category" : "Security",
+    "subcategory" : "InsecureModulesLibraries",
     "parameters" : [ {
       "name" : "doNotApplyToFilesMatching",
       "default" : ""
@@ -890,6 +891,7 @@
     "patternId" : "InsecureRandom",
     "level" : "Warning",
     "category" : "Security",
+    "subcategory" : "Cryptography",
     "parameters" : [ {
       "name" : "doNotApplyToFilesMatching",
       "default" : ""
@@ -1062,6 +1064,7 @@
     "patternId" : "JavaIoPackageAccess",
     "level" : "Warning",
     "category" : "Security",
+    "subcategory" : "FileAccess",
     "parameters" : [ {
       "name" : "doNotApplyToFilesMatching",
       "default" : ""
@@ -1281,11 +1284,13 @@
   }, {
     "patternId" : "NonFinalPublicField",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "NonFinalSubclassOfSensitiveInterface",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "MaliciousCode"
   }, {
     "patternId" : "ObjectFinalize",
     "level" : "Warning",
@@ -1368,7 +1373,8 @@
   }, {
     "patternId" : "PublicFinalizeMethod",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "CommandInjection"
   }, {
     "patternId" : "PublicInstanceField",
     "level" : "Warning",
@@ -1585,7 +1591,8 @@
   }, {
     "patternId" : "SystemExit",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "UnexpectedBehaviour"
   }, {
     "patternId" : "SystemOutPrint",
     "level" : "Warning",
@@ -1853,7 +1860,8 @@
   }, {
     "patternId" : "UnsafeArrayDeclaration",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "subcategory" : "UnexpectedBehaviour"
   }, {
     "patternId" : "UnsafeImplementationAsMap",
     "level" : "Warning",
