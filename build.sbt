@@ -23,7 +23,7 @@ lazy val commonSettings = Seq(
   scalaVersion := "2.13.1",
   libraryDependencies ++= Seq(
     "org.codenarc" % "CodeNarc" % toolVersion.value,
-    "com.codacy" %% "codacy-engine-scala-seed" % "3.1.0"
+    "com.codacy" %% "codacy-engine-scala-seed" % "4.0.0"
   )
 )
 
@@ -58,11 +58,9 @@ mappings in Universal ++=
     val src = resourceDir / "docs"
     val dest = "/docs"
 
-    val docFiles = for {
+    for {
       path <- src.allPaths.get if !path.isDirectory
     } yield path -> path.toString.replaceFirst(src.toString, dest)
-
-    docFiles
   }.value
 
 val defaultDockerInstallationPath = "/opt/docker"

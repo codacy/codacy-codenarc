@@ -54,6 +54,16 @@ object DocGenerator {
     case _ => Pattern.Category.CodeStyle
   }
 
+  def subcategoryForPatternId(patternId: String): Option[Pattern.Subcategory.Value] = patternId match {
+    case "FileCreateTempFile" => Some(Pattern.Subcategory.InsecureModulesLibraries)
+    case "InsecureRandom" => Some(Pattern.Subcategory.Cryptography)
+    case "JavaIoPackageAccess" => Some(Pattern.Subcategory.FileAccess)
+    case "NonFinalPublicField" | "PublicFinalizeMethod" => Some(Pattern.Subcategory.CommandInjection)
+    case "SystemExit" | "UnsafeArrayDeclaration" => Some(Pattern.Subcategory.UnexpectedBehaviour)
+    case "NonFinalSubclassOfSensitiveInterface" => Some(Pattern.Subcategory.MaliciousCode)
+    case _ => None
+  }
+
   /**
     * Convert from list of parameters to Parameter.Specification list
     */
@@ -188,6 +198,7 @@ object DocGenerator {
           Pattern.Id(ruleName),
           levelFromPriority(rulePriority.map(_.priority)),
           categoryTypeFromPriorityType(rulePriority.map(_.priorityType)),
+          subcategoryForPatternId(ruleName),
           parameterSpecificationFromParametersStringList(parameters)
         )
 
