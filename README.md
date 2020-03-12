@@ -1,5 +1,7 @@
 # codacy-codenarc
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2ac2eab19b9742d09074afb40bc932ff)](https://app.codacy.com/gh/codacy/codacy-codenarc?utm_source=github.com&utm_medium=referral&utm_content=codacy/codacy-codenarc&utm_campaign=Badge_Grade_Settings)
+
 Docker engine to allow Codacy to have [CodeNarc](https://github.com/CodeNarc/CodeNarc) support.
 
 ## Usage
