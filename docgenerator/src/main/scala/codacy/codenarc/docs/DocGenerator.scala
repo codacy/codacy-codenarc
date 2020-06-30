@@ -78,7 +78,8 @@ object DocGenerator {
       parameters: Option[Set[String]]
   ): Option[Set[Parameter.Description]] =
     parameters.map(
-      paramList => paramList.map(param => Parameter.Description(Parameter.Name(param), Parameter.DescriptionText("")))
+      paramList =>
+        paramList.map(param => Parameter.Description(Parameter.Name(param), Parameter.DescriptionText(param)))
     )
 
   /**
