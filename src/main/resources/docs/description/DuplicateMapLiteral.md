@@ -1,19 +1,20 @@
-
-
 *Since CodeNarc 0.16*
 
-This rule checks for duplicate *Map* literals within the current class. This rule only checks for *Map*s
-where the keys and values are all constants or literals.
+This rule checks for duplicate *Map* literals within the current class.
+This rule only checks for *Map*s where the keys and values are all
+constants or literals.
 
-Code containing duplicate *Map* literals can usually be improved by declaring the *Map* as a constant field.
+Code containing duplicate *Map* literals can usually be improved by
+declaring the *Map* as a constant field.
 
-By default, the rule does not analyze test files. This rule sets the default value of the
-*doNotApplyToFilesMatching* property to ignore file names ending in 'Spec.groovy', 'Test.groovy', 'Tests.groovy'
-or 'TestCase.groovy'.
+By default, the rule does not analyze test files. This rule sets the
+default value of the *doNotApplyToFilesMatching* property to ignore file
+names ending in ‘Spec.groovy’, ‘Test.groovy’, ‘Tests.groovy’ or
+‘TestCase.groovy’.
 
 Examples of violations:
 
-```
+``` 
       def var1 = [a:1, b:null, c:Boolean.FALSE, d:'x', e:true]
       def var2 = [a:1, b:null, c:Boolean.FALSE, d:'x', e:true]      // violation
 
@@ -29,7 +30,7 @@ Examples of violations:
 
 Examples of non-violations:
 
-```
+``` 
     def name
     def var1 = [(name):1, b:1, c:1]
     def var2 = [(name):1, b:1, c:1]   // not a violation; name is a variable

@@ -1,12 +1,13 @@
-
 *Since CodeNarc 0.13*
 
-Matcher objects should not be used as static fields. Calendars are inherently unsafe for multithreaded use. Sharing a single
-instance across thread boundaries without proper synchronization will result in erratic behavior of the application.
+Matcher objects should not be used as static fields. Calendars are
+inherently unsafe for multithreaded use. Sharing a single instance
+across thread boundaries without proper synchronization will result in
+erratic behavior of the application.
 
 Example of violations:
 
-```
+``` 
     // two violations
     class MyClass {
       static Matcher matcher1
@@ -19,4 +20,3 @@ Example of violations:
       static ThreadLocal*Matcher* matcher2
     }
 ```
-

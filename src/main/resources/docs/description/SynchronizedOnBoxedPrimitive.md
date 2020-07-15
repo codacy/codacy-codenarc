@@ -1,13 +1,13 @@
-
 *Since CodeNarc 0.13*
 
-The code synchronizes on a boxed primitive constant, such as an Integer. Since Integer objects can be cached and shared,
-this code could be synchronizing on the same object as other, unrelated code, leading to unresponsiveness and possible
-deadlock.
+The code synchronizes on a boxed primitive constant, such as an Integer.
+Since Integer objects can be cached and shared, this code could be
+synchronizing on the same object as other, unrelated code, leading to
+unresponsiveness and possible deadlock.
 
 Example of violations:
 
-```
+``` 
     class MyClass {
         Byte byte1 = 100
         Short short1 = 1
@@ -110,9 +110,10 @@ Example of violations:
     }
 ```
 
-And here is an in-depth example of how it works within inner classes and such:
+And here is an in-depth example of how it works within inner classes and
+such:
 
-```
+``` 
     class MyClass {
 
         final String lock = false
@@ -174,4 +175,3 @@ And here is an in-depth example of how it works within inner classes and such:
         }
     }
 ```
-

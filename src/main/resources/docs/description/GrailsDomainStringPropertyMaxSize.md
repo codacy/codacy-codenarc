@@ -1,14 +1,18 @@
-
 *Since CodeNarc 1.2*
 
-String properties in Grails domain classes have to define maximum size otherwise the property is mapped to VARCHAR(255) causing runtime exceptions to occur.
-To fix this issue either declare `size`* or `maxSize` constraint for the property inside `constraints` DSL closure of your Grails domain class or
-declare the `type` of the property inside `mapping` DSL closure. If you use the second option inside **mapping** DSL closure then please pay attention that the value of  `type` is
-not checked so using for example `VARCHAR(50)` would still cause runtime exceptions.
+String properties in Grails domain classes have to define maximum size
+otherwise the property is mapped to VARCHAR(255) causing runtime
+exceptions to occur. To fix this issue either declare `size`\* or
+`maxSize` constraint for the property inside `constraints` DSL closure
+of your Grails domain class or declare the `type` of the property inside
+`mapping` DSL closure. If you use the second option inside **mapping**
+DSL closure then please pay attention that the value of `type` is not
+checked so using for example `VARCHAR(50)` would still cause runtime
+exceptions.
 
 Example of violations:
 
-```
+``` 
     // both firstName and lastName will probably have database limit of 255 characters
     // which is not validated by Grails validation causing runtime JDBC exception
     class Person {
@@ -25,7 +29,7 @@ Example of violations:
 
 Example of valid configuration:
 
-```
+``` 
     class Person {
 
         String firstName

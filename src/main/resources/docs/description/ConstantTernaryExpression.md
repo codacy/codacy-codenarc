@@ -1,8 +1,8 @@
+Checks for ternary expressions with a constant value for the boolean
+expression, such as `true`, `false`, `null`, or a literal constant
+value. Examples of violations include:
 
-Checks for ternary expressions with a constant value for the boolean expression, such as
-`true`, `false`, `null`, or a literal constant value. Examples of violations include:
-
-```
+``` 
     true ? x : y
     false ? x : y
     Boolean.TRUE ? x : y
@@ -17,10 +17,11 @@ Checks for ternary expressions with a constant value for the boolean expression,
     [a, b, c] ? x : y
 ```
 
-The rule also checks for the same types of constant values for the boolean expressions within the "short"
-ternary expressions, also known as the "Elvis" operator, e.g.:
+The rule also checks for the same types of constant values for the
+boolean expressions within the “short” ternary expressions, also known
+as the “Elvis” operator, e.g.:
 
-```
+``` 
     true ?: y
     null ?: y
     99.7 ?: y

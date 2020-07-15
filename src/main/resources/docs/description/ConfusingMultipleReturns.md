@@ -1,13 +1,13 @@
-
 *Since CodeNarc 0.16*
 
-Multiple return values can be used to set several variables at once. To use multiple return values, the left
-hand side of the assignment must be enclosed in parenthesis. If not, then you are not using multiple return values,
-you're only assigning the last element.
+Multiple return values can be used to set several variables at once. To
+use multiple return values, the left hand side of the assignment must be
+enclosed in parenthesis. If not, then you are not using multiple return
+values, you’re only assigning the last element.
 
 Example of violations:
 
-```
+``` 
     def a, b = [1, 2] // bad, b is null
     def c, d, e = [1, 2, 3] // bad, c and d are null
     class MyClass {

@@ -1,13 +1,12 @@
-
-
 *Since CodeNarc 0.22*
 
-Check for the *safe navigation* operator (`?.`) applied to constants and literals, or `this`
-or `super`, or constructor calls, all of which can never be null.
+Check for the *safe navigation* operator (`?.`) applied to constants and
+literals, or `this` or `super`, or constructor calls, all of which can
+never be null.
 
 Example of violations:
 
-```
+``` 
     def myMethod() {
         "abc"?.bytes            // violation
         [1,2]?.getSize()        // violation

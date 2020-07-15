@@ -1,11 +1,11 @@
-
 *Since CodeNarc 0.12*
 
-There is no need to check for null before an instanceof; the instanceof keyword returns false when given a null argument.
+There is no need to check for null before an instanceof; the instanceof
+keyword returns false when given a null argument.
 
 Example:
 
-```
+``` 
     if (x != null && x instanceof MyClass) {
         // should drop the "x != null" check
     }

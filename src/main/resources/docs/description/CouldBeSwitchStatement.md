@@ -1,11 +1,11 @@
-
 *Since CodeNarc 1.0*
 
-Checks for three of more if statements that could be converted to a switch. Only applies to equality and instanceof.
+Checks for three of more if statements that could be converted to a
+switch. Only applies to equality and instanceof.
 
 Example of violations:
 
-```
+``` 
     if (x == 1) {                       // violation
        y = x
     } else if (x == 2) {
@@ -43,5 +43,4 @@ Example of violations:
     } else if (!x && i) {
         doAnotherThing()
     }
-
 ```

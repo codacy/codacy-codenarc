@@ -1,14 +1,16 @@
-
 *Since CodeNarc 0.13*
 
-Synchronizing on a ReentrantLock field is almost never the intended usage. A ReentrantLock should be obtained using
-the lock() method and released in a finally block using the unlock() method.
+Synchronizing on a ReentrantLock field is almost never the intended
+usage. A ReentrantLock should be obtained using the lock() method and
+released in a finally block using the unlock() method.
 
-This rule take from Alex Miller's [Java Concurrency in Practice](http://www.slideshare.net/alexmiller/java-concurrency-gotchas-3666977) slides.
+This rule take from Alex Miller’s [Java Concurrency in
+Practice](http://www.slideshare.net/alexmiller/java-concurrency-gotchas-3666977)
+slides.
 
 Here is the proper usage of ReentrantLock:
 
-```
+``` 
     import java.util.concurrent.locks.ReentrantLock;
     final lock = new ReentrantLock();
     def method()  {
@@ -25,7 +27,7 @@ Here is the proper usage of ReentrantLock:
 
 Example of violations:
 
-```
+``` 
     class MyClass {
 
         final ReentrantLock lock = new ReentrantLock()
@@ -86,4 +88,3 @@ Example of violations:
         }
     }
 ```
-

@@ -1,9 +1,8 @@
+Checks for array allocations that are not assigned or used, unless it is
+the last statement within a block (because it may be the intentional
+return value). Examples include:
 
-Checks for array allocations that are not assigned or used, unless it is the last
-statement within a block (because it may be the intentional return value). Examples
-include:
-
-```
+``` 
     int myMethod() {
         new String[3]               // unused
         return -1
@@ -21,4 +20,3 @@ include:
 
     def closure = { new Date[3] }   // OK (last statement in block)
 ```
-

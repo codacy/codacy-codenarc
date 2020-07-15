@@ -1,13 +1,14 @@
-
 *Since CodeNarc 0.13*
 
-A method was found without an implementation. If the method is overriding or implementing a parent method,
-then mark it with the `@Override` annotation. This rule should not be used with Java 5 code because you cannot
-put `@Override` on a method implementing an interface. Use with Java 6 and higher.
+A method was found without an implementation. If the method is
+overriding or implementing a parent method, then mark it with the
+`@Override` annotation. This rule should not be used with Java 5 code
+because you cannot put `@Override` on a method implementing an
+interface. Use with Java 6 and higher.
 
 Example of violations:
 
-```
+``` 
     class MyClass {
 
         // violation, empty method

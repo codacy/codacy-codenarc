@@ -1,11 +1,10 @@
-
 *Since CodeNarc 1.2*
 
 Enforce that all public methods are above protected and private methods.
 
 Example of violations:
 
-```
+``` 
     class MyClass {
         public static int staticMethod1() { }
 

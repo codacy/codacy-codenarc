@@ -1,13 +1,28 @@
+Checks for a specified text string that must exist within the source
+code.
 
-Checks for a specified text string that must exist within the source code.
+<table>
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>string</td>
+<td>The String to check for. If null or empty then do nothing.</td>
+<td><code>null</code></td>
+</tr>
+</tbody>
+</table>
 
-| Property                    | Description            | Default Value    |
-|-----------------------------|------------------------|------------------|
-| string                      | The String to check for. If null or empty then do nothing.     | `null` |
+A RuleSet can contain any number of instances of this rule, but each
+should be configured with a unique rule *name* and *string*, and
+(optionally) customized *violationMessage* and *priority*.
 
-A RuleSet can contain any number of instances of this rule, but each should be configured
-with a unique rule *name* and *string*, and (optionally) customized *violationMessage* and *priority*.
-
-NOTE: This is a file-based rule, rather than an AST-based rule, so the *applyToClassNames* and
-*doNotApplyToClassNames* rule configuration properties are not available. See
-[Standard Properties for Configuring Rules](./codenarc-configuring-rules.html#standard-properties-for-configuring-rules).
+NOTE: This is a file-based rule, rather than an AST-based rule, so the
+*applyToClassNames* and *doNotApplyToClassNames* rule configuration
+properties are not available. See [Standard Properties for Configuring
+Rules](./codenarc-configuring-rules.html#standard-properties-for-configuring-rules).

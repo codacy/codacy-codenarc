@@ -1,12 +1,12 @@
-
 *Since CodeNarc 0.17*
 
-Checks for ternary expressions where the *boolean* and *true* expressions are the same.
-These can be simplified to an *Elvis* expression.
+Checks for ternary expressions where the *boolean* and *true*
+expressions are the same. These can be simplified to an *Elvis*
+expression.
 
 Example of violations:
 
-```
+``` 
     x ? x : false               // violation; can simplify to x ?: false
 
     foo() ? foo() : bar()       // violation; can simplify to foo() ?: bar()
@@ -25,9 +25,10 @@ Example of violations:
     foo(1) ? foo(2) : 123       // OK
 ```
 
-NOTE: If the *boolean* and *true* expressions are the same method call, and that method
-call has *side-effects*, then converting it to a *Elvis* expression may produce *different*
-behavior. The method will only be called *once*, rather than *twice*. But relying on those
-*side-effects* as part of a ternary expression behavior is confusing, error-prone and just a
-bad idea. In any case, that code should be refactored to move the reliance on the side-effects
-out of the ternary expression.
+NOTE: If the *boolean* and *true* expressions are the same method call,
+and that method call has *side-effects*, then converting it to a *Elvis*
+expression may produce *different* behavior. The method will only be
+called *once*, rather than *twice*. But relying on those *side-effects*
+as part of a ternary expression behavior is confusing, error-prone and
+just a bad idea. In any case, that code should be refactored to move the
+reliance on the side-effects out of the ternary expression.

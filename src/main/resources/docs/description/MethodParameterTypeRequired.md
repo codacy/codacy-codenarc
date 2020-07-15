@@ -1,11 +1,11 @@
-
 *Since CodeNarc 1.1*
 
-Checks that method parameters are not dynamically typed, that is they are explicitly stated and different than def.
+Checks that method parameters are not dynamically typed, that is they
+are explicitly stated and different than def.
 
 Example of violations:
 
-```
+``` 
     void methodWithDynamicParameter(def parameter) {              // violation
     }
 
@@ -14,4 +14,3 @@ Example of violations:
 
     void methodWithObjectParameter(Object parameter)              // OK
 ```
-

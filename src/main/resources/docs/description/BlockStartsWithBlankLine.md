@@ -1,11 +1,11 @@
-
 *Since CodeNarc 1.1*
 
-Checks that code blocks such as method bodies, closures and control structure bodies do not start with an empty line.
+Checks that code blocks such as method bodies, closures and control
+structure bodies do not start with an empty line.
 
 Example of violations:
 
-```
+``` 
     boolean not(boolean value) {
                                 // violation
         !value
@@ -56,6 +56,4 @@ Example of violations:
         default:
             println 'switch'
     }
-
 ```
-

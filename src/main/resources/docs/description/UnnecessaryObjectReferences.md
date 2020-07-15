@@ -1,13 +1,14 @@
-
 *Since CodeNarc 0.12*
 
-Violations are triggered when an excessive set of consecutive statements all reference the same variable.
-This can be made more readable by using a `with` or `identity` block. By default, 5 references
-are allowed. You can override this property using the **maxReferencesAllowed` property on the rule.
+Violations are triggered when an excessive set of consecutive statements
+all reference the same variable. This can be made more readable by using
+a `with` or `identity` block. By default, 5 references are allowed. You
+can override this property using the \*\*maxReferencesAllowed\` property
+on the rule.
 
 These two bits of code produce violations:
 
-```
+``` 
     def p1 = new Person()
     p1.firstName = 'Hamlet'
     p1.lastName = "D'Arcy"
@@ -25,9 +26,10 @@ These two bits of code produce violations:
     p2.setZipCode('4051')
 ```
 
-However, these two bits of code do not because they use either a `with` or `identity` block.
+However, these two bits of code do not because they use either a `with`
+or `identity` block.
 
-```
+``` 
     def p1 = new Person().with {
         firstName = 'Hamlet'
         lastName = "D'Arcy"

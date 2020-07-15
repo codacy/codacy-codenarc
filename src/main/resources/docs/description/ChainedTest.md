@@ -1,12 +1,12 @@
-
 *Since CodeNarc 0.13*
 
-A test method that invokes another test method is a chained test; the methods are dependent on one another.
-Tests should be isolated, and not be dependent on one another.
+A test method that invokes another test method is a chained test; the
+methods are dependent on one another. Tests should be isolated, and not
+be dependent on one another.
 
 Example of violations:
 
-```
+``` 
     class MyTest extends GroovyTestCase {
         public void testFoo() {
 
@@ -28,4 +28,3 @@ Example of violations:
         }
     }
 ```
-

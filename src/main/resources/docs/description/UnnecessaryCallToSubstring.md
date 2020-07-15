@@ -1,11 +1,11 @@
-
 *Since CodeNarc 0.13*
 
-Calling String.substring(0) always returns the original string. This code is meaningless.
+Calling String.substring(0) always returns the original string. This
+code is meaningless.
 
 Examples:
 
-```
+``` 
     string.substring(0)         // violation
     method().substring(0)       // violation
 

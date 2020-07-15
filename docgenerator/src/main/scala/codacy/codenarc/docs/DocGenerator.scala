@@ -122,10 +122,12 @@ object DocGenerator {
 
     val regexPattern = ruleInfoRegex(ruleName)
     val regexMatch = regexPattern.findFirstIn(ruleInfoMarkdown).getOrElse("")
-    regexMatch.linesIterator.toList match {
+    val markdown = regexMatch.linesIterator.toList match {
       case _ :: rest => rest.mkString(System.lineSeparator)
       case Nil => ""
     }
+
+    MarkdownHelper.markdownToCommonmark(markdown)
   }
 
   /**

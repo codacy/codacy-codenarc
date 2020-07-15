@@ -1,11 +1,11 @@
-
 *Since CodeNarc 1.2*
 
-Enforce that all static fields are above all instance fields within a class
+Enforce that all static fields are above all instance fields within a
+class
 
 Example of violations:
 
-```
+``` 
     class MyClass {
         public static final int COUNT = 99
 
@@ -18,4 +18,3 @@ Example of violations:
         protected String f2
     }
 ```
-

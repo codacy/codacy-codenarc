@@ -1,16 +1,35 @@
+Checks for empty *catch* blocks. In most cases, exceptions should not be
+caught and ignored (swallowed).
 
-Checks for empty *catch* blocks. In most cases, exceptions should not be caught and ignored (swallowed).
+The rule has a property named `ignoreRegex` that defaults to the value
+‘ignore|ignored’. If the name of the exception matches this regex then
+no violations are produced.
 
-The rule has a property named `ignoreRegex` that defaults to the value 'ignore|ignored'. If the name of the exception
-matches this regex then no violations are produced.
-
-| Property                    | Description            | Default Value    |
-|-----------------------------|------------------------|------------------|
-| ignoreRegex                 | Regular expression - exception parameter names matching this regular expression are ignored and no violations are produced. | 'ignore\|ignored' |
+<table>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 33%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ignoreRegex</td>
+<td>Regular expression - exception parameter names matching this regular expression are ignored and no violations are produced.</td>
+<td>‘ignore|ignored’</td>
+</tr>
+</tbody>
+</table>
 
 Here is an example of code that produces a violation:
 
-```
+``` 
     def myMethod() {
         try {
             doSomething

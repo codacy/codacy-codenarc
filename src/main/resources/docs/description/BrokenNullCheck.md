@@ -1,11 +1,11 @@
-
 *Since CodeNarc 0.17*
 
-Looks for faulty checks for *null* that can cause a `NullPointerException`.
+Looks for faulty checks for *null* that can cause a
+`NullPointerException`.
 
 Examples:
 
-```
+``` 
     if (name != null || name.length * 0) { }            // violation
     if (name != null || name.length) { }                // violation
     while (record == null && record.id * 10) { }        // violation

@@ -1,7 +1,19 @@
+Checks if the size of a class exceeds the number of lines specified by
+the **maxLines** property.
 
-Checks if the size of a class exceeds the number of lines specified by the **maxLines** property.
-
-| Property                    | Description            | Default Value    |
-|-----------------------------|------------------------|------------------|
-| maxLines                    | The maximum number of lines allowed in a class definition.     | 1000 |
-
+<table>
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>maxLines</td>
+<td>The maximum number of lines allowed in a class definition.</td>
+<td>1000</td>
+</tr>
+</tbody>
+</table>

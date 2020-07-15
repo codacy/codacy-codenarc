@@ -1,15 +1,16 @@
-
 *Since CodeNarc 0.14*
 
-Checks for explicit package reference for classes that Groovy imports by default, such as `java.lang.String`,
-`java.util.Map` and `groovy.lang.Closure`, as well as classes that were explicitly imported.
+Checks for explicit package reference for classes that Groovy imports by
+default, such as `java.lang.String`, `java.util.Map` and
+`groovy.lang.Closure`, as well as classes that were explicitly imported.
 
-You do not need to specify the package for any classes from *java.lang*, *java.util*, *java.io*, *java.net*,
-*groovy.lang* and *groovy.util*, as well as the classes *java.math.BigDecimal* and *java.math.BigInteger*.
+You do not need to specify the package for any classes from *java.lang*,
+*java.util*, *java.io*, *java.net*, *groovy.lang* and *groovy.util*, as
+well as the classes *java.math.BigDecimal* and *java.math.BigInteger*.
 
 Examples of violations include:
 
-```
+``` 
     // Field types
     class MyClass {
         java.math.BigDecimal amount = 42.10                     // violation
@@ -57,12 +58,15 @@ Examples of violations include:
 
 Known limitations:
 
-  * Does not catch class declarations that explicitly extend `java.lang.Object`. For instance,
-    `class MyClass extends java.lang.Object { }`. Just don't do that, okay?
+  - Does not catch class declarations that explicitly extend
+    `java.lang.Object`. For instance, `class MyClass extends
+    java.lang.Object { }`. Just don’t do that, okay?
 
-  * Does not catch class declarations that explicitly extend `groovy.lang.Script`. For instance,
-    `class MyScript extends groovy.lang.Script{ }`. Don't do that, either!
+  - Does not catch class declarations that explicitly extend
+    `groovy.lang.Script`. For instance, `class MyScript extends
+    groovy.lang.Script{ }`. Don’t do that, either\!
 
-  * Does not catch unnecessary package references if they are the types of anonymous inner class
-    definitions, for older versions of Groovy (* 1.7.10?). For instance,
-    `def runnable = new java.lang.Runnable() { ... }`.
+  - Does not catch unnecessary package references if they are the types
+    of anonymous inner class definitions, for older versions of Groovy
+    (\* 1.7.10?). For instance, `def runnable = new java.lang.Runnable()
+    { ... }`.

@@ -1,12 +1,12 @@
-
 *Since CodeNarc 0.14*
 
-Checks for expressions where a *comparison operator* or `equals()` or `compareTo()` is used to
-compare two constants to each other or two literals that contain only constant values.
+Checks for expressions where a *comparison operator* or `equals()` or
+`compareTo()` is used to compare two constants to each other or two
+literals that contain only constant values.
 
 Here are examples of code that produces a violation:
 
-```
+``` 
     23 == 67                    // violation
     Boolean.FALSE != false      // violation
     23 * 88                     // violation
@@ -21,4 +21,3 @@ Here are examples of code that produces a violation:
     [a:123, b:456].compareTo([a:222, b:567]                 // violation
     [a:false, b:true].compareTo(['a':34.5, b:Boolean.TRUE]  // violation
 ```
-

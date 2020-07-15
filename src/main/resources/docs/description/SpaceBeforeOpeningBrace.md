@@ -1,23 +1,43 @@
-
 *Since CodeNarc 0.18*
 
-Check that there is at least one space (blank) or whitespace before each opening brace ("\{") for
-method/class/interface declarations, closure expressions and block statements.
+Check that there is at least one space (blank) or whitespace before each
+opening brace (“{”) for method/class/interface declarations, closure
+expressions and block statements.
 
-A closure expression a preceded by an opening parenthesis, an opening square
-brace ([), or a dollar sign ($) within a GString does not cause a violation.
+A closure expression a preceded by an opening parenthesis, an opening
+square brace (\[), or a dollar sign ($) within a GString does not cause
+a violation.
 
-| Property                    | Description            | Default Value    |
-|-----------------------------|------------------------|------------------|
-| checkClosureMapEntryValue   | If `false`, then do not check for whitespace before opening braces for closure expressions that are literal Map values, e.g. `[abc:\{doStuff()\}]`. | `true` |
+<table>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 33%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>checkClosureMapEntryValue</td>
+<td>If <code>false</code>, then do not check for whitespace before opening braces for closure expressions that are literal Map values, e.g. <code>[abc:\{doStuff()\}]</code>.</td>
+<td><code>true</code></td>
+</tr>
+</tbody>
+</table>
 
 Known limitations:
 
-  * May not catch actual violations if the source line contains unicode character literals, e.g. `'\\u00A0'`
+  - May not catch actual violations if the source line contains unicode
+    character literals, e.g. `'\\u00A0'`
 
 Examples of violations:
 
-```
+``` 
     class MyClass{ }                            // violation
     class MyOtherClass extends AbstractClass{ } // violation
 
@@ -53,4 +73,3 @@ Examples of violations:
 
     shouldFail(Exception){ doStuff() }          // violation
 ```
-

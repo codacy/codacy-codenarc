@@ -1,11 +1,11 @@
-
 *Since CodeNarc 0.14*
 
-A *Set* literal is created with duplicate constant value. A set cannot contain two elements with the same value.
+A *Set* literal is created with duplicate constant value. A set cannot
+contain two elements with the same value.
 
 Example of violations:
 
-```
+``` 
     def a = [1, 2, 2, 4] as Set
     def b = [1, 2, 2, 4] as HashSet
     def c = [1, 2, 2, 4] as SortedSet
