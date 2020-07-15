@@ -1,14 +1,15 @@
-
 *Since CodeNarc 0.13*
 
-Class contains similarly-named get and set methods where the set method is synchronized and the get method is not,
-or the get method is synchronized and the set method is not. This may result in incorrect behavior at runtime, as
-callers of the get and set methods will not necessarily see a consistent state for the object. The get and set method
-should both be synchronized or neither should be synchronized.
+Class contains similarly-named get and set methods where the set method
+is synchronized and the get method is not, or the get method is
+synchronized and the set method is not. This may result in incorrect
+behavior at runtime, as callers of the get and set methods will not
+necessarily see a consistent state for the object. The get and set
+method should both be synchronized or neither should be synchronized.
 
 Example of violations:
 
-```
+``` 
     class Person {
         String name
         Date birthday

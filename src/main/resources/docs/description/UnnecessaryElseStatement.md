@@ -1,12 +1,12 @@
-
 *Since CodeNarc 0.14*
 
-When an `if` statement block ends with a `return` statement, then the `else` is unnecessary.
-The logic in the `else` branch can be run without being in a new scope.
+When an `if` statement block ends with a `return` statement, then the
+`else` is unnecessary. The logic in the `else` branch can be run without
+being in a new scope.
 
 Example of violations:
 
-```
+``` 
     if(value){
         println 'Executing if logic...'
         return true
@@ -22,4 +22,3 @@ Example of violations:
     }
     println 'Executing else logic...'
 ```
-

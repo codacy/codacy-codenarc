@@ -1,9 +1,10 @@
+Checks for *assert* statements with a constant value for the *assert*
+boolean expression, such as `true`, `false`, `null`, or a literal
+constant value. These *assert* statements will always pass or always
+fail, depending on the constant/literal value. Examples of violations
+include:
 
-Checks for *assert* statements with a constant value for the *assert* boolean expression, such as
-`true`, `false`, `null`, or a literal constant value. These *assert* statements
-will always pass or always fail, depending on the constant/literal value. Examples of violations include:
-
-```
+``` 
     assert true
     assert false, "assertion message"
     assert Boolean.TRUE

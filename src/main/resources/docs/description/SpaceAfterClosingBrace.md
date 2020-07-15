@@ -1,24 +1,39 @@
-
 *Since CodeNarc 0.18*
 
-Check that there is at least one space (blank) or whitespace after each closing brace ("\{") for
-method/class/interface declarations, closure expressions and block statements.
+Check that there is at least one space (blank) or whitespace after each
+closing brace (“{”) for method/class/interface declarations, closure
+expressions and block statements.
 
-A closure expression followed by a dot operator (.), a comma, an opening parenthesis, a closing parenthesis, an
-opening square brace, a closing square brace (]), the spread-dot operator (*.), a semicolon or the
+A closure expression followed by a dot operator (.), a comma, an opening
+parenthesis, a closing parenthesis, an opening square brace, a closing
+square brace (\]), the spread-dot operator (\*.), a semicolon or the
 null-safe operator (?.) does not cause a violation.
 
-| Property                    | Description            | Default Value    |
-|-----------------------------|------------------------|------------------|
-| checkClosureMapEntryValue   | DEPRECATED. Ignored. | `true` |
+<table>
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>checkClosureMapEntryValue</td>
+<td>DEPRECATED. Ignored.</td>
+<td><code>true</code></td>
+</tr>
+</tbody>
+</table>
 
 Known limitations:
 
-  * May not catch actual violations if the source line contains unicode character literals, e.g. `'\\u00A0'`
+  - May not catch actual violations if the source line contains unicode
+    character literals, e.g. `'\\u00A0'`
 
 Examples of violations and exceptions:
 
-```
+``` 
     if (ready) { return 9 }else { }             // violation
     try { doStuff() }finally { }                // violation
 

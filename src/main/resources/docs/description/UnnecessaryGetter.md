@@ -1,20 +1,43 @@
-
 *Since CodeNarc 0.12*
 
-Checks for explicit calls to getter/accessor methods which can, for the most part, be replaced by property access.
-A getter is defined as a no-argument method call that matches `get[A-Z]` but not `getClass()` or
+Checks for explicit calls to getter/accessor methods which can, for the
+most part, be replaced by property access. A getter is defined as a
+no-argument method call that matches `get[A-Z]` but not `getClass()` or
 `get[A-Z][A-Z]` such as `getURL()`.
 
-Calls to getter methods within Spock method calls `Mock()`, `Stub()` and `Spy()` are ignored.
+Calls to getter methods within Spock method calls `Mock()`, `Stub()` and
+`Spy()` are ignored.
 
-| Property                    | Description            | Default Value    |
-|-----------------------------|------------------------|------------------|
-| checkIsMethods              | If `true`, then also check isXxx() getters methods. | `true` |
-| ignoreMethodNames           | Specifies one or more (comma-separated) method names that should be ignored (i.e., that should not cause a rule violation). The names may optionally contain wildcards (*,?).  | `null` |
+<table>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 33%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>checkIsMethods</td>
+<td>If <code>true</code>, then also check isXxx() getters methods.</td>
+<td><code>true</code></td>
+</tr>
+<tr class="even">
+<td>ignoreMethodNames</td>
+<td>Specifies one or more (comma-separated) method names that should be ignored (i.e., that should not cause a rule violation). The names may optionally contain wildcards (*,?).</td>
+<td><code>null</code></td>
+</tr>
+</tbody>
+</table>
 
 These bits of code produce violations:
 
-```
+``` 
     x.getProperty()
     x.getFirst()
     x.getFirstName()
@@ -26,7 +49,7 @@ These bits of code produce violations:
 
 These bits of code do not:
 
-```
+``` 
     x.property
     x.first
     x.firstName

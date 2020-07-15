@@ -1,10 +1,10 @@
-
 *Since CodeNarc 0.11*
 
-Check for duplicate `case` statements in a `switch` block, such as two equal
-integers or strings. Here are some examples of code that produces violations:
+Check for duplicate `case` statements in a `switch` block, such as two
+equal integers or strings. Here are some examples of code that produces
+violations:
 
-```
+``` 
     switch( 0 ) {
         case 1: break;
         case 2: break;

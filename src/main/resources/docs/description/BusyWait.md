@@ -1,12 +1,12 @@
-
 *Since CodeNarc 0.13*
 
-Busy waiting (forcing a `Thread.sleep()` while waiting on a condition) should be avoided. Prefer using the gate and
-barrier objects in the `java.util.concurrent` package.
+Busy waiting (forcing a `Thread.sleep()` while waiting on a condition)
+should be avoided. Prefer using the gate and barrier objects in the
+`java.util.concurrent` package.
 
 Example of violations:
 
-```
+``` 
     while (x) { Thread.sleep(1000) }
     while (x) { Thread.sleep(1000) { /* interruption handler */} }
     for (int x = 10; x; x--) {
@@ -28,4 +28,3 @@ Example of violations:
         sleep(1000)
     }
 ```
-

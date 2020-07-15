@@ -1,13 +1,13 @@
-
 *Since CodeNarc 0.12*
 
-Groovy contains the safe dereference operator. It can be used in boolean conditional statements to safely
-replace explicit `x == null` tests. Also, testing the 'this' or 'super' reference for null equality is
+Groovy contains the safe dereference operator. It can be used in boolean
+conditional statements to safely replace explicit `x == null` tests.
+Also, testing the ‘this’ or ‘super’ reference for null equality is
 pointless and can be removed.
 
 Examples of violations:
 
-```
+``` 
     if (obj != null && obj.method()) { }
 
     if (obj != null && obj.prop) { }
@@ -28,7 +28,7 @@ Examples of violations:
 
 Examples of acceptable code:
 
-```
+``` 
     // null check it OK
     if (obj != null) { }
 

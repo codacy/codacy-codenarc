@@ -1,15 +1,17 @@
-
 *Since CodeNarc 0.13*
 
-This rule detects double checked locking, where a 'lock hint' is tested for null before initializing an object within
-a synchronized block. Double checked locking does not guarantee correctness and is an anti-pattern.
+This rule detects double checked locking, where a ‘lock hint’ is tested
+for null before initializing an object within a synchronized block.
+Double checked locking does not guarantee correctness and is an
+anti-pattern.
 
-A full explanation of why double checked locking is broken in Java is available on Wikipedia:
+A full explanation of why double checked locking is broken in Java is
+available on Wikipedia:
 <http://en.wikipedia.org/wiki/Double-checked_locking>
 
 Example of violations:
 
-```
+``` 
     if (object == null) {
         synchronized(this) {
             if (object == null) {
@@ -40,4 +42,3 @@ Example of violations:
         }
     }
 ```
-

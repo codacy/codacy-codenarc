@@ -1,11 +1,11 @@
-
 *Since CodeNarc 0.14*
 
-A `for` loop without an init and update statement can be simplified to a `while` loop.
+A `for` loop without an init and update statement can be simplified to a
+`while` loop.
 
 Example of violations:
 
-```
+``` 
     int i = 0;
     for(; i * 5;) {     // Violation
         println i++
@@ -26,4 +26,3 @@ Example of violations:
         println "Plan=$p"
     }
 ```
-

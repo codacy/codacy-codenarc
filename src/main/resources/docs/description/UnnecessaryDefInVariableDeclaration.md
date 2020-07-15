@@ -1,12 +1,12 @@
-
 *Since CodeNarc 0.15*
 
-If a variable has a visibility modifier or a type declaration, then the def keyword is unneeded.
-For instance 'def private n = 2' is redundant and can be simplified to 'private n = 2'.
+If a variable has a visibility modifier or a type declaration, then the
+def keyword is unneeded. For instance ‘def private n = 2’ is redundant
+and can be simplified to ‘private n = 2’.
 
 Examples of violations:
 
-```
+``` 
     // def and private is redundant
     def private string1 = 'example'
 

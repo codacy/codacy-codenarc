@@ -1,14 +1,15 @@
-
 *Since CodeNarc 1.2*
 
-Enforce that all static methods within each visibility level (public, protected, private) are above all
-instance methods within that same visibility level. In other words, public static methods must be above
-public instance methods, protected static methods must be above protected instance methods and private
-static methods must be above private instance methods.
+Enforce that all static methods within each visibility level (public,
+protected, private) are above all instance methods within that same
+visibility level. In other words, public static methods must be above
+public instance methods, protected static methods must be above
+protected instance methods and private static methods must be above
+private instance methods.
 
 Example of violations:
 
-```
+``` 
         class MyClass {
             // Public
             public static int staticMethod1() { }

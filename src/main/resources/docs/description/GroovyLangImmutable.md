@@ -1,12 +1,12 @@
-
 *Since CodeNarc 0.13*
 
-The `groovy.lang.Immutable` annotation has been deprecated and replaced by `groovy.transform.Immutable`. Do
-not use the `Immutable` in `groovy.lang`.
+The `groovy.lang.Immutable` annotation has been deprecated and replaced
+by `groovy.transform.Immutable`. Do not use the `Immutable` in
+`groovy.lang`.
 
 Example of violations:
 
-```
+``` 
     @Immutable                          // Violation (no import means groovy.lang.Immutable)
     class Person { }
 
@@ -16,12 +16,11 @@ Example of violations:
     import groovy.lang.Immutable as Imtl
     @Imtl                               // Violation
     class Person { }
-
 ```
 
 Example of valid use of @Immutable:
 
-```
+``` 
     @groovy.transform.Immutable                 // OK
     class Person { }
 
@@ -39,5 +38,4 @@ Example of valid use of @Immutable:
 
     @javax.annotation.concurrent.Immutable      // OK
     class MyClass { }
-
 ```

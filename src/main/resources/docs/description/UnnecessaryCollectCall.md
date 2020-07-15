@@ -1,12 +1,12 @@
-
 *Since CodeNarc 0.12*
 
-Some method calls to `Object.collect(Closure)` can be replaced with the spread operator. For instance,
-`list.collect { it.multiply(2) }` can be replaced by `list*.multiply(2)`.
+Some method calls to `Object.collect(Closure)` can be replaced with the
+spread operator. For instance, `list.collect { it.multiply(2) }` can be
+replaced by `list*.multiply(2)`.
 
 Examples of violations include:
 
-```
+``` 
     assert [1, 2, 3].collect { it.multiply(2) }
     assert [1, 2, 3].collect { x -* x.multiply(2) }
     ["1", "2", "3"].collect { it.bytes }
@@ -14,7 +14,7 @@ Examples of violations include:
 
 The following code does not produce violations:
 
-```
+``` 
     [1, 2, 3].collect { it * it }   // OK, closure parameter is referenced twice
 
     [1, 2, 3].mapMethod { it.multiply(5) } // OK, method call is not collect

@@ -1,12 +1,12 @@
-
 *Since CodeNarc 0.14*
 
-The class has an `equals` method, but the parameter of the method is not of type `Object`.
-It is not overriding `equals` but instead overloading it.
+The class has an `equals` method, but the parameter of the method is not
+of type `Object`. It is not overriding `equals` but instead overloading
+it.
 
 Example of violations:
 
-```
+``` 
     class Object1 {
         //parameter should be Object not String
         boolean equals(String other) { true }
@@ -41,4 +41,3 @@ Example of violations:
         boolean equals(other) { true }
     }
 ```
-

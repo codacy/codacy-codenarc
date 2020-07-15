@@ -1,11 +1,11 @@
-
 *Since CodeNarc 1.1*
 
-Checks that code blocks such as method bodies, closures and control structure bodies do not end with an empty line.
+Checks that code blocks such as method bodies, closures and control
+structure bodies do not end with an empty line.
 
 Example of violations:
 
-```
+``` 
     boolean not(boolean value) {
         !value
                                 // violation

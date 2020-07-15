@@ -12,6 +12,11 @@ object MarkdownHelper {
     s"<div>$htmlContent</div>"
   }
 
+  def markdownToCommonmark(markdown: String): String = {
+    val input = new java.io.ByteArrayInputStream(markdown.getBytes("UTF-8"))
+    Seq("pandoc", "-f", "markdown", "-t", "commonmark").#<(input).!!
+  }
+
   def markdownToHtmlXml(markdownFile: File): Elem = {
     val ruleIndexHtmlString = markdownToHtml(markdownFile)
 

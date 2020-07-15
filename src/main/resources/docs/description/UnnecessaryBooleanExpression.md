@@ -1,14 +1,13 @@
+Checks for unnecessary boolean expressions, including ANDing (&&) or
+ORing (||) with `true`, `false`, `null`, or a Map/List/String/Number
+literal.
 
-
-Checks for unnecessary boolean expressions, including ANDing (&&) or ORing (||) with
-`true`, `false`, `null`, or a Map/List/String/Number literal.
-
-This rule also checks for negation (!) of `true`, `false`,
-`null`, or a Map/List/String/Number literal.
+This rule also checks for negation (\!) of `true`, `false`, `null`, or a
+Map/List/String/Number literal.
 
 Examples of violations include:
 
-```
+``` 
     result = value && true              // AND or OR with boolean constants
     if (false || value) { .. }
     return value && Boolean.FALSE

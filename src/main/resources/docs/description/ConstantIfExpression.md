@@ -1,9 +1,9 @@
+Checks for *if* statements with a constant value for the *if* boolean
+expression, such as `true`, `false`, `null`, or a literal constant
+value. These *if* statements can be simplified or avoided altogether.
+Examples of violations include:
 
-Checks for *if* statements with a constant value for the *if* boolean expression, such as
-`true`, `false`, `null`, or a literal constant value. These *if* statements
-can be simplified or avoided altogether. Examples of violations include:
-
-```
+``` 
     if (true) { .. }
     if (false) { .. }
     if (Boolean.TRUE) { .. }

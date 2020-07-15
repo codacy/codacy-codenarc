@@ -1,14 +1,14 @@
-
 *Since CodeNarc 0.24*
 
 Checks for assignment to a static field from an instance method.
 
-Influenced by the **AssignmentToNonFinalStatic** rule from **PMD**, and the
-**ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD** rule from **FindBugs**.
+Influenced by the **AssignmentToNonFinalStatic** rule from **PMD**, and
+the **ST\_WRITE\_TO\_STATIC\_FROM\_INSTANCE\_METHOD** rule from
+**FindBugs**.
 
 Example of violations:
 
-```
+``` 
     class MyClass {
         private static field1
         protected static String field2 = 'abc'
@@ -26,4 +26,3 @@ Example of violations:
         }
     }
 ```
-

@@ -1,10 +1,10 @@
-
-Checks for throwing an exception from within a *finally* block. Throwing an exception from a
-*finally* block is confusing and can hide the original exception.
+Checks for throwing an exception from within a *finally* block. Throwing
+an exception from a *finally* block is confusing and can hide the
+original exception.
 
 Here is an example of code that produces a violation:
 
-```
+``` 
     int myMethod() {
         try {
             doSomething()
