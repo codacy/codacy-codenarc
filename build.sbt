@@ -12,15 +12,21 @@ import com.typesafe.sbt.packager.docker.{Cmd, ExecCmd}
 
 // Tool version
 lazy val toolVersion = settingKey[String]("The version of the underlying tool")
-toolVersion in Global := {
-  val version = IO.readLines(new File(".codenarc-version"))
-  version.mkString("")
-}
+ThisBuild / toolVersion := "1.6"
 
 lazy val commonSettings = Seq(
   organization := "com.codacy",
   version := "1.0.0-SNAPSHOT",
   scalaVersion := "2.13.1",
+  Compile / sourceGenerators += Def.task {
+    val file = (Compile / sourceManaged).value / "codacy" / "codenarc" / "docs" / "Versions.scala"
+    IO.write(file, s"""package codacy.codenarc.docs 
+                      |object Versions {
+                      |  val codenarcVersion: String = "${toolVersion.value}"
+                      |}
+                      |""".stripMargin)
+    Seq(file)
+  }.taskValue,
   libraryDependencies ++= Seq(
     "org.codenarc" % "CodeNarc" % toolVersion.value,
     "com.codacy" %% "codacy-engine-scala-seed" % "4.0.0"

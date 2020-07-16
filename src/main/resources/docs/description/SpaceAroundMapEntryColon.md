@@ -23,13 +23,13 @@ Does not check *spread map* operator, e.g. `def binding = [*: map]`
 <tbody>
 <tr class="odd">
 <td>characterBeforeColonRegex</td>
-<td>The regular expression that must match the character before the colon (:) for a literal <em>Map</em> entry. For example, <code>/\\S/</code> matches any non-whitespace character and <code>/\\s/</code> matches any whitespace character (thus requiring a space or whitespace).</td>
-<td><code>/\\S/</code> (i.e., no space allowed before the colon)</td>
+<td>The regular expression that must match the character before the colon (:) for a literal <em>Map</em> entry. For example, <code>/\S/</code> matches any non-whitespace character and <code>/\s/</code> matches any whitespace character (thus requiring a space or whitespace).</td>
+<td><code>/\S/</code> (i.e., no space allowed before the colon)</td>
 </tr>
 <tr class="even">
 <td>characterAfterColonRegex</td>
-<td>The regular expression that must match the character after the colon (:) for a literal <em>Map</em> entry. For example, <code>/\\S/</code> matches any non-whitespace character and <code>/\\s/</code> matches any whitespace character (thus requiring a space or whitespace).</td>
-<td><code>/\\S/</code> (i.e., no space allowed before the colon)</td>
+<td>The regular expression that must match the character after the colon (:) for a literal <em>Map</em> entry. For example, <code>/\S/</code> matches any non-whitespace character and <code>/\s/</code> matches any whitespace character (thus requiring a space or whitespace).</td>
+<td><code>/\S/</code> (i.e., no space allowed after the colon)</td>
 </tr>
 </tbody>
 </table>

@@ -1,8 +1,9 @@
 *Since CodeNarc 0.16*
 
 If a class defines a `public` method that follows the Java getter
-notation and that returns a constant, then it is cleaner to provide a
-Groovy property for the value rather than a Groovy method.
+notation and that returns a constant, literal or static final field
+value, then it is cleaner to provide a Groovy property for the value
+rather than a Groovy method.
 
 <table>
 <colgroup>
@@ -35,29 +36,32 @@ Example of violations:
     }
 
     class Child extends Parent {
-        static VALUE = 'value'
+        static final VALUE = 'value'
 
-        @Override
-        String getSomething() {
-            'something'         // this could be simplified
+        String getSomething() {         // violation
+            'something'         
         }
 
         @Override
-        String getSomethingElse() {
-            VALUE       // this could be simplified
+        String getSomethingElse() {     // violation
+            VALUE       
         }
 
-        int getOtherValue() {
+        int getOtherValue() {           // violation
             123
         }
 
-        static String getName() {
+        Class getTheClass() {           // violation
+            return Integer
+        }
+
+        static String getName() {       // violation
             'MyName'
         }
     }
 
     class Child2 extends Parent {
-        static VALUE = 'value'
+        static final VALUE = 'value'
         final String something = 'something'    // this is cleaner
         final String somethingElse = VALUE      // this is cleaner
         final int otherValue = 123              // this is cleaner

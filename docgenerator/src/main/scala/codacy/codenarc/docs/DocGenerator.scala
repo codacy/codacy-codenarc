@@ -5,14 +5,13 @@ import java.lang.reflect.Field
 import better.files._
 import com.codacy.plugins.api.results.{Parameter, Pattern, Result, Tool}
 import org.codenarc.rule.AbstractAstVisitorRule
-import play.api.libs.json.Json
-
-import scala.jdk.CollectionConverters._
 import org.reflections.Reflections
+import play.api.libs.json._
 
 import scala.annotation.tailrec
+import scala.jdk.CollectionConverters._
+import scala.util.Try
 import scala.util.matching.Regex
-import scala.util.{Try, Using}
 
 object DocGenerator {
 
@@ -26,7 +25,6 @@ object DocGenerator {
 
   private val toolName = "codenarc"
 
-  private val codeNarcVersionFile = ".codenarc-version"
   private val codeNarcGitRepository = "github.com/CodeNarc/CodeNarc"
   private val patternsJsonFile = "patterns.json"
   private val descriptionJsonFile = "description.json"
@@ -68,11 +66,13 @@ object DocGenerator {
     * Convert from list of parameters to Parameter.Specification list
     */
   def parameterSpecificationFromParametersStringList(
-      parameters: Option[Set[String]]
+      parameters: Option[Map[String, JsValue]]
   ): Option[Set[Parameter.Specification]] =
-    parameters.map(
-      paramList => paramList.map(param => Parameter.Specification(Parameter.Name(param), Parameter.Value("")))
-    )
+    parameters.map { paramList =>
+      paramList.map {
+        case (name, default) => Parameter.Specification(Parameter.Name(name), Parameter.Value(default))
+      }.toSet
+    }
 
   def parameterDescriptionFromParametersStringList(
       parameters: Option[Set[String]]
@@ -97,8 +97,7 @@ object DocGenerator {
     * @return
     */
   def versionFromArgs(args: Array[String]): String =
-    args.headOption
-      .getOrElse(Using.resource(io.Source.fromFile(codeNarcVersionFile))(_.getLines.mkString("")))
+    args.headOption.getOrElse(Versions.codenarcVersion)
 
   /**
     * Gets the documentation markdown name from the href element value
@@ -210,7 +209,7 @@ object DocGenerator {
           Pattern.Title(ruleName),
           Some(Pattern.DescriptionText(ruleBasicDescription)),
           None,
-          parameterDescriptionFromParametersStringList(parameters)
+          parameterDescriptionFromParametersStringList(parameters.map(_.keySet))
         )
       } yield RulePatternInformation(patternSpec, patternDescription, ruleExtendedInfo)
 
@@ -238,20 +237,32 @@ object DocGenerator {
   def patternsDescription(patternsList: Seq[RulePatternInformation]): Seq[Pattern.Description] =
     patternsList.map(_.patternDescription)
 
-  private def isIntOrString(value: Field) =
-    value.getType == classOf[Int] || value.getType == classOf[String]
+  private def hasValidType(value: Field) = {
+    val t = value.getType()
+    t == classOf[Int] || t == classOf[String] || t == classOf[Boolean]
+  }
 
-  // value.getName.exists(_.isLower):
-  //    -> check if it is a constant (constants are all uppercase).
-  //             if it is not a constant, it should not be all uppercase
-  private def isNotNameOrPriority(value: Field) =
-    value.getName != "name" && value.getName != "priority" && value.getName.exists(_.isLower)
+  private def hasValidName(value: Field) = value.getName() match {
+    case "name" | "priority" | "__$stMC" => false
+    case v if !v.exists(_.isLower) => false // Java constants don't have lower case characters
+    case _ => true
+  }
+
+  private def getParameterDefault[T](classType: Class[T], value: Field): JsValue = {
+    val instance = classType.newInstance()
+    value.setAccessible(true)
+    val t = value.getType()
+    if (t == classOf[Int]) JsNumber(value.getInt(instance))
+    else if (t == classOf[Boolean]) JsBoolean(value.getBoolean(instance))
+    else if (t == classOf[String]) JsString(value.get(instance).asInstanceOf[String])
+    else throw new Exception(s"No default for $classType / $value")
+  }
 
   private def getParametersFromType[T](classType: Class[T]) = {
     classType.getDeclaredFields
-      .filter(x => isIntOrString(x) && isNotNameOrPriority(x))
-      .map(_.getName)
-      .toSet
+      .filter(x => hasValidType(x) && hasValidName(x))
+      .map(t => t.getName -> getParameterDefault(classType, t))
+      .toMap
   }
 
   // Check if rule is implemented by class type passed
@@ -261,7 +272,7 @@ object DocGenerator {
   def ruleImplementationClass(ruleName: String): Option[Class[_ <: AbstractAstVisitorRule]] =
     subTypes.find(isRuleImplementedBy(ruleName, _))
 
-  def getRuleParameters(ruleName: String): Option[Set[String]] = {
+  def getRuleParameters(ruleName: String): Option[Map[String, JsValue]] = {
     val ruleClassImplementation = ruleImplementationClass(ruleName)
 
     ruleClassImplementation

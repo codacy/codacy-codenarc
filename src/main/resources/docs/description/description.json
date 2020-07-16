@@ -177,7 +177,11 @@
 }, {
   "patternId" : "ElseBlockBraces",
   "title" : "ElseBlockBraces",
-  "description" : "Use braces for else blocks, even for a single statement. By default, braces are not required for an else if it is followed immediately by an if. Set the bracesRequiredForElseIf property to true to require braces is that situation as well."
+  "description" : "Use braces for else blocks, even for a single statement. By default, braces are not required for an else if it is followed immediately by an if. Set the bracesRequiredForElseIf property to true to require braces is that situation as well.",
+  "parameters" : [ {
+    "name" : "bracesRequiredForElseIf",
+    "description" : "bracesRequiredForElseIf"
+  } ]
 }, {
   "patternId" : "ForStatementBraces",
   "title" : "ForStatementBraces",
@@ -389,11 +393,23 @@
 }, {
   "patternId" : "IfStatementCouldBeTernary",
   "title" : "IfStatementCouldBeTernary",
-  "description" : "Checks for if statements where both the if and else blocks contain only a single return statement with a constant or literal value"
+  "description" : "Checks for if statements where both the if and else blocks contain only a single return statement with a constant or literal value",
+  "parameters" : [ {
+    "name" : "checkLastStatementImplicitElse",
+    "description" : "checkLastStatementImplicitElse"
+  } ]
 }, {
   "patternId" : "ImplicitClosureParameter",
   "title" : "ImplicitClosureParameter",
-  "description" : "Checks that the implicit it closure parameter is not used and that parameters are declared explicitly instead. "
+  "description" : "Checks that the implicit it closure parameter is not used and that parameters are declared explicitly instead. ",
+  "parameters" : [ {
+    "name" : "allowUsingItAsParameterName",
+    "description" : "allowUsingItAsParameterName"
+  } ]
+}, {
+  "patternId" : "ImplicitReturnStatement",
+  "title" : "ImplicitReturnStatement",
+  "description" : "Check for a non-void method that is missing an explicit return statement."
 }, {
   "patternId" : "InvertedCondition",
   "title" : "InvertedCondition",
@@ -409,11 +425,19 @@
 }, {
   "patternId" : "MethodParameterTypeRequired",
   "title" : "MethodParameterTypeRequired",
-  "description" : "Checks that method parameters are not dynamically typed, that is they are explicitly stated and different than def."
+  "description" : "Checks that method parameters are not dynamically typed, that is they are explicitly stated and different than def.",
+  "parameters" : [ {
+    "name" : "ignoreMethodParameterNames",
+    "description" : "ignoreMethodParameterNames"
+  } ]
 }, {
   "patternId" : "MethodReturnTypeRequired",
   "title" : "MethodReturnTypeRequired",
-  "description" : "Checks that method return types are not dynamic, that is they are explicitly stated and different than def."
+  "description" : "Checks that method return types are not dynamic, that is they are explicitly stated and different than def.",
+  "parameters" : [ {
+    "name" : "ignoreMethodNames",
+    "description" : "ignoreMethodNames"
+  } ]
 }, {
   "patternId" : "NoDef",
   "title" : "NoDef",
@@ -457,7 +481,20 @@
 }, {
   "patternId" : "TrailingComma",
   "title" : "TrailingComma",
-  "description" : "Check whether list and map literals contain optional trailing comma."
+  "description" : "Check whether list and map literals contain optional trailing comma.",
+  "parameters" : [ {
+    "name" : "checkList",
+    "description" : "checkList"
+  }, {
+    "name" : "checkMap",
+    "description" : "checkMap"
+  }, {
+    "name" : "ignoreSingleElementList",
+    "description" : "ignoreSingleElementList"
+  }, {
+    "name" : "ignoreSingleElementMap",
+    "description" : "ignoreSingleElementMap"
+  } ]
 }, {
   "patternId" : "VariableTypeRequired",
   "title" : "VariableTypeRequired",
@@ -548,6 +585,9 @@
   "parameters" : [ {
     "name" : "ignoreFieldNames",
     "description" : "ignoreFieldNames"
+  }, {
+    "name" : "ignoreJpaEntities",
+    "description" : "ignoreJpaEntities"
   } ]
 }, {
   "patternId" : "PublicInstanceField",
@@ -752,27 +792,72 @@
 }, {
   "patternId" : "BracesForForLoop",
   "title" : "BracesForForLoop",
-  "description" : "Checks the location of the opening brace ({) for for loops. By default, requires them on the same line, but the sameLine property can be set to false to override this."
+  "description" : "Checks the location of the opening brace ({) for for loops. By default, requires them on the same line, but the sameLine property can be set to false to override this.",
+  "parameters" : [ {
+    "name" : "sameLine",
+    "description" : "sameLine"
+  } ]
 }, {
   "patternId" : "BracesForIfElse",
   "title" : "BracesForIfElse",
-  "description" : "Checks the location of the opening brace ({) for if statements. By default, requires them on the same line, but the sameLine property can be set to false to override this."
+  "description" : "Checks the location of the opening brace ({) for if statements. By default, requires them on the same line, but the sameLine property can be set to false to override this.",
+  "parameters" : [ {
+    "name" : "sameLine",
+    "description" : "sameLine"
+  }, {
+    "name" : "validateElse",
+    "description" : "validateElse"
+  } ]
 }, {
   "patternId" : "BracesForMethod",
   "title" : "BracesForMethod",
-  "description" : "Checks the location of the opening brace ({) for constructors and methods. By default, requires them on the same line, but the sameLine property can be set to false to override this."
+  "description" : "Checks the location of the opening brace ({) for constructors and methods. By default, requires them on the same line, but the sameLine property can be set to false to override this.",
+  "parameters" : [ {
+    "name" : "sameLine",
+    "description" : "sameLine"
+  } ]
 }, {
   "patternId" : "BracesForTryCatchFinally",
   "title" : "BracesForTryCatchFinally",
-  "description" : "Checks the location of the opening brace ({) for try statements. By default, requires them on the line, but the sameLine property can be set to false to override this."
+  "description" : "Checks the location of the opening brace ({) for try statements. By default, requires them on the line, but the sameLine property can be set to false to override this.",
+  "parameters" : [ {
+    "name" : "sameLine",
+    "description" : "sameLine"
+  }, {
+    "name" : "validateCatch",
+    "description" : "validateCatch"
+  }, {
+    "name" : "validateFinally",
+    "description" : "validateFinally"
+  } ]
 }, {
   "patternId" : "ClassEndsWithBlankLine",
   "title" : "ClassEndsWithBlankLine",
-  "description" : "Check whether the class ends with a blank line.\\"
+  "description" : "Check whether the class ends with a blank line.\\",
+  "parameters" : [ {
+    "name" : "ignoreSingleLineClasses",
+    "description" : "ignoreSingleLineClasses"
+  }, {
+    "name" : "ignoreInnerClasses",
+    "description" : "ignoreInnerClasses"
+  }, {
+    "name" : "blankLineRequired",
+    "description" : "blankLineRequired"
+  } ]
 }, {
   "patternId" : "ClassStartsWithBlankLine",
   "title" : "ClassStartsWithBlankLine",
-  "description" : "Check whether the class starts with a blank line. \\"
+  "description" : "Check whether the class starts with a blank line. \\",
+  "parameters" : [ {
+    "name" : "ignoreSingleLineClasses",
+    "description" : "ignoreSingleLineClasses"
+  }, {
+    "name" : "ignoreInnerClasses",
+    "description" : "ignoreInnerClasses"
+  }, {
+    "name" : "blankLineRequired",
+    "description" : "blankLineRequired"
+  } ]
 }, {
   "patternId" : "ClosureStatementOnOpeningLineOfMultipleLineClosure",
   "title" : "ClosureStatementOnOpeningLineOfMultipleLineClosure",
@@ -801,6 +886,12 @@
     "name" : "length",
     "description" : "length"
   }, {
+    "name" : "ignoreImportStatements",
+    "description" : "ignoreImportStatements"
+  }, {
+    "name" : "ignorePackageStatements",
+    "description" : "ignorePackageStatements"
+  }, {
     "name" : "ignoreLineRegex",
     "description" : "ignoreLineRegex"
   } ]
@@ -819,7 +910,11 @@
 }, {
   "patternId" : "SpaceAfterClosingBrace",
   "title" : "SpaceAfterClosingBrace",
-  "description" : "Check that there is at least one space (blank) or whitespace after each closing brace (\"}\") for method/class/interface declarations, closure expressions and block statements."
+  "description" : "Check that there is at least one space (blank) or whitespace after each closing brace (\"}\") for method/class/interface declarations, closure expressions and block statements.",
+  "parameters" : [ {
+    "name" : "checkClosureMapEntryValue",
+    "description" : "checkClosureMapEntryValue"
+  } ]
 }, {
   "patternId" : "SpaceAfterComma",
   "title" : "SpaceAfterComma",
@@ -835,7 +930,14 @@
 }, {
   "patternId" : "SpaceAfterOpeningBrace",
   "title" : "SpaceAfterOpeningBrace",
-  "description" : "Check that there is at least one space (blank) or whitespace after each opening brace (\"{\") for method/class/interface declarations, closure expressions and block statements."
+  "description" : "Check that there is at least one space (blank) or whitespace after each opening brace (\"{\") for method/class/interface declarations, closure expressions and block statements.",
+  "parameters" : [ {
+    "name" : "checkClosureMapEntryValue",
+    "description" : "checkClosureMapEntryValue"
+  }, {
+    "name" : "ignoreEmptyBlock",
+    "description" : "ignoreEmptyBlock"
+  } ]
 }, {
   "patternId" : "SpaceAfterSemicolon",
   "title" : "SpaceAfterSemicolon",
@@ -866,15 +968,30 @@
 }, {
   "patternId" : "SpaceAroundOperator",
   "title" : "SpaceAroundOperator",
-  "description" : "Check that there is at least one space (blank) or whitespace around each binary operator."
+  "description" : "Check that there is at least one space (blank) or whitespace around each binary operator.",
+  "parameters" : [ {
+    "name" : "ignoreParameterDefaultValueAssignments",
+    "description" : "ignoreParameterDefaultValueAssignments"
+  } ]
 }, {
   "patternId" : "SpaceBeforeClosingBrace",
   "title" : "SpaceBeforeClosingBrace",
-  "description" : "Check that there is at least one space (blank) or whitespace before each closing brace (\"}\") for method/class/interface declarations, closure expressions and block statements."
+  "description" : "Check that there is at least one space (blank) or whitespace before each closing brace (\"}\") for method/class/interface declarations, closure expressions and block statements.",
+  "parameters" : [ {
+    "name" : "checkClosureMapEntryValue",
+    "description" : "checkClosureMapEntryValue"
+  }, {
+    "name" : "ignoreEmptyBlock",
+    "description" : "ignoreEmptyBlock"
+  } ]
 }, {
   "patternId" : "SpaceBeforeOpeningBrace",
   "title" : "SpaceBeforeOpeningBrace",
-  "description" : "Check that there is at least one space (blank) or whitespace before each opening brace (\"{\") for method/class/interface declarations, closure expressions and block statements."
+  "description" : "Check that there is at least one space (blank) or whitespace before each opening brace (\"{\") for method/class/interface declarations, closure expressions and block statements.",
+  "parameters" : [ {
+    "name" : "checkClosureMapEntryValue",
+    "description" : "checkClosureMapEntryValue"
+  } ]
 }, {
   "patternId" : "TrailingWhitespace",
   "title" : "TrailingWhitespace",
@@ -958,6 +1075,14 @@
   }, {
     "name" : "ignoreFieldTypes",
     "description" : "ignoreFieldTypes"
+  } ]
+}, {
+  "patternId" : "GrailsDomainGormMethods",
+  "title" : "GrailsDomainGormMethods",
+  "description" : "Database operation should be performed by Data Services instead of calling GORM static or instance methods.",
+  "parameters" : [ {
+    "name" : "compilerPhase",
+    "description" : "compilerPhase"
   } ]
 }, {
   "patternId" : "GrailsDomainHasEquals",
@@ -1085,63 +1210,123 @@
 }, {
   "patternId" : "ExplicitCallToAndMethod",
   "title" : "ExplicitCallToAndMethod",
-  "description" : "This rule detects when the and(Object) method is called directly in code instead of using the & operator. A groovier way to express this: a.and(b) is this: a & b"
+  "description" : "This rule detects when the and(Object) method is called directly in code instead of using the & operator. A groovier way to express this: a.and(b) is this: a & b",
+  "parameters" : [ {
+    "name" : "ignoreThisReference",
+    "description" : "ignoreThisReference"
+  } ]
 }, {
   "patternId" : "ExplicitCallToCompareToMethod",
   "title" : "ExplicitCallToCompareToMethod",
-  "description" : "This rule detects when the compareTo(Object) method is called directly in code instead of using the <=>, >, >=, <, and <= operators. A groovier way to express this: a.compareTo(b) is this: a <=> b, or using the other operators."
+  "description" : "This rule detects when the compareTo(Object) method is called directly in code instead of using the <=>, >, >=, <, and <= operators. A groovier way to express this: a.compareTo(b) is this: a <=> b, or using the other operators.",
+  "parameters" : [ {
+    "name" : "ignoreThisReference",
+    "description" : "ignoreThisReference"
+  } ]
 }, {
   "patternId" : "ExplicitCallToDivMethod",
   "title" : "ExplicitCallToDivMethod",
-  "description" : "This rule detects when the div(Object) method is called directly in code instead of using the / operator. A groovier way to express this: a.div(b) is this: a / b"
+  "description" : "This rule detects when the div(Object) method is called directly in code instead of using the / operator. A groovier way to express this: a.div(b) is this: a / b",
+  "parameters" : [ {
+    "name" : "ignoreThisReference",
+    "description" : "ignoreThisReference"
+  } ]
 }, {
   "patternId" : "ExplicitCallToEqualsMethod",
   "title" : "ExplicitCallToEqualsMethod",
-  "description" : "This rule detects when the equals(Object) method is called directly in code instead of using the == or != operator. A groovier way to express this: a.equals(b) is this: a == b and a groovier way to express : !a.equals(b) is : a != b"
+  "description" : "This rule detects when the equals(Object) method is called directly in code instead of using the == or != operator. A groovier way to express this: a.equals(b) is this: a == b and a groovier way to express : !a.equals(b) is : a != b",
+  "parameters" : [ {
+    "name" : "ignoreThisReference",
+    "description" : "ignoreThisReference"
+  } ]
 }, {
   "patternId" : "ExplicitCallToGetAtMethod",
   "title" : "ExplicitCallToGetAtMethod",
-  "description" : "This rule detects when the getAt(Object) method is called directly in code instead of using the [] index operator. A groovier way to express this: a.getAt(b) is this: a[b]"
+  "description" : "This rule detects when the getAt(Object) method is called directly in code instead of using the [] index operator. A groovier way to express this: a.getAt(b) is this: a[b]",
+  "parameters" : [ {
+    "name" : "ignoreThisReference",
+    "description" : "ignoreThisReference"
+  } ]
 }, {
   "patternId" : "ExplicitCallToLeftShiftMethod",
   "title" : "ExplicitCallToLeftShiftMethod",
-  "description" : "This rule detects when the leftShift(Object) method is called directly in code instead of using the << operator. A groovier way to express this: a.leftShift(b) is this: a << b"
+  "description" : "This rule detects when the leftShift(Object) method is called directly in code instead of using the << operator. A groovier way to express this: a.leftShift(b) is this: a << b",
+  "parameters" : [ {
+    "name" : "ignoreThisReference",
+    "description" : "ignoreThisReference"
+  } ]
 }, {
   "patternId" : "ExplicitCallToMinusMethod",
   "title" : "ExplicitCallToMinusMethod",
-  "description" : "This rule detects when the minus(Object) method is called directly in code instead of using the - operator. A groovier way to express this: a.minus(b) is this: a - b"
+  "description" : "This rule detects when the minus(Object) method is called directly in code instead of using the - operator. A groovier way to express this: a.minus(b) is this: a - b",
+  "parameters" : [ {
+    "name" : "ignoreThisReference",
+    "description" : "ignoreThisReference"
+  } ]
 }, {
   "patternId" : "ExplicitCallToModMethod",
   "title" : "ExplicitCallToModMethod",
-  "description" : "This rule detects when the mod(Object) method is called directly in code instead of using the % operator. A groovier way to express this: a.mod(b) is this: a % b"
+  "description" : "This rule detects when the mod(Object) method is called directly in code instead of using the % operator. A groovier way to express this: a.mod(b) is this: a % b",
+  "parameters" : [ {
+    "name" : "ignoreThisReference",
+    "description" : "ignoreThisReference"
+  } ]
 }, {
   "patternId" : "ExplicitCallToMultiplyMethod",
   "title" : "ExplicitCallToMultiplyMethod",
-  "description" : "This rule detects when the minus(Object) method is called directly in code instead of using the * operator. A groovier way to express this: a.multiply(b) is this: a * b"
+  "description" : "This rule detects when the minus(Object) method is called directly in code instead of using the * operator. A groovier way to express this: a.multiply(b) is this: a * b",
+  "parameters" : [ {
+    "name" : "ignoreThisReference",
+    "description" : "ignoreThisReference"
+  } ]
 }, {
   "patternId" : "ExplicitCallToOrMethod",
   "title" : "ExplicitCallToOrMethod",
-  "description" : "This rule detects when the or(Object) method is called directly in code instead of using the | operator. A groovier way to express this: a.or(b) is this: a | b"
+  "description" : "This rule detects when the or(Object) method is called directly in code instead of using the | operator. A groovier way to express this: a.or(b) is this: a | b",
+  "parameters" : [ {
+    "name" : "ignoreThisReference",
+    "description" : "ignoreThisReference"
+  } ]
 }, {
   "patternId" : "ExplicitCallToPlusMethod",
   "title" : "ExplicitCallToPlusMethod",
-  "description" : "This rule detects when the plus(Object) method is called directly in code instead of using the + operator. A groovier way to express this: a.plus(b) is this: a + b"
+  "description" : "This rule detects when the plus(Object) method is called directly in code instead of using the + operator. A groovier way to express this: a.plus(b) is this: a + b",
+  "parameters" : [ {
+    "name" : "ignoreThisReference",
+    "description" : "ignoreThisReference"
+  } ]
 }, {
   "patternId" : "ExplicitCallToPowerMethod",
   "title" : "ExplicitCallToPowerMethod",
-  "description" : "This rule detects when the power(Object) method is called directly in code instead of using the ** operator. A groovier way to express this: a.power(b) is this: a ** b"
+  "description" : "This rule detects when the power(Object) method is called directly in code instead of using the ** operator. A groovier way to express this: a.power(b) is this: a ** b",
+  "parameters" : [ {
+    "name" : "ignoreThisReference",
+    "description" : "ignoreThisReference"
+  } ]
 }, {
   "patternId" : "ExplicitCallToPutAtMethod",
   "title" : "ExplicitCallToPutAtMethod",
-  "description" : "Detects when the putAt(Object, Object) method is called directly in code instead of using the [] index operator. A groovier way to express this: map.putAt(k, v) is this: map[k] = v."
+  "description" : "Detects when the putAt(Object, Object) method is called directly in code instead of using the [] index operator. A groovier way to express this: map.putAt(k, v) is this: map[k] = v.",
+  "parameters" : [ {
+    "name" : "ignoreThisReference",
+    "description" : "ignoreThisReference"
+  } ]
 }, {
   "patternId" : "ExplicitCallToRightShiftMethod",
   "title" : "ExplicitCallToRightShiftMethod",
-  "description" : "This rule detects when the rightShift(Object) method is called directly in code instead of using the >> operator. A groovier way to express this: a.rightShift(b) is this: a >> b"
+  "description" : "This rule detects when the rightShift(Object) method is called directly in code instead of using the >> operator. A groovier way to express this: a.rightShift(b) is this: a >> b",
+  "parameters" : [ {
+    "name" : "ignoreThisReference",
+    "description" : "ignoreThisReference"
+  } ]
 }, {
   "patternId" : "ExplicitCallToXorMethod",
   "title" : "ExplicitCallToXorMethod",
-  "description" : "This rule detects when the xor(Object) method is called directly in code instead of using the ^ operator. A groovier way to express this: a.xor(b) is this: a ^ b"
+  "description" : "This rule detects when the xor(Object) method is called directly in code instead of using the ^ operator. A groovier way to express this: a.xor(b) is this: a ^ b",
+  "parameters" : [ {
+    "name" : "ignoreThisReference",
+    "description" : "ignoreThisReference"
+  } ]
 }, {
   "patternId" : "ExplicitHashMapInstantiation",
   "title" : "ExplicitHashMapInstantiation",
@@ -1177,7 +1362,11 @@
 }, {
   "patternId" : "GetterMethodCouldBeProperty",
   "title" : "GetterMethodCouldBeProperty",
-  "description" : "If a class defines a public method that follows the Java getter notation, and returns a constant, then it is cleaner to provide a Groovy property for the value rather than a Groovy method."
+  "description" : "If a class defines a public method that follows the Java getter notation, and returns a constant, then it is cleaner to provide a Groovy property for the value rather than a Groovy method.",
+  "parameters" : [ {
+    "name" : "ignoreMethodsWithOverrideAnnotation",
+    "description" : "ignoreMethodsWithOverrideAnnotation"
+  } ]
 }, {
   "patternId" : "GroovyLangImmutable",
   "title" : "GroovyLangImmutable",
@@ -1426,6 +1615,9 @@
   "parameters" : [ {
     "name" : "applyToClassNames",
     "description" : "applyToClassNames"
+  }, {
+    "name" : "checkAssertStatements",
+    "description" : "checkAssertStatements"
   } ]
 }, {
   "patternId" : "UseAssertTrueInsteadOfNegation",
@@ -1438,11 +1630,22 @@
 }, {
   "patternId" : "LoggerForDifferentClass",
   "title" : "LoggerForDifferentClass",
-  "description" : "Checks for instantiating a logger (Log4J, SLF4J, Logback, Apache Commons Logging or Java Util Logging) for a class other than the current class."
+  "description" : "Checks for instantiating a logger (Log4J, SLF4J, Logback, Apache Commons Logging or Java Util Logging) for a class other than the current class.",
+  "parameters" : [ {
+    "name" : "allowDerivedClasses",
+    "description" : "allowDerivedClasses"
+  } ]
 }, {
   "patternId" : "LoggerWithWrongModifiers",
   "title" : "LoggerWithWrongModifiers",
-  "description" : "Logger objects should be declared private, static and final. If subclasses should have access to a Logger in a parent class then the Logger should be declared protected, non-static and final. This rule find loggers that are not declared with these modifiers."
+  "description" : "Logger objects should be declared private, static and final. If subclasses should have access to a Logger in a parent class then the Logger should be declared protected, non-static and final. This rule find loggers that are not declared with these modifiers.",
+  "parameters" : [ {
+    "name" : "allowProtectedLogger",
+    "description" : "allowProtectedLogger"
+  }, {
+    "name" : "allowNonStaticLogger",
+    "description" : "allowNonStaticLogger"
+  } ]
 }, {
   "patternId" : "LoggingSwallowsStacktrace",
   "title" : "LoggingSwallowsStacktrace",
@@ -1560,6 +1763,9 @@
   "parameters" : [ {
     "name" : "regex",
     "description" : "regex"
+  }, {
+    "name" : "packageNameRequired",
+    "description" : "packageNameRequired"
   } ]
 }, {
   "patternId" : "PackageNameMatchesFilePath",
@@ -1767,6 +1973,9 @@
   "parameters" : [ {
     "name" : "maxParameters",
     "description" : "maxParameters"
+  }, {
+    "name" : "ignoreOverriddenMethods",
+    "description" : "ignoreOverriddenMethods"
   } ]
 }, {
   "patternId" : "AddEmptyString",
@@ -1823,7 +2032,11 @@
 }, {
   "patternId" : "UnnecessaryConstructor",
   "title" : "UnnecessaryConstructor",
-  "description" : "This rule detects when a constructor is not necessary; i.e., when there's only one constructor, it's public, has an empty body, and takes no arguments."
+  "description" : "This rule detects when a constructor is not necessary; i.e., when there's only one constructor, it's public, has an empty body, and takes no arguments.",
+  "parameters" : [ {
+    "name" : "ignoreAnnotations",
+    "description" : "ignoreAnnotations"
+  } ]
 }, {
   "patternId" : "UnnecessaryDefInFieldDeclaration",
   "title" : "UnnecessaryDefInFieldDeclaration",
@@ -1867,11 +2080,18 @@
   "parameters" : [ {
     "name" : "ignoreMethodNames",
     "description" : "ignoreMethodNames"
+  }, {
+    "name" : "checkIsMethods",
+    "description" : "checkIsMethods"
   } ]
 }, {
   "patternId" : "UnnecessaryIfStatement",
   "title" : "UnnecessaryIfStatement",
-  "description" : "Checks for if statements where the if and else blocks (or subsequent fall-through to a return), are merely returning true and false constants. These cases can be replaced by a simple return statement."
+  "description" : "Checks for if statements where the if and else blocks (or subsequent fall-through to a return), are merely returning true and false constants. These cases can be replaced by a simple return statement.",
+  "parameters" : [ {
+    "name" : "checkLastStatementImplicitElse",
+    "description" : "checkLastStatementImplicitElse"
+  } ]
 }, {
   "patternId" : "UnnecessaryInstanceOfCheck",
   "title" : "UnnecessaryInstanceOfCheck",
@@ -1939,11 +2159,7 @@
 }, {
   "patternId" : "UnnecessarySemicolon",
   "title" : "UnnecessarySemicolon",
-  "description" : "Semicolons as line terminators are not required in Groovy: remove them. Do not use a semicolon as a replacement for empty braces on for and while loops; this is a confusing practice.",
-  "parameters" : [ {
-    "name" : "excludePattern",
-    "description" : "excludePattern"
-  } ]
+  "description" : "Semicolons as line terminators are not required in Groovy: remove them. Do not use a semicolon as a replacement for empty braces on for and while loops; this is a confusing practice."
 }, {
   "patternId" : "UnnecessarySetter",
   "title" : "UnnecessarySetter",
@@ -1963,7 +2179,11 @@
 }, {
   "patternId" : "UnnecessaryToString",
   "title" : "UnnecessaryToString",
-  "description" : "Checks for unnecessary calls to toString()."
+  "description" : "Checks for unnecessary calls to toString().",
+  "parameters" : [ {
+    "name" : "checkAssignments",
+    "description" : "checkAssignments"
+  } ]
 }, {
   "patternId" : "UnnecessaryTransientModifier",
   "title" : "UnnecessaryTransientModifier",
