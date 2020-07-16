@@ -66,11 +66,13 @@ object DocGenerator {
     * Convert from list of parameters to Parameter.Specification list
     */
   def parameterSpecificationFromParametersStringList(
-      parameters: Option[Map[String, Option[JsValue]]]
+      parameters: Option[Map[String, JsValue]]
   ): Option[Set[Parameter.Specification]] =
-    parameters.map(
-      paramList => paramList.map{ case (name, default) => Parameter.Specification(Parameter.Name(name), Parameter.Value(default.getOrElse(JsString("")))) }.toSet
-    )
+    parameters.map { paramList =>
+      paramList.map {
+        case (name, default) => Parameter.Specification(Parameter.Name(name), Parameter.Value(default))
+      }.toSet
+    }
 
   def parameterDescriptionFromParametersStringList(
       parameters: Option[Set[String]]
@@ -246,14 +248,14 @@ object DocGenerator {
     case _ => true
   }
 
-  private def getParameterDefault[T](classType: Class[T], value: Field): Option[JsValue] = {
+  private def getParameterDefault[T](classType: Class[T], value: Field): JsValue = {
     val instance = classType.newInstance()
     value.setAccessible(true)
     val t = value.getType()
-    if (t == classOf[Int]) Some(JsNumber(value.getInt(instance)))
-    else if (t == classOf[Boolean]) Some(JsBoolean(value.getBoolean(instance)))
-    else if (t == classOf[String]) Some(JsString(value.get(instance).asInstanceOf[String]))
-    else None
+    if (t == classOf[Int]) JsNumber(value.getInt(instance))
+    else if (t == classOf[Boolean]) JsBoolean(value.getBoolean(instance))
+    else if (t == classOf[String]) JsString(value.get(instance).asInstanceOf[String])
+    else throw new Exception(s"No default for $classType / $value")
   }
 
   private def getParametersFromType[T](classType: Class[T]) = {
@@ -270,7 +272,7 @@ object DocGenerator {
   def ruleImplementationClass(ruleName: String): Option[Class[_ <: AbstractAstVisitorRule]] =
     subTypes.find(isRuleImplementedBy(ruleName, _))
 
-  def getRuleParameters(ruleName: String): Option[Map[String, Option[JsValue]]] = {
+  def getRuleParameters(ruleName: String): Option[Map[String, JsValue]] = {
     val ruleClassImplementation = ruleImplementationClass(ruleName)
 
     ruleClassImplementation
