@@ -29,5 +29,10 @@ names ending in ‘Spec.groovy’, ‘Test.groovy’, ‘Tests.groovy’ or
 <td>The optional comma-separated list of Strings that should be ignored (i.e., not cause a violation).</td>
 <td><code>''</code> (empty string)</td>
 </tr>
+<tr class="even">
+<td>ignoreStringsDelimiter</td>
+<td>The delimiter char for <code>ignoreStrings</code>.</td>
+<td><code>,</code> (comma)</td>
+</tr>
 </tbody>
 </table>

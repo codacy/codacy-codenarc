@@ -1,22 +1,22 @@
 {
   "name" : "codenarc",
-  "version" : "1.5",
+  "version" : "1.6",
   "patterns" : [ {
     "patternId" : "AbcMetric",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "maxMethodAbcScore",
-      "default" : ""
+      "default" : 60
     }, {
       "name" : "maxClassAverageMethodAbcScore",
-      "default" : ""
+      "default" : 60
     }, {
       "name" : "maxClassAbcScore",
-      "default" : ""
+      "default" : 0
     }, {
       "name" : "ignoreMethodNames",
-      "default" : ""
+      "default" : null
     } ]
   }, {
     "patternId" : "AbstractClassName",
@@ -24,7 +24,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "regex",
-      "default" : ""
+      "default" : null
     } ]
   }, {
     "patternId" : "AbstractClassWithPublicConstructor",
@@ -93,19 +93,44 @@
   }, {
     "patternId" : "BracesForForLoop",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "sameLine",
+      "default" : true
+    } ]
   }, {
     "patternId" : "BracesForIfElse",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "sameLine",
+      "default" : true
+    }, {
+      "name" : "validateElse",
+      "default" : false
+    } ]
   }, {
     "patternId" : "BracesForMethod",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "sameLine",
+      "default" : true
+    } ]
   }, {
     "patternId" : "BracesForTryCatchFinally",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "sameLine",
+      "default" : true
+    }, {
+      "name" : "validateCatch",
+      "default" : false
+    }, {
+      "name" : "validateFinally",
+      "default" : false
+    } ]
   }, {
     "patternId" : "BrokenNullCheck",
     "level" : "Warning",
@@ -120,7 +145,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "methodNameRegex",
-      "default" : ""
+      "default" : "(create.*|make.*|build.*)"
     } ]
   }, {
     "patternId" : "BusyWait",
@@ -164,12 +189,22 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToClassNames",
-      "default" : ""
+      "default" : "*Spec,*Test,*Tests,*TestCase"
     } ]
   }, {
     "patternId" : "ClassEndsWithBlankLine",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreSingleLineClasses",
+      "default" : true
+    }, {
+      "name" : "ignoreInnerClasses",
+      "default" : false
+    }, {
+      "name" : "blankLineRequired",
+      "default" : true
+    } ]
   }, {
     "patternId" : "ClassForName",
     "level" : "Warning",
@@ -184,7 +219,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "regex",
-      "default" : ""
+      "default" : "([A-Z]\\w*\\$?)*"
     } ]
   }, {
     "patternId" : "ClassNameSameAsFilename",
@@ -200,19 +235,29 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "maxLines",
-      "default" : ""
+      "default" : 1000
     } ]
   }, {
     "patternId" : "ClassStartsWithBlankLine",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreSingleLineClasses",
+      "default" : true
+    }, {
+      "name" : "ignoreInnerClasses",
+      "default" : false
+    }, {
+      "name" : "blankLineRequired",
+      "default" : true
+    } ]
   }, {
     "patternId" : "CloneWithoutCloneable",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "compilerPhase",
-      "default" : ""
+      "default" : 4
     } ]
   }, {
     "patternId" : "CloneableWithoutClone",
@@ -304,7 +349,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "errorMessage",
-      "default" : ""
+      "default" : "Code could use switch statement"
     } ]
   }, {
     "patternId" : "CoupledTestCase",
@@ -312,7 +357,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToClassNames",
-      "default" : ""
+      "default" : "*Spec,*Test,*Tests,*TestCase"
     } ]
   }, {
     "patternId" : "CrapMetric",
@@ -320,13 +365,13 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "coberturaXmlFile",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "ignoreMethodNames",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "crapMetricClassName",
-      "default" : ""
+      "default" : "org.gmetrics.metric.crap.CrapMetric"
     } ]
   }, {
     "patternId" : "CyclomaticComplexity",
@@ -334,16 +379,16 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "maxMethodComplexity",
-      "default" : ""
+      "default" : 20
     }, {
       "name" : "maxClassComplexity",
-      "default" : ""
+      "default" : 0
     }, {
       "name" : "maxClassAverageMethodComplexity",
-      "default" : ""
+      "default" : 20
     }, {
       "name" : "ignoreMethodNames",
-      "default" : ""
+      "default" : null
     } ]
   }, {
     "patternId" : "DeadCode",
@@ -375,7 +420,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "doNotApplyToFilesMatching",
-      "default" : ""
+      "default" : ".*(Spec|Test|Tests|TestCase)\\.groovy"
     } ]
   }, {
     "patternId" : "DuplicateMapKey",
@@ -387,7 +432,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "doNotApplyToFilesMatching",
-      "default" : ""
+      "default" : ".*(Spec|Test|Tests|TestCase)\\.groovy"
     } ]
   }, {
     "patternId" : "DuplicateNumberLiteral",
@@ -395,10 +440,10 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "doNotApplyToFilesMatching",
-      "default" : ""
+      "default" : ".*(Spec|Test|Tests|TestCase)\\.groovy"
     }, {
       "name" : "ignoreNumbers",
-      "default" : ""
+      "default" : "0,1"
     } ]
   }, {
     "patternId" : "DuplicateSetValue",
@@ -410,7 +455,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "doNotApplyToFilesMatching",
-      "default" : ""
+      "default" : ".*(Spec|Test|Tests|TestCase)\\.groovy"
     }, {
       "name" : "ignoreStrings",
       "default" : ""
@@ -418,14 +463,18 @@
   }, {
     "patternId" : "ElseBlockBraces",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "bracesRequiredForElseIf",
+      "default" : false
+    } ]
   }, {
     "patternId" : "EmptyCatchBlock",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "ignoreRegex",
-      "default" : ""
+      "default" : "ignore|ignored"
     } ]
   }, {
     "patternId" : "EmptyClass",
@@ -510,63 +559,123 @@
   }, {
     "patternId" : "ExplicitCallToAndMethod",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreThisReference",
+      "default" : true
+    } ]
   }, {
     "patternId" : "ExplicitCallToCompareToMethod",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreThisReference",
+      "default" : false
+    } ]
   }, {
     "patternId" : "ExplicitCallToDivMethod",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreThisReference",
+      "default" : false
+    } ]
   }, {
     "patternId" : "ExplicitCallToEqualsMethod",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreThisReference",
+      "default" : false
+    } ]
   }, {
     "patternId" : "ExplicitCallToGetAtMethod",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreThisReference",
+      "default" : false
+    } ]
   }, {
     "patternId" : "ExplicitCallToLeftShiftMethod",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreThisReference",
+      "default" : false
+    } ]
   }, {
     "patternId" : "ExplicitCallToMinusMethod",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreThisReference",
+      "default" : false
+    } ]
   }, {
     "patternId" : "ExplicitCallToModMethod",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreThisReference",
+      "default" : false
+    } ]
   }, {
     "patternId" : "ExplicitCallToMultiplyMethod",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreThisReference",
+      "default" : false
+    } ]
   }, {
     "patternId" : "ExplicitCallToOrMethod",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreThisReference",
+      "default" : true
+    } ]
   }, {
     "patternId" : "ExplicitCallToPlusMethod",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreThisReference",
+      "default" : false
+    } ]
   }, {
     "patternId" : "ExplicitCallToPowerMethod",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreThisReference",
+      "default" : false
+    } ]
   }, {
     "patternId" : "ExplicitCallToPutAtMethod",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreThisReference",
+      "default" : false
+    } ]
   }, {
     "patternId" : "ExplicitCallToRightShiftMethod",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreThisReference",
+      "default" : false
+    } ]
   }, {
     "patternId" : "ExplicitCallToXorMethod",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreThisReference",
+      "default" : false
+    } ]
   }, {
     "patternId" : "ExplicitGarbageCollection",
     "level" : "Warning",
@@ -601,7 +710,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "regex",
-      "default" : ""
+      "default" : "(build.*|create.*)"
     } ]
   }, {
     "patternId" : "FieldName",
@@ -609,22 +718,22 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "staticRegex",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "ignoreFieldNames",
-      "default" : ""
-    }, {
-      "name" : "finalRegex",
-      "default" : ""
+      "default" : "serialVersionUID"
     }, {
       "name" : "staticFinalRegex",
-      "default" : ""
+      "default" : "[A-Z][A-Z0-9_]*"
+    }, {
+      "name" : "finalRegex",
+      "default" : null
     }, {
       "name" : "privateStaticFinalRegex",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "regex",
-      "default" : ""
+      "default" : "[a-z][a-zA-Z0-9]*"
     } ]
   }, {
     "patternId" : "FieldTypeRequired",
@@ -632,7 +741,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "ignoreFieldNames",
-      "default" : ""
+      "default" : null
     } ]
   }, {
     "patternId" : "FileCreateTempFile",
@@ -641,7 +750,7 @@
     "subcategory" : "InsecureModulesLibraries",
     "parameters" : [ {
       "name" : "doNotApplyToFilesMatching",
-      "default" : ""
+      "default" : ".*(Spec|Test|Tests|TestCase)\\.groovy"
     } ]
   }, {
     "patternId" : "FileEndsWithoutNewline",
@@ -670,14 +779,26 @@
   }, {
     "patternId" : "GetterMethodCouldBeProperty",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreMethodsWithOverrideAnnotation",
+      "default" : false
+    } ]
+  }, {
+    "patternId" : "GrailsDomainGormMethods",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "compilerPhase",
+      "default" : 4
+    } ]
   }, {
     "patternId" : "GrailsDomainHasEquals",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToFilesMatching",
-      "default" : ""
+      "default" : ".*grails-app/domain/.*"
     } ]
   }, {
     "patternId" : "GrailsDomainHasToString",
@@ -685,7 +806,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToFilesMatching",
-      "default" : ""
+      "default" : ".*grails-app/domain/.*"
     } ]
   }, {
     "patternId" : "GrailsDomainReservedSqlKeywordName",
@@ -693,7 +814,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToFilesMatching",
-      "default" : ""
+      "default" : ".*grails-app/domain/.*"
     }, {
       "name" : "additionalReservedSqlKeywords",
       "default" : ""
@@ -707,7 +828,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToFilesMatching",
-      "default" : ""
+      "default" : ".*grails-app/domain/.*"
     } ]
   }, {
     "patternId" : "GrailsDomainWithServiceReference",
@@ -715,7 +836,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToFilesMatching",
-      "default" : ""
+      "default" : ".*grails-app/domain/.*"
     } ]
   }, {
     "patternId" : "GrailsDuplicateConstraint",
@@ -723,7 +844,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToFilesMatching",
-      "default" : ""
+      "default" : ".*grails-app/domain/.*"
     } ]
   }, {
     "patternId" : "GrailsDuplicateMapping",
@@ -731,7 +852,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToFilesMatching",
-      "default" : ""
+      "default" : ".*grails-app/domain/.*"
     } ]
   }, {
     "patternId" : "GrailsMassAssignment",
@@ -743,13 +864,13 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "ignoreMethodNames",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "applyToFilesMatching",
-      "default" : ""
+      "default" : ".*grails-app/controllers/.*"
     }, {
       "name" : "applyToClassNames",
-      "default" : ""
+      "default" : "*Controller"
     } ]
   }, {
     "patternId" : "GrailsServletContextReference",
@@ -757,7 +878,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToFilesMatching",
-      "default" : ""
+      "default" : ".*grails-app/(controllers|taglib)/.*"
     } ]
   }, {
     "patternId" : "GrailsStatelessService",
@@ -765,10 +886,10 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToFilesMatching",
-      "default" : ""
+      "default" : ".*grails-app/services/.*"
     }, {
       "name" : "applyToClassNames",
-      "default" : ""
+      "default" : "*Service"
     } ]
   }, {
     "patternId" : "GroovyLangImmutable",
@@ -793,35 +914,39 @@
   }, {
     "patternId" : "IfStatementCouldBeTernary",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "checkLastStatementImplicitElse",
+      "default" : true
+    } ]
   }, {
     "patternId" : "IllegalClassMember",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "illegalPropertyModifiersString",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "allowedMethodModifiersString",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "ignoreMethodNames",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "illegalMethodModifiersString",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "illegalFieldModifiersString",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "allowedFieldModifiersString",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "allowedPropertyModifiersString",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "ignoreMethodsWithAnnotationNames",
-      "default" : ""
+      "default" : null
     } ]
   }, {
     "patternId" : "IllegalClassReference",
@@ -829,7 +954,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "classNames",
-      "default" : ""
+      "default" : null
     } ]
   }, {
     "patternId" : "IllegalPackageReference",
@@ -837,7 +962,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "packageNames",
-      "default" : ""
+      "default" : null
     } ]
   }, {
     "patternId" : "IllegalRegex",
@@ -853,7 +978,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "superclassNames",
-      "default" : ""
+      "default" : null
     } ]
   }, {
     "patternId" : "ImplementationAsType",
@@ -861,6 +986,14 @@
     "category" : "CodeStyle"
   }, {
     "patternId" : "ImplicitClosureParameter",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "allowUsingItAsParameterName",
+      "default" : false
+    } ]
+  }, {
+    "patternId" : "ImplicitReturnStatement",
     "level" : "Info",
     "category" : "CodeStyle"
   }, {
@@ -885,7 +1018,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "spacesPerIndentLevel",
-      "default" : ""
+      "default" : 4
     } ]
   }, {
     "patternId" : "InsecureRandom",
@@ -894,7 +1027,7 @@
     "subcategory" : "Cryptography",
     "parameters" : [ {
       "name" : "doNotApplyToFilesMatching",
-      "default" : ""
+      "default" : ".*(Spec|Test|Tests|TestCase)\\.groovy"
     } ]
   }, {
     "patternId" : "Instanceof",
@@ -902,10 +1035,10 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "doNotApplyToFilesMatching",
-      "default" : ""
+      "default" : ".*(Spec|Test|Tests|TestCase)\\.groovy"
     }, {
       "name" : "ignoreTypeNames",
-      "default" : ""
+      "default" : "*Exception"
     } ]
   }, {
     "patternId" : "IntegerGetInteger",
@@ -917,7 +1050,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "regex",
-      "default" : ""
+      "default" : null
     } ]
   }, {
     "patternId" : "InterfaceNameSameAsSuperInterface",
@@ -937,7 +1070,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToClassNames",
-      "default" : ""
+      "default" : "*Spec,*Test,*Tests,*TestCase"
     } ]
   }, {
     "patternId" : "JUnitAssertAlwaysSucceeds",
@@ -945,7 +1078,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToClassNames",
-      "default" : ""
+      "default" : "*Spec,*Test,*Tests,*TestCase"
     } ]
   }, {
     "patternId" : "JUnitAssertEqualsConstantActualValue",
@@ -953,10 +1086,10 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToFilesMatching",
-      "default" : ""
+      "default" : ".*(Spec|Test|Tests|TestCase)\\.groovy"
     }, {
       "name" : "compilerPhase",
-      "default" : ""
+      "default" : 4
     } ]
   }, {
     "patternId" : "JUnitFailWithoutMessage",
@@ -964,7 +1097,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToClassNames",
-      "default" : ""
+      "default" : "*Spec,*Test,*Tests,*TestCase"
     } ]
   }, {
     "patternId" : "JUnitLostTest",
@@ -972,7 +1105,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToClassNames",
-      "default" : ""
+      "default" : "*Spec,*Test,*Tests,*TestCase"
     } ]
   }, {
     "patternId" : "JUnitPublicField",
@@ -980,7 +1113,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToClassNames",
-      "default" : ""
+      "default" : "*Spec,*Test,*Tests,*TestCase"
     } ]
   }, {
     "patternId" : "JUnitPublicNonTestMethod",
@@ -988,7 +1121,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToClassNames",
-      "default" : ""
+      "default" : "*Spec,*Test,*Tests,*TestCase"
     } ]
   }, {
     "patternId" : "JUnitPublicProperty",
@@ -996,10 +1129,10 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToClassNames",
-      "default" : ""
+      "default" : "*Spec,*Test,*Tests,*TestCase"
     }, {
       "name" : "ignorePropertyNames",
-      "default" : ""
+      "default" : null
     } ]
   }, {
     "patternId" : "JUnitSetUpCallsSuper",
@@ -1007,7 +1140,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToClassNames",
-      "default" : ""
+      "default" : "*Spec,*Test,*Tests,*TestCase"
     } ]
   }, {
     "patternId" : "JUnitStyleAssertions",
@@ -1015,7 +1148,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToClassNames",
-      "default" : ""
+      "default" : "*Spec,*Test,*Tests,*TestCase"
     } ]
   }, {
     "patternId" : "JUnitTearDownCallsSuper",
@@ -1023,7 +1156,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToClassNames",
-      "default" : ""
+      "default" : "*Spec,*Test,*Tests,*TestCase"
     } ]
   }, {
     "patternId" : "JUnitTestMethodWithoutAssert",
@@ -1031,10 +1164,10 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "assertMethodPatterns",
-      "default" : ""
+      "default" : "assert.*,should.*,fail.*,verify.*,expect.*"
     }, {
       "name" : "applyToClassNames",
-      "default" : ""
+      "default" : "*Spec,*Test,*Tests,*TestCase"
     } ]
   }, {
     "patternId" : "JUnitUnnecessarySetUp",
@@ -1042,7 +1175,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToClassNames",
-      "default" : ""
+      "default" : "*Spec,*Test,*Tests,*TestCase"
     } ]
   }, {
     "patternId" : "JUnitUnnecessaryTearDown",
@@ -1050,7 +1183,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToClassNames",
-      "default" : ""
+      "default" : "*Spec,*Test,*Tests,*TestCase"
     } ]
   }, {
     "patternId" : "JUnitUnnecessaryThrowsException",
@@ -1058,7 +1191,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToClassNames",
-      "default" : ""
+      "default" : "*Spec,*Test,*Tests,*TestCase"
     } ]
   }, {
     "patternId" : "JavaIoPackageAccess",
@@ -1067,7 +1200,7 @@
     "subcategory" : "FileAccess",
     "parameters" : [ {
       "name" : "doNotApplyToFilesMatching",
-      "default" : ""
+      "default" : ".*(Spec|Test|Tests|TestCase)\\.groovy"
     } ]
   }, {
     "patternId" : "JavadocConsecutiveEmptyLines",
@@ -1143,10 +1276,16 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "length",
-      "default" : ""
+      "default" : 120
+    }, {
+      "name" : "ignoreImportStatements",
+      "default" : true
+    }, {
+      "name" : "ignorePackageStatements",
+      "default" : true
     }, {
       "name" : "ignoreLineRegex",
-      "default" : ""
+      "default" : null
     } ]
   }, {
     "patternId" : "LocaleSetDefault",
@@ -1155,11 +1294,22 @@
   }, {
     "patternId" : "LoggerForDifferentClass",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "allowDerivedClasses",
+      "default" : false
+    } ]
   }, {
     "patternId" : "LoggerWithWrongModifiers",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "allowProtectedLogger",
+      "default" : false
+    }, {
+      "name" : "allowNonStaticLogger",
+      "default" : false
+    } ]
   }, {
     "patternId" : "LoggingSwallowsStacktrace",
     "level" : "Warning",
@@ -1174,7 +1324,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "maxMethods",
-      "default" : ""
+      "default" : 30
     } ]
   }, {
     "patternId" : "MethodName",
@@ -1182,29 +1332,37 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "regex",
-      "default" : ""
+      "default" : "[a-z]\\w*"
     }, {
       "name" : "ignoreMethodNames",
-      "default" : ""
+      "default" : null
     } ]
   }, {
     "patternId" : "MethodParameterTypeRequired",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreMethodParameterNames",
+      "default" : ""
+    } ]
   }, {
     "patternId" : "MethodReturnTypeRequired",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreMethodNames",
+      "default" : ""
+    } ]
   }, {
     "patternId" : "MethodSize",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "maxLines",
-      "default" : ""
+      "default" : 100
     }, {
       "name" : "ignoreMethodNames",
-      "default" : ""
+      "default" : null
     } ]
   }, {
     "patternId" : "MisorderedStaticImports",
@@ -1228,7 +1386,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "compilerPhase",
-      "default" : ""
+      "default" : 4
     } ]
   }, {
     "patternId" : "MultipleLoggers",
@@ -1244,10 +1402,10 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "maxNestedBlockDepth",
-      "default" : ""
+      "default" : 5
     }, {
       "name" : "ignoreRegex",
-      "default" : ""
+      "default" : ".*(b|B)uilder"
     } ]
   }, {
     "patternId" : "NestedForLoop",
@@ -1305,7 +1463,10 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "regex",
-      "default" : ""
+      "default" : "[a-z]+[a-z0-9]*(\\.[a-z0-9]+)*"
+    }, {
+      "name" : "packageNameRequired",
+      "default" : false
     } ]
   }, {
     "patternId" : "PackageNameMatchesFilePath",
@@ -1317,7 +1478,10 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "maxParameters",
-      "default" : ""
+      "default" : 5
+    }, {
+      "name" : "ignoreOverriddenMethods",
+      "default" : true
     } ]
   }, {
     "patternId" : "ParameterName",
@@ -1325,10 +1489,10 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "regex",
-      "default" : ""
+      "default" : "[a-z][a-zA-Z0-9]*"
     }, {
       "name" : "ignoreParameterNames",
-      "default" : ""
+      "default" : null
     } ]
   }, {
     "patternId" : "ParameterReassignment",
@@ -1348,7 +1512,10 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "ignoreFieldNames",
-      "default" : ""
+      "default" : null
+    }, {
+      "name" : "ignoreJpaEntities",
+      "default" : false
     } ]
   }, {
     "patternId" : "PropertyName",
@@ -1356,19 +1523,19 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "staticRegex",
-      "default" : ""
-    }, {
-      "name" : "ignorePropertyNames",
-      "default" : ""
-    }, {
-      "name" : "finalRegex",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "staticFinalRegex",
-      "default" : ""
+      "default" : "[A-Z][A-Z0-9_]*"
+    }, {
+      "name" : "ignorePropertyNames",
+      "default" : null
+    }, {
+      "name" : "finalRegex",
+      "default" : null
     }, {
       "name" : "regex",
-      "default" : ""
+      "default" : "[a-z][a-zA-Z0-9]*"
     } ]
   }, {
     "patternId" : "PublicFinalizeMethod",
@@ -1438,7 +1605,11 @@
   }, {
     "patternId" : "SpaceAfterClosingBrace",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "checkClosureMapEntryValue",
+      "default" : true
+    } ]
   }, {
     "patternId" : "SpaceAfterComma",
     "level" : "Info",
@@ -1454,7 +1625,14 @@
   }, {
     "patternId" : "SpaceAfterOpeningBrace",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "checkClosureMapEntryValue",
+      "default" : true
+    }, {
+      "name" : "ignoreEmptyBlock",
+      "default" : false
+    } ]
   }, {
     "patternId" : "SpaceAfterSemicolon",
     "level" : "Info",
@@ -1477,33 +1655,48 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "characterBeforeColonRegex",
-      "default" : ""
+      "default" : "\\S"
     }, {
       "name" : "characterAfterColonRegex",
-      "default" : ""
+      "default" : "\\S"
     } ]
   }, {
     "patternId" : "SpaceAroundOperator",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreParameterDefaultValueAssignments",
+      "default" : true
+    } ]
   }, {
     "patternId" : "SpaceBeforeClosingBrace",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "checkClosureMapEntryValue",
+      "default" : true
+    }, {
+      "name" : "ignoreEmptyBlock",
+      "default" : false
+    } ]
   }, {
     "patternId" : "SpaceBeforeOpeningBrace",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "checkClosureMapEntryValue",
+      "default" : true
+    } ]
   }, {
     "patternId" : "SpockIgnoreRestUsed",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "specificationSuperclassNames",
-      "default" : ""
+      "default" : "*Specification"
     }, {
       "name" : "specificationClassNames",
-      "default" : ""
+      "default" : null
     } ]
   }, {
     "patternId" : "StatelessClass",
@@ -1511,10 +1704,10 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "ignoreFieldNames",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "ignoreFieldTypes",
-      "default" : ""
+      "default" : null
     } ]
   }, {
     "patternId" : "StatelessSingleton",
@@ -1522,7 +1715,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "instanceRegex",
-      "default" : ""
+      "default" : "instance|_instance"
     } ]
   }, {
     "patternId" : "StaticCalendarField",
@@ -1652,7 +1845,20 @@
   }, {
     "patternId" : "TrailingComma",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "checkList",
+      "default" : true
+    }, {
+      "name" : "checkMap",
+      "default" : true
+    }, {
+      "name" : "ignoreSingleElementList",
+      "default" : true
+    }, {
+      "name" : "ignoreSingleElementMap",
+      "default" : true
+    } ]
   }, {
     "patternId" : "TrailingWhitespace",
     "level" : "Info",
@@ -1700,7 +1906,11 @@
   }, {
     "patternId" : "UnnecessaryConstructor",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreAnnotations",
+      "default" : false
+    } ]
   }, {
     "patternId" : "UnnecessaryDefInFieldDeclaration",
     "level" : "Info",
@@ -1731,7 +1941,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToClassNames",
-      "default" : ""
+      "default" : "*Spec,*Test,*Tests,*TestCase"
     } ]
   }, {
     "patternId" : "UnnecessaryFinalOnPrivateMethod",
@@ -1751,7 +1961,10 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "ignoreMethodNames",
-      "default" : ""
+      "default" : null
+    }, {
+      "name" : "checkIsMethods",
+      "default" : true
     } ]
   }, {
     "patternId" : "UnnecessaryGroovyImport",
@@ -1760,7 +1973,11 @@
   }, {
     "patternId" : "UnnecessaryIfStatement",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "checkLastStatementImplicitElse",
+      "default" : true
+    } ]
   }, {
     "patternId" : "UnnecessaryInstanceOfCheck",
     "level" : "Info",
@@ -1795,7 +2012,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "maxReferencesAllowed",
-      "default" : ""
+      "default" : 5
     } ]
   }, {
     "patternId" : "UnnecessaryOverridingMethod",
@@ -1828,11 +2045,7 @@
   }, {
     "patternId" : "UnnecessarySemicolon",
     "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "excludePattern",
-      "default" : ""
-    } ]
+    "category" : "CodeStyle"
   }, {
     "patternId" : "UnnecessarySetter",
     "level" : "Info",
@@ -1852,7 +2065,11 @@
   }, {
     "patternId" : "UnnecessaryToString",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "checkAssignments",
+      "default" : true
+    } ]
   }, {
     "patternId" : "UnnecessaryTransientModifier",
     "level" : "Info",
@@ -1868,10 +2085,10 @@
     "category" : "Security",
     "parameters" : [ {
       "name" : "compilerPhase",
-      "default" : ""
+      "default" : 4
     }, {
       "name" : "doNotApplyToFilesMatching",
-      "default" : ""
+      "default" : ".*(Spec|Test|Tests|TestCase)\\.groovy"
     } ]
   }, {
     "patternId" : "UnusedArray",
@@ -1887,10 +2104,10 @@
     "category" : "UnusedCode",
     "parameters" : [ {
       "name" : "ignoreRegex",
-      "default" : ""
+      "default" : "ignore|ignored"
     }, {
       "name" : "ignoreClassRegex",
-      "default" : ""
+      "default" : ".*Category"
     } ]
   }, {
     "patternId" : "UnusedObject",
@@ -1898,7 +2115,7 @@
     "category" : "UnusedCode",
     "parameters" : [ {
       "name" : "doNotApplyToFilesMatching",
-      "default" : ""
+      "default" : ".*(Spec|Test|Tests|TestCase)\\.groovy"
     } ]
   }, {
     "patternId" : "UnusedPrivateField",
@@ -1906,7 +2123,7 @@
     "category" : "UnusedCode",
     "parameters" : [ {
       "name" : "ignoreFieldNames",
-      "default" : ""
+      "default" : "serialVersionUID"
     } ]
   }, {
     "patternId" : "UnusedPrivateMethod",
@@ -1922,7 +2139,7 @@
     "category" : "UnusedCode",
     "parameters" : [ {
       "name" : "ignoreRegex",
-      "default" : ""
+      "default" : "ignore|ignored"
     } ]
   }, {
     "patternId" : "UnusedVariable",
@@ -1930,7 +2147,7 @@
     "category" : "UnusedCode",
     "parameters" : [ {
       "name" : "ignoreVariableNames",
-      "default" : ""
+      "default" : null
     } ]
   }, {
     "patternId" : "UseAssertEqualsInsteadOfAssertTrue",
@@ -1938,7 +2155,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToClassNames",
-      "default" : ""
+      "default" : "*Spec,*Test,*Tests,*TestCase"
     } ]
   }, {
     "patternId" : "UseAssertFalseInsteadOfNegation",
@@ -1946,7 +2163,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToClassNames",
-      "default" : ""
+      "default" : "*Spec,*Test,*Tests,*TestCase"
     } ]
   }, {
     "patternId" : "UseAssertNullInsteadOfAssertEquals",
@@ -1954,7 +2171,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToClassNames",
-      "default" : ""
+      "default" : "*Spec,*Test,*Tests,*TestCase"
     } ]
   }, {
     "patternId" : "UseAssertSameInsteadOfAssertTrue",
@@ -1962,7 +2179,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToClassNames",
-      "default" : ""
+      "default" : "*Spec,*Test,*Tests,*TestCase"
     } ]
   }, {
     "patternId" : "UseAssertTrueInsteadOfAssertEquals",
@@ -1970,7 +2187,10 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToClassNames",
-      "default" : ""
+      "default" : "*Spec,*Test,*Tests,*TestCase"
+    }, {
+      "name" : "checkAssertStatements",
+      "default" : false
     } ]
   }, {
     "patternId" : "UseAssertTrueInsteadOfNegation",
@@ -1978,7 +2198,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "applyToClassNames",
-      "default" : ""
+      "default" : "*Spec,*Test,*Tests,*TestCase"
     } ]
   }, {
     "patternId" : "UseCollectMany",
@@ -1998,13 +2218,13 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "regex",
-      "default" : ""
+      "default" : "[a-z][a-zA-Z0-9]*"
     }, {
       "name" : "finalRegex",
-      "default" : ""
+      "default" : "[A-Z][A-Z0-9_]*"
     }, {
       "name" : "ignoreVariableNames",
-      "default" : ""
+      "default" : null
     } ]
   }, {
     "patternId" : "VariableTypeRequired",
@@ -2012,7 +2232,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "ignoreVariableNames",
-      "default" : ""
+      "default" : null
     } ]
   }, {
     "patternId" : "VectorIsObsolete",

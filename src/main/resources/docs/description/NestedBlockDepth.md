@@ -45,7 +45,7 @@ objects are ignore. For instance, this code does not cause a violation:
 <tr class="even">
 <td>ignoreRegex</td>
 <td>Determines what is a builder call. For instance, closures nested on a method named createBuilder, a property named myBuilder, or a constructor call to object MyBuilder() do not produce violations.</td>
-<td>.*(b</td>
+<td>.*(b|B)uilder</td>
 </tr>
 </tbody>
 </table>

@@ -10,8 +10,8 @@ This rule also ignores all classes annotated with the `@Immutable`
 transformation. See
 <http://groovy.codehaus.org/Immutable+transformation>.
 
-This rule also ignores all fields annotated with the `@Inject`
-annotation.
+This rule also ignores all fields annotated with the `@Inject` or
+`@Value` annotations.
 
 You can configure this rule to ignore certain fields either by name or
 by type. This can be useful to ignore fields that hold references to
@@ -53,4 +53,6 @@ configuration.
 Note that you can use the standard rule properties, such as
 `applyToClassNames`, `doNotApplyToFileNames` and `applyToFilesMatching`
 to only apply this rule to a subset of all classes/files. These rule
-properties are described in zzz./codenarc-configuring-rules.htm
+properties are described in
+zzz./codenarc-configuring-rules.html\#standard-properties-for-configuring-rules}
+Standard Properties for Configuring Rulesyy.
