@@ -17,7 +17,9 @@
     }, {
       "name" : "ignoreMethodNames",
       "default" : null
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "AbstractClassName",
     "level" : "Warning",
@@ -25,71 +27,121 @@
     "parameters" : [ {
       "name" : "regex",
       "default" : null
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "AbstractClassWithPublicConstructor",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "AbstractClassWithoutAbstractMethod",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "AddEmptyString",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "AssertWithinFinallyBlock",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "AssignCollectionSort",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "AssignCollectionUnique",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "AssignmentInConditional",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "AssignmentToStaticFieldFromInstanceMethod",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "BigDecimalInstantiation",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "BitwiseOperatorInConditional",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "BlankLineBeforePackage",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "BlockEndsWithBlankLine",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "BlockStartsWithBlankLine",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "BooleanGetBoolean",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "BooleanMethodReturnsNull",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "BracesForClass",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "BracesForForLoop",
     "level" : "Warning",
@@ -97,7 +149,9 @@
     "parameters" : [ {
       "name" : "sameLine",
       "default" : true
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "BracesForIfElse",
     "level" : "Warning",
@@ -108,7 +162,9 @@
     }, {
       "name" : "validateElse",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "BracesForMethod",
     "level" : "Warning",
@@ -116,7 +172,9 @@
     "parameters" : [ {
       "name" : "sameLine",
       "default" : true
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "BracesForTryCatchFinally",
     "level" : "Warning",
@@ -130,15 +188,23 @@
     }, {
       "name" : "validateFinally",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "BrokenNullCheck",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "BrokenOddnessCheck",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "BuilderMethodWithSideEffects",
     "level" : "Warning",
@@ -146,43 +212,72 @@
     "parameters" : [ {
       "name" : "methodNameRegex",
       "default" : "(create.*|make.*|build.*)"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "BusyWait",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "CatchArrayIndexOutOfBoundsException",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "CatchError",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "CatchException",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "CatchIllegalMonitorStateException",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "CatchIndexOutOfBoundsException",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "CatchNullPointerException",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "CatchRuntimeException",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "CatchThrowable",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ChainedTest",
     "level" : "Warning",
@@ -190,7 +285,9 @@
     "parameters" : [ {
       "name" : "applyToClassNames",
       "default" : "*Spec,*Test,*Tests,*TestCase"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ClassEndsWithBlankLine",
     "level" : "Info",
@@ -204,15 +301,23 @@
     }, {
       "name" : "blankLineRequired",
       "default" : true
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ClassForName",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ClassJavadoc",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ClassName",
     "level" : "Warning",
@@ -220,15 +325,23 @@
     "parameters" : [ {
       "name" : "regex",
       "default" : "([A-Z]\\w*\\$?)*"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ClassNameSameAsFilename",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ClassNameSameAsSuperclass",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ClassSize",
     "level" : "Info",
@@ -236,7 +349,9 @@
     "parameters" : [ {
       "name" : "maxLines",
       "default" : 1000
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ClassStartsWithBlankLine",
     "level" : "Info",
@@ -250,7 +365,9 @@
     }, {
       "name" : "blankLineRequired",
       "default" : true
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "CloneWithoutCloneable",
     "level" : "Warning",
@@ -258,91 +375,156 @@
     "parameters" : [ {
       "name" : "compilerPhase",
       "default" : 4
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "CloneableWithoutClone",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "CloseWithoutCloseable",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ClosureAsLastMethodParameter",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ClosureStatementOnOpeningLineOfMultipleLineClosure",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "CollectAllIsDeprecated",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "CompareToWithoutComparable",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ComparisonOfTwoConstants",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ComparisonWithSelf",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "CompileStatic",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ConfusingClassNamedException",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ConfusingMethodName",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ConfusingMultipleReturns",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ConfusingTernary",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ConsecutiveBlankLines",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ConsecutiveLiteralAppends",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ConsecutiveStringConcatenation",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ConstantAssertExpression",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ConstantIfExpression",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ConstantTernaryExpression",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ConstantsOnlyInterface",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "CouldBeElvis",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "CouldBeSwitchStatement",
     "level" : "Info",
@@ -350,7 +532,9 @@
     "parameters" : [ {
       "name" : "errorMessage",
       "default" : "Code could use switch statement"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "CoupledTestCase",
     "level" : "Warning",
@@ -358,7 +542,9 @@
     "parameters" : [ {
       "name" : "applyToClassNames",
       "default" : "*Spec,*Test,*Tests,*TestCase"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "CrapMetric",
     "level" : "Warning",
@@ -372,7 +558,9 @@
     }, {
       "name" : "crapMetricClassName",
       "default" : "org.gmetrics.metric.crap.CrapMetric"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "CyclomaticComplexity",
     "level" : "Warning",
@@ -389,31 +577,51 @@
     }, {
       "name" : "ignoreMethodNames",
       "default" : null
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "DeadCode",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "DirectConnectionManagement",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "DoubleCheckedLocking",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "DoubleNegative",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "DuplicateCaseStatement",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "DuplicateImport",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "DuplicateListLiteral",
     "level" : "Info",
@@ -421,11 +629,16 @@
     "parameters" : [ {
       "name" : "doNotApplyToFilesMatching",
       "default" : ".*(Spec|Test|Tests|TestCase)\\.groovy"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "DuplicateMapKey",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "DuplicateMapLiteral",
     "level" : "Info",
@@ -433,7 +646,9 @@
     "parameters" : [ {
       "name" : "doNotApplyToFilesMatching",
       "default" : ".*(Spec|Test|Tests|TestCase)\\.groovy"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "DuplicateNumberLiteral",
     "level" : "Warning",
@@ -444,11 +659,16 @@
     }, {
       "name" : "ignoreNumbers",
       "default" : "0,1"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "DuplicateSetValue",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "DuplicateStringLiteral",
     "level" : "Warning",
@@ -459,7 +679,9 @@
     }, {
       "name" : "ignoreStrings",
       "default" : ""
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ElseBlockBraces",
     "level" : "Warning",
@@ -467,7 +689,9 @@
     "parameters" : [ {
       "name" : "bracesRequiredForElseIf",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "EmptyCatchBlock",
     "level" : "Warning",
@@ -475,87 +699,149 @@
     "parameters" : [ {
       "name" : "ignoreRegex",
       "default" : "ignore|ignored"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "EmptyClass",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "EmptyElseBlock",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "EmptyFinallyBlock",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "EmptyForStatement",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "EmptyIfStatement",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "EmptyInstanceInitializer",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "EmptyMethod",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "EmptyMethodInAbstractClass",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "EmptyStaticInitializer",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "EmptySwitchStatement",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "EmptySynchronizedStatement",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "EmptyTryBlock",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "EmptyWhileStatement",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "EnumCustomSerializationIgnored",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "EqualsAndHashCode",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "EqualsOverloaded",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ExceptionExtendsError",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ExceptionExtendsThrowable",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ExceptionNotThrown",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ExplicitArrayListInstantiation",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ExplicitCallToAndMethod",
     "level" : "Warning",
@@ -563,7 +849,9 @@
     "parameters" : [ {
       "name" : "ignoreThisReference",
       "default" : true
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ExplicitCallToCompareToMethod",
     "level" : "Warning",
@@ -571,7 +859,9 @@
     "parameters" : [ {
       "name" : "ignoreThisReference",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ExplicitCallToDivMethod",
     "level" : "Warning",
@@ -579,7 +869,9 @@
     "parameters" : [ {
       "name" : "ignoreThisReference",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ExplicitCallToEqualsMethod",
     "level" : "Warning",
@@ -587,7 +879,9 @@
     "parameters" : [ {
       "name" : "ignoreThisReference",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ExplicitCallToGetAtMethod",
     "level" : "Warning",
@@ -595,7 +889,9 @@
     "parameters" : [ {
       "name" : "ignoreThisReference",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ExplicitCallToLeftShiftMethod",
     "level" : "Warning",
@@ -603,7 +899,9 @@
     "parameters" : [ {
       "name" : "ignoreThisReference",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ExplicitCallToMinusMethod",
     "level" : "Warning",
@@ -611,7 +909,9 @@
     "parameters" : [ {
       "name" : "ignoreThisReference",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ExplicitCallToModMethod",
     "level" : "Warning",
@@ -619,7 +919,9 @@
     "parameters" : [ {
       "name" : "ignoreThisReference",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ExplicitCallToMultiplyMethod",
     "level" : "Warning",
@@ -627,7 +929,9 @@
     "parameters" : [ {
       "name" : "ignoreThisReference",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ExplicitCallToOrMethod",
     "level" : "Warning",
@@ -635,7 +939,9 @@
     "parameters" : [ {
       "name" : "ignoreThisReference",
       "default" : true
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ExplicitCallToPlusMethod",
     "level" : "Warning",
@@ -643,7 +949,9 @@
     "parameters" : [ {
       "name" : "ignoreThisReference",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ExplicitCallToPowerMethod",
     "level" : "Warning",
@@ -651,7 +959,9 @@
     "parameters" : [ {
       "name" : "ignoreThisReference",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ExplicitCallToPutAtMethod",
     "level" : "Warning",
@@ -659,7 +969,9 @@
     "parameters" : [ {
       "name" : "ignoreThisReference",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ExplicitCallToRightShiftMethod",
     "level" : "Warning",
@@ -667,7 +979,9 @@
     "parameters" : [ {
       "name" : "ignoreThisReference",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ExplicitCallToXorMethod",
     "level" : "Warning",
@@ -675,35 +989,58 @@
     "parameters" : [ {
       "name" : "ignoreThisReference",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ExplicitGarbageCollection",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ExplicitHashMapInstantiation",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ExplicitHashSetInstantiation",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ExplicitLinkedHashMapInstantiation",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ExplicitLinkedListInstantiation",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ExplicitStackInstantiation",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ExplicitTreeSetInstantiation",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "FactoryMethodName",
     "level" : "Warning",
@@ -711,7 +1048,9 @@
     "parameters" : [ {
       "name" : "regex",
       "default" : "(build.*|create.*)"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "FieldName",
     "level" : "Warning",
@@ -734,7 +1073,9 @@
     }, {
       "name" : "regex",
       "default" : "[a-z][a-zA-Z0-9]*"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "FieldTypeRequired",
     "level" : "Info",
@@ -742,7 +1083,9 @@
     "parameters" : [ {
       "name" : "ignoreFieldNames",
       "default" : null
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "FileCreateTempFile",
     "level" : "Warning",
@@ -751,31 +1094,51 @@
     "parameters" : [ {
       "name" : "doNotApplyToFilesMatching",
       "default" : ".*(Spec|Test|Tests|TestCase)\\.groovy"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "FileEndsWithoutNewline",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "FinalClassWithProtectedMember",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ForLoopShouldBeWhileLoop",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ForStatementBraces",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "GStringAsMapKey",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "GStringExpressionWithinString",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "GetterMethodCouldBeProperty",
     "level" : "Info",
@@ -783,7 +1146,9 @@
     "parameters" : [ {
       "name" : "ignoreMethodsWithOverrideAnnotation",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "GrailsDomainGormMethods",
     "level" : "Info",
@@ -791,7 +1156,9 @@
     "parameters" : [ {
       "name" : "compilerPhase",
       "default" : 4
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "GrailsDomainHasEquals",
     "level" : "Warning",
@@ -799,7 +1166,9 @@
     "parameters" : [ {
       "name" : "applyToFilesMatching",
       "default" : ".*grails-app/domain/.*"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "GrailsDomainHasToString",
     "level" : "Warning",
@@ -807,7 +1176,9 @@
     "parameters" : [ {
       "name" : "applyToFilesMatching",
       "default" : ".*grails-app/domain/.*"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "GrailsDomainReservedSqlKeywordName",
     "level" : "Warning",
@@ -821,7 +1192,9 @@
     }, {
       "name" : "additionalHibernateBasicTypes",
       "default" : ""
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "GrailsDomainStringPropertyMaxSize",
     "level" : "Warning",
@@ -829,7 +1202,9 @@
     "parameters" : [ {
       "name" : "applyToFilesMatching",
       "default" : ".*grails-app/domain/.*"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "GrailsDomainWithServiceReference",
     "level" : "Warning",
@@ -837,7 +1212,9 @@
     "parameters" : [ {
       "name" : "applyToFilesMatching",
       "default" : ".*grails-app/domain/.*"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "GrailsDuplicateConstraint",
     "level" : "Warning",
@@ -845,7 +1222,9 @@
     "parameters" : [ {
       "name" : "applyToFilesMatching",
       "default" : ".*grails-app/domain/.*"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "GrailsDuplicateMapping",
     "level" : "Warning",
@@ -853,11 +1232,16 @@
     "parameters" : [ {
       "name" : "applyToFilesMatching",
       "default" : ".*grails-app/domain/.*"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "GrailsMassAssignment",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "GrailsPublicControllerMethod",
     "level" : "Warning",
@@ -871,7 +1255,9 @@
     }, {
       "name" : "applyToClassNames",
       "default" : "*Controller"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "GrailsServletContextReference",
     "level" : "Warning",
@@ -879,7 +1265,9 @@
     "parameters" : [ {
       "name" : "applyToFilesMatching",
       "default" : ".*grails-app/(controllers|taglib)/.*"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "GrailsStatelessService",
     "level" : "Warning",
@@ -890,27 +1278,44 @@
     }, {
       "name" : "applyToClassNames",
       "default" : "*Service"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "GroovyLangImmutable",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "HardCodedWindowsFileSeparator",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "HardCodedWindowsRootDirectory",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "HashtableIsObsolete",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "IfStatementBraces",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "IfStatementCouldBeTernary",
     "level" : "Warning",
@@ -918,7 +1323,9 @@
     "parameters" : [ {
       "name" : "checkLastStatementImplicitElse",
       "default" : true
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "IllegalClassMember",
     "level" : "Warning",
@@ -947,7 +1354,9 @@
     }, {
       "name" : "ignoreMethodsWithAnnotationNames",
       "default" : null
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "IllegalClassReference",
     "level" : "Warning",
@@ -955,7 +1364,9 @@
     "parameters" : [ {
       "name" : "classNames",
       "default" : null
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "IllegalPackageReference",
     "level" : "Warning",
@@ -963,15 +1374,23 @@
     "parameters" : [ {
       "name" : "packageNames",
       "default" : null
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "IllegalRegex",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "IllegalString",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "IllegalSubclass",
     "level" : "Warning",
@@ -979,11 +1398,16 @@
     "parameters" : [ {
       "name" : "superclassNames",
       "default" : null
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ImplementationAsType",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ImplicitClosureParameter",
     "level" : "Info",
@@ -991,27 +1415,44 @@
     "parameters" : [ {
       "name" : "allowUsingItAsParameterName",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ImplicitReturnStatement",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ImportFromSamePackage",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ImportFromSunPackages",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "InconsistentPropertyLocking",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "InconsistentPropertySynchronization",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "Indentation",
     "level" : "Info",
@@ -1019,7 +1460,9 @@
     "parameters" : [ {
       "name" : "spacesPerIndentLevel",
       "default" : 4
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "InsecureRandom",
     "level" : "Warning",
@@ -1028,7 +1471,9 @@
     "parameters" : [ {
       "name" : "doNotApplyToFilesMatching",
       "default" : ".*(Spec|Test|Tests|TestCase)\\.groovy"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "Instanceof",
     "level" : "Warning",
@@ -1039,11 +1484,16 @@
     }, {
       "name" : "ignoreTypeNames",
       "default" : "*Exception"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "IntegerGetInteger",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "InterfaceName",
     "level" : "Warning",
@@ -1051,19 +1501,30 @@
     "parameters" : [ {
       "name" : "regex",
       "default" : null
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "InterfaceNameSameAsSuperInterface",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "InvertedCondition",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "InvertedIfElse",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "JUnitAssertAlwaysFails",
     "level" : "Warning",
@@ -1071,7 +1532,9 @@
     "parameters" : [ {
       "name" : "applyToClassNames",
       "default" : "*Spec,*Test,*Tests,*TestCase"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "JUnitAssertAlwaysSucceeds",
     "level" : "Warning",
@@ -1079,7 +1542,9 @@
     "parameters" : [ {
       "name" : "applyToClassNames",
       "default" : "*Spec,*Test,*Tests,*TestCase"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "JUnitAssertEqualsConstantActualValue",
     "level" : "Warning",
@@ -1090,7 +1555,9 @@
     }, {
       "name" : "compilerPhase",
       "default" : 4
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "JUnitFailWithoutMessage",
     "level" : "Warning",
@@ -1098,7 +1565,9 @@
     "parameters" : [ {
       "name" : "applyToClassNames",
       "default" : "*Spec,*Test,*Tests,*TestCase"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "JUnitLostTest",
     "level" : "Warning",
@@ -1106,7 +1575,9 @@
     "parameters" : [ {
       "name" : "applyToClassNames",
       "default" : "*Spec,*Test,*Tests,*TestCase"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "JUnitPublicField",
     "level" : "Info",
@@ -1114,7 +1585,9 @@
     "parameters" : [ {
       "name" : "applyToClassNames",
       "default" : "*Spec,*Test,*Tests,*TestCase"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "JUnitPublicNonTestMethod",
     "level" : "Warning",
@@ -1122,7 +1595,9 @@
     "parameters" : [ {
       "name" : "applyToClassNames",
       "default" : "*Spec,*Test,*Tests,*TestCase"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "JUnitPublicProperty",
     "level" : "Warning",
@@ -1133,7 +1608,9 @@
     }, {
       "name" : "ignorePropertyNames",
       "default" : null
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "JUnitSetUpCallsSuper",
     "level" : "Warning",
@@ -1141,7 +1618,9 @@
     "parameters" : [ {
       "name" : "applyToClassNames",
       "default" : "*Spec,*Test,*Tests,*TestCase"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "JUnitStyleAssertions",
     "level" : "Info",
@@ -1149,7 +1628,9 @@
     "parameters" : [ {
       "name" : "applyToClassNames",
       "default" : "*Spec,*Test,*Tests,*TestCase"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "JUnitTearDownCallsSuper",
     "level" : "Warning",
@@ -1157,7 +1638,9 @@
     "parameters" : [ {
       "name" : "applyToClassNames",
       "default" : "*Spec,*Test,*Tests,*TestCase"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "JUnitTestMethodWithoutAssert",
     "level" : "Warning",
@@ -1168,7 +1651,9 @@
     }, {
       "name" : "applyToClassNames",
       "default" : "*Spec,*Test,*Tests,*TestCase"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "JUnitUnnecessarySetUp",
     "level" : "Info",
@@ -1176,7 +1661,9 @@
     "parameters" : [ {
       "name" : "applyToClassNames",
       "default" : "*Spec,*Test,*Tests,*TestCase"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "JUnitUnnecessaryTearDown",
     "level" : "Info",
@@ -1184,7 +1671,9 @@
     "parameters" : [ {
       "name" : "applyToClassNames",
       "default" : "*Spec,*Test,*Tests,*TestCase"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "JUnitUnnecessaryThrowsException",
     "level" : "Info",
@@ -1192,7 +1681,9 @@
     "parameters" : [ {
       "name" : "applyToClassNames",
       "default" : "*Spec,*Test,*Tests,*TestCase"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "JavaIoPackageAccess",
     "level" : "Warning",
@@ -1201,75 +1692,128 @@
     "parameters" : [ {
       "name" : "doNotApplyToFilesMatching",
       "default" : ".*(Spec|Test|Tests|TestCase)\\.groovy"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "JavadocConsecutiveEmptyLines",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "JavadocEmptyAuthorTag",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "JavadocEmptyExceptionTag",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "JavadocEmptyFirstLine",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "JavadocEmptyLastLine",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "JavadocEmptyParamTag",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "JavadocEmptyReturnTag",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "JavadocEmptySeeTag",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "JavadocEmptySinceTag",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "JavadocEmptyThrowsTag",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "JavadocEmptyVersionTag",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "JavadocMissingExceptionDescription",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "JavadocMissingParamDescription",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "JavadocMissingThrowsDescription",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "JdbcConnectionReference",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "JdbcResultSetReference",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "JdbcStatementReference",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "LineLength",
     "level" : "Warning",
@@ -1286,11 +1830,16 @@
     }, {
       "name" : "ignoreLineRegex",
       "default" : null
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "LocaleSetDefault",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "LoggerForDifferentClass",
     "level" : "Warning",
@@ -1298,7 +1847,9 @@
     "parameters" : [ {
       "name" : "allowDerivedClasses",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "LoggerWithWrongModifiers",
     "level" : "Warning",
@@ -1309,15 +1860,23 @@
     }, {
       "name" : "allowNonStaticLogger",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "LoggingSwallowsStacktrace",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "LongLiteralWithLowerCaseL",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "MethodCount",
     "level" : "Warning",
@@ -1325,7 +1884,9 @@
     "parameters" : [ {
       "name" : "maxMethods",
       "default" : 30
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "MethodName",
     "level" : "Warning",
@@ -1336,7 +1897,9 @@
     }, {
       "name" : "ignoreMethodNames",
       "default" : null
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "MethodParameterTypeRequired",
     "level" : "Info",
@@ -1344,7 +1907,9 @@
     "parameters" : [ {
       "name" : "ignoreMethodParameterNames",
       "default" : ""
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "MethodReturnTypeRequired",
     "level" : "Info",
@@ -1352,7 +1917,9 @@
     "parameters" : [ {
       "name" : "ignoreMethodNames",
       "default" : ""
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "MethodSize",
     "level" : "Info",
@@ -1363,23 +1930,37 @@
     }, {
       "name" : "ignoreMethodNames",
       "default" : null
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "MisorderedStaticImports",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "MissingBlankLineAfterImports",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "MissingBlankLineAfterPackage",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "MissingNewInThrowStatement",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "MissingOverrideAnnotation",
     "level" : "Info",
@@ -1387,15 +1968,23 @@
     "parameters" : [ {
       "name" : "compilerPhase",
       "default" : 4
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "MultipleLoggers",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "MultipleUnaryOperators",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "NestedBlockDepth",
     "level" : "Warning",
@@ -1406,57 +1995,95 @@
     }, {
       "name" : "ignoreRegex",
       "default" : ".*(b|B)uilder"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "NestedForLoop",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "NestedSynchronization",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "NoDef",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "NoDouble",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "NoFloat",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "NoJavaUtilDate",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "NoTabCharacter",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "NoWildcardImports",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "NonFinalPublicField",
     "level" : "Warning",
     "category" : "Security",
-    "subcategory" : "CommandInjection"
+    "subcategory" : "CommandInjection",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "NonFinalSubclassOfSensitiveInterface",
     "level" : "Warning",
     "category" : "Security",
-    "subcategory" : "MaliciousCode"
+    "subcategory" : "MaliciousCode",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ObjectFinalize",
     "level" : "Warning",
-    "category" : "Security"
+    "category" : "Security",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ObjectOverrideMisspelledMethodName",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "PackageName",
     "level" : "Warning",
@@ -1467,11 +2094,16 @@
     }, {
       "name" : "packageNameRequired",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "PackageNameMatchesFilePath",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ParameterCount",
     "level" : "Warning",
@@ -1482,7 +2114,9 @@
     }, {
       "name" : "ignoreOverriddenMethods",
       "default" : true
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ParameterName",
     "level" : "Warning",
@@ -1493,19 +2127,30 @@
     }, {
       "name" : "ignoreParameterNames",
       "default" : null
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ParameterReassignment",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "PrintStackTrace",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "Println",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "PrivateFieldCouldBeFinal",
     "level" : "Info",
@@ -1516,7 +2161,9 @@
     }, {
       "name" : "ignoreJpaEntities",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "PropertyName",
     "level" : "Warning",
@@ -1536,72 +2183,122 @@
     }, {
       "name" : "regex",
       "default" : "[a-z][a-zA-Z0-9]*"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "PublicFinalizeMethod",
     "level" : "Warning",
     "category" : "Security",
-    "subcategory" : "CommandInjection"
+    "subcategory" : "CommandInjection",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "PublicInstanceField",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "PublicMethodsBeforeNonPublicMethods",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "RandomDoubleCoercedToZero",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "RemoveAllOnSelf",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "RequiredRegex",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "RequiredString",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ReturnFromFinallyBlock",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ReturnNullFromCatchBlock",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ReturnsNullInsteadOfEmptyArray",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ReturnsNullInsteadOfEmptyCollection",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "SerialPersistentFields",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "SerialVersionUID",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "SerializableClassMustDefineSerialVersionUID",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "SimpleDateFormatMissingLocale",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "SpaceAfterCatch",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "SpaceAfterClosingBrace",
     "level" : "Info",
@@ -1609,19 +2306,30 @@
     "parameters" : [ {
       "name" : "checkClosureMapEntryValue",
       "default" : true
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "SpaceAfterComma",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "SpaceAfterFor",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "SpaceAfterIf",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "SpaceAfterOpeningBrace",
     "level" : "Info",
@@ -1632,23 +2340,37 @@
     }, {
       "name" : "ignoreEmptyBlock",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "SpaceAfterSemicolon",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "SpaceAfterSwitch",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "SpaceAfterWhile",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "SpaceAroundClosureArrow",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "SpaceAroundMapEntryColon",
     "level" : "Info",
@@ -1659,7 +2381,9 @@
     }, {
       "name" : "characterAfterColonRegex",
       "default" : "\\S"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "SpaceAroundOperator",
     "level" : "Info",
@@ -1667,7 +2391,9 @@
     "parameters" : [ {
       "name" : "ignoreParameterDefaultValueAssignments",
       "default" : true
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "SpaceBeforeClosingBrace",
     "level" : "Info",
@@ -1678,7 +2404,9 @@
     }, {
       "name" : "ignoreEmptyBlock",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "SpaceBeforeOpeningBrace",
     "level" : "Info",
@@ -1686,7 +2414,9 @@
     "parameters" : [ {
       "name" : "checkClosureMapEntryValue",
       "default" : true
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "SpockIgnoreRestUsed",
     "level" : "Warning",
@@ -1697,7 +2427,9 @@
     }, {
       "name" : "specificationClassNames",
       "default" : null
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "StatelessClass",
     "level" : "Warning",
@@ -1708,7 +2440,9 @@
     }, {
       "name" : "ignoreFieldTypes",
       "default" : null
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "StatelessSingleton",
     "level" : "Warning",
@@ -1716,132 +2450,227 @@
     "parameters" : [ {
       "name" : "instanceRegex",
       "default" : "instance|_instance"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "StaticCalendarField",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "StaticConnection",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "StaticDateFormatField",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "StaticFieldsBeforeInstanceFields",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "StaticMatcherField",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "StaticMethodsBeforeInstanceMethods",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "StaticSimpleDateFormatField",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "SwallowThreadDeath",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "SynchronizedMethod",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "SynchronizedOnBoxedPrimitive",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "SynchronizedOnGetClass",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "SynchronizedOnReentrantLock",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "SynchronizedOnString",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "SynchronizedOnThis",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "SynchronizedReadObjectMethod",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "SystemErrPrint",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "SystemExit",
     "level" : "Warning",
     "category" : "Security",
-    "subcategory" : "UnexpectedBehaviour"
+    "subcategory" : "UnexpectedBehaviour",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "SystemOutPrint",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "SystemRunFinalizersOnExit",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "TernaryCouldBeElvis",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ThisReferenceEscapesConstructor",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ThreadGroup",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ThreadLocalNotStaticFinal",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ThreadYield",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ThrowError",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ThrowException",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ThrowExceptionFromFinallyBlock",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ThrowNullPointerException",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ThrowRuntimeException",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ThrowThrowable",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ToStringReturnsNull",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "TrailingComma",
     "level" : "Info",
@@ -1858,51 +2687,86 @@
     }, {
       "name" : "ignoreSingleElementMap",
       "default" : true
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "TrailingWhitespace",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "UnnecessaryBigDecimalInstantiation",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryBigIntegerInstantiation",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryBooleanExpression",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryBooleanInstantiation",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryCallForLastElement",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryCallToSubstring",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryCast",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "UnnecessaryCatchBlock",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryCollectCall",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryCollectionCall",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryConstructor",
     "level" : "Info",
@@ -1910,31 +2774,51 @@
     "parameters" : [ {
       "name" : "ignoreAnnotations",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryDefInFieldDeclaration",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryDefInMethodDeclaration",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryDefInVariableDeclaration",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryDotClass",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryDoubleInstantiation",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryElseStatement",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "UnnecessaryFail",
     "level" : "Warning",
@@ -1942,19 +2826,30 @@
     "parameters" : [ {
       "name" : "applyToClassNames",
       "default" : "*Spec,*Test,*Tests,*TestCase"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryFinalOnPrivateMethod",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryFloatInstantiation",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryGString",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "UnnecessaryGetter",
     "level" : "Info",
@@ -1965,11 +2860,16 @@
     }, {
       "name" : "checkIsMethods",
       "default" : true
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryGroovyImport",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryIfStatement",
     "level" : "Info",
@@ -1977,35 +2877,58 @@
     "parameters" : [ {
       "name" : "checkLastStatementImplicitElse",
       "default" : true
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryInstanceOfCheck",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryInstantiationToGetClass",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryIntegerInstantiation",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryLongInstantiation",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryModOne",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryNullCheck",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryNullCheckBeforeInstanceOf",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryObjectReferences",
     "level" : "Info",
@@ -2013,55 +2936,93 @@
     "parameters" : [ {
       "name" : "maxReferencesAllowed",
       "default" : 5
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryOverridingMethod",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryPackageReference",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryParenthesesForMethodCallWithClosure",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryPublicModifier",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryReturnKeyword",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "UnnecessarySafeNavigationOperator",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "UnnecessarySelfAssignment",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessarySemicolon",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessarySetter",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "UnnecessaryStringInstantiation",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessarySubstring",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryTernaryExpression",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryToString",
     "level" : "Warning",
@@ -2069,16 +3030,24 @@
     "parameters" : [ {
       "name" : "checkAssignments",
       "default" : true
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "UnnecessaryTransientModifier",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnsafeArrayDeclaration",
     "level" : "Warning",
     "category" : "Security",
-    "subcategory" : "UnexpectedBehaviour"
+    "subcategory" : "UnexpectedBehaviour",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnsafeImplementationAsMap",
     "level" : "Warning",
@@ -2089,15 +3058,23 @@
     }, {
       "name" : "doNotApplyToFilesMatching",
       "default" : ".*(Spec|Test|Tests|TestCase)\\.groovy"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnusedArray",
     "level" : "Warning",
-    "category" : "UnusedCode"
+    "category" : "UnusedCode",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnusedImport",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnusedMethodParameter",
     "level" : "Warning",
@@ -2108,7 +3085,9 @@
     }, {
       "name" : "ignoreClassRegex",
       "default" : ".*Category"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnusedObject",
     "level" : "Warning",
@@ -2116,7 +3095,9 @@
     "parameters" : [ {
       "name" : "doNotApplyToFilesMatching",
       "default" : ".*(Spec|Test|Tests|TestCase)\\.groovy"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnusedPrivateField",
     "level" : "Warning",
@@ -2124,7 +3105,9 @@
     "parameters" : [ {
       "name" : "ignoreFieldNames",
       "default" : "serialVersionUID"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnusedPrivateMethod",
     "level" : "Warning",
@@ -2132,7 +3115,9 @@
     "parameters" : [ {
       "name" : "ignoreMethodsWithAnnotationNames",
       "default" : ""
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnusedPrivateMethodParameter",
     "level" : "Warning",
@@ -2140,7 +3125,9 @@
     "parameters" : [ {
       "name" : "ignoreRegex",
       "default" : "ignore|ignored"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UnusedVariable",
     "level" : "Warning",
@@ -2148,7 +3135,9 @@
     "parameters" : [ {
       "name" : "ignoreVariableNames",
       "default" : null
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UseAssertEqualsInsteadOfAssertTrue",
     "level" : "Info",
@@ -2156,7 +3145,9 @@
     "parameters" : [ {
       "name" : "applyToClassNames",
       "default" : "*Spec,*Test,*Tests,*TestCase"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UseAssertFalseInsteadOfNegation",
     "level" : "Warning",
@@ -2164,7 +3155,9 @@
     "parameters" : [ {
       "name" : "applyToClassNames",
       "default" : "*Spec,*Test,*Tests,*TestCase"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UseAssertNullInsteadOfAssertEquals",
     "level" : "Info",
@@ -2172,7 +3165,9 @@
     "parameters" : [ {
       "name" : "applyToClassNames",
       "default" : "*Spec,*Test,*Tests,*TestCase"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UseAssertSameInsteadOfAssertTrue",
     "level" : "Info",
@@ -2180,7 +3175,9 @@
     "parameters" : [ {
       "name" : "applyToClassNames",
       "default" : "*Spec,*Test,*Tests,*TestCase"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UseAssertTrueInsteadOfAssertEquals",
     "level" : "Info",
@@ -2191,7 +3188,9 @@
     }, {
       "name" : "checkAssertStatements",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UseAssertTrueInsteadOfNegation",
     "level" : "Warning",
@@ -2199,19 +3198,30 @@
     "parameters" : [ {
       "name" : "applyToClassNames",
       "default" : "*Spec,*Test,*Tests,*TestCase"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UseCollectMany",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UseCollectNested",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UseOfNotifyMethod",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "VariableName",
     "level" : "Warning",
@@ -2225,7 +3235,9 @@
     }, {
       "name" : "ignoreVariableNames",
       "default" : null
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "VariableTypeRequired",
     "level" : "Info",
@@ -2233,26 +3245,43 @@
     "parameters" : [ {
       "name" : "ignoreVariableNames",
       "default" : null
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "VectorIsObsolete",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "VolatileArrayField",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "VolatileLongOrDoubleField",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "WaitOutsideOfWhileLoop",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "WhileStatementBraces",
     "level" : "Warning",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   } ]
 }

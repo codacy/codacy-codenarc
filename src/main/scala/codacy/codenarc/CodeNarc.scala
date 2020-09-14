@@ -83,14 +83,10 @@ object CodeNarc extends Tool {
   def patternDefinitionToCodeNarcPattern(pattern: plugins.api.results.Pattern.Definition): Pattern = {
     val parameters: Set[PatternParameter] =
       pattern.parameters
-        .map(
-          optionParamSet =>
-            optionParamSet.map(param => {
-              val valueAsJsValue: JsValue = param.value
-              PatternParameter(param.name.value, valueAsJsValue)
-            })
-        )
-        .getOrElse(Set())
+        .map(param => {
+          val valueAsJsValue: JsValue = param.value
+          PatternParameter(param.name.value, valueAsJsValue)
+        })
 
     Pattern(pattern.patternId.value, parameters)
   }
