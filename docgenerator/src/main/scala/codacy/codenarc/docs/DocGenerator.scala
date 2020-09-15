@@ -67,20 +67,22 @@ object DocGenerator {
     */
   def parameterSpecificationFromParametersStringList(
       parameters: Option[Map[String, JsValue]]
-  ): Option[Set[Parameter.Specification]] =
-    parameters.map { paramList =>
-      paramList.map {
-        case (name, default) => Parameter.Specification(Parameter.Name(name), Parameter.Value(default))
-      }.toSet
-    }
+  ): Set[Parameter.Specification] =
+    parameters
+      .map { paramList =>
+        paramList.map {
+          case (name, default) => Parameter.Specification(Parameter.Name(name), Parameter.Value(default))
+        }.toSet
+      }
+      .getOrElse(Set.empty)
 
-  def parameterDescriptionFromParametersStringList(
-      parameters: Option[Set[String]]
-  ): Option[Set[Parameter.Description]] =
-    parameters.map(
-      paramList =>
-        paramList.map(param => Parameter.Description(Parameter.Name(param), Parameter.DescriptionText(param)))
-    )
+  def parameterDescriptionFromParametersStringList(parameters: Option[Set[String]]): Set[Parameter.Description] =
+    parameters
+      .map(
+        paramList =>
+          paramList.map(param => Parameter.Description(Parameter.Name(param), Parameter.DescriptionText(param)))
+      )
+      .getOrElse(Set.empty)
 
   /**
     * returns the regex to get information from markdown file for a rule
@@ -201,7 +203,8 @@ object DocGenerator {
           levelFromPriority(rulePriority.map(_.priority)),
           categoryTypeFromPriorityType(rulePriority.map(_.priorityType)),
           subcategoryForPatternId(ruleName),
-          parameterSpecificationFromParametersStringList(parameters)
+          parameterSpecificationFromParametersStringList(parameters),
+          enabled = DefaultRules.list.contains(ruleName)
         )
 
         patternDescription = Pattern.Description(
