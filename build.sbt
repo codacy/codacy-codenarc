@@ -29,7 +29,7 @@ lazy val commonSettings = Seq(
   }.taskValue,
   libraryDependencies ++= Seq(
     "org.codenarc" % "CodeNarc" % toolVersion.value,
-    "com.codacy" %% "codacy-engine-scala-seed" % "5.0.0"
+    "com.codacy" %% "codacy-engine-scala-seed" % "5.0.1"
   )
 )
 
