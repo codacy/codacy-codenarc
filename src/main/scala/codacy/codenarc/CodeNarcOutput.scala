@@ -2,7 +2,6 @@ package codacy.codenarc
 
 import org.codenarc.results.{DirectoryResults, FileResults, Results}
 import org.codenarc.rule.Violation
-import scala.Option
 
 object CodeNarcOutput {
   case class CodeNarcOutput(file: String, message: String, ruleName: String, line: Int)
