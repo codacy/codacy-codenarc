@@ -16,7 +16,7 @@ object CodeNarcOutput {
         case violation: Violation =>
           CodeNarcOutput(
             fileResults.getPath,
-            Option(violation.getMessage).getOrElse("Not available"),
+            Option(violation.getMessage).getOrElse(violation.getRule.getName),
             violation.getRule.getName,
             violation.getLineNumber.toInt
           )
