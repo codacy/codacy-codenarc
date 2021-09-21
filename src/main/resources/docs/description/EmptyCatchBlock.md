@@ -29,20 +29,18 @@ no violations are produced.
 
 Here is an example of code that produces a violation:
 
-``` 
-    def myMethod() {
-        try {
-            doSomething
-        } catch(MyException e) {                //violation
-            // should do something here
+        def myMethod() {
+            try {
+                doSomething
+            } catch(MyException e) {                //violation
+                // should do something here
+            }
         }
-    }
 
-    def myMethod() {
-        try {
-            doSomething
-        } catch(MyException ignored) {
-            //no violations because the parameter name is ignored
+        def myMethod() {
+            try {
+                doSomething
+            } catch(MyException ignored) {
+                //no violations because the parameter name is ignored
+            }
         }
-    }
-```

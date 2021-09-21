@@ -9,8 +9,6 @@ and Java won’t let you reload old data.
 
 An example of a missing serialVersionUID:
 
-``` 
-    class MyClass implements Serializable {
-        // missing serialVersionUID
-    }
-```
+        class MyClass implements Serializable {
+            // missing serialVersionUID
+        }

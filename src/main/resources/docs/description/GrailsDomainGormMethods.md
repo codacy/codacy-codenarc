@@ -1,4 +1,4 @@
-\<Since CodeNarc 1.6\>
+\<Since CodeNarc 1.6>
 
 Database operation should be performed by Data Services instead of
 calling GORM static and instance methods.
@@ -18,46 +18,42 @@ any referenced classes, on the classpath.
 
 Example of violations:
 
-``` 
-    class Person {
-        String firstName
-        String lastName
-    }
-
-    class PersonService {
-        
-        Person createPerson(String firstName, String lastName) {
-            Person person = new Person(firstName: firstName, lastName: lastName)
-            return person.save()
+        class Person {
+            String firstName
+            String lastName
         }
-    
-    }
-```
+
+        class PersonService {
+            
+            Person createPerson(String firstName, String lastName) {
+                Person person = new Person(firstName: firstName, lastName: lastName)
+                return person.save()
+            }
+        
+        }
 
 Example of valid configuration:
 
-``` 
-    class Person {
-        String firstName
-        String lastName
-    }
-
-    @Service(Person)
-    class PersonDataService {
-        Person save(Person person)
-    }
-
-    class PersonService {
-
-        PersonDataService personDataService
-        
-        Person createPerson(String firstName, String lastName) {
-            Person person = new Person(firstName: firstName, lastName: lastName)
-            return personDataService.save(person)
+        class Person {
+            String firstName
+            String lastName
         }
-    
-    }
-```
+
+        @Service(Person)
+        class PersonDataService {
+            Person save(Person person)
+        }
+
+        class PersonService {
+
+            PersonDataService personDataService
+            
+            Person createPerson(String firstName, String lastName) {
+                Person person = new Person(firstName: firstName, lastName: lastName)
+                return personDataService.save(person)
+            }
+        
+        }
 
 See \[GORM Data
 Services\](https://gorm.grails.org/latest/hibernate/manual/index.htm

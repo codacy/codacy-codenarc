@@ -11,9 +11,7 @@ or “Long”.
 
 Here is an example of code that produces a violation:
 
-``` 
-     def method() {
-         private volatile double d
-         private volatile long f
-     }
-```
+         def method() {
+             private volatile double d
+             private volatile long f
+         }

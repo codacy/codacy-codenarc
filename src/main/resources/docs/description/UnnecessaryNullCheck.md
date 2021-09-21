@@ -7,40 +7,36 @@ pointless and can be removed.
 
 Examples of violations:
 
-``` 
-    if (obj != null && obj.method()) { }
+        if (obj != null && obj.method()) { }
 
-    if (obj != null && obj.prop) { }
+        if (obj != null && obj.prop) { }
 
-    // this is pointless and won't avoid NullPointerException
-    if (obj.method() && obj != null ) { }
+        // this is pointless and won't avoid NullPointerException
+        if (obj.method() && obj != null ) { }
 
-    if (this == null) { }
-    if (null == this) { }
-    if (this != null) { }
-    if (null != this) { }
+        if (this == null) { }
+        if (null == this) { }
+        if (this != null) { }
+        if (null != this) { }
 
-    if (super == null) { }
-    if (null == super) { }
-    if (super != null) { }
-    if (null != super) { }
-```
+        if (super == null) { }
+        if (null == super) { }
+        if (super != null) { }
+        if (null != super) { }
 
 Examples of acceptable code:
 
-``` 
-    // null check it OK
-    if (obj != null) { }
+        // null check it OK
+        if (obj != null) { }
 
-    // null safe dereference in if is OK
-    if (obj?.method()) { }
+        // null safe dereference in if is OK
+        if (obj?.method()) { }
 
-    // null safe dereference in ternary is OK
-    (obj?.prop && obj?.prop2) ? x : y
+        // null safe dereference in ternary is OK
+        (obj?.prop && obj?.prop2) ? x : y
 
-    // obj is reused in a parameter list, so OK
-    if (obj != null && obj.method() && isValid(obj)) { }
+        // obj is reused in a parameter list, so OK
+        if (obj != null && obj.method() && isValid(obj)) { }
 
-    // rule is not so complex yet...
-    (obj != null && obj.prop && obj.method()) ? x : y
-```
+        // rule is not so complex yet...
+        (obj != null && obj.prop && obj.method()) ? x : y

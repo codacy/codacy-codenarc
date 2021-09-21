@@ -1,6 +1,6 @@
 {
   "name" : "codenarc",
-  "version" : "1.6",
+  "version" : "2.2.0",
   "patterns" : [ {
     "patternId" : "AbcMetric",
     "level" : "Warning",
@@ -172,6 +172,9 @@
     "parameters" : [ {
       "name" : "sameLine",
       "default" : true
+    }, {
+      "name" : "allowBraceOnNextLineForMultilineDeclarations",
+      "default" : false
     } ],
     "languages" : [ ],
     "enabled" : true
@@ -396,7 +399,10 @@
     "patternId" : "ClosureAsLastMethodParameter",
     "level" : "Info",
     "category" : "CodeStyle",
-    "parameters" : [ ],
+    "parameters" : [ {
+      "name" : "ignoreCallsToMethodNames",
+      "default" : ""
+    } ],
     "languages" : [ ],
     "enabled" : false
   }, {
@@ -1955,6 +1961,13 @@
     "languages" : [ ],
     "enabled" : false
   }, {
+    "patternId" : "MissingBlankLineBeforeAnnotatedField",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
     "patternId" : "MissingNewInThrowStatement",
     "level" : "Warning",
     "category" : "CodeStyle",
@@ -2085,6 +2098,27 @@
     "languages" : [ ],
     "enabled" : true
   }, {
+    "patternId" : "OptionalCollectionReturnType",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "OptionalField",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "OptionalMethodParameter",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
     "patternId" : "PackageName",
     "level" : "Warning",
     "category" : "CodeStyle",
@@ -2100,6 +2134,13 @@
   }, {
     "patternId" : "PackageNameMatchesFilePath",
     "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "ParameterAssignmentInFilterClosure",
+    "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
@@ -2331,6 +2372,27 @@
     "languages" : [ ],
     "enabled" : true
   }, {
+    "patternId" : "SpaceAfterMethodCallName",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "SpaceAfterMethodDeclarationName",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "SpaceAfterNotOperator",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
     "patternId" : "SpaceAfterOpeningBrace",
     "level" : "Info",
     "category" : "CodeStyle",
@@ -2417,6 +2479,13 @@
     } ],
     "languages" : [ ],
     "enabled" : true
+  }, {
+    "patternId" : "SpaceInsideParentheses",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "SpockIgnoreRestUsed",
     "level" : "Warning",
@@ -3105,6 +3174,9 @@
     "parameters" : [ {
       "name" : "ignoreFieldNames",
       "default" : "serialVersionUID"
+    }, {
+      "name" : "allowConstructorOnlyUsages",
+      "default" : true
     } ],
     "languages" : [ ],
     "enabled" : true
@@ -3231,7 +3303,7 @@
       "default" : "[a-z][a-zA-Z0-9]*"
     }, {
       "name" : "finalRegex",
-      "default" : "[A-Z][A-Z0-9_]*"
+      "default" : null
     }, {
       "name" : "ignoreVariableNames",
       "default" : null

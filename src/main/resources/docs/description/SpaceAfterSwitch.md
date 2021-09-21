@@ -5,11 +5,9 @@ and before the opening parenthesis.
 
 Examples of violations:
 
-``` 
-    switch(x) {                                 // violation
-        case 1: println 'one'
-    }
-    switch  (x) {                               // violation
-        case 1: println 'one'
-    }
-```
+        switch(x) {                                 // violation
+            case 1: println 'one'
+        }
+        switch  (x) {                               // violation
+            case 1: println 'one'
+        }

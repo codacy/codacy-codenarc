@@ -54,5 +54,5 @@ Note that you can use the standard rule properties, such as
 `applyToClassNames`, `doNotApplyToFileNames` and `applyToFilesMatching`
 to only apply this rule to a subset of all classes/files. These rule
 properties are described in
-zzz./codenarc-configuring-rules.html\#standard-properties-for-configuring-rules}
+zzz./codenarc-configuring-rules.html#standard-properties-for-configuring-rules}
 Standard Properties for Configuring Rulesyy.

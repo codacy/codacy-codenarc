@@ -11,10 +11,8 @@ locale-sensitive code running within the same Java Virtual Machine.*
 
 Example of violations:
 
-``` 
-    Locale.setDefault(Locale.UK)                                // violation
-    java.util.Locale.setDefault(Locale.FRANCE)                  // violation
-    Locale.setDefault(Locale.Category.DISPLAY, Locale.JAPAN)    // violation
+        Locale.setDefault(Locale.UK)                                // violation
+        java.util.Locale.setDefault(Locale.FRANCE)                  // violation
+        Locale.setDefault(Locale.Category.DISPLAY, Locale.JAPAN)    // violation
 
-    Locale.default = Locale.UK                                  // violation
-```
+        Locale.default = Locale.UK                                  // violation

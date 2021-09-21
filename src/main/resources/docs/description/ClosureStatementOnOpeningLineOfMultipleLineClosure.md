@@ -7,8 +7,6 @@ easily missed when reading the code.
 
 Example of violations:
 
-``` 
-    def closure = { name -* println name
-        addToCounts()
-        println “done” }
-```
+        def closure = { name -* println name
+            addToCounts()
+            println “done” }

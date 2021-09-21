@@ -2,8 +2,6 @@
 
 An empty static initializer was found. It is safe to remove it. Example:
 
-``` 
-    class MyClass {
-        static { }
-    }
-```
+        class MyClass {
+            static { }
+        }

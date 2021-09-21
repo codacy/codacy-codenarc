@@ -27,7 +27,5 @@ if an explicit `it` parameter has been specified.
 
 Example of violations:
 
-``` 
-    def closureWithViolation = { it * 10 }
-    def closureWithViolationBecauseOfExplicitItParameter = { it -* it * 10}
-```
+        def closureWithViolation = { it * 10 }
+        def closureWithViolationBecauseOfExplicitItParameter = { it -* it * 10}

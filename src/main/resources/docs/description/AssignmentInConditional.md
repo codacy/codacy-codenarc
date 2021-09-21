@@ -5,22 +5,20 @@ usually a typo, and the comparison operator (==) was intended.
 
 Example of violations:
 
-``` 
-    if ((value = true)) {
-        // should be ==
-    }
+        if ((value = true)) {
+            // should be ==
+        }
 
-    while (value = true) {
-        // should be ==
-    }
+        while (value = true) {
+            // should be ==
+        }
 
-    (value = true) ? x : y
-    (value = true) ?: x
+        (value = true) ? x : y
+        (value = true) ?: x
 
-    // the following code has no violations
-    if (value == true) {
-    }
+        // the following code has no violations
+        if (value == true) {
+        }
 
-    value == true ? x : y
-    value == true ?: x
-```
+        value == true ? x : y
+        value == true ?: x

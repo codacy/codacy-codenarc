@@ -8,19 +8,17 @@ first?” or “does the common case go first?”.
 
 Example:
 
-``` 
-    (x != y) ? diff : same      // triggers violation
-    (!x) ? diff : same          // triggers violation
+        (x != y) ? diff : same      // triggers violation
+        (!x) ? diff : same          // triggers violation
 
-    (x == y) ? same : diff      // OK
-    (x) ? same : diff           // OK
+        (x == y) ? same : diff      // OK
+        (x) ? same : diff           // OK
 
-    // this is OK, because of GroovyTruth there is no inverse of != null
-    (x != null) ? diff : same
+        // this is OK, because of GroovyTruth there is no inverse of != null
+        (x != null) ? diff : same
 
-    // this is OK, because of GroovyTruth there is no inverse of != true
-    (x != true) ? diff : same
+        // this is OK, because of GroovyTruth there is no inverse of != true
+        (x != true) ? diff : same
 
-    // this is OK, because of GroovyTruth there is no inverse of != false
-    (x != false) ? diff : same
-```
+        // this is OK, because of GroovyTruth there is no inverse of != false
+        (x != false) ? diff : same

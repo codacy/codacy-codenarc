@@ -7,7 +7,5 @@ some fonts may look like 111 instead of 11L.
 
 Example of violations:
 
-``` 
-    def x = 1l
-    def y = 55l
-```
+        def x = 1l
+        def y = 55l

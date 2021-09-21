@@ -12,7 +12,5 @@ any referenced classes, on the classpath.
 
 Example of violations:
 
-``` 
-    [mouseClicked: { ... }] as MouseListener
-    //not all MouseListener methods are implemented which can lead to UnsupportedOperationException-s
-```
+        [mouseClicked: { ... }] as MouseListener
+        //not all MouseListener methods are implemented which can lead to UnsupportedOperationException-s

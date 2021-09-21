@@ -10,13 +10,11 @@ only match class names ending in ‘Spec’, ‘Test’, ‘Tests’ or ‘TestC
 
 Example of violations:
 
-``` 
-    import org.junit.Test
-    class MyTestCase {
-        public int count                        // violation
-        public static final MAX_VALUE = 1000    // violation
+        import org.junit.Test
+        class MyTestCase {
+            public int count                        // violation
+            public static final MAX_VALUE = 1000    // violation
 
-        @Test
-        void testMe() { }
-    }
-```
+            @Test
+            void testMe() { }
+        }

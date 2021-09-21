@@ -36,8 +36,6 @@ Does not check *spread map* operator, e.g. `def binding = [*: map]`
 
 Example of violations:
 
-``` 
-    Map m1 = [myKey : 12345]            // violation (both before and after the colon)
-    println [a :[1:11, 2:22],           // violation on a (before colon)
-                b:[(Integer): 33]]      // violation on Integer (after colon)
-```
+        Map m1 = [myKey : 12345]            // violation (both before and after the colon)
+        println [a :[1:11, 2:22],           // violation on a (before colon)
+                    b:[(Integer): 33]]      // violation on Integer (after colon)

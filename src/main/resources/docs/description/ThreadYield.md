@@ -6,8 +6,6 @@ programmers to mask race conditions.
 
 Here is an example of code that produces a violation:
 
-``` 
-     def method() {
-         Thread.yield()
-     }
-```
+         def method() {
+             Thread.yield()
+         }

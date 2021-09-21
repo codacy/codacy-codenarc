@@ -8,12 +8,10 @@ System.properties\[‘prop’\].
 
 Example of violations:
 
-``` 
-    // violations
-    Integer.getInteger(value)
-    Integer.getInteger(value, radix)
+        // violations
+        Integer.getInteger(value)
+        Integer.getInteger(value, radix)
 
-    // zero or more than 2 parameters is OK, must be different method
-    Integer.getInteger()
-    Integer.getInteger(value, radix, locale)
-```
+        // zero or more than 2 parameters is OK, must be different method
+        Integer.getInteger()
+        Integer.getInteger(value, radix, locale)

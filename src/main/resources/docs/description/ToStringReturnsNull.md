@@ -6,26 +6,24 @@ normal or implicit use of `toString()`.
 
 Example of violations:
 
-``` 
-    class MyClass {
-        String toString() {
-            if (foo()) {
-                return 'MyClass'
-            } else {
-                return null         // violation
+        class MyClass {
+            String toString() {
+                if (foo()) {
+                    return 'MyClass'
+                } else {
+                    return null         // violation
+                }
             }
         }
-    }
 
-    class MyClass {
-        String toString() {
-            calculateStuff()
-            null                    // violation
+        class MyClass {
+            String toString() {
+                calculateStuff()
+                null                    // violation
+            }
         }
-    }
 
-    class MyClass {
-        String toString() {         // violation - implicit return of null
+        class MyClass {
+            String toString() {         // violation - implicit return of null
+            }
         }
-    }
-```

@@ -5,24 +5,22 @@ A `for` loop without an init and update statement can be simplified to a
 
 Example of violations:
 
-``` 
-    int i = 0;
-    for(; i * 5;) {     // Violation
-        println i++
-    }
+        int i = 0;
+        for(; i * 5;) {     // Violation
+            println i++
+        }
 
-    // These are OK
-    for(i in [1,2])         // OK
-       println i
+        // These are OK
+        for(i in [1,2])         // OK
+           println i
 
-    for(int i = 0; i*5;)    // OK
-        println i++
+        for(int i = 0; i*5;)    // OK
+            println i++
 
-    int i = 0;
-    for(; i * 5; i++)       // OK
-        println i
+        int i = 0;
+        for(; i * 5; i++)       // OK
+            println i
 
-    for (Plan p : plans) {  // OK
-        println "Plan=$p"
-    }
-```
+        for (Plan p : plans) {  // OK
+            println "Plan=$p"
+        }

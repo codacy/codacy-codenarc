@@ -197,6 +197,11 @@
   "description" : "Checks for multiple consecutive unary operators. These are confusing, and are likely typos and bugs.",
   "parameters" : [ ]
 }, {
+  "patternId" : "ParameterAssignmentInFilterClosure",
+  "title" : "ParameterAssignmentInFilterClosure",
+  "description" : "An assignment operator was used on a parameter in a filtering closure. This is usually a typo, and the comparison operator (==) was intended.",
+  "parameters" : [ ]
+}, {
   "patternId" : "RandomDoubleCoercedToZero",
   "title" : "RandomDoubleCoercedToZero",
   "description" : "The Math.random() method returns a double result greater than or equal to 0.0 and less than 1.0. If you coerce this result into an Integer or int, then it is coerced to zero. Casting the result to int, or assigning it to an int field is probably a bug.",
@@ -697,6 +702,21 @@
   "description" : "Reports classes with nested for loops.",
   "parameters" : [ ]
 }, {
+  "patternId" : "OptionalCollectionReturnType",
+  "title" : "OptionalCollectionReturnType",
+  "description" : "Do not declare a method return type of Optional<List> (or Collection, ArrayList, Set, Map, HashMap, etc.). Return an empty collection instead. ",
+  "parameters" : [ ]
+}, {
+  "patternId" : "OptionalField",
+  "title" : "OptionalField",
+  "description" : "Do not use an Optional as a field type.",
+  "parameters" : [ ]
+}, {
+  "patternId" : "OptionalMethodParameter",
+  "title" : "OptionalMethodParameter",
+  "description" : "Do not use an Optional as a parameter type for a method or constructor.",
+  "parameters" : [ ]
+}, {
   "patternId" : "PrivateFieldCouldBeFinal",
   "title" : "PrivateFieldCouldBeFinal",
   "description" : "Checks for private fields that are only set within a constructor or field initializer. Such fields can safely be made final.",
@@ -962,6 +982,9 @@
   "parameters" : [ {
     "name" : "sameLine",
     "description" : "sameLine"
+  }, {
+    "name" : "allowBraceOnNextLineForMultilineDeclarations",
+    "description" : "allowBraceOnNextLineForMultilineDeclarations"
   } ]
 }, {
   "patternId" : "BracesForTryCatchFinally",
@@ -1056,6 +1079,11 @@
   "description" : "Makes sure there is a blank line after the package statement of a source code file.",
   "parameters" : [ ]
 }, {
+  "patternId" : "MissingBlankLineBeforeAnnotatedField",
+  "title" : "MissingBlankLineBeforeAnnotatedField",
+  "description" : "Checks that there is a blank line before a field declaration that uses annotations. ",
+  "parameters" : [ ]
+}, {
   "patternId" : "SpaceAfterCatch",
   "title" : "SpaceAfterCatch",
   "description" : "Check that there is exactly one space (blank) after the catch keyword and before the opening parenthesis.",
@@ -1082,6 +1110,21 @@
   "patternId" : "SpaceAfterIf",
   "title" : "SpaceAfterIf",
   "description" : "Check that there is exactly one space (blank) after the if keyword and before the opening parenthesis.",
+  "parameters" : [ ]
+}, {
+  "patternId" : "SpaceAfterMethodCallName",
+  "title" : "SpaceAfterMethodCallName",
+  "description" : "Checks that there is whitespace after the method name when a method call contains parenthesis or that there is at most one space after the method name if the call does not contain parenthesis.",
+  "parameters" : [ ]
+}, {
+  "patternId" : "SpaceAfterMethodDeclarationName",
+  "title" : "SpaceAfterMethodDeclarationName",
+  "description" : "Check whether method declarations do not contain unnecessary whitespace between method name and the opening parenthesis for parameter list.",
+  "parameters" : [ ]
+}, {
+  "patternId" : "SpaceAfterNotOperator",
+  "title" : "SpaceAfterNotOperator",
+  "description" : "Check that there are no whitespace characters directly after the not (!) operator.",
   "parameters" : [ ]
 }, {
   "patternId" : "SpaceAfterOpeningBrace",
@@ -1152,6 +1195,11 @@
     "name" : "checkClosureMapEntryValue",
     "description" : "checkClosureMapEntryValue"
   } ]
+}, {
+  "patternId" : "SpaceInsideParentheses",
+  "title" : "SpaceInsideParentheses",
+  "description" : "Check for whitespace after opening parentheses and before closing parentheses",
+  "parameters" : [ ]
 }, {
   "patternId" : "TrailingWhitespace",
   "title" : "TrailingWhitespace",
@@ -1363,7 +1411,10 @@
   "patternId" : "ClosureAsLastMethodParameter",
   "title" : "ClosureAsLastMethodParameter",
   "description" : "If a method is called and the last parameter is an inline closure then it can be declared outside of the method call brackets.",
-  "parameters" : [ ]
+  "parameters" : [ {
+    "name" : "ignoreCallsToMethodNames",
+    "description" : "ignoreCallsToMethodNames"
+  } ]
 }, {
   "patternId" : "CollectAllIsDeprecated",
   "title" : "CollectAllIsDeprecated",
@@ -2477,6 +2528,9 @@
   "parameters" : [ {
     "name" : "ignoreFieldNames",
     "description" : "ignoreFieldNames"
+  }, {
+    "name" : "allowConstructorOnlyUsages",
+    "description" : "allowConstructorOnlyUsages"
   } ]
 }, {
   "patternId" : "UnusedPrivateMethod",

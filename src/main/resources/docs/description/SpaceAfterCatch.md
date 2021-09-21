@@ -5,7 +5,5 @@ and before the opening parenthesis.
 
 Examples of violations:
 
-``` 
-    try { } catch(Exception e) { }          // violation
-    try { } catch  (Exception e) { }        // violation
-```
+        try { } catch(Exception e) { }          // violation
+        try { } catch  (Exception e) { }        // violation

@@ -10,17 +10,15 @@ naming convention for your builder methods.
 
 Example of violations:
 
-``` 
 
-    class MyClass {
+        class MyClass {
 
-            void make() { /* ... */ }
-            void makeSomething() { /* ... */ }
+                void make() { /* ... */ }
+                void makeSomething() { /* ... */ }
 
-            void create() { /* ... */ }
-            void createSomething() { /* ... */ }
+                void create() { /* ... */ }
+                void createSomething() { /* ... */ }
 
-            void build() { /* ... */ }
-            void buildSomething() { /* ... */ }
-    }
-```
+                void build() { /* ... */ }
+                void buildSomething() { /* ... */ }
+        }

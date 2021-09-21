@@ -27,12 +27,10 @@ are explicitly stated and different than def.
 
 Example of violations:
 
-``` 
-    void methodWithDynamicParameter(def parameter) {              // violation
-    }
+        void methodWithDynamicParameter(def parameter) {              // violation
+        }
 
-    void methodWithParameterWithoutTypeDeclaration(parameter) {   // violation
-    }
+        void methodWithParameterWithoutTypeDeclaration(parameter) {   // violation
+        }
 
-    void methodWithObjectParameter(Object parameter)              // OK
-```
+        void methodWithObjectParameter(Object parameter)              // OK

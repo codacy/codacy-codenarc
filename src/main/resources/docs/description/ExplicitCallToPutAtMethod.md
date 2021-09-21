@@ -11,6 +11,4 @@ This rule also ignores all calls to `super.putAt(k, v)`.
 
 Example of violations:
 
-``` 
-        map.putAt(k, v)         // violation
-```
+            map.putAt(k, v)         // violation

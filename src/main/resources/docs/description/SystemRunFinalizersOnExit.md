@@ -8,8 +8,6 @@ discouraged.
 
 Here is an example of code that produces a violation:
 
-``` 
-    def method() {
-        System.runFinalizersOnExit(true)
-    }
-```
+        def method() {
+            System.runFinalizersOnExit(true)
+        }

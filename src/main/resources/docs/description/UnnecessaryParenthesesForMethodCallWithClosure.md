@@ -5,6 +5,4 @@ closure then the parentheses of the method call can be omitted.
 
 Example of violations:
 
-``` 
-    [1,2,3].each() { println it }
-```
+        [1,2,3].each() { println it }

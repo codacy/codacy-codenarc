@@ -8,19 +8,15 @@ expression are ignored.
 
 These bits of code produce violations:
 
-``` 
-  x.setProperty(1)
-  x.setProperty(this.getA())
-  x.setProperty([])
-```
+      x.setProperty(1)
+      x.setProperty(this.getA())
+      x.setProperty([])
 
 These bits of code do not:
 
-``` 
-  x.set(1)                              // Nothing after "set"
-  x.setup(2)                            // The letter after "set" must be capitalized
-  x.setURL('')                          // But setters with multiple capital letters after "set" are ignored
-  x.setSomething('arg1', 'arg2')        // Setter must have exactly one argument
-  if (!file.setExecutable(true)) { }    // Set method called within expression
-  def count = x.setCount(92)            // Set method called within expression
-```
+      x.set(1)                              // Nothing after "set"
+      x.setup(2)                            // The letter after "set" must be capitalized
+      x.setURL('')                          // But setters with multiple capital letters after "set" are ignored
+      x.setSomething('arg1', 'arg2')        // Setter must have exactly one argument
+      if (!file.setExecutable(true)) { }    // Set method called within expression
+      def count = x.setCount(92)            // Set method called within expression

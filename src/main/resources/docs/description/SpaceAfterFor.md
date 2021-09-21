@@ -5,7 +5,5 @@ and before the opening parenthesis.
 
 Examples of violations:
 
-``` 
-    for(name in names) { }                  // violation
-    for  (int i=0; i * 10; i++) { }         // violation
-```
+        for(name in names) { }                  // violation
+        for  (int i=0; i * 10; i++) { }         // violation

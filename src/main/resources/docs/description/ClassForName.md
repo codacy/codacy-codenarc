@@ -9,13 +9,11 @@ the same problem.
 
 For more information see these links:
 
-  - <http://blog.bjhargrave.com/2007/09/classforname-caches-defined-class-in.html>
+-   <http://blog.bjhargrave.com/2007/09/classforname-caches-defined-class-in.html>
 
-  - <http://www.osgi.org/blog/2011/05/what-you-should-know-about-class.html>
+-   <http://www.osgi.org/blog/2011/05/what-you-should-know-about-class.html>
 
 Example of violations:
 
-``` 
-    Class.forName('SomeClassName')
-    Class.forName(aClassName, true, aClassLoader)
-```
+        Class.forName('SomeClassName')
+        Class.forName(aClassName, true, aClassLoader)

@@ -5,14 +5,12 @@ code file.
 
 Example of violation:
 
-``` 
-  package org.codenarc
-  import java.util.Date                     // violation
+      package org.codenarc
+      import java.util.Date                     // violation
 
-  class MyClass {
-      void go() { /* ... */ }
-  }
-```
+      class MyClass {
+          void go() { /* ... */ }
+      }
 
 NOTE: This is a file-based rule, rather than an AST-based rule, so the
 *applyToClassNames* and *doNotApplyToClassNames* rule configuration

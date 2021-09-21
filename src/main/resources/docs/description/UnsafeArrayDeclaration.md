@@ -12,9 +12,7 @@ situations the array should be made private.
 
 Example of violations:
 
-``` 
-    class MyClass {
-        public static final String[] myArray = init()
-        public static final def myArray = [] as String[]
-    }
-```
+        class MyClass {
+            public static final String[] myArray = init()
+            public static final def myArray = [] as String[]
+        }

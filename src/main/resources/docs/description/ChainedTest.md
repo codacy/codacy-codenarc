@@ -6,25 +6,23 @@ be dependent on one another.
 
 Example of violations:
 
-``` 
-    class MyTest extends GroovyTestCase {
-        public void testFoo() {
+        class MyTest extends GroovyTestCase {
+            public void testFoo() {
 
-            // violations, calls test method on self
-            5.times { testBar() }
-            5.times { this.testBar() }
+                // violations, calls test method on self
+                5.times { testBar() }
+                5.times { this.testBar() }
 
-            // OK, no violation: one arg method is not actually a test method
-            5.times { testBar(it) }
+                // OK, no violation: one arg method is not actually a test method
+                5.times { testBar(it) }
+            }
+
+            private static void assertSomething() {
+                testBar() // violation, even if in helper method
+                this.testBar() // violation, even if in helper method
+            }
+
+            public void testBar() {
+                // ...
+            }
         }
-
-        private static void assertSomething() {
-            testBar() // violation, even if in helper method
-            this.testBar() // violation, even if in helper method
-        }
-
-        public void testBar() {
-            // ...
-        }
-    }
-```

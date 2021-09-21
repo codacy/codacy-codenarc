@@ -5,16 +5,14 @@ class
 
 Example of violations:
 
-``` 
-    class MyClass {
-        public static final int COUNT = 99
+        class MyClass {
+            public static final int COUNT = 99
 
-        public String f1
+            public String f1
 
-        public static final String F1 = "xxx"       // violation
-        private static String F4                    // violation
-        static F5 = new Date()                      // violation
+            public static final String F1 = "xxx"       // violation
+            private static String F4                    // violation
+            static F5 = new Date()                      // violation
 
-        protected String f2
-    }
-```
+            protected String f2
+        }

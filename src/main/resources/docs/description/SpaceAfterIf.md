@@ -5,7 +5,5 @@ before the opening parenthesis.
 
 Examples of violations:
 
-``` 
-    if(true) { }                            // violation
-    if  (true) { }                          // violation
-```
+        if(true) { }                            // violation
+        if  (true) { }                          // violation

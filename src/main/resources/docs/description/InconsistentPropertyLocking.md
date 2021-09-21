@@ -10,46 +10,44 @@ neither should be guarded.
 
 Example of violations:
 
-``` 
-    class Person {
-        String name
-        Date birthday
-        boolean deceased
-        boolean parent
+        class Person {
+            String name
+            Date birthday
+            boolean deceased
+            boolean parent
 
-        @WithWriteLock setName(String name) {
-            this.name = name
-        }
-        // violation, get method should be locked
-        String getName() {
-            name
-        }
+            @WithWriteLock setName(String name) {
+                this.name = name
+            }
+            // violation, get method should be locked
+            String getName() {
+                name
+            }
 
-        // violation, set method should be locked
-        void setBirthday(Date birthday) {
-            this.birthday = birthday
-        }
+            // violation, set method should be locked
+            void setBirthday(Date birthday) {
+                this.birthday = birthday
+            }
 
-        @WithReadLock String getBirthday() {
-            birthday
-        }
+            @WithReadLock String getBirthday() {
+                birthday
+            }
 
-        // violation, set method should be locked
-        void setDeceased(boolean deceased) {
-            this.deceased = deceased
-        }
+            // violation, set method should be locked
+            void setDeceased(boolean deceased) {
+                this.deceased = deceased
+            }
 
-        @WithReadLock boolean isDeceased() {
-            deceased
-        }
+            @WithReadLock boolean isDeceased() {
+                deceased
+            }
 
-        @WithWriteLock void setParent(boolean parent) {
-            this.parent = parent
-        }
+            @WithWriteLock void setParent(boolean parent) {
+                this.parent = parent
+            }
 
-        // violation, get method should be locked
-        boolean isParent() {
-            parent
+            // violation, get method should be locked
+            boolean isParent() {
+                parent
+            }
         }
-    }
-```

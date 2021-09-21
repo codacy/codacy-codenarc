@@ -6,8 +6,6 @@ synchronize on internal objects.
 
 Here is an example of code that produces a violation:
 
-``` 
-    synchronized def myMethod() {
-        // do stuff ...
-    }
-```
+        synchronized def myMethod() {
+            // do stuff ...
+        }

@@ -6,13 +6,11 @@ be true because the result of a not expression is always a boolean.
 
 Example of violations:
 
-``` 
-    if (!variable instanceof String) { ... }    // always false
-    def x = !variable instanceof String         // always false
+        if (!variable instanceof String) { ... }    // always false
+        def x = !variable instanceof String         // always false
 
-    if (!variable instanceof Boolean) { ... }    // always true
-    def x = !variable instanceof Boolean         // always true
+        if (!variable instanceof Boolean) { ... }    // always true
+        def x = !variable instanceof Boolean         // always true
 
-    // this code is OK
-    if (!(variable instanceof String)) { ... }
-```
+        // this code is OK
+        if (!(variable instanceof String)) { ... }

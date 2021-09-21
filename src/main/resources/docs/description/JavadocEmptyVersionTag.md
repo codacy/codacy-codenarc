@@ -34,12 +34,10 @@ Rules](./codenarc-configuring-rules.html#standard-properties-for-configuring-rul
 
 Example of violations:
 
-``` 
-    /**
-     * Return the calculated count of some stuff.
-     *
-     * @param startIndex - the starting index
-     * @return the count
-     * @version                                          // violation
-     */
-```
+        /**
+         * Return the calculated count of some stuff.
+         *
+         * @param startIndex - the starting index
+         * @return the count
+         * @version                                          // violation
+         */

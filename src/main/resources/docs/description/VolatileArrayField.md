@@ -10,10 +10,8 @@ available at
 
 Example of violations:
 
-``` 
-    class MyClass {
-        private volatile Object[] field1 = value()
-        volatile field2 = value as Object[]
-        volatile field3 = (Object[])foo
-    }
-```
+        class MyClass {
+            private volatile Object[] field1 = value()
+            volatile field2 = value as Object[]
+            volatile field3 = (Object[])foo
+        }

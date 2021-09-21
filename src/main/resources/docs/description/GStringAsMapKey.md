@@ -5,6 +5,4 @@ guaranteed to be stable. Consider calling `key.toString()`.
 
 Here is an example of code that produces a violation:
 
-``` 
-    Map map = ["${someRef}" : 'invalid' ]       // violation
-```
+        Map map = ["${someRef}" : 'invalid' ]       // violation

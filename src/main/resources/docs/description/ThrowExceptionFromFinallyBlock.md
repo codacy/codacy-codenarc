@@ -4,14 +4,12 @@ original exception.
 
 Here is an example of code that produces a violation:
 
-``` 
-    int myMethod() {
-        try {
-            doSomething()
-            throw new Exception()
-        } finally {
-            println 'finally'
-            throw new Exception()   // violation
+        int myMethod() {
+            try {
+                doSomething()
+                throw new Exception()
+            } finally {
+                println 'finally'
+                throw new Exception()   // violation
+            }
         }
-    }
-```

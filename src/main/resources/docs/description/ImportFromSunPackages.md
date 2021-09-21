@@ -3,12 +3,10 @@ packages. These packages are not portable and are likely to change.
 
 Example of violations:
 
-``` 
-    import sun.misc.foo
-    import sun.misc.foo as Foo
+        import sun.misc.foo
+        import sun.misc.foo as Foo
 
-    public class MyClass{}
-```
+        public class MyClass{}
 
 NOTE: This is a file-based rule, rather than a typical AST-based rule,
 so the *applyToClassNames* and *doNotApplyToClassNames* rule

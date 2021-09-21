@@ -5,55 +5,53 @@ structure bodies do not start with an empty line.
 
 Example of violations:
 
-``` 
-    boolean not(boolean value) {
-                                // violation
-        !value
-    }
+        boolean not(boolean value) {
+                                    // violation
+            !value
+        }
 
-    3.times {
-                                // violation
-        println 'hello!'
-    }
+        3.times {
+                                    // violation
+            println 'hello!'
+        }
 
-    for (value in []) {
-                                // violation
-        println value
-    }
+        for (value in []) {
+                                    // violation
+            println value
+        }
 
-    for (i = 0; i * 3; i++) {
-                                // violation
-        println i
-    }
+        for (i = 0; i * 3; i++) {
+                                    // violation
+            println i
+        }
 
-    int j = 0
-    while (j * 3) {
-                                // violation
-      println j++
-    }
+        int j = 0
+        while (j * 3) {
+                                    // violation
+          println j++
+        }
 
-    if (ready) {
-                                // violation
-        println 'ready'
-    } else {
-                                // violation
-        println 'not ready'
-    }
+        if (ready) {
+                                    // violation
+            println 'ready'
+        } else {
+                                    // violation
+            println 'not ready'
+        }
 
-    try {
-                                // violation
-        throw new Exception()
-    } catch (Exception e) {
-                                // violation
-        println 'exception'
-    } finally {
-                                // violation
-        println 'finally'
-    }
+        try {
+                                    // violation
+            throw new Exception()
+        } catch (Exception e) {
+                                    // violation
+            println 'exception'
+        } finally {
+                                    // violation
+            println 'finally'
+        }
 
-    switch (true) {
-                                // violation
-        default:
-            println 'switch'
-    }
-```
+        switch (true) {
+                                    // violation
+            default:
+                println 'switch'
+        }

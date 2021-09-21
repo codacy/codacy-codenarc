@@ -5,8 +5,6 @@ is useless and confusing.
 
 The following code produces a violation:
 
-``` 
-    abstract class MyClass {
-        MyClass() { }
-    }
-```
+        abstract class MyClass {
+            MyClass() { }
+        }

@@ -13,5 +13,4 @@ methods will cause compilation errors.
 
 Example of violations:
 
-\``class ClassOverridingToString { String toString() {
-"ClassOverridingToString" } }`
+\``class ClassOverridingToString {         String toString() {           "ClassOverridingToString"         }     }`

@@ -8,17 +8,15 @@ Static references to methods on the current test class are ignored.
 
 Example of violations:
 
-``` 
-    class MyTest extends GroovyTestCase {
-        public void testMethod() {
-            // violation, static method call to other test
-            MyOtherTest.helperMethod()
+        class MyTest extends GroovyTestCase {
+            public void testMethod() {
+                // violation, static method call to other test
+                MyOtherTest.helperMethod()
 
-            // violation, instantiation of another test class
-            new MyOtherTest()
+                // violation, instantiation of another test class
+                new MyOtherTest()
 
-            // no violation; same class
-            def input = MyTest.getResourceAsStream('sample.txt')
+                // no violation; same class
+                def input = MyTest.getResourceAsStream('sample.txt')
+            }
         }
-    }
-```

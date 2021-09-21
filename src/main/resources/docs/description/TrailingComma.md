@@ -43,21 +43,17 @@ the elements or add new elements on the end.
 
 This is valid code:
 
-``` 
-  int[] array1 = [] // one line declaration
-  int[] array2 = [ // empty list
-                 ]
-  int[] array3 = [1,2,3] // one line declaration
-  int[] array4 = [1,
-                  2,
-                  3, // contains trailing comma
-                 ]
-```
+      int[] array1 = [] // one line declaration
+      int[] array2 = [ // empty list
+                     ]
+      int[] array3 = [1,2,3] // one line declaration
+      int[] array4 = [1,
+                      2,
+                      3, // contains trailing comma
+                     ]
 
 Example of violations:
 
-``` 
-  int[] array2 = [1,
-                  2 // there is no trailing comma
-                 ]
-```
+      int[] array2 = [1,
+                      2 // there is no trailing comma
+                     ]

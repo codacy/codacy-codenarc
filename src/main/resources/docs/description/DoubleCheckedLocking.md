@@ -11,34 +11,32 @@ available on Wikipedia:
 
 Example of violations:
 
-``` 
-    if (object == null) {
-        synchronized(this) {
-            if (object == null) {
-                // createObject() could be called twice depending
-                // on the Thread Scheduler.
-                object = createObject()
+        if (object == null) {
+            synchronized(this) {
+                if (object == null) {
+                    // createObject() could be called twice depending
+                    // on the Thread Scheduler.
+                    object = createObject()
+                }
             }
         }
-    }
 
-    // there are several idioms to fix this problem.
-    def result = object;
-    if (result == null) {
-        synchronized(this) {
-            result = object;
-            if (result == null)
-                object = result = createObject()
+        // there are several idioms to fix this problem.
+        def result = object;
+        if (result == null) {
+            synchronized(this) {
+                result = object;
+                if (result == null)
+                    object = result = createObject()
+            }
         }
-    }
 
-    // and a better solution for a singleton:
-    class myClass  {
-        private static class ObjectHolder {
-           public static Object object = createObject()
+        // and a better solution for a singleton:
+        class myClass  {
+            private static class ObjectHolder {
+               public static Object object = createObject()
+            }
+            public static Object getObject() {
+                return ObjectHolder.object;
+            }
         }
-        public static Object getObject() {
-            return ObjectHolder.object;
-        }
-    }
-```

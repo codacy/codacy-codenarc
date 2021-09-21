@@ -4,7 +4,7 @@ Check that there is at least one space (blank) or whitespace around each
 binary operator, including: +, -, \*, /, \*\*, \*\*, &&, ||, &, |, ?:,
 =, “as”.
 
-Do not check dot (‘.’) operator. Do not check unary operators (\!, +, -,
+Do not check dot (‘.’) operator. Do not check unary operators (!, +, -,
 ++, –, ?.). Do not check array (‘\[’) operator.
 
 <table>
@@ -36,16 +36,14 @@ fields initialization if the field is annotated.
 
 Examples of violations:
 
-``` 
-    def myMethod() {
-        3+ 5-x*23/ 100              // violation
-        list \*\*123                // violation
-        other\*\* writer            // violation
-        x=99                        // violation
-        x&& y                       // violation
-        x ||y                       // violation
-        x &y                        // violation
-        x| y                        // violation
-        [1,2]as String              // violation
-    }
-```
+        def myMethod() {
+            3+ 5-x*23/ 100              // violation
+            list \*\*123                // violation
+            other\*\* writer            // violation
+            x=99                        // violation
+            x&& y                       // violation
+            x ||y                       // violation
+            x &y                        // violation
+            x| y                        // violation
+            [1,2]as String              // violation
+        }

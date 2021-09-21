@@ -12,20 +12,18 @@ Rules](./codenarc-configuring-rules.html#standard-properties-for-configuring-rul
 
 Example of violations:
 
-``` 
-    /**
-     * Description
-     *
-     *                                                                          // violation
-     * @param startIndex - the starting index
-     * @return the full count
-     * @throws RuntimeException if you are not pure of spirit
-     *
-     * NOTE: Only the first occurrence of consecutive empty lines
-     *       within a javadoc comment is found, so the following
-     *       lines are not flagged as violations!!!
-     *
-     *
-     */
-    int countThings(int startIndex) { }
-```
+        /**
+         * Description
+         *
+         *                                                                          // violation
+         * @param startIndex - the starting index
+         * @return the full count
+         * @throws RuntimeException if you are not pure of spirit
+         *
+         * NOTE: Only the first occurrence of consecutive empty lines
+         *       within a javadoc comment is found, so the following
+         *       lines are not flagged as violations!!!
+         *
+         *
+         */
+        int countThings(int startIndex) { }

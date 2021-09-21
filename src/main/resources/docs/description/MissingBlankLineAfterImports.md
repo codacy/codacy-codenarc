@@ -5,10 +5,8 @@ file.
 
 Example of violation:
 
-``` 
-    import org.apache.commons.lang.StringUtils
-    class MyClass { }                       // violation
-```
+        import org.apache.commons.lang.StringUtils
+        class MyClass { }                       // violation
 
 NOTE: This is a file-based rule, rather than an AST-based rule, so the
 *applyToClassNames* and *doNotApplyToClassNames* rule configuration

@@ -29,42 +29,40 @@ rather than a Groovy method.
 
 Example of violations:
 
-``` 
-    interface Parent {
-        String getSomething()
-        String getSomethingElse()
-    }
-
-    class Child extends Parent {
-        static final VALUE = 'value'
-
-        String getSomething() {         // violation
-            'something'         
+        interface Parent {
+            String getSomething()
+            String getSomethingElse()
         }
 
-        @Override
-        String getSomethingElse() {     // violation
-            VALUE       
+        class Child extends Parent {
+            static final VALUE = 'value'
+
+            String getSomething() {         // violation
+                'something'         
+            }
+
+            @Override
+            String getSomethingElse() {     // violation
+                VALUE       
+            }
+
+            int getOtherValue() {           // violation
+                123
+            }
+
+            Class getTheClass() {           // violation
+                return Integer
+            }
+
+            static String getName() {       // violation
+                'MyName'
+            }
         }
 
-        int getOtherValue() {           // violation
-            123
+        class Child2 extends Parent {
+            static final VALUE = 'value'
+            final String something = 'something'    // this is cleaner
+            final String somethingElse = VALUE      // this is cleaner
+            final int otherValue = 123              // this is cleaner
+            static final String name = 'MyName'     // this is cleaner
         }
-
-        Class getTheClass() {           // violation
-            return Integer
-        }
-
-        static String getName() {       // violation
-            'MyName'
-        }
-    }
-
-    class Child2 extends Parent {
-        static final VALUE = 'value'
-        final String something = 'something'    // this is cleaner
-        final String somethingElse = VALUE      // this is cleaner
-        final int otherValue = 123              // this is cleaner
-        static final String name = 'MyName'     // this is cleaner
-    }
-```

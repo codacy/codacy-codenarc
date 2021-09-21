@@ -34,33 +34,31 @@ Rules](./codenarc-configuring-rules.html#standard-properties-for-configuring-rul
 
 Example of violations:
 
-``` 
-    /**
-     * Sample class
-     *
-     * @see                                                         // violation
-     */
-    class MyClass {
-
         /**
-         * Return the calculated count of some stuff,
-         * starting with the specified startIndex.
+         * Sample class
          *
-         * @param startIndex - the starting index
-         * @return the full count
-         * @throws RuntimeException when you least expect it
-         *     @see                                                 // violation
-         *
-         * NOTE: Only the first occurrence of an empty @see tag
-         *       within a javadoc comment is found, so the
-         *       following line is not flagged as a violation!!!
-         * @see
+         * @see                                                         // violation
          */
-        int countThings(int startIndex) { }
+        class MyClass {
 
-        /**
-         *@see                                                      // violation
-         */
-        String name = 'joe'
-    }
-```
+            /**
+             * Return the calculated count of some stuff,
+             * starting with the specified startIndex.
+             *
+             * @param startIndex - the starting index
+             * @return the full count
+             * @throws RuntimeException when you least expect it
+             *     @see                                                 // violation
+             *
+             * NOTE: Only the first occurrence of an empty @see tag
+             *       within a javadoc comment is found, so the
+             *       following line is not flagged as a violation!!!
+             * @see
+             */
+            int countThings(int startIndex) { }
+
+            /**
+             *@see                                                      // violation
+             */
+            String name = 'joe'
+        }

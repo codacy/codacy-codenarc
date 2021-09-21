@@ -2,9 +2,9 @@
 
 Checks for unnecessary calls to `toString()`. This includes:
 
-  - Calls to `toString()` on a String literal or expression
+-   Calls to `toString()` on a String literal or expression
 
-  - Calls to `toString()` for the value assigned to a `String` field or
+-   Calls to `toString()` for the value assigned to a `String` field or
     variable (if *checkAssignments* is `true`).
 
 <table>
@@ -31,17 +31,19 @@ Checks for unnecessary calls to `toString()`. This includes:
 
 Example of violations:
 
-``` 
-    def name = "Joe".toString()                             // violation - string literal
-    def groupId = ((String)row.get('GroupID')).toString()   // violation - string expression
+        def name = "Joe".toString()                             // violation - string literal
+        def groupId = ((String)row.get('GroupID')).toString()   // violation - string expression
 
-    class MyClass {
-        String name = nameNode.toString()           // violation - field
-        String code = account.getCode().toString()  // violation - field
+        class MyClass {
+            String name = nameNode.toString()           // violation - field
+            String code = account.getCode().toString()  // violation - field
 
-        void run() {
-            String name = nameNode.toString()       // violation - variable
-            String id = account.id.toString()       // violation - variable
+            def name = "Joe" + new Date().toString()    // violation - adding object to String
+
+            void run() {
+                String name = nameNode.toString()       // violation - variable
+                String id = account.id.toString()       // violation - variable
+
+                def string = "processing ${123L.toString()} or ${new Date().toString()}"    // 2 violations - GString value
+            }
         }
-    }
-```

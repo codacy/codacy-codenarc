@@ -6,18 +6,16 @@ never be null.
 
 Example of violations:
 
-``` 
-    def myMethod() {
-        "abc"?.bytes            // violation
-        [1,2]?.getSize()        // violation
-        [abc:123]?.name         // violation
-        [:]?.toString()         // violation
-        123?.class              // violation
-        123.45?.getClass()      // violation
-        Boolean.FALSE?.class    // violation
-        Boolean.TRUE?.class     // violation
-        this?.class             // violation
-        super?.getClass()       // violation
-        new Long(100)?.class    // violation
-    }
-```
+        def myMethod() {
+            "abc"?.bytes            // violation
+            [1,2]?.getSize()        // violation
+            [abc:123]?.name         // violation
+            [:]?.toString()         // violation
+            123?.class              // violation
+            123.45?.getClass()      // violation
+            Boolean.FALSE?.class    // violation
+            Boolean.TRUE?.class     // violation
+            this?.class             // violation
+            super?.getClass()       // violation
+            new Long(100)?.class    // violation
+        }

@@ -8,18 +8,16 @@ only match class names ending in ‘Spec’, ‘Test’, ‘Tests’ or ‘TestC
 
 Example of violations:
 
-``` 
-    @Test
-    void shouldDoStuff() throws Exception { }           // violation
+        @Test
+        void shouldDoStuff() throws Exception { }           // violation
 
-    @BeforeClass void initialize() throws Exception { } // violation
-    @Before void setUp() throws RuntimeException { }    // violation
-    @After void tearDown() throws Exception { }         // violation
-    @AfterClass void cleanUp() throws Exception { }     // violation
-    @Ignore void ignored() throws Exception { }         // violation
+        @BeforeClass void initialize() throws Exception { } // violation
+        @Before void setUp() throws RuntimeException { }    // violation
+        @After void tearDown() throws Exception { }         // violation
+        @AfterClass void cleanUp() throws Exception { }     // violation
+        @Ignore void ignored() throws Exception { }         // violation
 
-    class MyTest extends GroovyTestCase {
-        void test1() throws Exception { }               // violation
-        public void test2() throws IOException { }      // violation
-    }
-```
+        class MyTest extends GroovyTestCase {
+            void test1() throws Exception { }               // violation
+            public void test2() throws IOException { }      // violation
+        }

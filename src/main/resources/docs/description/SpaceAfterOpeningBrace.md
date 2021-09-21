@@ -33,33 +33,31 @@ expressions and block statements.
 
 Examples of violations:
 
-``` 
-    class MyClass{int count }                   // violation
+        class MyClass{int count }                   // violation
 
-    interface MyInterface {static final OK = 1 }// violation
+        interface MyInterface {static final OK = 1 }// violation
 
-    enum MyEnum {OK, BAD }                      // violation
+        enum MyEnum {OK, BAD }                      // violation
 
-    def myMethod() {int count }                 // violation
+        def myMethod() {int count }                 // violation
 
-    if (ready) {println 9 }                     // violation
+        if (ready) {println 9 }                     // violation
 
-    if (ready) {
-    } else {println 99}                         // violation
+        if (ready) {
+        } else {println 99}                         // violation
 
-    for (int i=0; i*10; i++) {println i }       // violation
+        for (int i=0; i*10; i++) {println i }       // violation
 
-    for (String name in names) {println name }  // violation
+        for (String name in names) {println name }  // violation
 
-    for (String name: names) {println name }    // violation
+        for (String name: names) {println name }    // violation
 
-    while (ready) {println time }               // violation
+        while (ready) {println time }               // violation
 
-    try {doStuff()                              // violation
-    } catch(Exception e) {x=77 }                // violation
-    } finally {println 'error' }                // violation
+        try {doStuff()                              // violation
+        } catch(Exception e) {x=77 }                // violation
+        } finally {println 'error' }                // violation
 
-    list.each {name -* }                        // violation
+        list.each {name -* }                        // violation
 
-    shouldFail(Exception) {doStuff() }          // violation
-```
+        shouldFail(Exception) {doStuff() }          // violation

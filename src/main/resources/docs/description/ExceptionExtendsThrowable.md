@@ -5,6 +5,4 @@ should subclass `Exception` or one of its descendants.
 
 Example of violations:
 
-``` 
-    class MyException extends Throwable { }   // violation
-```
+        class MyException extends Throwable { }   // violation

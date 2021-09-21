@@ -8,13 +8,11 @@ constructors) that include Generic types in the method declaration.
 
 Example of violations:
 
-``` 
-    // violation on class
-    public class MyClass {
-        // violation on constructor
-        public MyClass() {}
+        // violation on class
+        public class MyClass {
+            // violation on constructor
+            public MyClass() {}
 
-        // violation on method
-        public void myMethod() {}
-    }
-```
+            // violation on method
+            public void myMethod() {}
+        }

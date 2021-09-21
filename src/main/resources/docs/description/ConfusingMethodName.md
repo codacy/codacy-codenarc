@@ -8,11 +8,9 @@ override the other.
 Also, violations are triggered when methods and fields have very similar
 names.
 
-``` 
-    class MyClass {
-        int total
-        int total() {
-            1
+        class MyClass {
+            int total
+            int total() {
+                1
+            }
         }
-    }
-```

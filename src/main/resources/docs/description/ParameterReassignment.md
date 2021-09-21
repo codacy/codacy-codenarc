@@ -6,13 +6,11 @@ questionable practice. Use a temporary variable instead.
 
 Example of violations:
 
-``` 
-    void myMethod(int a, String b) {
-        println a
-        b = 'new value'     // violation
-    }
+        void myMethod(int a, String b) {
+            println a
+            b = 'new value'     // violation
+        }
 
-    def myClosure1 = { int a, b -*
-        a = 123             // violation
-    }
-```
+        def myClosure1 = { int a, b -*
+            a = 123             // violation
+        }

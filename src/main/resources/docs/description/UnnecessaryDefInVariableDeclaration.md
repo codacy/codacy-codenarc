@@ -6,22 +6,20 @@ and can be simplified to ‘private n = 2’.
 
 Examples of violations:
 
-``` 
-    // def and private is redundant
-    def private string1 = 'example'
+        // def and private is redundant
+        def private string1 = 'example'
 
-    // def and protected is redundant
-    def protected string2 = 'example'
+        // def and protected is redundant
+        def protected string2 = 'example'
 
-    // def and public is redundant
-    def public string3 = 'example'
+        // def and public is redundant
+        def public string3 = 'example'
 
-    // def and static is redundant
-    def static string4 = 'example'
+        // def and static is redundant
+        def static string4 = 'example'
 
-    // def and final is redundant
-    def final string5 = 'example'
+        // def and final is redundant
+        def final string5 = 'example'
 
-    // def and a type is redundant
-    def String string6 = 'example'
-```
+        // def and a type is redundant
+        def String string6 = 'example'

@@ -1,4 +1,4 @@
-\<Since CodeNarc 1.6\>
+\<Since CodeNarc 1.6>
 
 Checks for methods that are missing an explicit `return` statement.
 
@@ -8,16 +8,14 @@ as well as methods whose last statement is a: - `throw` - `if` - `for` -
 
 Example of violations:
 
-``` 
-    boolean example() { true }          // violation
-     
-    protected int longerExample() {
-        if (baseName == null) {
-            return 0
+        boolean example() { true }          // violation
+         
+        protected int longerExample() {
+            if (baseName == null) {
+                return 0
+            }
+            99                              // violation
         }
-        99                              // violation
-    }
-```
 
 Note: This rule is pretty much the opposite of the
 [UnnecessaryReturnKeyword](./codenarc-rules-unnecessary.html#unnecessaryreturnkeyword-rule)

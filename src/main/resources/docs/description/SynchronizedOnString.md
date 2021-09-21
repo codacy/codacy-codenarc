@@ -11,64 +11,62 @@ See [JETTY-352](http://www.javalobby.org/java/forums/t96352.html) and
 
 Examples:
 
-``` 
-    class MyClass {
+        class MyClass {
 
-        final String stringLock = "stringLock"
+            final String stringLock = "stringLock"
 
-        def method() {
-            // violation
-            synchronized(stringLock) { }
-        }
-    }
-
-    class MyClass {
-
-        final String stringLock = "stringLock"
-
-        class MyInnerClass {
-            def method() {
-                synchronized(stringLock) { }
-            }
-        }
-    }
-
-    class MyClass {
-        // implicit typing
-        final def stringLock = "stringLock"
-
-        def method() {
-            // violation
-            synchronized(stringLock) { }
-        }
-    }
-
-    class MyClass {
-        // implicit typing
-        final def lock = new Object[0] // correct idiom
-
-        def method() {
-            return new Runnable() {
-                final def lock = "" // shadows parent from inner class
-                public void run() {
-                    // violation
-                    synchronized(stringLock) { }
-                }
-            }
-        }
-    }
-
-    class MyClass {
-        // implicit typing
-        final def lock = new Object[0] // correct idiom
-
-        class MyInnerClass {
-
-            final def lock = "" // shadows parent from inner class
             def method() {
                 // violation
                 synchronized(stringLock) { }
             }
         }
-    }
-```
+
+        class MyClass {
+
+            final String stringLock = "stringLock"
+
+            class MyInnerClass {
+                def method() {
+                    synchronized(stringLock) { }
+                }
+            }
+        }
+
+        class MyClass {
+            // implicit typing
+            final def stringLock = "stringLock"
+
+            def method() {
+                // violation
+                synchronized(stringLock) { }
+            }
+        }
+
+        class MyClass {
+            // implicit typing
+            final def lock = new Object[0] // correct idiom
+
+            def method() {
+                return new Runnable() {
+                    final def lock = "" // shadows parent from inner class
+                    public void run() {
+                        // violation
+                        synchronized(stringLock) { }
+                    }
+                }
+            }
+        }
+
+        class MyClass {
+            // implicit typing
+            final def lock = new Object[0] // correct idiom
+
+            class MyInnerClass {
+
+                final def lock = "" // shadows parent from inner class
+                def method() {
+                    // violation
+                    synchronized(stringLock) { }
+                }
+            }
+        }

@@ -3,8 +3,6 @@
 An empty class instance initializer was found. It is safe to remove it.
 Example:
 
-``` 
-    class MyClass {
-        { }     // empty instance initializer, not a closure
-    }
-```
+        class MyClass {
+            { }     // empty instance initializer, not a closure
+        }

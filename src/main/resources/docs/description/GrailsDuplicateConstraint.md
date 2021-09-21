@@ -8,15 +8,13 @@ duplicated, only that there are two entries with the same name.
 
 Example of violations:
 
-``` 
-    class Person {
-        String firstName
-        String lastName
+        class Person {
+            String firstName
+            String lastName
 
-        static constraints = {
-            firstName nullable:true
-            lastName nullable:true, maxSize:30
-            firstName nullable:false                // violation
+            static constraints = {
+                firstName nullable:true
+                lastName nullable:true, maxSize:30
+                firstName nullable:false                // violation
+            }
         }
-    }
-```

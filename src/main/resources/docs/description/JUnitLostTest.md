@@ -13,10 +13,8 @@ only match class names ending in ‘Spec’, ‘Test’, ‘Tests’ or ‘TestC
 
 Example of violations:
 
-``` 
-    import org.junit.Test
+        import org.junit.Test
 
-    class MyTestCase {
-        void testMe() { }           // missing @Test annotation
-    }
-```
+        class MyTestCase {
+            void testMe() { }           // missing @Test annotation
+        }

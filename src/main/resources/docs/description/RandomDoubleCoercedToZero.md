@@ -7,13 +7,11 @@ int, or assigning it to an int field is probably a bug.
 
 Example of violations:
 
-``` 
-    (int) Math.random()
-    (Integer) Math.random()
-    int x = Math.random()
-    Integer y = Math.random()
-    int m() { Math.random() }
-    Integer m() { Math.random() }
-    (Math.random()) as int
-    (Math.random()) as Integer
-```
+        (int) Math.random()
+        (Integer) Math.random()
+        int x = Math.random()
+        Integer y = Math.random()
+        int m() { Math.random() }
+        Integer m() { Math.random() }
+        (Math.random()) as int
+        (Math.random()) as Integer

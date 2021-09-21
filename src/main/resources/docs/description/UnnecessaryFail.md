@@ -9,18 +9,16 @@ only match class names ending in ‘Spec’, ‘Test’, ‘Tests’ or ‘TestC
 
 Example of violations:
 
-``` 
-    public void testSomething() {
-        try {
-            something()
-        } catch (Exception e) {
-            fail(e.message)
-        }
+        public void testSomething() {
+            try {
+                something()
+            } catch (Exception e) {
+                fail(e.message)
+            }
 
-        try {
-            something()
-        } catch (Exception e) {
-            fail()
+            try {
+                something()
+            } catch (Exception e) {
+                fail()
+            }
         }
-    }
-```

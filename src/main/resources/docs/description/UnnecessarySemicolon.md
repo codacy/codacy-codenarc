@@ -10,22 +10,23 @@ default value is ’\\s?\\*.*|/\\*.*|.*//.*|.*\\*/.\*’ This is to filter
 out comments. Any source line that even looks like it is a comment is
 ignored.
 
-  - `\s?\*.*` == whitespace plus star character plus anything
-  - `/\*.*` == any line that contains the /\* sequence
-  - `.*//.*` == any line that contains the // sequence
-  - `.*\*/.*` == any line that contains the \*/ sequence
+-   `\s?\*.*` == whitespace plus star character plus anything
+-   `/\*.*` == any line that contains the /\* sequence
+-   `.*//.*` == any line that contains the // sequence
+-   `.*\*/.*` == any line that contains the \*/ sequence
 
 Example of violations:
 
-``` 
-    package my.company.server;  // violation
+        package my.company.server;  // violation
 
-    import java.lang.String;    // violation
+        import java.lang.String;    // violation
 
-    println(value) ;             // violation
+        println(value) ;             // violation
 
-    for (def x : list);         // violation
+        for (def x : list);         // violation
 
-    // this code is OK
-    println(value); println (otherValue)
-```
+        // this code is OK
+        println(value); println (otherValue)
+
+Known limitations: - Will not flag a semicolon on a field declaration
+with no initial value specified when running on Groovy 3.x.
