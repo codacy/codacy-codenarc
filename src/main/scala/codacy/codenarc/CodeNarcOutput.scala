@@ -13,10 +13,11 @@ object CodeNarcOutput {
       .toArray()
       .map {
         case violation: Violation =>
+          val ruleTitle = violation.getRule.getName
           CodeNarcOutput(
             fileResults.getPath,
-            Option(violation.getMessage).getOrElse(violation.getRule.getName),
-            violation.getRule.getName,
+            Option(violation.getMessage).getOrElse(ruleTitle),
+            ruleTitle,
             violation.getLineNumber.toInt
           )
       }
