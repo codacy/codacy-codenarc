@@ -6,21 +6,19 @@ for a class named *xxx***Exception** as an exception constructor call.
 
 Example of violations:
 
-``` 
-    void execute() {
-        try { } catch(Exception e) { new Exception(e) }     // violation
-    }
+        void execute() {
+            try { } catch(Exception e) { new Exception(e) }     // violation
+        }
 
-    try {
-        doStuff()
-    } catch(DaoException e) {
-        log.warning("Ooops", e)
-        new ServiceException(e)                             // violation
-    } catch(Exception e) {
-        new SystemException(e)                              // violation
-    }
+        try {
+            doStuff()
+        } catch(DaoException e) {
+            log.warning("Ooops", e)
+            new ServiceException(e)                             // violation
+        } catch(Exception e) {
+            new SystemException(e)                              // violation
+        }
 
-    try {
-        doStuff()
-    } catch(Exception e) { throw new DaoException(e) }      // ok
-```
+        try {
+            doStuff()
+        } catch(Exception e) { throw new DaoException(e) }      // ok

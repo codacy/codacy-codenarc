@@ -29,5 +29,10 @@ names ending in ‘Spec.groovy’, ‘Test.groovy’, ‘Tests.groovy’ or
 <td>The optional comma-separated list of numbers that should be ignored (i.e., not cause a violation).</td>
 <td><code>0,1</code></td>
 </tr>
+<tr class="even">
+<td>duplicateNumberMinimumValue</td>
+<td>Ignore duplicate numbers less than this value</td>
+<td><code>null</code></td>
+</tr>
 </tbody>
 </table>

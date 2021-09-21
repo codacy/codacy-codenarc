@@ -30,5 +30,5 @@ the **maxLines** property.
 
 Known Limitations:
 
-  - Annotations on a method are included in the size (line count) for
+-   Annotations on a method are included in the size (line count) for
     that method.

@@ -7,16 +7,14 @@ erratic behavior of the application.
 
 Example of violations:
 
-``` 
-    // two violations
-    class MyClass {
-      static Matcher matcher1
-      static java.util.regex.Matcher matcher2
-    }
+        // two violations
+        class MyClass {
+          static Matcher matcher1
+          static java.util.regex.Matcher matcher2
+        }
 
-    // these usages are OK
-    class MyCorrectClass {
-      private Matcher matcher1
-      static ThreadLocal*Matcher* matcher2
-    }
-```
+        // these usages are OK
+        class MyCorrectClass {
+          private Matcher matcher1
+          static ThreadLocal*Matcher* matcher2
+        }

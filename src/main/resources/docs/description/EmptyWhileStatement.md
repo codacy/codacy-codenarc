@@ -3,10 +3,8 @@ confusing and serve no purpose.
 
 Here is an example of code that produces a violation:
 
-``` 
-    def myMethod() {
-        while (!stopped) {
-            // empty
+        def myMethod() {
+            while (!stopped) {
+                // empty
+            }
         }
-    }
-```

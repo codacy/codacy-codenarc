@@ -19,7 +19,7 @@ instead.
 <tbody>
 <tr class="odd">
 <td>excludeRegex</td>
-<td>Regular expression describing names of attributes, parameters or methods that could be precede by the <code>def</code> keyword.</td>
+<td>Regular expression matching the names of fields, variables, parameters or methods that can be preceded by the <code>def</code> keyword.</td>
 <td>’’</td>
 </tr>
 </tbody>

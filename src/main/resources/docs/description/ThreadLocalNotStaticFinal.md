@@ -10,9 +10,7 @@ behavior.
 
 Here is an example of code that produces a violation:
 
-``` 
-    private static ThreadLocal local1 = new ThreadLocal()
-    private final ThreadLocal local2 = new ThreadLocal()
-    protected ThreadLocal local3 = new ThreadLocal()
-    ThreadLocal local4 = new ThreadLocal()
-```
+        private static ThreadLocal local1 = new ThreadLocal()
+        private final ThreadLocal local2 = new ThreadLocal()
+        protected ThreadLocal local3 = new ThreadLocal()
+        ThreadLocal local4 = new ThreadLocal()

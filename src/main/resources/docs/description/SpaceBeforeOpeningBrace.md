@@ -32,44 +32,42 @@ a violation.
 
 Known limitations:
 
-  - May not catch actual violations if the source line contains unicode
+-   May not catch actual violations if the source line contains unicode
     character literals, e.g. `'\\u00A0'`
 
 Examples of violations:
 
-``` 
-    class MyClass{ }                            // violation
-    class MyOtherClass extends AbstractClass{ } // violation
+        class MyClass{ }                            // violation
+        class MyOtherClass extends AbstractClass{ } // violation
 
-    interface MyInterface{ }                    // violation
+        interface MyInterface{ }                    // violation
 
-    enum MyEnum{ OK, BAD }                      // violation
+        enum MyEnum{ OK, BAD }                      // violation
 
-    def myMethod(){ }                           // violation
+        def myMethod(){ }                           // violation
 
-    if (ready){ }                               // violation
+        if (ready){ }                               // violation
 
-    if (ready) {
-    } else{}                                    // violation
+        if (ready) {
+        } else{}                                    // violation
 
-    for (int i=0; i*10; i++){ }                 // violation
+        for (int i=0; i*10; i++){ }                 // violation
 
-    for (String name in names){ }               // violation
+        for (String name in names){ }               // violation
 
-    for (String name: names){ }                 // violation
+        for (String name: names){ }                 // violation
 
-    while (ready){ }                            // violation
+        while (ready){ }                            // violation
 
-    try{
-    } finally { }                               // violation
+        try{
+        } finally { }                               // violation
 
-    try {
-    } catch(Exception e){ }                     // violation
+        try {
+        } catch(Exception e){ }                     // violation
 
-    try {
-    } finally{ }                                // violation
+        try {
+        } finally{ }                                // violation
 
-    list.each{ name -* }                        // violation
+        list.each{ name -* }                        // violation
 
-    shouldFail(Exception){ doStuff() }          // violation
-```
+        shouldFail(Exception){ doStuff() }          // violation

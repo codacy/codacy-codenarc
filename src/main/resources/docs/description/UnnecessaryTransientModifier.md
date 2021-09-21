@@ -12,14 +12,12 @@ which Java frameworks are in use.
 
 Examples:
 
-``` 
-    class MyClass {
-        // class not serializable, violation occurs
-        transient String property
-    }
+        class MyClass {
+            // class not serializable, violation occurs
+            transient String property
+        }
 
-    class MySerializableClass implements Serializable {
-        // OK, class is serializable
-        transient String property
-    }
-```
+        class MySerializableClass implements Serializable {
+            // OK, class is serializable
+            transient String property
+        }

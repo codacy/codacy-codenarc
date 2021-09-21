@@ -15,13 +15,11 @@ For more information see:
 
 Example of violations:
 
-``` 
-     def r1 = new Random()
-     def r2 = new java.util.Random()
-     Math.random()
-     java.lang.Math.random()
+         def r1 = new Random()
+         def r2 = new java.util.Random()
+         Math.random()
+         java.lang.Math.random()
 
-     // this is OK
-     new java.security.SecureRandom()
-     new SecureRandom()
-```
+         // this is OK
+         new java.security.SecureRandom()
+         new SecureRandom()

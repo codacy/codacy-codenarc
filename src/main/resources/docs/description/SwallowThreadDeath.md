@@ -3,10 +3,8 @@ without re-throwing it.
 
 Example of violations:
 
-``` 
-    try {
-        def a = 0
-    } catch (ThreadDeath td) {
-        td.printStackTrace()
-    }
-```
+        try {
+            def a = 0
+        } catch (ThreadDeath td) {
+            td.printStackTrace()
+        }

@@ -6,22 +6,20 @@ closures.
 Methods calls, constructor calls, and property access through Builder
 objects are ignore. For instance, this code does not cause a violation:
 
-``` 
-    myBuilder.root {
-        foo {
-            bar {
-                baz {
-                    quix {
-                        qux {
-                            quaxz {
+        myBuilder.root {
+            foo {
+                bar {
+                    baz {
+                        quix {
+                            qux {
+                                quaxz {
+                                }
                             }
                         }
                     }
                 }
             }
         }
-    }
-```
 
 <table>
 <colgroup>

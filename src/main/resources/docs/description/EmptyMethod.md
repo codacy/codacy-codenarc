@@ -8,22 +8,20 @@ interface. Use with Java 6 and higher.
 
 Example of violations:
 
-``` 
-    class MyClass {
+        class MyClass {
 
-        // violation, empty method
-        public void method1() {}
+            // violation, empty method
+            public void method1() {}
 
-        // violation, empty method
-        def method2() {}
+            // violation, empty method
+            def method2() {}
 
-        // OK because of @Override
-        @Override
-        public void method3() {}
-    }
+            // OK because of @Override
+            @Override
+            public void method3() {}
+        }
 
-    abstract class MyBaseClass {
-        // OK, handled by EmptyMethodInAbstractClass Rule
-        public void method() {}
-    }
-```
+        abstract class MyBaseClass {
+            // OK, handled by EmptyMethodInAbstractClass Rule
+            public void method() {}
+        }

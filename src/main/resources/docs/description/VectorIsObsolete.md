@@ -6,6 +6,4 @@ class. Use the **Java Collections Framework** classes instead, including
 
 Example of violations:
 
-``` 
-    def myList = new Vector()           // violation
-```
+        def myList = new Vector()           // violation

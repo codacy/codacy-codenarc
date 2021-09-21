@@ -14,24 +14,22 @@ defaults to the value ’instance|\_instance’
 
 Example of violations:
 
-``` 
-    @groovy.lang.Singleton
-    class Service {
-       // violation: the class has no fields but is marked Singleton
-        void processItem(item){
+        @groovy.lang.Singleton
+        class Service {
+           // violation: the class has no fields but is marked Singleton
+            void processItem(item){
+            }
         }
-    }
 
-    class Service {
-       // violation: the class has no fields other than 'instance' but is marked Singleton
-        static instance
-        void processItem(item){
+        class Service {
+           // violation: the class has no fields other than 'instance' but is marked Singleton
+            static instance
+            void processItem(item){
+            }
         }
-    }
 
-    class Service {                                       // violation
-        static Service service
-        void processItem(item){
+        class Service {                                       // violation
+            static Service service
+            void processItem(item){
+            }
         }
-    }
-```

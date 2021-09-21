@@ -10,9 +10,7 @@ the `Boolean.TRUE` or `Boolean.FALSE` constants instead.
 
 Here is an example of code that produces a violation:
 
-``` 
-    def b1 = new Boolean(true)             // violation
-    def b2 = new java.lang.Boolean(false)  // violation
-    def b3 = Boolean.valueOf(true)         // violation
-    def b4 = Boolean.valueOf(false)        // violation
-```
+        def b1 = new Boolean(true)             // violation
+        def b2 = new java.lang.Boolean(false)  // violation
+        def b3 = Boolean.valueOf(true)         // violation
+        def b4 = Boolean.valueOf(false)        // violation

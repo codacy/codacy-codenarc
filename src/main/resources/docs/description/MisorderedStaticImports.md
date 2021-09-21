@@ -7,12 +7,10 @@ property to false.
 
 Examples of violations:
 
-``` 
-    import my.something.another
-    import static foo.bar
+        import my.something.another
+        import static foo.bar
 
-    public class MyClass{}
-```
+        public class MyClass{}
 
 NOTE: This is a file-based rule, rather than a typical AST-based rule,
 so the *applyToClassNames* and *doNotApplyToClassNames* rule

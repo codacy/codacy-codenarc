@@ -27,12 +27,10 @@ not using `def`).
 
 Example of violations:
 
-``` 
-    class MyClass {
-        void doStuff() {
-            final NAME = "joe"          // violation
-            def count = 0, max = 99     // violation
-            def defaultName             // violation
+        class MyClass {
+            void doStuff() {
+                final NAME = "joe"          // violation
+                def count = 0, max = 99     // violation
+                def defaultName             // violation
+            }
         }
-    }
-```

@@ -28,15 +28,13 @@ takes no arguments, or else contains only a single call to `super()`.
 
 Example of violations:
 
-``` 
-    class MyClass {
-        public MyClass() {          // violation; constructor is not necessary
+        class MyClass {
+            public MyClass() {          // violation; constructor is not necessary
+            }
         }
-    }
 
-    class MyClass2 extends OtherClass {
-        MyClass2() {                // violation; constructor is not necessary
-            super()
+        class MyClass2 extends OtherClass {
+            MyClass2() {                // violation; constructor is not necessary
+                super()
+            }
         }
-    }
-```

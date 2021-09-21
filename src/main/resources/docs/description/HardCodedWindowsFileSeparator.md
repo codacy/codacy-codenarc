@@ -6,8 +6,6 @@ separator or use the File.separator constant.
 
 Example of violations:
 
-``` 
-   new File('.\\foo\\')
-   new File('c:\\dir')
-   new File('../foo\\')
-```
+       new File('.\\foo\\')
+       new File('c:\\dir')
+       new File('../foo\\')

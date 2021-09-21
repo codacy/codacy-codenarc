@@ -12,7 +12,5 @@ For more information see:
 
 Example of violations:
 
-``` 
-    DriverManager.getConnection()
-    java.sql.DriverManager.getConnection()
-```
+        DriverManager.getConnection()
+        java.sql.DriverManager.getConnection()

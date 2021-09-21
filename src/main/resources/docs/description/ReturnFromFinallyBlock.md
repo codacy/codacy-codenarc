@@ -3,15 +3,13 @@ Checks for a return from within a *finally* block. Returning from a
 
 Here is an example of code that produces a violation:
 
-``` 
-    int myMethod() {
-        try {
-            doSomething()
-            return 0
-        } catch(Exception e) {
-            return -1
-        } finally {
-            return 99               // violation
+        int myMethod() {
+            try {
+                doSomething()
+                return 0
+            } catch(Exception e) {
+                return -1
+            } finally {
+                return 99               // violation
+            }
         }
-    }
-```

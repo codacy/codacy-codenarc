@@ -9,43 +9,41 @@ coding style.
 
 Examples:
 
-``` 
-    class MyClass implements Serializable {
+        class MyClass implements Serializable {
 
-        private synchronized void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
-            // violation, no need to synchronized
-        }
-    }
-
-    class MyClass implements Serializable {
-
-        private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
-            synchronized(lock) {
+            private synchronized void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
                 // violation, no need to synchronized
             }
         }
-    }
 
-    // OK, class not Serializable
-    class MyClass {
+        class MyClass implements Serializable {
 
-        private synchronized void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException { }
-    }
-
-    // OK, class not Serializable
-    class MyClass {
-
-        private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
-            synchronized(lock) { }
+            private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
+                synchronized(lock) {
+                    // violation, no need to synchronized
+                }
+            }
         }
-    }
 
-    class MyClass implements Serializable {
+        // OK, class not Serializable
+        class MyClass {
 
-        private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
-            // OK, this block is more than just a simple sync statement
-            synchronized(lock) { }
-            doSomething()
+            private synchronized void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException { }
         }
-    }
-```
+
+        // OK, class not Serializable
+        class MyClass {
+
+            private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
+                synchronized(lock) { }
+            }
+        }
+
+        class MyClass implements Serializable {
+
+            private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
+                // OK, this block is more than just a simple sync statement
+                synchronized(lock) { }
+                doSomething()
+            }
+        }

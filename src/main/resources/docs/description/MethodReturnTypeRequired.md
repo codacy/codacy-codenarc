@@ -27,13 +27,11 @@ explicitly stated and different than def.
 
 Example of violations:
 
-``` 
-    def methodWithDynamicReturnType() {    // violation
-    }
+        def methodWithDynamicReturnType() {    // violation
+        }
 
-    private methodWithoutReturnType() {    // violation
-    }
+        private methodWithoutReturnType() {    // violation
+        }
 
-    Object objectReturningMethod() {       // OK
-    }
-```
+        Object objectReturningMethod() {       // OK
+        }

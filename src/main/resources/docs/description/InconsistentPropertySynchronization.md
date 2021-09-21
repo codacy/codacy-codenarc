@@ -9,53 +9,51 @@ method should both be synchronized or neither should be synchronized.
 
 Example of violations:
 
-``` 
-    class Person {
-        String name
-        Date birthday
-        boolean deceased
-        boolean parent
-        int weight
+        class Person {
+            String name
+            Date birthday
+            boolean deceased
+            boolean parent
+            int weight
 
-        synchronized setName(String name) {
-            this.name = name
-        }
-        // violation, get method should be synchronized
-        String getName() {
-            name
-        }
+            synchronized setName(String name) {
+                this.name = name
+            }
+            // violation, get method should be synchronized
+            String getName() {
+                name
+            }
 
-        // violation, set method should be synchronized
-        void setBirthday(Date birthday) {
-            this.birthday = birthday
-        }
+            // violation, set method should be synchronized
+            void setBirthday(Date birthday) {
+                this.birthday = birthday
+            }
 
-        synchronized String getBirthday() {
-            birthday
-        }
+            synchronized String getBirthday() {
+                birthday
+            }
 
-        // violation, set method should be synchronized
-        void setDeceased(boolean deceased) {
-            this.deceased = deceased
-        }
+            // violation, set method should be synchronized
+            void setDeceased(boolean deceased) {
+                this.deceased = deceased
+            }
 
-        synchronized boolean isDeceased() {
-            deceased
-        }
+            synchronized boolean isDeceased() {
+                deceased
+            }
 
-        synchronized void setParent(boolean parent) {
-            this.parent = parent
-        }
+            synchronized void setParent(boolean parent) {
+                this.parent = parent
+            }
 
-        // violation, get method should be synchronized
-        boolean isParent() {
-            parent
-        }
+            // violation, get method should be synchronized
+            boolean isParent() {
+                parent
+            }
 
-        // violation get method should be synchronized
-        @groovy.transform.Synchronized
-        void setWeight(int value) {
-            weight = value
+            // violation get method should be synchronized
+            @groovy.transform.Synchronized
+            void setWeight(int value) {
+                weight = value
+            }
         }
-    }
-```

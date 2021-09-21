@@ -12,36 +12,32 @@ exceptions.
 
 Example of violations:
 
-``` 
-    // both firstName and lastName will probably have database limit of 255 characters
-    // which is not validated by Grails validation causing runtime JDBC exception
-    class Person {
+        // both firstName and lastName will probably have database limit of 255 characters
+        // which is not validated by Grails validation causing runtime JDBC exception
+        class Person {
 
-        String firstName
-        String lastName
+            String firstName
+            String lastName
 
-        static constraints = {
-            firstName nullable:true
-            lastName nullable:true
+            static constraints = {
+                firstName nullable:true
+                lastName nullable:true
+            }
         }
-    }
-```
 
 Example of valid configuration:
 
-``` 
-    class Person {
+        class Person {
 
-        String firstName
-        String lastName
+            String firstName
+            String lastName
 
-        static constraints = {
-            firstName nullable:true, maxSize: 255
-            lastName nullable:true
+            static constraints = {
+                firstName nullable:true, maxSize: 255
+                lastName nullable:true
+            }
+
+            static mapping = {
+                lastName type: 'text'
+            }
         }
-
-        static mapping = {
-            lastName type: 'text'
-        }
-    }
-```

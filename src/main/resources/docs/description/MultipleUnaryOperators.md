@@ -5,10 +5,8 @@ and are likely typos and bugs.
 
 Example of violations:
 
-``` 
-    int z = ~~2             // violation
-    boolean b = !!true      // violation
-    boolean c = !!!false    // 2 violations
-    int j = -~7             // violation
-    int k = +~8             // violation
-```
+        int z = ~~2             // violation
+        boolean b = !!true      // violation
+        boolean c = !!!false    // 2 violations
+        int j = -~7             // violation
+        int k = +~8             // violation

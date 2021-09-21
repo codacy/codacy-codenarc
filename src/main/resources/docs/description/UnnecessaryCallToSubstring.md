@@ -5,10 +5,8 @@ code is meaningless.
 
 Examples:
 
-``` 
-    string.substring(0)         // violation
-    method().substring(0)       // violation
+        string.substring(0)         // violation
+        method().substring(0)       // violation
 
-    prop.substring(1)           // OK, not constant 0
-    prop.substring(0, 1)        // OK, end is specified
-```
+        prop.substring(1)           // OK, not constant 0
+        prop.substring(0, 1)        // OK, end is specified

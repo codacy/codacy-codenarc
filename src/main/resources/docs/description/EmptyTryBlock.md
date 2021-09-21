@@ -3,12 +3,10 @@ serve no purpose.
 
 Here is an example of code that produces a violation:
 
-``` 
-    def myMethod() {
-        try {
-            // empty
-        } catch(MyException e) {
-            e.printStackTrace()
+        def myMethod() {
+            try {
+                // empty
+            } catch(MyException e) {
+                e.printStackTrace()
+            }
         }
-    }
-```

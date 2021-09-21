@@ -6,24 +6,22 @@ expression.
 
 Example of violations:
 
-``` 
-    x ? x : false               // violation; can simplify to x ?: false
+        x ? x : false               // violation; can simplify to x ?: false
 
-    foo() ? foo() : bar()       // violation; can simplify to foo() ?: bar()
-    foo(1) ? foo(1) : 123       // violation; can simplify to foo(1) ?: 123
+        foo() ? foo() : bar()       // violation; can simplify to foo() ?: bar()
+        foo(1) ? foo(1) : 123       // violation; can simplify to foo(1) ?: 123
 
-    (x == y) ? same : diff      // OK
-    x ? y : z                   // OK
-    x ? x + 1 : x + 2           // OK
-    x ? 1 : 0                   // OK
-    x ? !x : x                  // OK
-    !x ? x : null               // OK
+        (x == y) ? same : diff      // OK
+        x ? y : z                   // OK
+        x ? x + 1 : x + 2           // OK
+        x ? 1 : 0                   // OK
+        x ? !x : x                  // OK
+        !x ? x : null               // OK
 
-    foo() ? bar() : 123         // OK
-    foo() ? foo(99) : 123       // OK
-    foo(x) ? foo() : 123        // OK
-    foo(1) ? foo(2) : 123       // OK
-```
+        foo() ? bar() : 123         // OK
+        foo() ? foo(99) : 123       // OK
+        foo(x) ? foo() : 123        // OK
+        foo(1) ? foo(2) : 123       // OK
 
 NOTE: If the *boolean* and *true* expressions are the same method call,
 and that method call has *side-effects*, then converting it to a *Elvis*

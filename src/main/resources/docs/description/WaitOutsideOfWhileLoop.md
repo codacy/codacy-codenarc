@@ -12,34 +12,30 @@ discussion in *Effective Java* \[2\].
 
 Example of violation:
 
-``` 
-    class MyClass {
-        private data
+        class MyClass {
+            private data
 
-        void processData()
-            synchronized(data) {
-                if (!data.isReady()) {
-                    data.wait()
+            void processData()
+                synchronized(data) {
+                    if (!data.isReady()) {
+                        data.wait()
+                    }
+                    data.calculateStatistics()
                 }
-                data.calculateStatistics()
             }
         }
-    }
-```
 
 Example of correct usage:
 
-``` 
-    class MyClass {
-        private data
+        class MyClass {
+            private data
 
-        void processData()
-            synchronized(data) {
-                while (!data.isReady()) {
-                    data.wait()
+            void processData()
+                synchronized(data) {
+                    while (!data.isReady()) {
+                        data.wait()
+                    }
+                    data.calculateStatistics()
                 }
-                data.calculateStatistics()
             }
         }
-    }
-```

@@ -10,9 +10,7 @@ any referenced classes, on the classpath.
 
 Example of violations:
 
-``` 
-    class ValueClass {
-        ValueClass clone() {
+        class ValueClass {
+            ValueClass clone() {
+            }
         }
-    }
-```

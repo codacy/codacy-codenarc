@@ -37,21 +37,19 @@ instance, do not contain references to DAO classes (e.g., \*Dao).
 Here is an example configuration of this rule used to ensure that DAO
 classes are not referenced from within model classes:
 
-``` 
-    ruleset {
-        description "Example CodeNarc Ruleset"
+        ruleset {
+            description "Example CodeNarc Ruleset"
 
-        // ...
+            // ...
 
-        IllegalClassReference {
-            name = 'DoNotReferenceDaoFromModelClasses'
-            priority = 2
-            classNames = '*Dao'
-            applyToClassNames = 'com.example.model.*'
-            description = 'Do not reference DAOs from model classes.'
+            IllegalClassReference {
+                name = 'DoNotReferenceDaoFromModelClasses'
+                priority = 2
+                classNames = '*Dao'
+                applyToClassNames = 'com.example.model.*'
+                description = 'Do not reference DAOs from model classes.'
+            }
         }
-    }
-```
 
 A RuleSet can contain any number of instances of this rule, but each
 should be configured with a unique rule *name* and *classNames*, and

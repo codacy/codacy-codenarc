@@ -5,6 +5,4 @@ so marking it final is unnecessary.
 
 Example of violations:
 
-``` 
-    private final method() {}
-```
+        private final method() {}

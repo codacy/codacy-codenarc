@@ -14,15 +14,13 @@ ignored–all enum types have a fixed serialVersionUID of 0L.*
 
 Example of violations:
 
-``` 
-    enum MyEnum {
-        ONE, TWO, THREE
-        private static final long serialVersionUID = 1234567L               // violation
-        private static final ObjectStreamField[] serialPersistentFields =   // violation
-            { new ObjectStreamField("name", String.class) }
-        String name;
+        enum MyEnum {
+            ONE, TWO, THREE
+            private static final long serialVersionUID = 1234567L               // violation
+            private static final ObjectStreamField[] serialPersistentFields =   // violation
+                { new ObjectStreamField("name", String.class) }
+            String name;
 
-        Object writeReplace() throws ObjectStreamException { .. }      // violation
-        private void writeObject(ObjectOutputStream stream) { .. }     // violation
-    }
-```
+            Object writeReplace() throws ObjectStreamException { .. }      // violation
+            private void writeObject(ObjectOutputStream stream) { .. }     // violation
+        }

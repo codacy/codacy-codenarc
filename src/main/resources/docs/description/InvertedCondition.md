@@ -7,8 +7,6 @@ by convention placed on the right hand side of the comparision.
 
 Example of violations:
 
-``` 
-    boolean isTenCharactersLong(String value) {
-        10 == value.size()  // violation
-    }
-```
+        boolean isTenCharactersLong(String value) {
+            10 == value.size()  // violation
+        }

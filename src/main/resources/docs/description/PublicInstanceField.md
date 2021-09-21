@@ -5,8 +5,6 @@ instead.
 
 Example of violations:
 
-``` 
-    class Person {
-        public String name
-    }
-```
+        class Person {
+            public String name
+        }

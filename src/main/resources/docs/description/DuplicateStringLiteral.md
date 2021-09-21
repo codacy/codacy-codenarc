@@ -5,6 +5,8 @@ This rule checks for duplicate String literals within the current class.
 Code containing duplicate *String* literals can usually be improved by
 declaring the *String* as a constant field.
 
+This rule ignores (zero-length) empty strings.
+
 By default, the rule does not analyze test files. This rule sets the
 default value of the *doNotApplyToFilesMatching* property to ignore file
 names ending in ‘Spec.groovy’, ‘Test.groovy’, ‘Tests.groovy’ or
@@ -33,6 +35,11 @@ names ending in ‘Spec.groovy’, ‘Test.groovy’, ‘Tests.groovy’ or
 <td>ignoreStringsDelimiter</td>
 <td>The delimiter char for <code>ignoreStrings</code>.</td>
 <td><code>,</code> (comma)</td>
+</tr>
+<tr class="odd">
+<td>duplicateStringMinimumLength</td>
+<td>Ignore duplicate strings whose length is less than this value</td>
+<td><code>null</code></td>
 </tr>
 </tbody>
 </table>

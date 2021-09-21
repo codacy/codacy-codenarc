@@ -5,13 +5,11 @@ without restriction.
 
 Example of violations:
 
-``` 
-   // Person would be a grails domain object
-   def person = new Person(params)
-   person.save()
+       // Person would be a grails domain object
+       def person = new Person(params)
+       person.save()
 
-   // or using .properties
-   def person = Person.get(1)
-   person.properties = params
-   person.save()
-```
+       // or using .properties
+       def person = Person.get(1)
+       person.properties = params
+       person.save()

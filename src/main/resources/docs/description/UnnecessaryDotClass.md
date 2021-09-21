@@ -6,10 +6,8 @@ String.
 
 Example of violations:
 
-``` 
-    // The '.class' identifier is unnecessary, violation occurs
-    def x = String.class
+        // The '.class' identifier is unnecessary, violation occurs
+        def x = String.class
 
-    // Ok, unnecessary '.class' identifier has been excluded
-    def x = String
-```
+        // Ok, unnecessary '.class' identifier has been excluded
+        def x = String

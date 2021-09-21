@@ -5,6 +5,4 @@ super-interface, other than the package. This can be very confusing.
 
 Example of violations:
 
-``` 
-    interface MyInterface extends other.MyInterface { }     // violation
-```
+        interface MyInterface extends other.MyInterface { }     // violation

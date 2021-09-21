@@ -8,6 +8,4 @@ Checks for direct call to the `String` constructor that accepts a
 
 Here is an example of code that produces a violation:
 
-``` 
-    def s = new String('abc')
-```
+        def s = new String('abc')

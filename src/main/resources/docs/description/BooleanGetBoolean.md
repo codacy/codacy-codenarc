@@ -7,11 +7,9 @@ poor piece of API to use; replace it with System.properties\[‘prop̈́’\].
 
 Example of violations:
 
-``` 
-    // produces violation
-    Boolean.getBoolean(value)
+        // produces violation
+        Boolean.getBoolean(value)
 
-    // zero or two parameters is OK, must be different method
-    Boolean.getBoolean(value, 1)
-    Boolean.getBoolean()
-```
+        // zero or two parameters is OK, must be different method
+        Boolean.getBoolean(value, 1)
+        Boolean.getBoolean()

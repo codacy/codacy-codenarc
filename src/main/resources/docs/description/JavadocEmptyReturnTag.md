@@ -34,13 +34,11 @@ Rules](./codenarc-configuring-rules.html#standard-properties-for-configuring-rul
 
 Example of violations:
 
-``` 
-    /**
-     * Return the calculated count of some stuff.
-     *
-     * @param startIndex - the starting index
-     * @return                                  // violation
-     * @throws RuntimeException if you don't say "please"
-     */
-    int countThings(int startIndex) { }
-```
+        /**
+         * Return the calculated count of some stuff.
+         *
+         * @param startIndex - the starting index
+         * @return                                  // violation
+         * @throws RuntimeException if you don't say "please"
+         */
+        int countThings(int startIndex) { }

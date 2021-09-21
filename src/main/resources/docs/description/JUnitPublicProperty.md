@@ -31,14 +31,12 @@ only match class names ending in ‘Spec’, ‘Test’, ‘Tests’ or ‘TestC
 
 Example of violations:
 
-``` 
-    import org.junit.Test
-    class MyTestCase {
-        static String id    // violation
-        def helper          // violation
-        String name         // violation
+        import org.junit.Test
+        class MyTestCase {
+            static String id    // violation
+            def helper          // violation
+            String name         // violation
 
-        @Test
-        void testMe() { }
-    }
-```
+            @Test
+            void testMe() { }
+        }

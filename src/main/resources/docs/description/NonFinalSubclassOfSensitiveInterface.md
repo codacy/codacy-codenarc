@@ -14,24 +14,22 @@ For more information see:
 
 Example of violations:
 
-``` 
-    class MyPermission extends java.security.Permission {
-        MyPermission(String name) { super(name) }
-        boolean implies(Permission permission) { true }
-        boolean equals(Object obj) { true }
-        int hashCode() { 0 }
-        String getActions() { "action" }
-    }
+        class MyPermission extends java.security.Permission {
+            MyPermission(String name) { super(name) }
+            boolean implies(Permission permission) { true }
+            boolean equals(Object obj) { true }
+            int hashCode() { 0 }
+            String getActions() { "action" }
+        }
 
-    class MyBasicPermission extends BasicPermission {
-        MyBasicPermission(String name) { super(name) }
-    }
+        class MyBasicPermission extends BasicPermission {
+            MyBasicPermission(String name) { super(name) }
+        }
 
-    class MyPrivilegedAction implements PrivilegedAction {
-        Object run() { 0 }
-    }
+        class MyPrivilegedAction implements PrivilegedAction {
+            Object run() { 0 }
+        }
 
-    class MyPrivilegedActionException extends PrivilegedActionException {
-        MyPrivilegedActionException(Exception exception) { super(exception) }
-    }
-```
+        class MyPrivilegedActionException extends PrivilegedActionException {
+            MyPrivilegedActionException(Exception exception) { super(exception) }
+        }

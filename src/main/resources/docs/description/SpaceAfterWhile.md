@@ -5,7 +5,5 @@ and before the opening parenthesis.
 
 Examples of violations:
 
-``` 
-    while(true) { }             // violation
-    while  (true) { }           // violation
-```
+        while(true) { }             // violation
+        while  (true) { }           // violation

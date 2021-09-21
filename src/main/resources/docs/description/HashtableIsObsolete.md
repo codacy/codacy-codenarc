@@ -7,6 +7,4 @@ javadoc.
 
 Example of violations:
 
-``` 
-    def myMap = new Hashtable()           // violation
-```
+        def myMap = new Hashtable()           // violation

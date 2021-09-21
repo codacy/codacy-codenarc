@@ -7,7 +7,7 @@ conveys the intent.
 Example of violations:
 
     def l = [1, 2, 3, 4]
-    
+
     l.collect{ [it, it*2] }.flatten() // suboptimal
-    
+
     l.collectMany{ [it, it*2] }       // same functionality, better readability

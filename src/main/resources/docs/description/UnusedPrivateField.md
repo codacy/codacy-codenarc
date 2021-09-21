@@ -27,6 +27,11 @@ property to the ‘fieldx, serialVersionUID’
 <td>Specifies one or more (comma-separated) field names that should be ignored (i.e., that should not cause a rule violation). The names may optionally contain wildcards (*,?).</td>
 <td><code>serialVersionUID</code></td>
 </tr>
+<tr class="even">
+<td>allowConstructorOnlyUsages</td>
+<td>Should be set to <code>false</code> if violations are to be raised for fields which are used only within constructors.</td>
+<td><code>true</code></td>
+</tr>
 </tbody>
 </table>
 

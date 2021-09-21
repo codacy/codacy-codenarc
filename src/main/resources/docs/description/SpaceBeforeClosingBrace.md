@@ -33,38 +33,36 @@ expressions and block statements.
 
 Known limitations:
 
-  - May not catch actual violations if the source line contains unicode
+-   May not catch actual violations if the source line contains unicode
     character literals, e.g. `'\\u00A0'`
 
 Examples of violations:
 
-``` 
-    class MyClass { int count}                  // violation
+        class MyClass { int count}                  // violation
 
-    interface MyInterface { void doStuff()}     // violation
+        interface MyInterface { void doStuff()}     // violation
 
-    enum MyEnum { OK, BAD}                      // violation
+        enum MyEnum { OK, BAD}                      // violation
 
-    def myMethod() { return 9}                  // violation
+        def myMethod() { return 9}                  // violation
 
-    if (ready) { doStuff()}                     // violation
+        if (ready) { doStuff()}                     // violation
 
-    if (ready) {
-    } else { return 9}                          // violation
+        if (ready) {
+        } else { return 9}                          // violation
 
-    for (int i=0; i*10; i++) { println i}       // violation
+        for (int i=0; i*10; i++) { println i}       // violation
 
-    for (String name in names) { println name}  // violation
+        for (String name in names) { println name}  // violation
 
-    for (String name: names) { println name}    // violation
+        for (String name: names) { println name}    // violation
 
-    while (ready) { doStuff()}                  // violation
+        while (ready) { doStuff()}                  // violation
 
-    try { doStuff()}                            // violation
-    catch(Exception e) { logError(e)}           // violation
-    finally { cleanUp()}                        // violation
+        try { doStuff()}                            // violation
+        catch(Exception e) { logError(e)}           // violation
+        finally { cleanUp()}                        // violation
 
-    list.each { name -* println name}           // violation
+        list.each { name -* println name}           // violation
 
-    shouldFail(Exception) { doStuff()}          // violation
-```
+        shouldFail(Exception) { doStuff()}          // violation

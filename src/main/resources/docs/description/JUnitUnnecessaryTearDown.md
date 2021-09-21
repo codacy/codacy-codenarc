@@ -6,10 +6,8 @@ only match class names ending in ‘Spec’, ‘Test’, ‘Tests’ or ‘TestC
 
 Here is an example of a violation:
 
-``` 
-    class MyTest extends TestCase {
-        void tearDown() {               // violation
-            super.tearDown()
+        class MyTest extends TestCase {
+            void tearDown() {               // violation
+                super.tearDown()
+            }
         }
-    }
-```

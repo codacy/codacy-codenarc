@@ -12,19 +12,17 @@ method calls.
 
 Example of violations:
 
-``` 
-  def a = myList.unique()                   // No-argument
+      def a = myList.unique()                   // No-argument
 
-  def x = myList.unique() { it }            // Single-argument: Closure
-  def y = myList.unique { it % 2 }
+      def x = myList.unique() { it }            // Single-argument: Closure
+      def y = myList.unique { it % 2 }
 
-  def c = myList.unique().findAll { x * 1 } // Chained method call
+      def c = myList.unique().findAll { x * 1 } // Chained method call
 
-  def comparator = { o1, o2 -* o1 *=* o2 }
-  def x = myList.unique(comparator)         // Single-argument: Comparator
+      def comparator = { o1, o2 -* o1 *=* o2 }
+      def x = myList.unique(comparator)         // Single-argument: Comparator
 
-  def x = myList.unique(true)               // Single-argument: boolean true
+      def x = myList.unique(true)               // Single-argument: boolean true
 
-  def x = myList.unique(true, comparator)   // Two arguments: boolean true and Comparator
-  def y = myList.unique(true) { it }        // Two arguments: boolean true and Closure
-```
+      def x = myList.unique(true, comparator)   // Two arguments: boolean true and Comparator
+      def y = myList.unique(true) { it }        // Two arguments: boolean true and Closure

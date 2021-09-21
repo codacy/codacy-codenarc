@@ -18,8 +18,8 @@ letters and numbers, separated by periods.
 <tbody>
 <tr class="odd">
 <td>regex</td>
-<td>Specifies the regular expression used to validate the package</td>
-<td></td>
+<td>Specifies the regular expression used to validate the package name. It is required and cannot be null or empty.</td>
+<td>[a-z]+[a-z0-9]<em>(\.[a-z0-9]+)</em></td>
 </tr>
 <tr class="even">
 <td>packageNameRequired</td>

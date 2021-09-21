@@ -14,30 +14,26 @@ names ending in ‘Spec.groovy’, ‘Test.groovy’, ‘Tests.groovy’ or
 
 Examples of violations:
 
-``` 
-      def var1 = [a:1, b:null, c:Boolean.FALSE, d:'x', e:true]
-      def var2 = [a:1, b:null, c:Boolean.FALSE, d:'x', e:true]      // violation
+          def var1 = [a:1, b:null, c:Boolean.FALSE, d:'x', e:true]
+          def var2 = [a:1, b:null, c:Boolean.FALSE, d:'x', e:true]      // violation
 
-      def var1 = [a:1, b:[x:3,y:4]]
-      def var2 = [a:1, b:[x:3,y:4]]     // violation
+          def var1 = [a:1, b:[x:3,y:4]]
+          def var2 = [a:1, b:[x:3,y:4]]     // violation
 
-      def var1 = [a:1, b:[3,4]]
-      def var2 = [a:1, b:[3,4]]     // violation
+          def var1 = [a:1, b:[3,4]]
+          def var2 = [a:1, b:[3,4]]     // violation
 
-      def var1 = [null:1, 'b':2, (Boolean.FALSE):3, (4):4, (true):5]
-      def var2 = [null:1, 'b':2, (Boolean.FALSE):3, (4):4, (true):5]    // violation
-```
+          def var1 = [null:1, 'b':2, (Boolean.FALSE):3, (4):4, (true):5]
+          def var2 = [null:1, 'b':2, (Boolean.FALSE):3, (4):4, (true):5]    // violation
 
 Examples of non-violations:
 
-``` 
-    def name
-    def var1 = [(name):1, b:1, c:1]
-    def var2 = [(name):1, b:1, c:1]   // not a violation; name is a variable
+        def name
+        def var1 = [(name):1, b:1, c:1]
+        def var2 = [(name):1, b:1, c:1]   // not a violation; name is a variable
 
-    def var1 = [a:1, b:['x', name]]
-    def var2 = [a:1, b:['x', name]]   // not a violation; name is a variable
+        def var1 = [a:1, b:['x', name]]
+        def var2 = [a:1, b:['x', name]]   // not a violation; name is a variable
 
-    def var1 = [a:7+5]
-    def var2 = [a:7+5]      // not a violation; contains a non-constant/literal expression
-```
+        def var1 = [a:7+5]
+        def var2 = [a:7+5]      // not a violation; contains a non-constant/literal expression

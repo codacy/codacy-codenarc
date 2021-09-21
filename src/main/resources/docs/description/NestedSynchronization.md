@@ -12,13 +12,11 @@ within either of those will).
 
 Here is an example of code that produces a violation:
 
-``` 
-    def myMethod() {
-        synchronized(this) {
-            // do something ...
+        def myMethod() {
             synchronized(this) {
-                // do something else ...
+                // do something ...
+                synchronized(this) {
+                    // do something else ...
+                }
             }
         }
-    }
-```

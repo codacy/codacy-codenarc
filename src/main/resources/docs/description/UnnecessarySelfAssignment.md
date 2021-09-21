@@ -7,14 +7,12 @@ getters and violates the contract of equals().
 
 Examples:
 
-``` 
-    x = x               // violation
-    def method(y) {
-        y = y           // violation
-    }
-    a.b.c = a.b.c       // violation
+        x = x               // violation
+        def method(y) {
+            y = y           // violation
+        }
+        a.b.c = a.b.c       // violation
 
-    x = y               // acceptable
-    a.b = a.zz          // acceptable
-    a.b = a().b         // acceptable
-```
+        x = y               // acceptable
+        a.b = a.zz          // acceptable
+        a.b = a().b         // acceptable

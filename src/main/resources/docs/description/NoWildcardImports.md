@@ -6,12 +6,10 @@ check the standard imports if ignoreImports is *true*.
 
 Example of violations:
 
-``` 
-    import static foo.bar.*         // violation (unless ignoreStaticImports is true)
-    import my.something.*           // violation (unless ignoreImports is true)
+        import static foo.bar.*         // violation (unless ignoreStaticImports is true)
+        import my.something.*           // violation (unless ignoreImports is true)
 
-    public class MyClass{}
-```
+        public class MyClass{}
 
 <table>
 <thead>

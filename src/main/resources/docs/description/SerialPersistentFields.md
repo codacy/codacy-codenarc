@@ -13,20 +13,18 @@ the `serialPersistentFields` array. This feature will only work if
 References:
 
     * Standards Mapping - Common Weakness Enumeration - (CWE) CWE ID 485
-    
+
     * Sun Microsystems, Inc. Java Sun Tutorial
-    
+
     []
 
 Example of violations:
 
-``` 
-    class MyClass implements Serializable {
-        public ObjectStreamField[] serialPersistentFields = [ new ObjectStreamField("myField", List.class) ] as ObjectStreamField[]
-    }
+        class MyClass implements Serializable {
+            public ObjectStreamField[] serialPersistentFields = [ new ObjectStreamField("myField", List.class) ] as ObjectStreamField[]
+        }
 
-    // the JVM sees the field type as Object, which won't work
-    class MyOtherClass implements Serializable {
-        private static final serialPersistentFields = [ new ObjectStreamField("myField", List.class) ] as ObjectStreamField[]
-    }
-```
+        // the JVM sees the field type as Object, which won't work
+        class MyOtherClass implements Serializable {
+            private static final serialPersistentFields = [ new ObjectStreamField("myField", List.class) ] as ObjectStreamField[]
+        }

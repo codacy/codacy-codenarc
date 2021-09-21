@@ -6,5 +6,5 @@ wakes up one thread, meaning that the awakened thread might not be the
 one waiting for the condition that the caller just satisfied.
 
 Also see
-[**Java\_Concurrency\_in\_Practice**](http://www.javaconcurrencyinpractice.com/),
+[**Java_Concurrency_in_Practice**](http://www.javaconcurrencyinpractice.com/),
 Brian Goetz, p 303.

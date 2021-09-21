@@ -8,25 +8,21 @@ protected constructor can be provided prevent direct instantiation.
 
 Example:
 
-``` 
-    public abstract class MyBaseClass {
-        void method1() {  }
-        void method2() {  }
-        // consider using abstract methods or removing
-        // the abstract modifier and adding protected constructors
-    }
-```
+        public abstract class MyBaseClass {
+            void method1() {  }
+            void method2() {  }
+            // consider using abstract methods or removing
+            // the abstract modifier and adding protected constructors
+        }
 
 The following examples all pass:
 
-``` 
-    abstract class MyClass extends AbstractParent {
-        // OK because parent is named Abstract.*
-    }
-    abstract class MyClass extends BaseParent{
-        // OK because parent is named Base.*
-    }
-```
+        abstract class MyClass extends AbstractParent {
+            // OK because parent is named Abstract.*
+        }
+        abstract class MyClass extends BaseParent{
+            // OK because parent is named Base.*
+        }
 
 This rule has a single `enhancedMode` property which defaults to
 `false`. When set to `true`, this rule will run in [enhanced

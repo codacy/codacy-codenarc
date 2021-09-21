@@ -10,12 +10,10 @@ by Brian Goetz.
 
 Example of violations:
 
-``` 
-    class EventListener {
-        EventListener(EventPublisher publisher) {
-            publisher.register(this)
-            new WorkThread(publisher, this).start()
-            new AnotherWorkThread(listener: this)
+        class EventListener {
+            EventListener(EventPublisher publisher) {
+                publisher.register(this)
+                new WorkThread(publisher, this).start()
+                new AnotherWorkThread(listener: this)
+            }
         }
-    }
-```

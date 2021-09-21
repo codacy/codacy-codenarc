@@ -7,8 +7,6 @@ alternative.
 
 Example of violations:
 
-``` 
-   new File('c:\\')
-   new File('c:\\dir')
-   new File('E:\\dir')
-```
+       new File('c:\\')
+       new File('c:\\dir')
+       new File('E:\\dir')

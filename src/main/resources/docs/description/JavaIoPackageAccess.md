@@ -24,21 +24,19 @@ By default, this rule is not applied to tests and test cases.
 
 Example of violations:
 
-``` 
-    FileSystem.getFileSystem()          // any method on FileSystem
-    FileSystem.fileSystem.delete(aFile) // property access of FileSystem
+        FileSystem.getFileSystem()          // any method on FileSystem
+        FileSystem.fileSystem.delete(aFile) // property access of FileSystem
 
-    // shouldn't create files
-    new File(name)
-    new File(name, parent)
+        // shouldn't create files
+        new File(name)
+        new File(name, parent)
 
-    // don't create file readers
-    new FileReader(name)
+        // don't create file readers
+        new FileReader(name)
 
-    // don't create file output streams
-    new FileOutputStream(name)
-    new FileOutputStream(name, true)
+        // don't create file output streams
+        new FileOutputStream(name)
+        new FileOutputStream(name, true)
 
-    // don't create random access file
-    new RandomAccessFile(name, parent)
-```
+        // don't create random access file
+        new RandomAccessFile(name, parent)

@@ -36,43 +36,41 @@ Builder methods are slightly different than factory methods.
 
 Example of violations:
 
-``` 
-    class MyClass {
+        class MyClass {
 
-        // violation. Factory methods should be named make()
-        def create() {
+            // violation. Factory methods should be named make()
+            def create() {
+            }
+
+            // violation. Factory methods should be named make()
+            def createSomething() {
+            }
+
+            // violation. Builder method not in class named *Builder
+            def build() {
+            }
+
+            // violation. Builder method not in class named *Builder
+            def buildSomething() {
+            }
+
+            // this is OK because it is called make
+            def make() {
+            }
+
+            // this is also OK
+            def makeSomething() {
+            }
+
+            // OK, overriding a parent
+            @Override
+            build() { }
+
         }
 
-        // violation. Factory methods should be named make()
-        def createSomething() {
+        class WidgetBuilder {
+
+            // OK, the class name ends in Builder
+            def build() {
+            }
         }
-
-        // violation. Builder method not in class named *Builder
-        def build() {
-        }
-
-        // violation. Builder method not in class named *Builder
-        def buildSomething() {
-        }
-
-        // this is OK because it is called make
-        def make() {
-        }
-
-        // this is also OK
-        def makeSomething() {
-        }
-
-        // OK, overriding a parent
-        @Override
-        build() { }
-
-    }
-
-    class WidgetBuilder {
-
-        // OK, the class name ends in Builder
-        def build() {
-        }
-    }
-```

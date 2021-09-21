@@ -10,7 +10,5 @@ For instance, executing `println new BigDecimal(0.1)` prints out
 
 Here is an example of code that produces a violation:
 
-``` 
-    def b1 = new BigDecimal(0.1)               // violation
-    def b2 = new java.math.BigDecimal(23.45d)  // violation
-```
+        def b1 = new BigDecimal(0.1)               // violation
+        def b2 = new java.math.BigDecimal(23.45d)  // violation

@@ -32,18 +32,16 @@ only match class names ending in ‘Spec’, ‘Test’, ‘Tests’ or ‘TestC
 All of the following examples can be simplified to assertTrue or remove
 the true literal:
 
-``` 
-    assertEquals(true, foo())
-    assertEquals("message", true, foo())
-    assertEquals(foo(), true)
-    assertEquals("message", foo(), true)
-    assertEquals(false, foo())
-    assertEquals("message", false, foo())
-    assertEquals(foo(), false)
-    assertEquals("message", foo(), false)
+        assertEquals(true, foo())
+        assertEquals("message", true, foo())
+        assertEquals(foo(), true)
+        assertEquals("message", foo(), true)
+        assertEquals(false, foo())
+        assertEquals("message", false, foo())
+        assertEquals(foo(), false)
+        assertEquals("message", foo(), false)
 
-    assert true == foo()                    // violation only if checkAssertStatements == true
-    assert foo() == true : "message"        // violation only if checkAssertStatements == true
-    assert false == foo()                   // violation only if checkAssertStatements == true
-    assert foo() == false : "message"       // violation only if checkAssertStatements == true
-```
+        assert true == foo()                    // violation only if checkAssertStatements == true
+        assert foo() == true : "message"        // violation only if checkAssertStatements == true
+        assert false == foo()                   // violation only if checkAssertStatements == true
+        assert foo() == false : "message"       // violation only if checkAssertStatements == true

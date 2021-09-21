@@ -7,16 +7,14 @@ code will fit on one screen for easier comprehension.
 
 Example of violation:
 
-``` 
-    def name
+        def name
 
 
-    def value
+        def value
 
 
 
-    def id
-```
+        def id
 
 NOTE: This is a file-based rule, rather than an AST-based rule, so the
 *applyToClassNames* and *doNotApplyToClassNames* rule configuration

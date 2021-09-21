@@ -3,8 +3,6 @@ without implementing the `clone()` method.
 
 Here is an example of code that produces a violation:
 
-``` 
-    class BadClass implements Cloneable {
-        def someMethod()
-    }
-```
+        class BadClass implements Cloneable {
+            def someMethod()
+        }

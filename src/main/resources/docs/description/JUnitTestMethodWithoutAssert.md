@@ -11,22 +11,18 @@ property. An assertion is defined as either using the `assert` keyword
 or invoking a method that starts with the work assert, like
 assertEquals, assertNull, or assertMyClassIsSimilar. Also, any method
 named `should.*` also counts as an assertion so that `shouldFail`
-methods do not trigger an assertion, any method that starts with `fail**
-counts as an assertion, and any method that starts with`verify\` counts
-as an assertion. Since version 0.23 CodeNarc has support for JUnit’s
-ExpectedException.
+methods do not trigger an assertion, any method that starts with
+`fail** counts as an assertion, and any method that starts with`verify\`
+counts as an assertion. Since version 0.23 CodeNarc has support for
+JUnit’s ExpectedException.
 
 What counts as an assertion method can be overridden using the
 assertMethodPatterns property of the rule. The default value is this
 comma separated list of regular expressions:
 
-``` 
-    String assertMethodPatterns = 'assert.*,should.*,fail.*,verify.*,expect.*'
-```
+        String assertMethodPatterns = 'assert.*,should.*,fail.*,verify.*,expect.*'
 
 If you’d like to add any method starting with ‘ensure’ to the ignores
 then you would set the value to this:
 
-``` 
-    'assert.*,should.*,fail.*,verify.*,ensure.*'
-```
+        'assert.*,should.*,fail.*,verify.*,ensure.*'

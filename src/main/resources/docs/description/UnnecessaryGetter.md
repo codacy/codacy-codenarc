@@ -37,24 +37,20 @@ Calls to getter methods within Spock method calls `Mock()`, `Stub()` and
 
 These bits of code produce violations:
 
-``` 
-    x.getProperty()
-    x.getFirst()
-    x.getFirstName()
-    x.getA()
+        x.getProperty()
+        x.getFirst()
+        x.getFirstName()
+        x.getA()
 
-    x.isFirst()         // Violation if checkIsMethods is true
-    x.isA()             // Violation if checkIsMethods is true
-```
+        x.isFirst()         // Violation if checkIsMethods is true
+        x.isA()             // Violation if checkIsMethods is true
 
 These bits of code do not:
 
-``` 
-    x.property
-    x.first
-    x.firstName
-    x.a
-    x.getURL()
-    x.getClass()
-    x.getProperty('key')
-```
+        x.property
+        x.first
+        x.firstName
+        x.a
+        x.getURL()
+        x.getClass()
+        x.getProperty('key')

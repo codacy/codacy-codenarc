@@ -13,15 +13,13 @@ itself implements `Comparable`.
 
 Here is an example of code that produces a violation:
 
-``` 
-    class BadClass {
-        int compareTo(Object o) { ... }
-    }
-```
+        class BadClass {
+            int compareTo(Object o) { ... }
+        }
 
 Known limitations:
 
-  - When not running in enhanced mode, this rule is not able to
+-   When not running in enhanced mode, this rule is not able to
     determine if the class extends a superclass that itself implements
     `Comparable`, or if it implements an interface that extends
     `Comparable`. In those cases, this rule produces a false violation.
