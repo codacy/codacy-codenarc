@@ -1,4 +1,4 @@
-\<Since CodeNarc 2.1.0>
+\<Since CodeNarc 2.1.0\>
 
 An assignment operator was used on a parameter, or a property or
 subproperty of the parameter, in a filtering or searching closure. This

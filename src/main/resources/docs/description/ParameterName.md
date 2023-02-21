@@ -19,12 +19,15 @@ a lowercase letter and contains only letters or numbers.
 <tbody>
 <tr class="odd">
 <td>regex</td>
-<td>Specifies the regular expression used to validate the parameter name. It is required and cannot be null or empty.</td>
+<td>Specifies the regular expression used to validate the parameter
+name. It is required and cannot be null or empty.</td>
 <td>[a-z][a-zA-Z0-9]*</td>
 </tr>
 <tr class="even">
 <td>ignoreParameterNames</td>
-<td>Specifies one or more (comma-separated) parameter names that should be ignored (i.e., that should not cause a rule violation). The names may optionally contain wildcards (*,?).</td>
+<td>Specifies one or more (comma-separated) parameter names that should
+be ignored (i.e., that should not cause a rule violation). The names may
+optionally contain wildcards (*,?).</td>
 <td><code>null</code></td>
 </tr>
 </tbody>

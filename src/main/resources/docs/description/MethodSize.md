@@ -22,7 +22,9 @@ the **maxLines** property.
 </tr>
 <tr class="even">
 <td>ignoreMethodNames</td>
-<td>Specifies one or more (comma-separated) method names that should be ignored (i.e., that should not cause a rule violation). The names may optionally contain wildcards (*,?).</td>
+<td>Specifies one or more (comma-separated) method names that should be
+ignored (i.e., that should not cause a rule violation). The names may
+optionally contain wildcards (*,?).</td>
 <td><code>null</code></td>
 </tr>
 </tbody>
@@ -30,5 +32,5 @@ the **maxLines** property.
 
 Known Limitations:
 
--   Annotations on a method are included in the size (line count) for
-    that method.
+- Annotations on a method are included in the size (line count) for that
+  method.

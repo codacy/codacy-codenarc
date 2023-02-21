@@ -23,7 +23,9 @@ only match class names ending in ‘Spec’, ‘Test’, ‘Tests’ or ‘TestC
 <tbody>
 <tr class="odd">
 <td>ignorePropertyNames</td>
-<td>Specifies one or more (comma-separated) property names that should be ignored (i.e., that should not cause a rule violation). The names may optionally contain wildcards (*,?).</td>
+<td>Specifies one or more (comma-separated) property names that should
+be ignored (i.e., that should not cause a rule violation). The names may
+optionally contain wildcards (*,?).</td>
 <td><code>null</code></td>
 </tr>
 </tbody>

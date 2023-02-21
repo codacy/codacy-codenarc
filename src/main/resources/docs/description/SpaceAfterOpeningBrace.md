@@ -20,7 +20,9 @@ expressions and block statements.
 <tbody>
 <tr class="odd">
 <td>checkClosureMapEntryValue</td>
-<td>If <code>false</code>, then do not check for whitespace after opening braces for closure expressions that are literal Map values, e.g. <code>[abc:\{doStuff()\}]</code>.</td>
+<td>If <code>false</code>, then do not check for whitespace after
+opening braces for closure expressions that are literal Map values,
+e.g. <code>[abc:\{doStuff()\}]</code>.</td>
 <td><code>true</code></td>
 </tr>
 <tr class="even">

@@ -1,6 +1,6 @@
 {
   "name" : "codenarc",
-  "version" : "2.2.0",
+  "version" : "3.2.0",
   "patterns" : [ {
     "patternId" : "AbcMetric",
     "level" : "Warning",
@@ -3079,13 +3079,6 @@
     "languages" : [ ],
     "enabled" : true
   }, {
-    "patternId" : "UnnecessarySubstring",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ ],
-    "languages" : [ ],
-    "enabled" : true
-  }, {
     "patternId" : "UnnecessaryTernaryExpression",
     "level" : "Info",
     "category" : "CodeStyle",
@@ -3177,6 +3170,9 @@
     }, {
       "name" : "allowConstructorOnlyUsages",
       "default" : true
+    }, {
+      "name" : "ignoreClassesAnnotatedWithNames",
+      "default" : "Entity"
     } ],
     "languages" : [ ],
     "enabled" : true

@@ -38,8 +38,10 @@ only match class names ending in ‘Spec’, ‘Test’, ‘Tests’ or ‘TestC
 <tbody>
 <tr class="odd">
 <td>ignoreMethodsWithAnnotations</td>
-<td>Specifies one or more (comma-separated) annotation names. Methods annotated with the annotations are ignored by this rule.</td>
-<td>After,AfterAll,AfterClass, AfterEach,Before,BeforeAll, BeforeClass,BeforeEach, Disabled,Ignore, Override,Test</td>
+<td>Specifies one or more (comma-separated) annotation names. Methods
+annotated with the annotations are ignored by this rule.</td>
+<td>After,AfterAll,AfterClass, AfterEach,Before,BeforeAll,
+BeforeClass,BeforeEach, Disabled,Ignore, Override,Test</td>
 </tr>
 </tbody>
 </table>

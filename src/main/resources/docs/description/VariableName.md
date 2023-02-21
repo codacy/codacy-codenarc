@@ -20,17 +20,22 @@ Variables annotated with @Field are ignored.
 <tbody>
 <tr class="odd">
 <td>regex</td>
-<td>Specifies the regular expression used to validate the variable name. It is required and cannot be null or empty.</td>
+<td>Specifies the regular expression used to validate the variable name.
+It is required and cannot be null or empty.</td>
 <td>[a-z][a-zA-Z0-9]*</td>
 </tr>
 <tr class="even">
 <td>finalRegex</td>
-<td>Specifies the regular expression used to validate <code>final</code> variable names. It is optional. If not set, then <strong>regex</strong> is used to validate <code>final</code> variable names.</td>
+<td>Specifies the regular expression used to validate <code>final</code>
+variable names. It is optional. If not set, then <strong>regex</strong>
+is used to validate <code>final</code> variable names.</td>
 <td><code>null</code></td>
 </tr>
 <tr class="odd">
 <td>ignoreVariableNames</td>
-<td>Specifies one or more (comma-separated) variable names that should be ignored (i.e., that should not cause a rule violation). The names may optionally contain wildcards (*,?).</td>
+<td>Specifies one or more (comma-separated) variable names that should
+be ignored (i.e., that should not cause a rule violation). The names may
+optionally contain wildcards (*,?).</td>
 <td><code>null</code></td>
 </tr>
 </tbody>
@@ -42,5 +47,5 @@ only uppercase letters, numbers and underscores (i.e., like
 *constants*). Starting with CodeNarc 2.0, that has been changed so that
 `finalRegex` defaults to `null` and thus `final` variable names are
 treated like regular variables. See
-[#467](https://github.com/CodeNarc/CodeNarc/issues/467). To restore that
-previous behavior, set `finalRegex` to `[A-Z][A-Z0-9_]*`.
+[\#467](https://github.com/CodeNarc/CodeNarc/issues/467). To restore
+that previous behavior, set `finalRegex` to `[A-Z][A-Z0-9_]*`.

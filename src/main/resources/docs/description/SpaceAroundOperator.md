@@ -1,8 +1,10 @@
 *Since CodeNarc 0.18*
 
 Check that there is at least one space (blank) or whitespace around each
-binary operator, including: +, -, \*, /, \*\*, \*\*, &&, ||, &, |, ?:,
-=, “as”.
+binary operator, including: - Arithmetic operators: +, -, *, /, \*\* -
+Assignment operators: =, +=, -=, *=, /=, \*\*=, ?= - Relational
+operators: ==, !=, \>, \>=, \<, \<=, ===, !== - Logical operators: &&,
+|| - Bitwise operators: &, | - Other: ?:, “as”
 
 Do not check dot (‘.’) operator. Do not check unary operators (!, +, -,
 ++, –, ?.). Do not check array (‘\[’) operator.
@@ -23,7 +25,9 @@ Do not check dot (‘.’) operator. Do not check unary operators (!, +, -,
 <tbody>
 <tr class="odd">
 <td>ignoreParameterDefaultValueAssignments</td>
-<td>If <code>true</code>, then do not check for whitespace around the ‘=’ operator within method/constructor default parameter assignments.</td>
+<td>If <code>true</code>, then do not check for whitespace around the
+‘=’ operator within method/constructor default parameter
+assignments.</td>
 <td><code>true</code></td>
 </tr>
 </tbody>

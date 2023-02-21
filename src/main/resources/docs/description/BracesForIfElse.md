@@ -20,7 +20,8 @@ be set to false to override this.
 <tbody>
 <tr class="odd">
 <td>sameLine</td>
-<td>If <code>true</code>, then the opening brace ({) for if statement should be on the same line.</td>
+<td>If <code>true</code>, then the opening brace ({) for if statement
+should be on the same line.</td>
 <td><code>true</code></td>
 </tr>
 <tr class="even">
@@ -30,12 +31,14 @@ be set to false to override this.
 </tr>
 <tr class="odd">
 <td>elseOnSameLineAsClosingBrace</td>
-<td>If <code>true</code>, then the else statement should be on the same line the same as sameLine as closing brace (})</td>
+<td>If <code>true</code>, then the else statement should be on the same
+line the same as sameLine as closing brace (})</td>
 <td>the same as <em>sameline</em></td>
 </tr>
 <tr class="even">
 <td>elseOnSameLineAsOpeningBrace</td>
-<td>If <code>true</code>, then the else statement should be on the same line the same as sameLine as opening brace ({)</td>
+<td>If <code>true</code>, then the else statement should be on the same
+line the same as sameLine as opening brace ({)</td>
 <td>the same as <em>sameline</em></td>
 </tr>
 </tbody>

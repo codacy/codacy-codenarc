@@ -9,13 +9,13 @@ for monetary calculations.
 
 Some related discussions include:
 
--   **Effective Java**, 2nd edition, by Joshua Bloch, Addison Wesley
-    (2008). Item #48: *Avoid float and double if exact answers are
-    required*.
--   [Why not use Double or Float to represent
-    currency?](https://stackoverflow.com/questions/3730019/why-not-use-double-or-float-to-represent-currency)
--   [Why You Should Never Use Float and Double for Monetary
-    Calculations](https://dzone.com/articles/never-use-float-and-double-for-monetary-calculatio).
+- **Effective Java**, 2nd edition, by Joshua Bloch, Addison Wesley
+  (2008). Item \#48: *Avoid float and double if exact answers are
+  required*.
+- [Why not use Double or Float to represent
+  currency?](https://stackoverflow.com/questions/3730019/why-not-use-double-or-float-to-represent-currency)
+- [Why You Should Never Use Float and Double for Monetary
+  Calculations](https://dzone.com/articles/never-use-float-and-double-for-monetary-calculatio).
 
 Example of violations:
 

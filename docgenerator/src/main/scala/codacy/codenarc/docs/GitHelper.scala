@@ -9,7 +9,7 @@ object GitHelper {
     val res = for {
       directory <- File.temporaryDirectory("codenarcRepository")
     } yield {
-      s"git clone git://$repository --depth 1 -b v$version $directory".!!
+      s"git clone https://$repository --depth 1 -b v$version $directory".!!
       val result = block(directory)
       result
     }

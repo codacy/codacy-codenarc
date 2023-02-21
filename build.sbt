@@ -12,7 +12,7 @@ import com.typesafe.sbt.packager.docker.{Cmd, ExecCmd}
 
 // Tool version
 lazy val toolVersion = settingKey[String]("The version of the underlying tool")
-ThisBuild / toolVersion := "2.2.0"
+ThisBuild / toolVersion := "3.2.0"
 
 lazy val commonSettings = Seq(
   organization := "com.codacy",
@@ -40,8 +40,8 @@ lazy val docGenerator = (project in file("docgenerator"))
     moduleName := "docgenerator",
     libraryDependencies ++= Seq(
       "org.codenarc" % "CodeNarc" % toolVersion.value,
-      "org.scala-lang.modules" %% "scala-xml" % "1.2.0",
-      "org.reflections" % "reflections" % "0.9.10"
+      "org.scala-lang.modules" %% "scala-xml" % "2.0.1",
+      "org.reflections" % "reflections" % "0.10.2"
     )
   )
 

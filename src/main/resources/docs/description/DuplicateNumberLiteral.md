@@ -26,7 +26,8 @@ names ending in ‘Spec.groovy’, ‘Test.groovy’, ‘Tests.groovy’ or
 <tbody>
 <tr class="odd">
 <td>ignoreNumbers</td>
-<td>The optional comma-separated list of numbers that should be ignored (i.e., not cause a violation).</td>
+<td>The optional comma-separated list of numbers that should be ignored
+(i.e., not cause a violation).</td>
 <td><code>0,1</code></td>
 </tr>
 <tr class="even">

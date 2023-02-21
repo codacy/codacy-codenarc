@@ -21,7 +21,8 @@ classes.
 <tbody>
 <tr class="odd">
 <td>regex</td>
-<td>Specifies the regular expression used to validate the abstract class name. If null or empty, then this rule does nothing.</td>
+<td>Specifies the regular expression used to validate the abstract class
+name. If null or empty, then this rule does nothing.</td>
 <td><code>null</code></td>
 </tr>
 </tbody>

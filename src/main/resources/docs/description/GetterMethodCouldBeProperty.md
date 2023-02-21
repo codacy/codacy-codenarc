@@ -21,7 +21,8 @@ rather than a Groovy method.
 <tbody>
 <tr class="odd">
 <td>ignoreMethodsWithOverrideAnnotation</td>
-<td>If <code>true</code>, then do not check methods annotated with <span class="citation" data-cites="Override">@Override</span>.</td>
+<td>If <code>true</code>, then do not check methods annotated with <span
+class="citation" data-cites="Override">@Override</span>.</td>
 <td><code>false</code></td>
 </tr>
 </tbody>

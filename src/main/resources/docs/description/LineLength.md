@@ -33,17 +33,20 @@ applyToFilesMatching and doNotApplyToFilesMatching.
 </tr>
 <tr class="even">
 <td>ignoreImportStatements</td>
-<td>If <code>true</code>, then do not apply this rule to import statements.</td>
+<td>If <code>true</code>, then do not apply this rule to import
+statements.</td>
 <td><code>true</code></td>
 </tr>
 <tr class="odd">
 <td>ignorePackageStatements</td>
-<td>If <code>true</code>, then do not apply this rule to package statements.</td>
+<td>If <code>true</code>, then do not apply this rule to package
+statements.</td>
 <td><code>true</code></td>
 </tr>
 <tr class="even">
 <td>ignoreLineRegex</td>
-<td>If specified, then ignore lines matching this regular expression.</td>
+<td>If specified, then ignore lines matching this regular
+expression.</td>
 <td><code>null</code></td>
 </tr>
 </tbody>

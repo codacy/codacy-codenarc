@@ -20,12 +20,18 @@ This rule finds `private` fields that are only set within a
 <tbody>
 <tr class="odd">
 <td>ignoreFieldNames</td>
-<td>Specifies one or more (comma-separated) field names that should be ignored (i.e., that should not cause a rule violation). The names may optionally contain wildcards (*,?).</td>
+<td>Specifies one or more (comma-separated) field names that should be
+ignored (i.e., that should not cause a rule violation). The names may
+optionally contain wildcards (*,?).</td>
 <td><code>null</code></td>
 </tr>
 <tr class="even">
 <td>ignoreJpaEntities</td>
-<td>Specifies whether fields defined inside classes annotated with <span class="citation" data-cites="Entity">@Entity</span> or <span class="citation" data-cites="MappedSuperclass">@MappedSuperclass</span> JPA annotations should be ignored (i.e., that should not cause a rule violation).</td>
+<td>Specifies whether fields defined inside classes annotated with <span
+class="citation" data-cites="Entity">@Entity</span> or <span
+class="citation" data-cites="MappedSuperclass">@MappedSuperclass</span>
+JPA annotations should be ignored (i.e., that should not cause a rule
+violation).</td>
 <td><code>false</code></td>
 </tr>
 </tbody>

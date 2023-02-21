@@ -25,12 +25,18 @@ classes.
 <tbody>
 <tr class="odd">
 <td>specificationClassNames</td>
-<td>Specifies one or more (comma-separated) class names that should be treated as Spock Specification classes. The class names may optionally contain wildcards (<em>,?), e.g. “</em>Spec”.</td>
+<td>Specifies one or more (comma-separated) class names that should be
+treated as Spock Specification classes. The class names may optionally
+contain wildcards (<em>,?), e.g. “</em>Spec”.</td>
 <td><code>null</code></td>
 </tr>
 <tr class="even">
 <td>specificationSuperclassNames</td>
-<td>Specifies one or more (comma-separated) class names that should be treated as Spock Specification superclasses. In other words, a class that extends a matching class name is considered a Spock Specification . The class names may optionally contain wildcards (<em>,?), e.g. “</em>Spec”.</td>
+<td>Specifies one or more (comma-separated) class names that should be
+treated as Spock Specification superclasses. In other words, a class
+that extends a matching class name is considered a Spock Specification .
+The class names may optionally contain wildcards (<em>,?),
+e.g. “</em>Spec”.</td>
 <td>“*Specification”</td>
 </tr>
 </tbody>

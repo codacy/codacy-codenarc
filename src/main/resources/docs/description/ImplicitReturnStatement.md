@@ -1,4 +1,4 @@
-\<Since CodeNarc 1.6>
+\<Since CodeNarc 1.6\>
 
 Checks for methods that are missing an explicit `return` statement.
 

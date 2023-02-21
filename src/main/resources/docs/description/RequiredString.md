@@ -2,6 +2,11 @@ Checks for a specified text string that must exist within the source
 code.
 
 <table>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 33%" />
+<col style="width: 25%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>Property</th>

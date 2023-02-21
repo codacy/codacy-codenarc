@@ -26,7 +26,9 @@ Rules](./codenarc-configuring-rules.html#standard-properties-for-configuring-rul
 <tbody>
 <tr class="odd">
 <td>allowMultiline</td>
-<td>Set to <code>true</code> to allow the tag content (name, description, etc.) to start on the following line. If <em>false</em>, that content must start on the same line as the tag.</td>
+<td>Set to <code>true</code> to allow the tag content (name,
+description, etc.) to start on the following line. If <em>false</em>,
+that content must start on the same line as the tag.</td>
 <td><code>false</code></td>
 </tr>
 </tbody>

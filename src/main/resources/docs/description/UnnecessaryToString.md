@@ -2,10 +2,10 @@
 
 Checks for unnecessary calls to `toString()`. This includes:
 
--   Calls to `toString()` on a String literal or expression
+- Calls to `toString()` on a String literal or expression
 
--   Calls to `toString()` for the value assigned to a `String` field or
-    variable (if *checkAssignments* is `true`).
+- Calls to `toString()` for the value assigned to a `String` field or
+  variable (if *checkAssignments* is `true`).
 
 <table>
 <colgroup>
@@ -23,7 +23,9 @@ Checks for unnecessary calls to `toString()`. This includes:
 <tbody>
 <tr class="odd">
 <td>checkAssignments</td>
-<td>If <code>true</code>, then check for calls to <code>toString()</code> for the value assigned to a <code>String</code> field or variable.</td>
+<td>If <code>true</code>, then check for calls to
+<code>toString()</code> for the value assigned to a <code>String</code>
+field or variable.</td>
 <td><code>true</code></td>
 </tr>
 </tbody>

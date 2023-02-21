@@ -20,12 +20,14 @@ the elements or add new elements on the end.
 <tbody>
 <tr class="odd">
 <td>checkList</td>
-<td>To disable checking List literals, set this property to <code>false</code></td>
+<td>To disable checking List literals, set this property to
+<code>false</code></td>
 <td><code>true</code></td>
 </tr>
 <tr class="even">
 <td>checkMap</td>
-<td>To disable checking Map literals, set this property to <code>false</code></td>
+<td>To disable checking Map literals, set this property to
+<code>false</code></td>
 <td><code>true</code></td>
 </tr>
 <tr class="odd">

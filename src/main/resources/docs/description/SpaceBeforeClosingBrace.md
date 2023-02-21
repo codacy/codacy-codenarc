@@ -20,7 +20,9 @@ expressions and block statements.
 <tbody>
 <tr class="odd">
 <td>checkClosureMapEntryValue</td>
-<td>If <code>false</code>, then do not check for whitespace before closing braces for closure expressions that are literal Map values, e.g. <code>[abc:\{doStuff()\}]</code>.</td>
+<td>If <code>false</code>, then do not check for whitespace before
+closing braces for closure expressions that are literal Map values,
+e.g. <code>[abc:\{doStuff()\}]</code>.</td>
 <td><code>true</code></td>
 </tr>
 <tr class="even">
@@ -33,8 +35,8 @@ expressions and block statements.
 
 Known limitations:
 
--   May not catch actual violations if the source line contains unicode
-    character literals, e.g. `'\\u00A0'`
+- May not catch actual violations if the source line contains unicode
+  character literals, e.g. `'\\u00A0'`
 
 Examples of violations:
 

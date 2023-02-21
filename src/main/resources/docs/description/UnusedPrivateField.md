@@ -10,9 +10,9 @@ property to the ‘fieldx, serialVersionUID’
 
 <table>
 <colgroup>
-<col style="width: 40%" />
-<col style="width: 33%" />
-<col style="width: 25%" />
+<col style="width: 13%" />
+<col style="width: 79%" />
+<col style="width: 7%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -24,12 +24,22 @@ property to the ‘fieldx, serialVersionUID’
 <tbody>
 <tr class="odd">
 <td>ignoreFieldNames</td>
-<td>Specifies one or more (comma-separated) field names that should be ignored (i.e., that should not cause a rule violation). The names may optionally contain wildcards (*,?).</td>
+<td>Specifies one or more (comma-separated) field names that should be
+ignored (i.e., that should not cause a rule violation). The names may
+optionally contain wildcards (*,?).</td>
 <td><code>serialVersionUID</code></td>
 </tr>
 <tr class="even">
+<td>ignoreClassesAnnotatedWithNames</td>
+<td>Specifies one or more (comma-separated) annotation names; any
+classes annotated with those should be ignored (i.e., should not cause a
+rule violation). The names may optionally contain wildcards (*,?).</td>
+<td><code>Entity</code></td>
+</tr>
+<tr class="odd">
 <td>allowConstructorOnlyUsages</td>
-<td>Should be set to <code>false</code> if violations are to be raised for fields which are used only within constructors.</td>
+<td>Should be set to <code>false</code> if violations are to be raised
+for fields which are used only within constructors.</td>
 <td><code>true</code></td>
 </tr>
 </tbody>

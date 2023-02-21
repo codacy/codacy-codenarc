@@ -22,7 +22,8 @@ per indentation level.
 <tbody>
 <tr class="odd">
 <td>spacesPerIndentLevel</td>
-<td>The number of spaces that make up a single level of indentation.</td>
+<td>The number of spaces that make up a single level of
+indentation.</td>
 <td>4</td>
 </tr>
 </tbody>
@@ -30,18 +31,18 @@ per indentation level.
 
 Known Limitations include:
 
--   Checks spaces only (not tabs)
--   Does not check comments
--   Does not check line-continuations (i.e., checks only the first line
-    of a statement)
--   Does not check multiple statements/members on the same line (only
-    checks the first one)
--   Does not check Map entry expressions
--   Does not check List expressions
--   Does not check calls to `this()` and `super()` within a constructor
--   When classes, methods or fields have annotations, the indentation of
-    the annotation is checked, not the actual member. And only the first
-    annotation is checked, if there is more than one.
+- Checks spaces only (not tabs)
+- Does not check comments
+- Does not check line-continuations (i.e., checks only the first line of
+  a statement)
+- Does not check multiple statements/members on the same line (only
+  checks the first one)
+- Does not check Map entry expressions
+- Does not check List expressions
+- Does not check calls to `this()` and `super()` within a constructor
+- When classes, methods or fields have annotations, the indentation of
+  the annotation is checked, not the actual member. And only the first
+  annotation is checked, if there is more than one.
 
 Example of violations:
 

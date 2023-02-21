@@ -20,7 +20,8 @@ takes no arguments, or else contains only a single call to `super()`.
 <tbody>
 <tr class="odd">
 <td>ignoreAnnotations</td>
-<td>If <code>true</code>, then do not report violations if a constructor has one or more annotations.</td>
+<td>If <code>true</code>, then do not report violations if a constructor
+has one or more annotations.</td>
 <td><code>false</code></td>
 </tr>
 </tbody>

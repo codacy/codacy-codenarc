@@ -29,7 +29,9 @@ Calls to getter methods within Spock method calls `Mock()`, `Stub()` and
 </tr>
 <tr class="even">
 <td>ignoreMethodNames</td>
-<td>Specifies one or more (comma-separated) method names that should be ignored (i.e., that should not cause a rule violation). The names may optionally contain wildcards (*,?).</td>
+<td>Specifies one or more (comma-separated) method names that should be
+ignored (i.e., that should not cause a rule violation). The names may
+optionally contain wildcards (*,?).</td>
 <td><code>null</code></td>
 </tr>
 </tbody>

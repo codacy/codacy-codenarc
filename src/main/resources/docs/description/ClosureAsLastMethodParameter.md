@@ -19,7 +19,9 @@ be declared outside the method call parentheses.
 <tbody>
 <tr class="odd">
 <td>ignoreCallsToMethodNames</td>
-<td>Specifies one or more (comma-separated) method names; method calls on the named methods are ignored (i.e., do not cause a rule violation). The names may optionally contain wildcards (*,?).</td>
+<td>Specifies one or more (comma-separated) method names; method calls
+on the named methods are ignored (i.e., do not cause a rule violation).
+The names may optionally contain wildcards (*,?).</td>
 <td><code>null</code></td>
 </tr>
 </tbody>

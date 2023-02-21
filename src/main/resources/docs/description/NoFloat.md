@@ -9,5 +9,5 @@ for monetary calculations.
 
 Some related discussions include:
 
--   **Effective Java**, 2nd edition, by Joshua Bloch, Addison Wesley
-    (2008). Item
+- **Effective Java**, 2nd edition, by Joshua Bloch, Addison Wesley
+  (2008). Item
