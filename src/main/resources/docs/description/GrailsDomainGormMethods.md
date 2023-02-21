@@ -1,4 +1,4 @@
-\<Since CodeNarc 1.6>
+\<Since CodeNarc 1.6\>
 
 Database operation should be performed by Data Services instead of
 calling GORM static and instance methods.

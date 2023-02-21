@@ -21,7 +21,8 @@ no violations are produced.
 <tbody>
 <tr class="odd">
 <td>ignoreRegex</td>
-<td>Regular expression - exception parameter names matching this regular expression are ignored and no violations are produced.</td>
+<td>Regular expression - exception parameter names matching this regular
+expression are ignored and no violations are produced.</td>
 <td>‘ignore|ignored’</td>
 </tr>
 </tbody>

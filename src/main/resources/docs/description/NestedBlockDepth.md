@@ -37,12 +37,15 @@ objects are ignore. For instance, this code does not cause a violation:
 <tbody>
 <tr class="odd">
 <td>maxNestedBlockDepth</td>
-<td>The maximum number of nesting levels. A block or closure nested deeper than that number of levels is considered a violation.</td>
+<td>The maximum number of nesting levels. A block or closure nested
+deeper than that number of levels is considered a violation.</td>
 <td>5</td>
 </tr>
 <tr class="even">
 <td>ignoreRegex</td>
-<td>Determines what is a builder call. For instance, closures nested on a method named createBuilder, a property named myBuilder, or a constructor call to object MyBuilder() do not produce violations.</td>
+<td>Determines what is a builder call. For instance, closures nested on
+a method named createBuilder, a property named myBuilder, or a
+constructor call to object MyBuilder() do not produce violations.</td>
 <td>.*(b|B)uilder</td>
 </tr>
 </tbody>

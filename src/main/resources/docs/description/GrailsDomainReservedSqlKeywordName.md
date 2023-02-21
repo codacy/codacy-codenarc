@@ -26,12 +26,15 @@ as domain properties in `additionalHibernateBasicTypes`.
 <tbody>
 <tr class="odd">
 <td>additionalHibernateBasicTypes</td>
-<td>Comma-separated list of simple class names of additional classes that Hibernate maps as basic types (creates a column for a field of such class). Add your custom basic types here.</td>
+<td>Comma-separated list of simple class names of additional classes
+that Hibernate maps as basic types (creates a column for a field of such
+class). Add your custom basic types here.</td>
 <td><code>''</code></td>
 </tr>
 <tr class="even">
 <td>additionalReservedSqlKeywords</td>
-<td>Comma-separated list of additional reserved SQL keywords (just in case the 337 keywords of nowadays SQL-* standards weren’t enough)</td>
+<td>Comma-separated list of additional reserved SQL keywords (just in
+case the 337 keywords of nowadays SQL-* standards weren’t enough)</td>
 <td><code>''</code></td>
 </tr>
 </tbody>

@@ -10,6 +10,11 @@ square brace (\]), the spread-dot operator (\*.), a semicolon or the
 null-safe operator (?.) does not cause a violation.
 
 <table>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 33%" />
+<col style="width: 25%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>Property</th>
@@ -28,8 +33,8 @@ null-safe operator (?.) does not cause a violation.
 
 Known limitations:
 
--   May not catch actual violations if the source line contains unicode
-    character literals, e.g. `'\\u00A0'`
+- May not catch actual violations if the source line contains unicode
+  character literals, e.g. `'\\u00A0'`
 
 Examples of violations and exceptions:
 

@@ -19,7 +19,9 @@ if an explicit `it` parameter has been specified.
 <tbody>
 <tr class="odd">
 <td>allowUsingItAsParameterName</td>
-<td>To stop the rule reporting violations when an explicit closure parameter called <code>it</code> is used, set this property to <code>true</code>.</td>
+<td>To stop the rule reporting violations when an explicit closure
+parameter called <code>it</code> is used, set this property to
+<code>true</code>.</td>
 <td><code>false</code></td>
 </tr>
 </tbody>

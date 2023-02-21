@@ -6,8 +6,8 @@ lists, method call parameter lists, Map literals and List literals.
 
 Known limitations:
 
--   May not catch actual violations if the source line contains unicode
-    character literals, e.g. `'\\u00A0'`
+- May not catch actual violations if the source line contains unicode
+  character literals, e.g. `'\\u00A0'`
 
 Examples of violations:
 

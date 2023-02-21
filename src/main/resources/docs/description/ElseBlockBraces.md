@@ -20,7 +20,8 @@ true to require braces is that situation as well.
 <tbody>
 <tr class="odd">
 <td>bracesRequiredForElseIf</td>
-<td>Set to <code>true</code> to require braces for an <em>else</em> block followed immediately by an <em>if</em> statement.</td>
+<td>Set to <code>true</code> to require braces for an <em>else</em>
+block followed immediately by an <em>if</em> statement.</td>
 <td><code>false</code></td>
 </tr>
 </tbody>

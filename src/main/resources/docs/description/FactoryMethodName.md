@@ -28,7 +28,8 @@ Builder methods are slightly different than factory methods.
 <tbody>
 <tr class="odd">
 <td>regex</td>
-<td>Specifies the default regular expression used to validate the method name. It is required and cannot be null or empty.</td>
+<td>Specifies the default regular expression used to validate the method
+name. It is required and cannot be null or empty.</td>
 <td>(build.<em>|create.</em>)</td>
 </tr>
 </tbody>

@@ -17,7 +17,8 @@ code.
 <tbody>
 <tr class="odd">
 <td>regex</td>
-<td>The regular expression to check for. If null or empty then do nothing.</td>
+<td>The regular expression to check for. If null or empty then do
+nothing.</td>
 <td><code>null</code></td>
 </tr>
 </tbody>

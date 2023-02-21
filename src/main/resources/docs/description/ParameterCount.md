@@ -38,7 +38,8 @@ Example of violations:
 </tr>
 <tr class="even">
 <td>ignoreOverriddenMethods</td>
-<td>Ignore number of parameters for methods with <span class="citation" data-cites="Override">@Override</span> annotation</td>
+<td>Ignore number of parameters for methods with <span class="citation"
+data-cites="Override">@Override</span> annotation</td>
 <td><code>true</code></td>
 </tr>
 </tbody>

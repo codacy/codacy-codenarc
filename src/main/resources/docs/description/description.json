@@ -658,7 +658,7 @@
 }, {
   "patternId" : "CompareToWithoutComparable",
   "title" : "CompareToWithoutComparable",
-  "description" : "If you implement a compareTo method then you should also implement the Comparable interface. If you don't then you could possibly get an exception if the Groovy == operator is invoked on your object. This is an issue fixed in Groovy 1.8 but present in previous versions.",
+  "description" : "If you implement a compareTo method then you should also implement the Comparable interface.",
   "parameters" : [ ]
 }, {
   "patternId" : "ConstantsOnlyInterface",
@@ -1754,7 +1754,7 @@
 }, {
   "patternId" : "JUnitStyleAssertions",
   "title" : "JUnitStyleAssertions",
-  "description" : "This rule detects calling JUnit style assertions like assertEquals, assertTrue, assertFalse, assertNull, assertNotNull. Groovy 1.7 ships with a feature called the \"power assert\", which is an assert statement with better error reporting. This is preferable to the JUnit assertions.",
+  "description" : "This rule detects calling JUnit style assertions like assertEquals, assertTrue, assertFalse, assertNull, assertNotNull. Groovy ships with a feature called the \"power assert\", which is an assert statement with better error reporting. This is preferable to the JUnit assertions.",
   "parameters" : [ {
     "name" : "applyToClassNames",
     "description" : "applyToClassNames"
@@ -2475,11 +2475,6 @@
   "description" : "Use a String literal (e.g., \"...\") instead of calling the corresponding String constructor (new String(\"..\")) directly.",
   "parameters" : [ ]
 }, {
-  "patternId" : "UnnecessarySubstring",
-  "title" : "UnnecessarySubstring",
-  "description" : "This rule finds usages of String.substring(int) and String.substring(int, int) that can be replaced by use of the subscript operator. For instance, var.substring(5) can be replaced with var[5..-1].",
-  "parameters" : [ ]
-}, {
   "patternId" : "UnnecessaryTernaryExpression",
   "title" : "UnnecessaryTernaryExpression",
   "description" : "Checks for ternary expressions where the conditional expression always evaluates to a boolean and the true and false expressions are merely returning true and false constants. Also checks for ternary expressions where both expressions are the same constant or variable.",
@@ -2531,6 +2526,9 @@
   }, {
     "name" : "allowConstructorOnlyUsages",
     "description" : "allowConstructorOnlyUsages"
+  }, {
+    "name" : "ignoreClassesAnnotatedWithNames",
+    "description" : "ignoreClassesAnnotatedWithNames"
   } ]
 }, {
   "patternId" : "UnusedPrivateMethod",

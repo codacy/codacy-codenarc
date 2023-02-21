@@ -19,7 +19,12 @@ Checks for reference to any of the packages configured in
 <tbody>
 <tr class="odd">
 <td>packageNames</td>
-<td>Specifies the comma-separated list of package names. The package name(s) may optionally include wildcard characters (‘<em>’ or ’?’). Note that the ’</em>’ wildcard matches any sequence of zero or more characters in the package name, e.g. ’a.*’ matches ‘a.b’ as well as ‘a.b.c.d’. If <code>packageNames</code> is null or empty, do nothing.</td>
+<td>Specifies the comma-separated list of package names. The package
+name(s) may optionally include wildcard characters (‘<em>’ or ’?’). Note
+that the ’</em>’ wildcard matches any sequence of zero or more
+characters in the package name, e.g. ’a.*’ matches ‘a.b’ as well as
+‘a.b.c.d’. If <code>packageNames</code> is null or empty, do
+nothing.</td>
 <td><code>null</code></td>
 </tr>
 </tbody>

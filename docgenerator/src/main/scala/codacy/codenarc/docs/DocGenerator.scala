@@ -25,7 +25,7 @@ object DocGenerator {
 
   private val toolName = "codenarc"
 
-  private val codeNarcGitRepository = "github.com/CodeNarc/CodeNarc"
+  private val codeNarcGitRepository = "github.com/CodeNarc/CodeNarc.git"
   private val patternsJsonFile = "patterns.json"
   private val descriptionJsonFile = "description.json"
   private val docsFolder = "docs"
@@ -252,7 +252,7 @@ object DocGenerator {
   }
 
   private def getParameterDefault[T](classType: Class[T], value: Field): JsValue = {
-    val instance = classType.newInstance()
+    val instance = classType.getDeclaredConstructor().newInstance()
     value.setAccessible(true)
     val t = value.getType()
     if (t == classOf[Int]) JsNumber(value.getInt(instance))

@@ -20,42 +20,71 @@ configured allowed member modifiers.
 <tbody>
 <tr class="odd">
 <td>allowedFieldModifiers</td>
-<td>Specifies one or more groups of whitespace-delimited modifier names (e.g. “public static” or “protected”). Multiple groups are separated by commas (e.g. “private final, protected”). If a field does not match all of the modifiers in any group, then trigger a violation. If <code>null</code> or empty, skip this check.</td>
+<td>Specifies one or more groups of whitespace-delimited modifier names
+(e.g. “public static” or “protected”). Multiple groups are separated by
+commas (e.g. “private final, protected”). If a field does not match all
+of the modifiers in any group, then trigger a violation. If
+<code>null</code> or empty, skip this check.</td>
 <td><code>null</code></td>
 </tr>
 <tr class="even">
 <td>allowedMethodModifiers</td>
-<td>Specifies one or more groups of whitespace-delimited modifier names (e.g. “public static” or “protected”). Multiple groups are separated by commas (e.g. “private final, protected”). If a method does not match all of the modifiers in any group, then trigger a violation. If <code>null</code> or empty, skip this check.</td>
+<td>Specifies one or more groups of whitespace-delimited modifier names
+(e.g. “public static” or “protected”). Multiple groups are separated by
+commas (e.g. “private final, protected”). If a method does not match all
+of the modifiers in any group, then trigger a violation. If
+<code>null</code> or empty, skip this check.</td>
 <td><code>null</code></td>
 </tr>
 <tr class="odd">
 <td>allowedPropertyModifiers</td>
-<td>Specifies one or more groups of whitespace-delimited modifier names (e.g. “public static” or “protected”). Multiple groups are separated by commas (e.g. “private final, protected”). If a property does not match all of the modifiers in any group, then trigger a violation. If <code>null</code> or empty, skip this check.</td>
+<td>Specifies one or more groups of whitespace-delimited modifier names
+(e.g. “public static” or “protected”). Multiple groups are separated by
+commas (e.g. “private final, protected”). If a property does not match
+all of the modifiers in any group, then trigger a violation. If
+<code>null</code> or empty, skip this check.</td>
 <td><code>null</code></td>
 </tr>
 <tr class="even">
 <td>ignoreMethodNames</td>
-<td>Specifies one or more (comma-separated) method names that should be ignored (i.e., that should not cause a rule violation). The names may optionally contain wildcards (*,?).</td>
+<td>Specifies one or more (comma-separated) method names that should be
+ignored (i.e., that should not cause a rule violation). The names may
+optionally contain wildcards (*,?).</td>
 <td><code>null</code></td>
 </tr>
 <tr class="odd">
 <td>ignoreMethodsWithAnnotationNames</td>
-<td>Specifies one or more (comma-separated) annotation names that should be ignored (i.e., methods with those annotations should not cause a rule violation). The names may optionally contain wildcards (*,?). (Do not include the “@” in the annotation name.</td>
+<td>Specifies one or more (comma-separated) annotation names that should
+be ignored (i.e., methods with those annotations should not cause a rule
+violation). The names may optionally contain wildcards (*,?). (Do not
+include the “@” in the annotation name.</td>
 <td><code>null</code></td>
 </tr>
 <tr class="even">
 <td>illegalFieldModifiers</td>
-<td>Specifies one or more groups of whitespace-delimited modifier names (e.g. “public static” or “protected”). Multiple groups are separated by commas (e.g. “private final, protected”). If a field matches all of the modifiers in any group, then trigger a violation. If <code>null</code> or empty, skip this check.</td>
+<td>Specifies one or more groups of whitespace-delimited modifier names
+(e.g. “public static” or “protected”). Multiple groups are separated by
+commas (e.g. “private final, protected”). If a field matches all of the
+modifiers in any group, then trigger a violation. If <code>null</code>
+or empty, skip this check.</td>
 <td><code>null</code></td>
 </tr>
 <tr class="odd">
 <td>illegalMethodModifiers</td>
-<td>Specifies one or more groups of whitespace-delimited modifier names (e.g. “public static” or “protected”). Multiple groups are separated by commas (e.g. “private final, protected”). If a method matches all of the modifiers in any group, then trigger a violation. If <code>null</code> or empty, skip this check.</td>
+<td>Specifies one or more groups of whitespace-delimited modifier names
+(e.g. “public static” or “protected”). Multiple groups are separated by
+commas (e.g. “private final, protected”). If a method matches all of the
+modifiers in any group, then trigger a violation. If <code>null</code>
+or empty, skip this check.</td>
 <td><code>null</code></td>
 </tr>
 <tr class="even">
 <td>illegalPropertyModifiers</td>
-<td>Specifies one or more groups of whitespace-delimited modifier names (e.g. “public static” or “protected”). Multiple groups are separated by commas (e.g. “private final, protected”). If a property matches all of the modifiers in any group, then trigger a violation. If <code>null</code> or empty, skip this check.</td>
+<td>Specifies one or more groups of whitespace-delimited modifier names
+(e.g. “public static” or “protected”). Multiple groups are separated by
+commas (e.g. “private final, protected”). If a property matches all of
+the modifiers in any group, then trigger a violation. If
+<code>null</code> or empty, skip this check.</td>
 <td><code>null</code></td>
 </tr>
 </tbody>

@@ -34,17 +34,25 @@ configuration.
 <tbody>
 <tr class="odd">
 <td>ignoreFieldNames</td>
-<td>Specifies one or more (comma-separated) field names that should be ignored (i.e., that should not cause a rule violation). The names may optionally contain wildcards (*,?).</td>
+<td>Specifies one or more (comma-separated) field names that should be
+ignored (i.e., that should not cause a rule violation). The names may
+optionally contain wildcards (*,?).</td>
 <td><code>null</code></td>
 </tr>
 <tr class="even">
 <td>addToIgnoreFieldNames</td>
-<td>Specifies one or more (comma-separated) field names to be added to the <code>ignoreFieldNames</code> property value. This is a special write-only property, and each call to <code>setAddIgnoreFieldNames()</code> adds to (rather than overwrites) the list of field names to be ignored.</td>
+<td>Specifies one or more (comma-separated) field names to be added to
+the <code>ignoreFieldNames</code> property value. This is a special
+write-only property, and each call to
+<code>setAddIgnoreFieldNames()</code> adds to (rather than overwrites)
+the list of field names to be ignored.</td>
 <td><code>null</code></td>
 </tr>
 <tr class="odd">
 <td>ignoreFieldTypes</td>
-<td>Specifies one or more (comma-separated) field types that should be ignored (i.e., that should not cause a rule violation). The names may optionally contain wildcards (*,?).</td>
+<td>Specifies one or more (comma-separated) field types that should be
+ignored (i.e., that should not cause a rule violation). The names may
+optionally contain wildcards (*,?).</td>
 <td><code>null</code></td>
 </tr>
 </tbody>

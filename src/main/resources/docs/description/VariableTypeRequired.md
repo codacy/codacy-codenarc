@@ -19,7 +19,9 @@ not using `def`).
 <tbody>
 <tr class="odd">
 <td>ignoreVariableNames</td>
-<td>Specifies one or more (comma-separated) variable names that should be ignored (i.e., that should not cause a rule violation). The names may optionally contain wildcards (*,?).</td>
+<td>Specifies one or more (comma-separated) variable names that should
+be ignored (i.e., that should not cause a rule violation). The names may
+optionally contain wildcards (*,?).</td>
 <td><code>null</code></td>
 </tr>
 </tbody>

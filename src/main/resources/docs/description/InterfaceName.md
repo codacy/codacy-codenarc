@@ -19,7 +19,8 @@ null, so this rule must be explicitly configured to be active.
 <tbody>
 <tr class="odd">
 <td>regex</td>
-<td>Specifies the regular expression used to validate the name of an interface. If null or empty, then this rule does nothing.</td>
+<td>Specifies the regular expression used to validate the name of an
+interface. If null or empty, then this rule does nothing.</td>
 <td><code>null</code></td>
 </tr>
 </tbody>

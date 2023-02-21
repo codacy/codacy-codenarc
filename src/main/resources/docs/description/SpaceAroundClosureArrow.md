@@ -5,8 +5,8 @@ each closure arrow (-\*) symbol.
 
 Known limitations:
 
--   Does not catch violations if the closure arrow (-\*) is on a
-    separate line from the start of the closure.
+- Does not catch violations if the closure arrow (-\*) is on a separate
+  line from the start of the closure.
 
 Example of violations:
 

@@ -19,7 +19,12 @@ superclasses.
 <tbody>
 <tr class="odd">
 <td>superclassNames</td>
-<td>Specifies the comma-separated list of (fully-qualified) class names. The class name(s) may optionally include wildcard characters (‘<em>’ or ’?’). Note that the ’</em>’ wildcard matches any sequence of zero or more characters in the class/package name, e.g. ’a.*.MyClass’ matches <code>a.b.MyClass</code> as well as <code>a.b.c.d.MyClass</code>. If <code>classNames</code> is null or empty, do nothing.</td>
+<td>Specifies the comma-separated list of (fully-qualified) class names.
+The class name(s) may optionally include wildcard characters (‘<em>’ or
+’?’). Note that the ’</em>’ wildcard matches any sequence of zero or
+more characters in the class/package name, e.g. ’a.*.MyClass’ matches
+<code>a.b.MyClass</code> as well as <code>a.b.c.d.MyClass</code>. If
+<code>classNames</code> is null or empty, do nothing.</td>
 <td><code>null</code></td>
 </tr>
 </tbody>

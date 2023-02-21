@@ -23,7 +23,8 @@ only match class names ending in ‘Spec’, ‘Test’, ‘Tests’ or ‘TestC
 <tbody>
 <tr class="odd">
 <td>checkAssertStatements</td>
-<td>If <code>true</code>, then also check assert statements, e.g. <code>assert x == true</code>.</td>
+<td>If <code>true</code>, then also check assert statements,
+e.g. <code>assert x == true</code>.</td>
 <td><code>false</code></td>
 </tr>
 </tbody>

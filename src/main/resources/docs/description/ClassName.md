@@ -19,7 +19,8 @@ underscores) or dollar signs ($).
 <tbody>
 <tr class="odd">
 <td>regex</td>
-<td>Specifies the regular expression used to validate the class name. It is required and cannot be null or empty.</td>
+<td>Specifies the regular expression used to validate the class name. It
+is required and cannot be null or empty.</td>
 <td>([A-Z]\w<em>\$?)</em></td>
 </tr>
 </tbody>

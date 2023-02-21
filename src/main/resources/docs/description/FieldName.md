@@ -26,27 +26,40 @@ fields that specify an access modifier. For naming of *properties*, see
 <tbody>
 <tr class="odd">
 <td>regex</td>
-<td>Specifies the default regular expression used to validate the field name. It is required and cannot be null or empty.</td>
+<td>Specifies the default regular expression used to validate the field
+name. It is required and cannot be null or empty.</td>
 <td>[a-z][a-zA-Z0-9]*</td>
 </tr>
 <tr class="even">
 <td>finalRegex</td>
-<td>Specifies the regular expression used to validate <code>final</code> field names. It is optional. If not set, then <code>final</code> fields that are non-<code>static</code> are validated using <strong>regex</strong>.</td>
+<td>Specifies the regular expression used to validate <code>final</code>
+field names. It is optional. If not set, then <code>final</code> fields
+that are non-<code>static</code> are validated using
+<strong>regex</strong>.</td>
 <td><code>null</code></td>
 </tr>
 <tr class="odd">
 <td>staticRegex</td>
-<td>Specifies the regular expression used to validate <code>static</code> field names. It is optional. If not set, then <code>static</code> fields that are non-<code>final</code> are validated using <strong>regex</strong>.</td>
+<td>Specifies the regular expression used to validate
+<code>static</code> field names. It is optional. If not set, then
+<code>static</code> fields that are non-<code>final</code> are validated
+using <strong>regex</strong>.</td>
 <td><code>null</code></td>
 </tr>
 <tr class="even">
 <td>staticFinalRegex</td>
-<td>Specifies the regular expression used to validate <code>static final</code> field names. It is optional. If not set, then <code>static final</code> fields are validated using <strong>finalRegex</strong>, <strong>staticRegex</strong> or <strong>regex</strong>.</td>
+<td>Specifies the regular expression used to validate
+<code>static final</code> field names. It is optional. If not set, then
+<code>static final</code> fields are validated using
+<strong>finalRegex</strong>, <strong>staticRegex</strong> or
+<strong>regex</strong>.</td>
 <td>[A-Z][A-Z0-9_]*</td>
 </tr>
 <tr class="odd">
 <td>ignoreFieldNames</td>
-<td>Specifies one or more (comma-separated) field names that should be ignored (i.e., that should not cause a rule violation). The names may optionally contain wildcards (*,?).</td>
+<td>Specifies one or more (comma-separated) field names that should be
+ignored (i.e., that should not cause a rule violation). The names may
+optionally contain wildcards (*,?).</td>
 <td><code>serialVersionUID</code></td>
 </tr>
 </tbody>
