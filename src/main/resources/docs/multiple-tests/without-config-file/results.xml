@@ -3,6 +3,14 @@
     <file name="ConsecutiveBlankLines.groovy">
         <error source="ConsecutiveBlankLines" line="2"
                message="File ConsecutiveBlankLines.groovy has consecutive blank lines" severity="info"/>
+        <error source="UnnecessarySemicolon" line="9"
+               message="Semicolons as line endings can be removed safely" severity="info"/>
+        <error source="UnnecessarySemicolon" line="12"
+               message="Semicolons as line endings can be removed safely" severity="info"/>
+        <error source="UnnecessarySemicolon" line="13"
+               message="Semicolons as line endings can be removed safely" severity="info"/>
+        <error source="AssignmentInConditional" line="14"
+               message="Assignment used as conditional value, which always results in true. Use the == operator instead" severity="warning"/>
     </file>
     <file name="AssignmentInConditional.groovy">
         <error source="AssignmentInConditional" line="7"
