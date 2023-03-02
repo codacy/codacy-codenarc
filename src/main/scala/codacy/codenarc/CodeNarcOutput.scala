@@ -9,19 +9,19 @@ object CodeNarcOutput {
   case class CodeNarcViolation(ruleName: String, message: String, line: Int)
 
   private def parseFileResult(fileResults: FileResults): List[CodeNarcOutput] = {
-    fileResults.getViolations
-      .toArray()
-      .map {
-        case violation: Violation =>
-          val ruleTitle = violation.getRule.getName
-          CodeNarcOutput(
-            fileResults.getPath,
-            Option(violation.getMessage).getOrElse(ruleTitle),
-            ruleTitle,
-            violation.getLineNumber.toInt
-          )
-      }
-      .toList
+    val vs: Array[Violation] = fileResults.getViolations.toArray(new Array[Violation](0))
+
+    vs.map { violation =>
+      val ruleTitle = violation.getRule.getName
+
+      CodeNarcOutput(
+        fileResults.getPath,
+        Option(violation.getMessage).getOrElse(ruleTitle),
+        ruleTitle,
+        violation.getLineNumber.toInt
+      )
+
+    }.toList
   }
 
   def parseResult(result: Results): List[CodeNarcOutput] =
@@ -32,8 +32,10 @@ object CodeNarcOutput {
       case dirResult: DirectoryResults =>
         dirResult.getChildren.toArray.flatMap {
           case res: Results => parseResult(res)
+          case _ => List.empty
         }.toList
 
-      case _ => List()
+      case _ =>
+        List.empty
     }
 }

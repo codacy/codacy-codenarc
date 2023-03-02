@@ -17,7 +17,7 @@ ThisBuild / toolVersion := "3.2.0"
 lazy val commonSettings = Seq(
   organization := "com.codacy",
   version := "1.0.0-SNAPSHOT",
-  scalaVersion := "2.13.1",
+  scalaVersion := "2.13.10",
   Compile / sourceGenerators += Def.task {
     val file = (Compile / sourceManaged).value / "codacy" / "codenarc" / "docs" / "Versions.scala"
     IO.write(file, s"""package codacy.codenarc.docs 
@@ -29,7 +29,7 @@ lazy val commonSettings = Seq(
   }.taskValue,
   libraryDependencies ++= Seq(
     "org.codenarc" % "CodeNarc" % toolVersion.value,
-    "com.codacy" %% "codacy-engine-scala-seed" % "5.0.1"
+    "com.codacy" %% "codacy-engine-scala-seed" % "6.1.0"
   )
 )
 
@@ -40,8 +40,9 @@ lazy val docGenerator = (project in file("docgenerator"))
     moduleName := "docgenerator",
     libraryDependencies ++= Seq(
       "org.codenarc" % "CodeNarc" % toolVersion.value,
-      "org.scala-lang.modules" %% "scala-xml" % "2.0.1",
-      "org.reflections" % "reflections" % "0.10.2"
+      "org.scala-lang.modules" %% "scala-xml" % "2.1.0",
+      "org.reflections" % "reflections" % "0.10.2",
+      "com.github.pathikrit" %% "better-files" % "3.9.2"
     )
   )
 
@@ -50,17 +51,15 @@ lazy val root = (project in file("."))
     commonSettings,
     name := "codacy-codenarc",
     moduleName := "codacy-codenarc",
-    libraryDependencies ++= Seq("org.slf4j" % "slf4j-nop" % "1.7.12", "org.scalatest" %% "scalatest" % "3.1.0" % Test)
+    libraryDependencies ++= Seq("org.slf4j" % "slf4j-nop" % "2.0.5", "org.scalatest" %% "scalatest" % "3.2.15" % Test)
   )
   .enablePlugins(DockerPlugin)
   .enablePlugins(AshScriptPlugin)
 
 enablePlugins(JavaAppPackaging)
 
-resourceDirectory in IntegrationTest := baseDirectory.value / "test" / "resources"
-
-mappings in Universal ++=
-  (resourceDirectory in Compile).map { resourceDir =>
+Universal / mappings ++=
+  (Compile / resourceDirectory).map { resourceDir =>
     val src = resourceDir / "docs"
     val dest = "/docs"
 
@@ -73,14 +72,13 @@ val defaultDockerInstallationPath = "/opt/docker"
 val dockerUser = "docker"
 
 // Docker
-mainClass in Compile := Some("codacy.Engine")
-packageName in Docker := name.value
-maintainer in Docker := "José Melo <jose@codacy.com>"
-dockerBaseImage := "amazoncorretto:8-alpine3.14-jre"
+Compile / mainClass := Some("codacy.Engine")
+Docker / packageName := name.value
+dockerBaseImage := "amazoncorretto:8-alpine3.17-jre"
 dockerUpdateLatest := true
-defaultLinuxInstallLocation in Docker := defaultDockerInstallationPath
-daemonUser in Docker := dockerUser
-daemonGroup in Docker := dockerUser
+Docker / defaultLinuxInstallLocation := defaultDockerInstallationPath
+Docker / daemonUser := dockerUser
+Docker / daemonGroup := dockerUser
 dockerEntrypoint := Seq(s"$defaultDockerInstallationPath/bin/${name.value}")
 dockerCmd := Seq()
 dockerCommands := dockerCommands.value.flatMap {

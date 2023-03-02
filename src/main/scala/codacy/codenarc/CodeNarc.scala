@@ -1,18 +1,15 @@
 package codacy.codenarc
 
-import better.files.File
-
 import com.codacy.plugins
 import com.codacy.plugins.api.{Options, Source}
 import com.codacy.plugins.api.results.{Result, Tool}
+import com.codacy.tools.scala.seed.utils.FileHelper
 import com.codacy.tools.scala.seed.utils.FileHelper.findConfigurationFile
 
 import java.io.{FileOutputStream, PrintStream}
 import java.nio.file.{Path, Paths}
-
 import org.codenarc.CodeNarcRunner
 import org.codenarc.analyzer.FilesystemSourceAnalyzer
-
 import play.api.libs.json.{JsString, JsValue}
 
 import scala.util.Try
@@ -72,13 +69,13 @@ object CodeNarc extends Tool {
        |}""".stripMargin
   }
 
-  private def generateConfigurationFile(patterns: List[Pattern]): File =
+  private def generateConfigurationFile(patterns: List[Pattern]): Path = {
     saveConfigurationFile(ruleFileContentFromPatterns(patterns))
+  }
 
-  private def saveConfigurationFile(content: String): File =
-    File
-      .newTemporaryFile("codacycodenarc", ".txt")
-      .write(content)
+  private def saveConfigurationFile(content: String): Path = {
+    FileHelper.createTmpFile(content, "codacycodenarc", ".txt")
+  }
 
   def patternDefinitionToCodeNarcPattern(pattern: plugins.api.results.Pattern.Definition): Pattern = {
     val parameters: Set[PatternParameter] =
@@ -99,14 +96,15 @@ object CodeNarc extends Tool {
       .map { config =>
         val codeNarcPatterns = config.map(patternDefinitionToCodeNarcPattern)
 
-        generateConfigurationFile(codeNarcPatterns).path
+        generateConfigurationFile(codeNarcPatterns)
       }
       .orElse {
         sourceCodeRepositoryContainsConfigFile(source)
       }
       .getOrElse {
         val defaultConfigContent = scala.io.Source.fromResource(codeNarcDefaultConfigPath).mkString
-        saveConfigurationFile(defaultConfigContent).path
+
+        saveConfigurationFile(defaultConfigContent)
       }
 
   def filesToAnalyse(filesOpt: Option[Set[Source.File]]): String = filesOpt match {
@@ -120,7 +118,7 @@ object CodeNarc extends Tool {
     * CodeNarc makes some println's which we need to ignore
     */
   def codeNarcPrintlnIgnore(): Unit =
-    System.setOut(new PrintStream(new FileOutputStream(File.newTemporaryFile("out").toJava)))
+    System.setOut(new PrintStream(new FileOutputStream(FileHelper.createTmpFile("out").toFile)))
 
   def run(
       source: Source.Directory,
@@ -140,6 +138,7 @@ object CodeNarc extends Tool {
   private def runAnalysis(sourceDir: String, rulesList: String, includesFiles: String) = {
     val codeNarcRunner = new CodeNarcRunner()
     codeNarcRunner.setRuleSetFiles(rulesList)
+
     val sourceAnalyzer = new FilesystemSourceAnalyzer
     sourceAnalyzer.setBaseDirectory(sourceDir)
     sourceAnalyzer.setIncludes(includesFiles)

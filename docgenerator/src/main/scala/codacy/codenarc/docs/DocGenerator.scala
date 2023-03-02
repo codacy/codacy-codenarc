@@ -173,7 +173,7 @@ object DocGenerator {
     * @return
     */
   def listRulesSupportedFromGitDocumentation(toolVersion: String): Seq[RulePatternInformation] =
-    GitHelper.withRepository(codeNarcGitRepository, toolVersion)(directory => {
+    GitHelper.withRepository(codeNarcGitRepository, toolVersion) { directory =>
       val documentationFolder = directory / "docs"
 
       val documentationStartingPoint = documentationFolder / codeNarcDocumentationStartingPoint
@@ -216,7 +216,7 @@ object DocGenerator {
         )
       } yield RulePatternInformation(patternSpec, patternDescription, ruleExtendedInfo)
 
-    })
+    }
 
   /**
     * Get the tool specification with all required information (name, version, patterns list)
@@ -305,6 +305,7 @@ object DocGenerator {
     patternsList.foreach(description => {
       val patternId = description.patternSpecification.patternId.value
       val descriptionMdFile = File(descriptionsRoot, s"$patternId.md")
+
       ResourceHelper.writeFile(descriptionMdFile.path, description.descriptionMarkdown)
     })
 

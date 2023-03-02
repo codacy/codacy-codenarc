@@ -13,10 +13,8 @@ workflows:
       - codacy/sbt:
           name: publish_docker_local
           cmd: |
-            sbt "set scalafmtUseIvy in ThisBuild := false;
-                 scalafmt::test;
-                 test:scalafmt::test;
-                 sbt:scalafmt::test;
+            sbt "scalafmtCheckAll;
+                 scalafmtSbtCheck;
                  test;
                  set name := \"$CIRCLE_PROJECT_REPONAME\";
                  set version in Docker := \"latest\";

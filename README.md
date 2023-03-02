@@ -123,6 +123,10 @@ Here is an example of code that produces a violation:
 
 This documentation should be generated automatically by using the Documentation Generator tool:
 
+notes: 
+ 1. pandoc is required to be installed.
+ 2. only runs currently under java 8 or 11 (due to runtime introspection). 
+
 ```
 sbt "docGenerator / runMain codacy.codenarc.docs.DocGenerator"
 ```
