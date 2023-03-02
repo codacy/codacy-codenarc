@@ -1,7 +1,7 @@
 //#Patterns: MissingBlankLineAfterPackage, MisorderedStaticImports, UnnecessarySemicolon
 //#Info: MissingBlankLineAfterPackage
 package docs.tests
-import java.lang.Math
+import java.lang.Math 
 //#Info: MisorderedStaticImports
 import static ConsecutiveBlankLines.*
 
