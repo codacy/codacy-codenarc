@@ -273,7 +273,6 @@ object DefaultRules {
     "UnnecessarySelfAssignment",
     "UnnecessarySemicolon",
     "UnnecessaryStringInstantiation",
-    "UnnecessarySubstring",
     "UnnecessaryTernaryExpression",
     "UnnecessaryTransientModifier",
     "UnsafeArrayDeclaration",
