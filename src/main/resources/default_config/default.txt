@@ -1,5 +1,6 @@
 ruleset {
 
+    // rulesets/basic.xml
     AssertWithinFinallyBlock
     AssignmentInConditional
     BigDecimalInstantiation
@@ -39,11 +40,11 @@ ruleset {
     HardCodedWindowsRootDirectory
     IntegerGetInteger
     MultipleUnaryOperators
+    ParameterAssignmentInFilterClosure
     RandomDoubleCoercedToZero
     RemoveAllOnSelf
     ReturnFromFinallyBlock
     ThrowExceptionFromFinallyBlock
-
 
     // rulesets/braces.xml
     ElseBlockBraces
@@ -97,6 +98,7 @@ ruleset {
     WaitOutsideOfWhileLoop
 
     // rulesets/convention.xml
+    CompileStatic
     ConfusingTernary
     CouldBeElvis
     CouldBeSwitchStatement
@@ -104,11 +106,13 @@ ruleset {
     HashtableIsObsolete
     IfStatementCouldBeTernary
     ImplicitClosureParameter
+    ImplicitReturnStatement
     InvertedCondition
     InvertedIfElse
     LongLiteralWithLowerCaseL
     MethodParameterTypeRequired
     MethodReturnTypeRequired
+    NoDef
     NoDouble
     NoFloat
     NoJavaUtilDate
@@ -138,6 +142,9 @@ ruleset {
     Instanceof
     LocaleSetDefault
     NestedForLoop
+    OptionalCollectionReturnType
+    OptionalField
+    OptionalMethodParameter
     PrivateFieldCouldBeFinal
     PublicInstanceField
     ReturnsNullInsteadOfEmptyArray
@@ -189,6 +196,7 @@ ruleset {
     BracesForIfElse
     BracesForMethod
     BracesForTryCatchFinally
+    ClassEndsWithBlankLine
     ClassStartsWithBlankLine
     ClosureStatementOnOpeningLineOfMultipleLineClosure
     ConsecutiveBlankLines
@@ -197,11 +205,15 @@ ruleset {
     LineLength
     MissingBlankLineAfterImports
     MissingBlankLineAfterPackage
+    MissingBlankLineBeforeAnnotatedField
     SpaceAfterCatch
     SpaceAfterClosingBrace
     SpaceAfterComma
     SpaceAfterFor
     SpaceAfterIf
+    SpaceAfterMethodCallName
+    SpaceAfterMethodDeclarationName
+    SpaceAfterNotOperator
     SpaceAfterOpeningBrace
     SpaceAfterSemicolon
     SpaceAfterSwitch
@@ -211,6 +223,7 @@ ruleset {
     SpaceAroundOperator
     SpaceBeforeClosingBrace
     SpaceBeforeOpeningBrace
+    SpaceInsideParentheses
     TrailingWhitespace
 
     // rulesets/generic.xml
@@ -225,6 +238,7 @@ ruleset {
     StatelessClass
 
     // rulesets/grails.xml
+    GrailsDomainGormMethods
     GrailsDomainHasEquals
     GrailsDomainHasToString
     GrailsDomainReservedSqlKeywordName
@@ -424,4 +438,6 @@ ruleset {
     UnusedPrivateMethod
     UnusedPrivateMethodParameter
     UnusedVariable
+
+
 }
