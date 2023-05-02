@@ -85,7 +85,7 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "BigDecimalInstantiation",
     "level" : "Warning",
@@ -106,21 +106,21 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "BlockEndsWithBlankLine",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "BlockStartsWithBlankLine",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "BooleanGetBoolean",
     "level" : "Warning",
@@ -306,7 +306,7 @@
       "default" : true
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "ClassForName",
     "level" : "Warning",
@@ -320,7 +320,7 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "ClassName",
     "level" : "Warning",
@@ -344,7 +344,7 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "ClassSize",
     "level" : "Info",
@@ -370,7 +370,7 @@
       "default" : true
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "CloneWithoutCloneable",
     "level" : "Warning",
@@ -404,14 +404,14 @@
       "default" : ""
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "ClosureStatementOnOpeningLineOfMultipleLineClosure",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "CollectAllIsDeprecated",
     "level" : "Warning",
@@ -446,7 +446,7 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "ConfusingClassNamedException",
     "level" : "Warning",
@@ -481,7 +481,7 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "ConsecutiveLiteralAppends",
     "level" : "Warning",
@@ -540,7 +540,7 @@
       "default" : "Code could use switch statement"
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "CoupledTestCase",
     "level" : "Warning",
@@ -667,7 +667,7 @@
       "default" : "0,1"
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "DuplicateSetValue",
     "level" : "Warning",
@@ -687,7 +687,7 @@
       "default" : ""
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "ElseBlockBraces",
     "level" : "Warning",
@@ -833,7 +833,7 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "ExceptionNotThrown",
     "level" : "Warning",
@@ -977,7 +977,7 @@
       "default" : false
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "ExplicitCallToRightShiftMethod",
     "level" : "Warning",
@@ -1091,7 +1091,7 @@
       "default" : null
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "FileCreateTempFile",
     "level" : "Warning",
@@ -1109,7 +1109,7 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "FinalClassWithProtectedMember",
     "level" : "Warning",
@@ -1164,7 +1164,7 @@
       "default" : 4
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "GrailsDomainHasEquals",
     "level" : "Warning",
@@ -1174,7 +1174,7 @@
       "default" : ".*grails-app/domain/.*"
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "GrailsDomainHasToString",
     "level" : "Warning",
@@ -1184,7 +1184,7 @@
       "default" : ".*grails-app/domain/.*"
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "GrailsDomainReservedSqlKeywordName",
     "level" : "Warning",
@@ -1200,7 +1200,7 @@
       "default" : ""
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "GrailsDomainStringPropertyMaxSize",
     "level" : "Warning",
@@ -1210,7 +1210,7 @@
       "default" : ".*grails-app/domain/.*"
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "GrailsDomainWithServiceReference",
     "level" : "Warning",
@@ -1220,7 +1220,7 @@
       "default" : ".*grails-app/domain/.*"
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "GrailsDuplicateConstraint",
     "level" : "Warning",
@@ -1230,7 +1230,7 @@
       "default" : ".*grails-app/domain/.*"
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "GrailsDuplicateMapping",
     "level" : "Warning",
@@ -1240,14 +1240,14 @@
       "default" : ".*grails-app/domain/.*"
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "GrailsMassAssignment",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "GrailsPublicControllerMethod",
     "level" : "Warning",
@@ -1263,7 +1263,7 @@
       "default" : "*Controller"
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "GrailsServletContextReference",
     "level" : "Warning",
@@ -1273,7 +1273,7 @@
       "default" : ".*grails-app/(controllers|taglib)/.*"
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "GrailsStatelessService",
     "level" : "Warning",
@@ -1286,7 +1286,7 @@
       "default" : "*Service"
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "GroovyLangImmutable",
     "level" : "Warning",
@@ -1396,7 +1396,7 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "IllegalSubclass",
     "level" : "Warning",
@@ -1406,7 +1406,7 @@
       "default" : null
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "ImplementationAsType",
     "level" : "Warning",
@@ -1423,14 +1423,14 @@
       "default" : false
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "ImplicitReturnStatement",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "ImportFromSamePackage",
     "level" : "Info",
@@ -1468,7 +1468,7 @@
       "default" : 4
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "InsecureRandom",
     "level" : "Warning",
@@ -1492,7 +1492,7 @@
       "default" : "*Exception"
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "IntegerGetInteger",
     "level" : "Warning",
@@ -1516,14 +1516,14 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "InvertedCondition",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "InvertedIfElse",
     "level" : "Info",
@@ -1616,7 +1616,7 @@
       "default" : null
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "JUnitSetUpCallsSuper",
     "level" : "Warning",
@@ -1700,105 +1700,105 @@
       "default" : ".*(Spec|Test|Tests|TestCase)\\.groovy"
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "JavadocConsecutiveEmptyLines",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "JavadocEmptyAuthorTag",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "JavadocEmptyExceptionTag",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "JavadocEmptyFirstLine",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "JavadocEmptyLastLine",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "JavadocEmptyParamTag",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "JavadocEmptyReturnTag",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "JavadocEmptySeeTag",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "JavadocEmptySinceTag",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "JavadocEmptyThrowsTag",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "JavadocEmptyVersionTag",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "JavadocMissingExceptionDescription",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "JavadocMissingParamDescription",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "JavadocMissingThrowsDescription",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "JdbcConnectionReference",
     "level" : "Warning",
@@ -1838,14 +1838,14 @@
       "default" : null
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "LocaleSetDefault",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "LoggerForDifferentClass",
     "level" : "Warning",
@@ -1915,7 +1915,7 @@
       "default" : ""
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "MethodReturnTypeRequired",
     "level" : "Info",
@@ -1925,7 +1925,7 @@
       "default" : ""
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "MethodSize",
     "level" : "Info",
@@ -1952,21 +1952,21 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "MissingBlankLineAfterPackage",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "MissingBlankLineBeforeAnnotatedField",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "MissingNewInThrowStatement",
     "level" : "Warning",
@@ -1983,7 +1983,7 @@
       "default" : 4
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "MultipleLoggers",
     "level" : "Warning",
@@ -1997,7 +1997,7 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "NestedBlockDepth",
     "level" : "Warning",
@@ -2017,7 +2017,7 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "NestedSynchronization",
     "level" : "Warning",
@@ -2031,42 +2031,42 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "NoDouble",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "NoFloat",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "NoJavaUtilDate",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "NoTabCharacter",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "NoWildcardImports",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "NonFinalPublicField",
     "level" : "Warning",
@@ -2103,21 +2103,21 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "OptionalField",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "OptionalMethodParameter",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "PackageName",
     "level" : "Warning",
@@ -2137,14 +2137,14 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "ParameterAssignmentInFilterClosure",
     "level" : "Warning",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "ParameterCount",
     "level" : "Warning",
@@ -2157,7 +2157,7 @@
       "default" : true
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "ParameterName",
     "level" : "Warning",
@@ -2248,7 +2248,7 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "RandomDoubleCoercedToZero",
     "level" : "Warning",
@@ -2325,7 +2325,7 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "SimpleDateFormatMissingLocale",
     "level" : "Warning",
@@ -2377,21 +2377,21 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "SpaceAfterMethodDeclarationName",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "SpaceAfterNotOperator",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "SpaceAfterOpeningBrace",
     "level" : "Info",
@@ -2445,7 +2445,7 @@
       "default" : "\\S"
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "SpaceAroundOperator",
     "level" : "Info",
@@ -2485,7 +2485,7 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "SpockIgnoreRestUsed",
     "level" : "Warning",
@@ -2549,7 +2549,7 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "StaticMatcherField",
     "level" : "Warning",
@@ -2563,7 +2563,7 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "StaticSimpleDateFormatField",
     "level" : "Warning",
@@ -2739,7 +2739,7 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "TrailingComma",
     "level" : "Info",
@@ -2758,14 +2758,14 @@
       "default" : true
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "TrailingWhitespace",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryBigDecimalInstantiation",
     "level" : "Info",
@@ -2814,7 +2814,7 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryCatchBlock",
     "level" : "Info",
@@ -2887,7 +2887,7 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryFail",
     "level" : "Warning",
@@ -2918,7 +2918,7 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryGetter",
     "level" : "Info",
@@ -3042,14 +3042,14 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "UnnecessarySafeNavigationOperator",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "UnnecessarySelfAssignment",
     "level" : "Info",
@@ -3070,7 +3070,7 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryStringInstantiation",
     "level" : "Info",
@@ -3094,7 +3094,7 @@
       "default" : true
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "UnnecessaryTransientModifier",
     "level" : "Info",
@@ -3315,7 +3315,7 @@
       "default" : null
     } ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   }, {
     "patternId" : "VectorIsObsolete",
     "level" : "Warning",
@@ -3350,6 +3350,6 @@
     "category" : "CodeStyle",
     "parameters" : [ ],
     "languages" : [ ],
-    "enabled" : false
+    "enabled" : true
   } ]
 }
