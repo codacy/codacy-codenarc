@@ -45,6 +45,13 @@
     "languages" : [ ],
     "enabled" : true
   }, {
+    "patternId" : "AddEmptyString",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
+  }, {
     "patternId" : "AssertWithinFinallyBlock",
     "level" : "Warning",
     "category" : "CodeStyle",
