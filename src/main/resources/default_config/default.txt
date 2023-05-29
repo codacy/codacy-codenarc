@@ -383,7 +383,6 @@ ruleset {
     ParameterCount
 
     // rulesets/unnecessary.xml
-    AddEmptyString
     ConsecutiveLiteralAppends
     ConsecutiveStringConcatenation
     UnnecessaryBigDecimalInstantiation
