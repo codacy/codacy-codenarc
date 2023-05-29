@@ -8,7 +8,6 @@ object DefaultRules {
     "AbstractClassName",
     "AbstractClassWithPublicConstructor",
     "AbstractClassWithoutAbstractMethod",
-    "AddEmptyString",
     "AssertWithinFinallyBlock",
     "AssignCollectionSort",
     "AssignCollectionUnique",
