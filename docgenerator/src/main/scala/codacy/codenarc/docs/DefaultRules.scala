@@ -368,7 +368,6 @@ object DefaultRules {
     "UnnecessarySemicolon",
     "UnnecessarySetter",
     "UnnecessaryStringInstantiation",
-    "UnnecessarySubstring",
     "UnnecessaryTernaryExpression",
     "UnnecessaryToString",
     "UnnecessaryTransientModifier",
