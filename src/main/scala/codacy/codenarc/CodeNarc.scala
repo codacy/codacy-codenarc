@@ -128,7 +128,7 @@ object CodeNarc extends Tool {
     val filesToInclude = filesToAnalyse(filesOpt)
     val ruleConfiguration = ruleConfigFile(configurationFilePath)
 
-    codeNarcPrintlnIgnore()
+    sys.env.get("DEBUG").fold()(_ => codeNarcPrintlnIgnore())
 
     val result = runAnalysis(source.path, ruleConfiguration, filesToInclude)
 

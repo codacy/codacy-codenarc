@@ -1,0 +1,9 @@
+{
+  "tools": [
+    {
+      "name": "codenarc",
+      "patterns": null
+    }
+  ],
+  "files": null
+}
