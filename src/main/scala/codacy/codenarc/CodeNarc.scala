@@ -35,7 +35,7 @@ object CodeNarc extends Tool {
 
   private def paramValueAsString(paramValue: JsValue): String =
     paramValue match {
-      case JsString(value) => s"'$value'"
+      case jsonEncodedString @ JsString(_) => s"'${jsonEncodedString.toString.stripPrefix("\"").stripSuffix("\"")}'"
       case v => v.toString
     }
 
