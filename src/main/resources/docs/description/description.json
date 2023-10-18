@@ -320,6 +320,16 @@
   "description" : "Checks for missing description within @throws javadoc tags.",
   "parameters" : [ ]
 }, {
+  "patternId" : "SpaceAfterCommentDelimiter",
+  "title" : "SpaceAfterCommentDelimiter",
+  "description" : "Checks that there is whitespace after comment characters (// and /*)",
+  "parameters" : [ ]
+}, {
+  "patternId" : "SpaceBeforeCommentDelimiter",
+  "title" : "SpaceBeforeCommentDelimiter",
+  "description" : "Checks that there is whitespace before comment characters (// and /*)",
+  "parameters" : [ ]
+}, {
   "patternId" : "BusyWait",
   "title" : "BusyWait",
   "description" : "Busy waiting (forcing a Thread.sleep() while waiting on a condition) should be avoided. Prefer using the gate and barrier objects in the java.util.concurrent package.",
@@ -343,6 +353,11 @@
   "patternId" : "NestedSynchronization",
   "title" : "NestedSynchronization",
   "description" : "Nested synchronized statements should be avoided. Nested synchronized statements are either useless (if the lock objects are identical) or prone to deadlock.",
+  "parameters" : [ ]
+}, {
+  "patternId" : "NoScriptBindings",
+  "title" : "NoScriptBindings",
+  "description" : "Do not use script bindings (global variables). Prefer to scope them as local variables or fields by providing a type definition (int a ...).",
   "parameters" : [ ]
 }, {
   "patternId" : "StaticCalendarField",
@@ -496,7 +511,7 @@
 }, {
   "patternId" : "ImplicitClosureParameter",
   "title" : "ImplicitClosureParameter",
-  "description" : "Checks that the implicit it closure parameter is not used and that parameters are declared explicitly instead. ",
+  "description" : "Checks that the implicit it closure parameter is not used and that parameters are declared explicitly instead.",
   "parameters" : [ {
     "name" : "allowUsingItAsParameterName",
     "description" : "allowUsingItAsParameterName"
@@ -704,7 +719,7 @@
 }, {
   "patternId" : "OptionalCollectionReturnType",
   "title" : "OptionalCollectionReturnType",
-  "description" : "Do not declare a method return type of Optional<List> (or Collection, ArrayList, Set, Map, HashMap, etc.). Return an empty collection instead. ",
+  "description" : "Do not declare a method return type of Optional<List> (or Collection, ArrayList, Set, Map, HashMap, etc.). Return an empty collection instead.",
   "parameters" : [ ]
 }, {
   "patternId" : "OptionalField",
@@ -1050,6 +1065,9 @@
   "parameters" : [ {
     "name" : "spacesPerIndentLevel",
     "description" : "spacesPerIndentLevel"
+  }, {
+    "name" : "indentUnderLabel",
+    "description" : "indentUnderLabel"
   } ]
 }, {
   "patternId" : "LineLength",
@@ -1081,7 +1099,7 @@
 }, {
   "patternId" : "MissingBlankLineBeforeAnnotatedField",
   "title" : "MissingBlankLineBeforeAnnotatedField",
-  "description" : "Checks that there is a blank line before a field declaration that uses annotations. ",
+  "description" : "Checks that there is a blank line before a field declaration that uses annotations.",
   "parameters" : [ ]
 }, {
   "patternId" : "SpaceAfterCatch",
@@ -1806,6 +1824,17 @@
   "patternId" : "SpockIgnoreRestUsed",
   "title" : "SpockIgnoreRestUsed",
   "description" : "If Spock's @IgnoreRest appears on any method, all non-annotated test methods are not executed. This behaviour is almost always unintended. It's fine to use @IgnoreRest locally during development, but when committing code, it should be removed.",
+  "parameters" : [ {
+    "name" : "specificationSuperclassNames",
+    "description" : "specificationSuperclassNames"
+  }, {
+    "name" : "specificationClassNames",
+    "description" : "specificationClassNames"
+  } ]
+}, {
+  "patternId" : "SpockMissingAssert",
+  "title" : "SpockMissingAssert",
+  "description" : "Spock treats all expressions on the first level of a then or expect block as an implicit assertion. However, everything inside if/for/switch/... blocks is not an implicit 'assert', just a useless comparison (unless wrapped by a 'with' or 'verifyAll'). Please note that the rule might produce false positives, as it relies on method names to determine whether an expression has a boolean type or not.",
   "parameters" : [ {
     "name" : "specificationSuperclassNames",
     "description" : "specificationSuperclassNames"
