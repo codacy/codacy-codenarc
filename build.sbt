@@ -12,7 +12,7 @@ import com.typesafe.sbt.packager.docker.{Cmd, ExecCmd}
 
 // Tool version
 lazy val toolVersion = settingKey[String]("The version of the underlying tool")
-ThisBuild / toolVersion := "3.2.0"
+ThisBuild / toolVersion := "3.3.0"
 
 lazy val commonSettings = Seq(
   organization := "com.codacy",
