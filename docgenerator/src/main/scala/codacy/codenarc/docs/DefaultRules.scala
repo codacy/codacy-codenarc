@@ -4,7 +4,6 @@ object DefaultRules {
 
   // retrieved from https://codenarc.github.io/CodeNarc/StarterRuleSet-AllRulesByCategory.groovy.txt
   val list = List(
-    "AbcMetric",
     "AbstractClassName",
     "AbstractClassWithPublicConstructor",
     "AbstractClassWithoutAbstractMethod",
