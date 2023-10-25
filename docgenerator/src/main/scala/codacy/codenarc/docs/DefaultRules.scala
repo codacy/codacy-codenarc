@@ -17,7 +17,6 @@ object DefaultRules {
     "BigDecimalInstantiation",
     "BitwiseOperatorInConditional",
     "BlankLineBeforePackage",
-    "BlockEndsWithBlankLine",
     "BlockStartsWithBlankLine",
     "BooleanGetBoolean",
     "BooleanMethodReturnsNull",
