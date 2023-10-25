@@ -957,11 +957,6 @@
   "description" : "Makes sure there are no blank lines before the package declaration of a source code file.",
   "parameters" : [ ]
 }, {
-  "patternId" : "BlockEndsWithBlankLine",
-  "title" : "BlockEndsWithBlankLine",
-  "description" : "Checks that code blocks such as method bodies, closures and control structure bodies do not end with an empty line.",
-  "parameters" : [ ]
-}, {
   "patternId" : "BlockStartsWithBlankLine",
   "title" : "BlockStartsWithBlankLine",
   "description" : "Checks that code blocks such as method bodies, closures and control structure bodies do not start with an empty line.",
