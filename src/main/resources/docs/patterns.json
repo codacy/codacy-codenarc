@@ -1,7 +1,26 @@
 {
   "name" : "codenarc",
   "version" : "3.3.0",
-  "patterns" : [{
+  "patterns" : [ {
+    "patternId" : "AbcMetric",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "maxMethodAbcScore",
+      "default" : 60
+    }, {
+      "name" : "maxClassAverageMethodAbcScore",
+      "default" : 60
+    }, {
+      "name" : "maxClassAbcScore",
+      "default" : 0
+    }, {
+      "name" : "ignoreMethodNames",
+      "default" : null
+    } ],
+    "languages" : [ ],
+    "enabled" : true
+  }, {
     "patternId" : "AbstractClassName",
     "level" : "Warning",
     "category" : "CodeStyle",
