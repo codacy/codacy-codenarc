@@ -189,6 +189,7 @@ ruleset {
 
     // rulesets/formatting.xml
     BlankLineBeforePackage
+    BlockEndsWithBlankLine
     BlockStartsWithBlankLine
     BracesForClass
     BracesForForLoop

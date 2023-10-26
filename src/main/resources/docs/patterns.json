@@ -108,6 +108,13 @@
     "languages" : [ ],
     "enabled" : true
   }, {
+    "patternId" : "BlockEndsWithBlankLine",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
+  }, {
     "patternId" : "BlockStartsWithBlankLine",
     "level" : "Info",
     "category" : "CodeStyle",
