@@ -10,14 +10,14 @@ Checks for reference to any of the packages configured in
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>packageNames</td>
 <td>Specifies the comma-separated list of package names. The package
 name(s) may optionally include wildcard characters (‘<em>’ or ’?’). Note

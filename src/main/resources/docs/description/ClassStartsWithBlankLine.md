@@ -22,26 +22,26 @@ This rule can be configured with the following properties:
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>ignoreSingleLineClasses</td>
 <td>A boolean property to ignore single line classes. If it is false,
 then single line classes are considered a violation.</td>
 <td><code>true</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td>ignoreInnerClasses</td>
 <td>A boolean property to ignore inner classes. If it is <em>false</em>
 then inner classes can cause violations.</td>
 <td><code>false</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>blankLineRequired</td>
 <td>A boolean property to define if there may be a blank line after the
 opening class brace. If it is false, the first content after the brace

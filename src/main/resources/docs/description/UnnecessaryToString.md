@@ -14,14 +14,14 @@ Checks for unnecessary calls to `toString()`. This includes:
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>checkAssignments</td>
 <td>If <code>true</code>, then check for calls to
 <code>toString()</code> for the value assigned to a <code>String</code>

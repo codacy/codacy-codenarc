@@ -17,14 +17,14 @@ Rules](./codenarc-configuring-rules.html#standard-properties-for-configuring-rul
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>allowMultiline</td>
 <td>Set to <code>true</code> to allow the tag content (name,
 description, etc.) to start on the following line. If <em>false</em>,

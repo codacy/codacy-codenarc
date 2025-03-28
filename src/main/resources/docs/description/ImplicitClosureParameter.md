@@ -10,14 +10,14 @@ if an explicit `it` parameter has been specified.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>allowUsingItAsParameterName</td>
 <td>To stop the rule reporting violations when an explicit closure
 parameter called <code>it</code> is used, set this property to

@@ -19,18 +19,18 @@ Builder methods are slightly different than factory methods.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>regex</td>
 <td>Specifies the default regular expression used to validate the method
 name. It is required and cannot be null or empty.</td>
-<td>(build.<em>|create.</em>)</td>
+<td>(build.*|create.*)</td>
 </tr>
 </tbody>
 </table>

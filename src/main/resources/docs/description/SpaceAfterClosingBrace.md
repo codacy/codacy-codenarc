@@ -16,14 +16,14 @@ null-safe operator (?.) does not cause a violation.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>checkClosureMapEntryValue</td>
 <td>DEPRECATED. Ignored.</td>
 <td><code>true</code></td>

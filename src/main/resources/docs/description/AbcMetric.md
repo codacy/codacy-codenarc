@@ -27,21 +27,21 @@ analyzed and checked just like a method.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>maxMethodAbcScore</td>
 <td>The maximum <em>ABC</em> score allowed for a single method (or
 “closure field”). If zero or <em>null</em>, then do not check
 method-level scores.</td>
 <td>60</td>
 </tr>
-<tr class="even">
+<tr>
 <td>maxClassAverageMethodAbcScore</td>
 <td>The maximum average <em>ABC</em> score allowed for a class,
 calculated as the average score of its methods or “closure fields”. If
@@ -49,14 +49,14 @@ zero or <em>null</em>, then do not check class-level average
 scores.</td>
 <td>60</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>maxClassAbcScore</td>
 <td>The maximum <em>ABC</em> score allowed for a class, calculated as
 the total ABC score of its methods or “closure fields”. If zero or
 <em>null</em>, then do not check class-level scores.</td>
 <td>0</td>
 </tr>
-<tr class="even">
+<tr>
 <td>ignoreMethodNames</td>
 <td>Specifies one or more (comma-separated) method names that that
 should not cause a rule violation. The names may optionally contain

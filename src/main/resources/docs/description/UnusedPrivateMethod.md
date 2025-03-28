@@ -10,14 +10,14 @@ classes).
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>ignoreMethodsWithAnnotationNames</td>
 <td>Specifies one or more (comma-separated) annotation names that mark
 private methods that should be ignored (i.e., that should not cause a

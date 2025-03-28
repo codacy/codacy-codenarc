@@ -8,14 +8,14 @@ the **maxLines** property.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>maxLines</td>
 <td>The maximum number of lines allowed in a class definition.</td>
 <td>1000</td>

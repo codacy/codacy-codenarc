@@ -22,21 +22,21 @@ analyzed and checked just like a method.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>maxMethodComplexity</td>
 <td>The maximum <em>cyclomatic complexity</em> value allowed for a
 single method (or “closure field”). If zero or <em>null</em>, then do
 not check method-level complexity.</td>
 <td>20</td>
 </tr>
-<tr class="even">
+<tr>
 <td>maxClassAverageMethodComplexity</td>
 <td>The maximum average <em>cyclomatic complexity</em> value allowed for
 a class, calculated as the average complexity of its methods or “closure
@@ -44,7 +44,7 @@ fields”. If zero or <em>null</em>, then do not check average class-level
 complexity.</td>
 <td>20</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>maxClassComplexity</td>
 <td>The maximum total <em>cyclomatic complexity</em> value allowed for a
 class, calculated as the total complexity of its methods or “closure
@@ -52,7 +52,7 @@ fields”. If zero or <em>null</em>, then do not check total class-level
 complexity.</td>
 <td>0</td>
 </tr>
-<tr class="even">
+<tr>
 <td>ignoreMethodNames</td>
 <td>Specifies one or more (comma-separated) method names that that
 should not cause a rule violation. The names may optionally contain

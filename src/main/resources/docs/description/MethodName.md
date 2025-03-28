@@ -10,20 +10,20 @@ automatically created for Groovy scripts).
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>regex</td>
 <td>Specifies the regular expression used to validate the method name.
 It is required and cannot be null or empty.</td>
 <td>[a-z]\w*</td>
 </tr>
-<tr class="even">
+<tr>
 <td>ignoreMethodNames</td>
 <td>Specifies one or more (comma-separated) method names that should be
 ignored (i.e., that should not cause a rule violation). The names may

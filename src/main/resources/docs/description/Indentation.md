@@ -13,14 +13,14 @@ per indentation level.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>spacesPerIndentLevel</td>
 <td>The number of spaces that make up a single level of
 indentation.</td>
