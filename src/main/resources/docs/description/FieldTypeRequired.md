@@ -9,14 +9,14 @@ Checks that field types are explicitly specified (and not using `def`).
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>ignoreFieldNames</td>
 <td>Specifies one or more (comma-separated) field names that should be
 ignored (i.e., that should not cause a rule violation). The names may

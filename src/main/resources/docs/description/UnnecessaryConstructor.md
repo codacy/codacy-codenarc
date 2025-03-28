@@ -11,14 +11,14 @@ takes no arguments, or else contains only a single call to `super()`.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>ignoreAnnotations</td>
 <td>If <code>true</code>, then do not report violations if a constructor
 has one or more annotations.</td>

@@ -15,19 +15,19 @@ Calls to getter methods within Spock method calls `Mock()`, `Stub()` and
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>checkIsMethods</td>
 <td>If <code>true</code>, then also check isXxx() getters methods.</td>
 <td><code>true</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td>ignoreMethodNames</td>
 <td>Specifies one or more (comma-separated) method names that should be
 ignored (i.e., that should not cause a rule violation). The names may

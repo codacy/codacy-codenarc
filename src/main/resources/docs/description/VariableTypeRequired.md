@@ -10,14 +10,14 @@ not using `def`).
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>ignoreVariableNames</td>
 <td>Specifies one or more (comma-separated) variable names that should
 be ignored (i.e., that should not cause a rule violation). The names may

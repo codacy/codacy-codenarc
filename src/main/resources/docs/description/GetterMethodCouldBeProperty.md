@@ -12,14 +12,14 @@ rather than a Groovy method.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>ignoreMethodsWithOverrideAnnotation</td>
 <td>If <code>true</code>, then do not check methods annotated with <span
 class="citation" data-cites="Override">@Override</span>.</td>

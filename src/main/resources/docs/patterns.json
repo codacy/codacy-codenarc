@@ -1,6 +1,6 @@
 {
   "name" : "codenarc",
-  "version" : "3.3.0",
+  "version" : "3.6.0",
   "patterns" : [ {
     "patternId" : "AbcMetric",
     "level" : "Warning",
@@ -346,6 +346,19 @@
     "languages" : [ ],
     "enabled" : true
   }, {
+    "patternId" : "ClassNotSerializable",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "compilerPhase",
+      "default" : 4
+    }, {
+      "name" : "applyToFileNames",
+      "default" : "Jenkinsfile"
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
     "patternId" : "ClassSize",
     "level" : "Info",
     "category" : "CodeStyle",
@@ -405,6 +418,16 @@
     } ],
     "languages" : [ ],
     "enabled" : true
+  }, {
+    "patternId" : "ClosureInGString",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToFileNames",
+      "default" : "Jenkinsfile"
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ClosureStatementOnOpeningLineOfMultipleLineClosure",
     "level" : "Info",
@@ -551,6 +574,22 @@
     } ],
     "languages" : [ ],
     "enabled" : true
+  }, {
+    "patternId" : "CpsCallFromNonCpsMethod",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "compilerPhase",
+      "default" : 4
+    }, {
+      "name" : "applyToFileNames",
+      "default" : "Jenkinsfile"
+    }, {
+      "name" : "cpsScriptVariableName",
+      "default" : "script"
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "CrapMetric",
     "level" : "Warning",
@@ -1048,6 +1087,19 @@
     "languages" : [ ],
     "enabled" : true
   }, {
+    "patternId" : "ExpressionInCpsMethodNotSerializable",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "compilerPhase",
+      "default" : 4
+    }, {
+      "name" : "applyToFileNames",
+      "default" : "Jenkinsfile"
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
     "patternId" : "FactoryMethodName",
     "level" : "Warning",
     "category" : "CodeStyle",
@@ -1131,6 +1183,19 @@
     "parameters" : [ ],
     "languages" : [ ],
     "enabled" : true
+  }, {
+    "patternId" : "ForbiddenCallInCpsMethod",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "compilerPhase",
+      "default" : 4
+    }, {
+      "name" : "applyToFileNames",
+      "default" : "Jenkinsfile"
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "GStringAsMapKey",
     "level" : "Warning",
@@ -2094,6 +2159,16 @@
     "languages" : [ ],
     "enabled" : true
   }, {
+    "patternId" : "NonSerializableFieldInSerializableClass",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "compilerPhase",
+      "default" : 4
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
     "patternId" : "ObjectFinalize",
     "level" : "Warning",
     "category" : "Security",
@@ -2107,6 +2182,19 @@
     "parameters" : [ ],
     "languages" : [ ],
     "enabled" : true
+  }, {
+    "patternId" : "ObjectOverrideOnlyNonCpsMethods",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "compilerPhase",
+      "default" : 4
+    }, {
+      "name" : "applyToFileNames",
+      "default" : "Jenkinsfile"
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "OptionalCollectionReturnType",
     "level" : "Warning",
@@ -2182,6 +2270,19 @@
     "languages" : [ ],
     "enabled" : true
   }, {
+    "patternId" : "ParameterOrReturnTypeNotSerializable",
+    "level" : "Warning",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "compilerPhase",
+      "default" : 4
+    }, {
+      "name" : "applyToFileNames",
+      "default" : "Jenkinsfile"
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
     "patternId" : "ParameterReassignment",
     "level" : "Info",
     "category" : "CodeStyle",
@@ -2256,7 +2357,10 @@
     "patternId" : "PublicMethodsBeforeNonPublicMethods",
     "level" : "Info",
     "category" : "CodeStyle",
-    "parameters" : [ ],
+    "parameters" : [ {
+      "name" : "ignoreMethodNames",
+      "default" : null
+    } ],
     "languages" : [ ],
     "enabled" : true
   }, {
@@ -2598,7 +2702,10 @@
     "patternId" : "StaticMethodsBeforeInstanceMethods",
     "level" : "Info",
     "category" : "CodeStyle",
-    "parameters" : [ ],
+    "parameters" : [ {
+      "name" : "ignoreMethodNames",
+      "default" : null
+    } ],
     "languages" : [ ],
     "enabled" : true
   }, {

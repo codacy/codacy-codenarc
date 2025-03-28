@@ -16,21 +16,21 @@ classes.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>specificationClassNames</td>
 <td>Specifies one or more (comma-separated) class names that should be
 treated as Spock Specification classes. The class names may optionally
 contain wildcards (<em>,?), e.g. “</em>Spec”.</td>
 <td><code>null</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td>specificationSuperclassNames</td>
 <td>Specifies one or more (comma-separated) class names that should be
 treated as Spock Specification superclasses. In other words, a class

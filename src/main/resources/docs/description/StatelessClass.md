@@ -25,21 +25,21 @@ configuration.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>ignoreFieldNames</td>
 <td>Specifies one or more (comma-separated) field names that should be
 ignored (i.e., that should not cause a rule violation). The names may
 optionally contain wildcards (*,?).</td>
 <td><code>null</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td>addToIgnoreFieldNames</td>
 <td>Specifies one or more (comma-separated) field names to be added to
 the <code>ignoreFieldNames</code> property value. This is a special
@@ -48,7 +48,7 @@ write-only property, and each call to
 the list of field names to be ignored.</td>
 <td><code>null</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>ignoreFieldTypes</td>
 <td>Specifies one or more (comma-separated) field types that should be
 ignored (i.e., that should not cause a rule violation). The names may

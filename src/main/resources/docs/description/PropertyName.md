@@ -16,20 +16,20 @@ see `FieldNameRule`.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>regex</td>
 <td>Specifies the default regular expression used to validate the
 property name. It is required and cannot be null or empty.</td>
 <td>[a-z][a-zA-Z0-9]*</td>
 </tr>
-<tr class="even">
+<tr>
 <td>finalRegex</td>
 <td>Specifies the regular expression used to validate <code>final</code>
 property names. It is optional. If not set, then <code>final</code>
@@ -37,7 +37,7 @@ properties that are non-<code>static</code> are validated using
 <strong>regex</strong>.</td>
 <td><code>null</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>staticRegex</td>
 <td>Specifies the regular expression used to validate
 <code>static</code> property names. It is optional. If not set, then
@@ -45,7 +45,7 @@ properties that are non-<code>static</code> are validated using
 validated using <strong>regex</strong>.</td>
 <td><code>null</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td>staticFinalRegex</td>
 <td>Specifies the regular expression used to validate
 <code>static final</code> property names. It is optional. If not set,
@@ -54,7 +54,7 @@ then <code>static final</code> property are validated using
 <strong>regex</strong>.</td>
 <td>[A-Z][A-Z0-9_]*</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>ignorePropertyNames</td>
 <td>Specifies one or more (comma-separated) property names that should
 be ignored (i.e., that should not cause a rule violation). The names may

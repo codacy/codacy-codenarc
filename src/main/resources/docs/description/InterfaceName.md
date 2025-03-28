@@ -10,14 +10,14 @@ null, so this rule must be explicitly configured to be active.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>regex</td>
 <td>Specifies the regular expression used to validate the name of an
 interface. If null or empty, then this rule does nothing.</td>

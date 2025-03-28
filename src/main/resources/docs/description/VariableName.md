@@ -11,27 +11,27 @@ Variables annotated with @Field are ignored.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>regex</td>
 <td>Specifies the regular expression used to validate the variable name.
 It is required and cannot be null or empty.</td>
 <td>[a-z][a-zA-Z0-9]*</td>
 </tr>
-<tr class="even">
+<tr>
 <td>finalRegex</td>
 <td>Specifies the regular expression used to validate <code>final</code>
 variable names. It is optional. If not set, then <strong>regex</strong>
 is used to validate <code>final</code> variable names.</td>
 <td><code>null</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>ignoreVariableNames</td>
 <td>Specifies one or more (comma-separated) variable names that should
 be ignored (i.e., that should not cause a rule violation). The names may
@@ -47,5 +47,3 @@ only uppercase letters, numbers and underscores (i.e., like
 *constants*). Starting with CodeNarc 2.0, that has been changed so that
 `finalRegex` defaults to `null` and thus `final` variable names are
 treated like regular variables. See
-[\#467](https://github.com/CodeNarc/CodeNarc/issues/467). To restore
-that previous behavior, set `finalRegex` to `[A-Z][A-Z0-9_]*`.

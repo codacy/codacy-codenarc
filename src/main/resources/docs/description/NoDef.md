@@ -10,14 +10,14 @@ instead.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>excludeRegex</td>
 <td>Regular expression matching the names of fields, variables,
 parameters or methods that can be preceded by the <code>def</code>

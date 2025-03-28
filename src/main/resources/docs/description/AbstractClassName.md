@@ -12,14 +12,14 @@ classes.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>regex</td>
 <td>Specifies the regular expression used to validate the abstract class
 name. If null or empty, then this rule does nothing.</td>

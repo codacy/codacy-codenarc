@@ -12,7 +12,7 @@ import com.typesafe.sbt.packager.docker.{Cmd, ExecCmd}
 
 // Tool version
 lazy val toolVersion = settingKey[String]("The version of the underlying tool")
-ThisBuild / toolVersion := "3.3.0"
+ThisBuild / toolVersion := "3.6.0"
 
 lazy val commonSettings = Seq(
   organization := "com.codacy",
@@ -76,7 +76,7 @@ val dockerUser = "docker"
 mainClass in Compile := Some("codacy.Engine")
 packageName in Docker := name.value
 maintainer in Docker := "José Melo <jose@codacy.com>"
-dockerBaseImage := "amazoncorretto:8-alpine3.18-jre"
+dockerBaseImage := "amazoncorretto:8-alpine3.21-jre"
 dockerUpdateLatest := true
 defaultLinuxInstallLocation in Docker := defaultDockerInstallationPath
 daemonUser in Docker := dockerUser

@@ -15,14 +15,14 @@ a violation.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>checkClosureMapEntryValue</td>
 <td>If <code>false</code>, then do not check for whitespace before
 opening braces for closure expressions that are literal Map values,

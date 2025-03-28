@@ -17,14 +17,14 @@ unnecessary. They break encapsulation and can be confusing.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>ignoreMethodNames</td>
 <td>Specifies one or more (comma-separated) method names that should be
 ignored (i.e., that should not cause a rule violation). The names may

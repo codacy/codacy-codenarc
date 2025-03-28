@@ -16,14 +16,14 @@ Do not check dot (‘.’) operator. Do not check unary operators (!, +, -,
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>ignoreParameterDefaultValueAssignments</td>
 <td>If <code>true</code>, then do not check for whitespace around the
 ‘=’ operator within method/constructor default parameter

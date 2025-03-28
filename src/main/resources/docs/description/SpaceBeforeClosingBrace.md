@@ -11,21 +11,21 @@ expressions and block statements.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>checkClosureMapEntryValue</td>
 <td>If <code>false</code>, then do not check for whitespace before
 closing braces for closure expressions that are literal Map values,
 e.g. <code>[abc:\{doStuff()\}]</code>.</td>
 <td><code>true</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td>ignoreEmptyBlock</td>
 <td>If <code>true</code>, then allow for <code>\{\}</code> in code</td>
 <td><code>false</code></td>

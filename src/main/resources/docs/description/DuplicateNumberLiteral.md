@@ -17,20 +17,20 @@ names ending in ‘Spec.groovy’, ‘Test.groovy’, ‘Tests.groovy’ or
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>ignoreNumbers</td>
 <td>The optional comma-separated list of numbers that should be ignored
 (i.e., not cause a violation).</td>
 <td><code>0,1</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td>duplicateNumberMinimumValue</td>
 <td>Ignore duplicate numbers less than this value</td>
 <td><code>null</code></td>

@@ -28,19 +28,19 @@ UnusedPrivateMethodParameter rule) or methods marked @Override.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>ignoreRegex</td>
 <td>Regex that specifies the parameter names to ignore.</td>
 <td>‘ignore|ignored’</td>
 </tr>
-<tr class="even">
+<tr>
 <td>ignoreClassRegex</td>
 <td>Regex that specifies the names of the classes to skip checking.</td>
 <td>’.*Category’</td>

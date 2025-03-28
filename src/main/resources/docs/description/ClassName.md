@@ -10,18 +10,18 @@ underscores) or dollar signs ($).
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>regex</td>
 <td>Specifies the regular expression used to validate the class name. It
 is required and cannot be null or empty.</td>
-<td>([A-Z]\w<em>\$?)</em></td>
+<td>([A-Z]\w*\$?)*</td>
 </tr>
 </tbody>
 </table>
