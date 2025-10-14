@@ -224,7 +224,6 @@ ruleset {
     SpaceBeforeClosingBrace
     SpaceBeforeOpeningBrace
     SpaceInsideParentheses
-    TrailingWhitespace
 
     // rulesets/generic.xml
     IllegalClassMember
