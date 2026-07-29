@@ -19,25 +19,25 @@ names ending in ‘Spec.groovy’, ‘Test.groovy’, ‘Tests.groovy’ or
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>ignoreStrings</td>
 <td>The optional comma-separated list of Strings that should be ignored
 (i.e., not cause a violation).</td>
 <td><code>''</code> (empty string)</td>
 </tr>
-<tr>
+<tr class="even">
 <td>ignoreStringsDelimiter</td>
 <td>The delimiter char for <code>ignoreStrings</code>.</td>
 <td><code>,</code> (comma)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>duplicateStringMinimumLength</td>
 <td>Ignore duplicate strings whose length is less than this value</td>
 <td><code>null</code></td>

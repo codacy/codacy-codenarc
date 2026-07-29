@@ -4,11 +4,12 @@ This rule finds instances of method (or constructor) parameters not
 being used. It does not analyze private methods (that is done by the
 UnusedPrivateMethodParameter rule) or methods marked @Override.
 
-- This rule ignores `main()` methods. In Groovy, the
-  `main()** method can either specify a`void`return type or else omit a return type (be dynamically typed). The`main()\*\*
-  method must have exactly one parameter. That parameter can either be
-  typed as `String[]` or else the type can be omitted (be dynamically
-  typed). And the `main()** method must be`static\`.
+- This rule ignores `main()` methods. In Groovy, the `main()` method can
+  either specify a `void` return type or else omit a return type (be
+  dynamically typed). The `main()` method must have exactly one
+  parameter. That parameter can either be typed as `String[]` or else
+  the type can be omitted (be dynamically typed). And the `main()`
+  method must be `static`.
 
 - You can specify an ignore list of parameter names using the
   ‘ignoreRegex’ property. By default, a parameter named ‘ignore’ or
@@ -28,19 +29,19 @@ UnusedPrivateMethodParameter rule) or methods marked @Override.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>ignoreRegex</td>
 <td>Regex that specifies the parameter names to ignore.</td>
 <td>‘ignore|ignored’</td>
 </tr>
-<tr>
+<tr class="even">
 <td>ignoreClassRegex</td>
 <td>Regex that specifies the names of the classes to skip checking.</td>
 <td>’.*Category’</td>

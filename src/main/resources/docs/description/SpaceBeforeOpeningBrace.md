@@ -15,14 +15,14 @@ a violation.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>checkClosureMapEntryValue</td>
 <td>If <code>false</code>, then do not check for whitespace before
 opening braces for closure expressions that are literal Map values,
@@ -53,7 +53,7 @@ Examples of violations:
         if (ready) {
         } else{}                                    // violation
 
-        for (int i=0; i*10; i++){ }                 // violation
+        for (int i=0; i<10; i++){ }                 // violation
 
         for (String name in names){ }               // violation
 
@@ -70,6 +70,6 @@ Examples of violations:
         try {
         } finally{ }                                // violation
 
-        list.each{ name -* }                        // violation
+        list.each{ name -> }                        // violation
 
         shouldFail(Exception){ doStuff() }          // violation

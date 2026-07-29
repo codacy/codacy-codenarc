@@ -19,31 +19,31 @@ applyToFilesMatching and doNotApplyToFilesMatching.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>length</td>
 <td>The maximum line length allowed.</td>
 <td>120</td>
 </tr>
-<tr>
+<tr class="even">
 <td>ignoreImportStatements</td>
 <td>If <code>true</code>, then do not apply this rule to import
 statements.</td>
 <td><code>true</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>ignorePackageStatements</td>
 <td>If <code>true</code>, then do not apply this rule to package
 statements.</td>
 <td><code>true</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>ignoreLineRegex</td>
 <td>If specified, then ignore lines matching this regular
 expression.</td>

@@ -14,14 +14,14 @@ more fine grained objects.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>maxMethods</td>
 <td>The maximum number of methods allowed in a class definition.</td>
 <td>30</td>

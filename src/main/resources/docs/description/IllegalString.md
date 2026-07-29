@@ -9,14 +9,14 @@ Checks for a specified illegal string within the source code.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>string</td>
 <td>The String to check for. If null or empty then do nothing.</td>
 <td><code>null</code></td>

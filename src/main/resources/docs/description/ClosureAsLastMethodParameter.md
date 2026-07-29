@@ -10,14 +10,14 @@ be declared outside the method call parentheses.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>ignoreCallsToMethodNames</td>
 <td>Specifies one or more (comma-separated) method names; method calls
 on the named methods are ignored (i.e., do not cause a rule violation).

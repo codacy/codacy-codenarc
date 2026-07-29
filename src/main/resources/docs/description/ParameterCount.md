@@ -24,19 +24,19 @@ Example of violations:
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>maxParameters</td>
 <td>The maximum number of parameters in method/constructor</td>
 <td>5</td>
 </tr>
-<tr>
+<tr class="even">
 <td>ignoreOverriddenMethods</td>
 <td>Ignore number of parameters for methods with <span class="citation"
 data-cites="Override">@Override</span> annotation</td>

@@ -38,7 +38,7 @@ Examples of violations include:
         void init(String name, groovy.lang.Binding binding) { }     // violation
 
         // Closure parameter types
-        def writeCount = { java.io.Writer writer, int count -* }    // violation
+        def writeCount = { java.io.Writer writer, int count -> }    // violation
 
         // Extends and implements
         class MyHashMap extends java.util.HashMap { }               // violation
@@ -66,6 +66,6 @@ Known limitations:
   `class MyScript extends groovy.lang.Script{ }`. Don’t do that, either!
 
 - Does not catch unnecessary package references if they are the types of
-  anonymous inner class definitions, for older versions of Groovy (\*
+  anonymous inner class definitions, for older versions of Groovy (\<
   1.7.10?). For instance,
   `def runnable = new java.lang.Runnable() { ... }`.

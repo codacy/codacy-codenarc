@@ -7,6 +7,11 @@ method can potentially be serialized. Generally all user defined classes
 already implicitly Serializable in Jenkins but it makes static analysis
 easier later on if all classes are marked Serializable explicitly.
 
+NOTE: This is a [CodeNarc Enhanced Classpath
+Rule](./codenarc-enhanced-classpath-rules.html). It requires
+**CodeNarc** to have the application classes being analyzed, as well as
+any referenced classes, on the classpath.
+
 Example of violation:
 
     class SomeClass {}

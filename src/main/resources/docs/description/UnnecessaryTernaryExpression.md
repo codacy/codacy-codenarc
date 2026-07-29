@@ -6,8 +6,8 @@ simple boolean expression. Examples of violations include:
         x==99 ? true : false                    // can be replaced by: x==99
         x && y ? true : false                   // can be replaced by: x && y
         x||y ? false : true                     // can be replaced by: !(x||y)
-        x *= 1 ? true: false                    // can be replaced by: x *= 1
-        x * 99 ? Boolean.TRUE : Boolean.FALSE   // can be replaced by: x * 99
+        x <= 1 ? true: false                    // can be replaced by: x <= 1
+        x < 99 ? Boolean.TRUE : Boolean.FALSE   // can be replaced by: x < 99
         !x ? true : false                       // can be replaced by: !x
 
 The rule also checks for ternary expressions where the *true* and

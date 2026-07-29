@@ -1926,6 +1926,20 @@
     "description" : "specificationClassNames"
   } ]
 }, {
+  "patternId" : "SpockUseVerifyEach",
+  "title" : "SpockUseVerifyEach",
+  "description" : "Checks for .every, .each, .eachWithIndex, or .forEach calls containing assertions in Spock specifications that should use verifyEach instead. Requires Spock 2.4+.",
+  "parameters" : [ {
+    "name" : "specificationSuperclassNames",
+    "description" : "specificationSuperclassNames"
+  }, {
+    "name" : "specificationClassNames",
+    "description" : "specificationClassNames"
+  }, {
+    "name" : "checkAllBlocks",
+    "description" : "checkAllBlocks"
+  } ]
+}, {
   "patternId" : "UnnecessaryFail",
   "title" : "UnnecessaryFail",
   "description" : "In a unit test, catching an exception and immediately calling Assert.fail() is pointless and hides the stack trace. It is better to rethrow the exception or not catch the exception at all.",

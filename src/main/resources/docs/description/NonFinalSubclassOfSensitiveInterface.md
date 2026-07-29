@@ -9,8 +9,8 @@ sensitive interfaces such as `java.security.PrivilegedAction` and
 `java.security.PrivilegedActionException` must also be declared `final`
 for analogous reasons.
 
-For more information see:
-<https://www.securecoding.cert.org/confluence/display/java/SEC07-J.+Classes+that+derive+from+a+sensitive+class+or+implement+a+sensitive+interface+must+be+declared+final>
+See the Java Permission class documentation for more information:
+<https://docs.oracle.com/javase/8/docs/api/java/security/Permission.html>.
 
 Example of violations:
 

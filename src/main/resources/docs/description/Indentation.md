@@ -13,18 +13,24 @@ per indentation level.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>spacesPerIndentLevel</td>
 <td>The number of spaces that make up a single level of
 indentation.</td>
 <td>4</td>
+</tr>
+<tr class="even">
+<td>indentUnderLabel</td>
+<td>Indent code under labels (fx. Spock labels ‘given:’, ‘when:’,
+‘then:’, …)</td>
+<td>false</td>
 </tr>
 </tbody>
 </table>
@@ -69,4 +75,16 @@ Example of violations:
                     closeResources()                // violation
             }
         }
+    }
+
+    class MyClassSpec extends Specification {
+
+        void "Test"() {
+            when:
+            int x = 2 + 2   // CORRECT (default) or if `indentUnderLabel:false`
+
+            then:
+                x == 4      // violation unless `indentUnderLabel:true`
+        }
+
     }
