@@ -9,20 +9,20 @@ letters and numbers, separated by periods.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>regex</td>
 <td>Specifies the regular expression used to validate the package name.
 It is required and cannot be null or empty.</td>
 <td>[a-z]+[a-z0-9]*(\.[a-z0-9]+)*</td>
 </tr>
-<tr>
+<tr class="even">
 <td>packageNameRequired</td>
 <td>Indicates whether a package name declaration is required for all
 classes.</td>

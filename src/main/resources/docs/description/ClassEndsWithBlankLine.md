@@ -19,26 +19,26 @@ This rule can be configured with the following properties:
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>ignoreSingleLineClasses</td>
 <td>a boolean property to forbid single line classes.If it is false,then
 single line classes are considered a violation.</td>
 <td><code>true</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>ignoreInnerClasses</td>
 <td>A boolean property to ignore inner classes. If it is <em>false</em>
 then inner classes can cause violations.</td>
 <td><code>false</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>blankLineRequired</td>
 <td>a boolean property to define if there may be a blank line before the
 closing class brace. If it is false, the last line before the brace must
@@ -62,7 +62,7 @@ If *ignoreSingleLineClasses* is `true` and *blankLineRequired* is `true`
 If *ignoreSingleLineClasses* is `false` and *blankLineRequired* is
 `true`
 
-                class Foo extends Bar*String* { }
+                class Foo extends Bar<String> { }
 
 If *ignoreSingleLineClasses* is `true` and *blankLineRequired* is
 `false`

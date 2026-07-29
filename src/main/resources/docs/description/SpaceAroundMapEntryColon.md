@@ -14,14 +14,14 @@ Does not check *spread map* operator, e.g. `def binding = [*: map]`
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>characterBeforeColonRegex</td>
 <td>The regular expression that must match the character before the
 colon (:) for a literal <em>Map</em> entry. For example,
@@ -30,7 +30,7 @@ colon (:) for a literal <em>Map</em> entry. For example,
 space or whitespace).</td>
 <td><code>/\S/</code> (i.e., no space allowed before the colon)</td>
 </tr>
-<tr>
+<tr class="even">
 <td>characterAfterColonRegex</td>
 <td>The regular expression that must match the character after the colon
 (:) for a literal <em>Map</em> entry. For example, <code>/\S/</code>

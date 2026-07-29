@@ -11,6 +11,6 @@ Example of violations:
             b = 'new value'     // violation
         }
 
-        def myClosure1 = { int a, b -*
+        def myClosure1 = { int a, b ->
             a = 123             // violation
         }

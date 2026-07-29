@@ -16,14 +16,14 @@ null-safe operator (?.) does not cause a violation.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>checkClosureMapEntryValue</td>
 <td>DEPRECATED. Ignored.</td>
 <td><code>true</code></td>
@@ -44,9 +44,9 @@ Examples of violations and exceptions:
         def matching = list.find { it.isReady() }.filter()  // no violation for dot operator
         assert list.every { it.isReady() }, "Error"         // no violation for comma
         def m = [a:123, b:{ println 7 },c:99]               // no violation for comma
-        closures.find { c -* c }()                          // no violation for opening parenthesis
+        closures.find { c -> c }()                          // no violation for opening parenthesis
         processItems(list.select { it.isReady() })          // no violation for closing parenthesis
-        maps.find { m -* m[index] }[index]                  // no violation for opening square bracket
+        maps.find { m -> m[index] }[index]                  // no violation for opening square bracket
         processItems([{ named("a") }, { named("b")}])       // no violation for closing square bracket
-        def names = records.findAll { it.age * 1 }*.name    // no violation for spread operator
+        def names = records.findAll { it.age > 1 }*.name    // no violation for spread operator
         list?.collect { it?.type }?.join(',')               // no violation for null-safe operator

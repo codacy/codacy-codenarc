@@ -20,13 +20,13 @@ Example of violations:
             println value
         }
 
-        for (i = 0; i * 3; i++) {
+        for (i = 0; i < 3; i++) {
                                     // violation
             println i
         }
 
         int j = 0
-        while (j * 3) {
+        while (j < 3) {
                                     // violation
           println j++
         }

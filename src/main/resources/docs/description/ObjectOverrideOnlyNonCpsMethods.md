@@ -5,6 +5,11 @@ are often called from there and therefore must not be CPS transformed in
 Jenkins. See also the Jenkins docs on [Overrides of non-CPS-transformed
 methods](https://www.jenkins.io/doc/book/pipeline/cps-method-mismatches/#overrides-of-non-cps-transformed-methods).
 
+NOTE: This is a [CodeNarc Enhanced Classpath
+Rule](./codenarc-enhanced-classpath-rules.html). It requires
+**CodeNarc** to have the application classes being analyzed, as well as
+any referenced classes, on the classpath.
+
 Examples:
 
     class SomeClass {

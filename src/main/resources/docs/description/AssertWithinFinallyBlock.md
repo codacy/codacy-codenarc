@@ -7,6 +7,6 @@ Here is an example of code that produces a violation:
             try {
                 doSomething()
             } finally {
-                assert count * 0        // violation
+                assert count > 0        // violation
             }
         }

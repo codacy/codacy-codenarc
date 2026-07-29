@@ -11,14 +11,14 @@ true to require braces is that situation as well.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>bracesRequiredForElseIf</td>
 <td>Set to <code>true</code> to require braces for an <em>else</em>
 block followed immediately by an <em>if</em> statement.</td>

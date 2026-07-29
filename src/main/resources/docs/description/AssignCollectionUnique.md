@@ -17,9 +17,9 @@ Example of violations:
       def x = myList.unique() { it }            // Single-argument: Closure
       def y = myList.unique { it % 2 }
 
-      def c = myList.unique().findAll { x * 1 } // Chained method call
+      def c = myList.unique().findAll { x > 1 } // Chained method call
 
-      def comparator = { o1, o2 -* o1 *=* o2 }
+      def comparator = { o1, o2 -> o1 <=> o2 }
       def x = myList.unique(comparator)         // Single-argument: Comparator
 
       def x = myList.unique(true)               // Single-argument: boolean true

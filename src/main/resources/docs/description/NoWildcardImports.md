@@ -18,19 +18,19 @@ Example of violations:
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>ignoreStaticImports</td>
 <td>If <em>true</em>, then do not check static imports.</td>
 <td><code>false</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>ignoreImports</td>
 <td>If <em>true</em>, then do not check imports.</td>
 <td><code>false</code></td>

@@ -15,7 +15,7 @@ Examples of violations:
 
         def method1(int a,String b) { }             // violation on parameter b
 
-        def closure1 = { int a,String b -* }        // violation on parameter b
+        def closure1 = { int a,String b -> }        // violation on parameter b
 
         def list1 = [a,b, c]                        // violation on list element b
 

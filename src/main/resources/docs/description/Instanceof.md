@@ -27,14 +27,14 @@ names ending in ‘Spec.groovy’, ‘Test.groovy’, ‘Tests.groovy’ or
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>ignoreTypeNames</td>
 <td>Specifies one or more (comma-separated) class names that should be
 ignored (i.e., that should not cause a rule violation). The names may

@@ -1,6 +1,6 @@
 {
   "name" : "codenarc",
-  "version" : "3.6.0",
+  "version" : "4.0.0",
   "patterns" : [ {
     "patternId" : "AbcMetric",
     "level" : "Warning",
@@ -2637,6 +2637,22 @@
     }, {
       "name" : "specificationClassNames",
       "default" : null
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "SpockUseVerifyEach",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "specificationSuperclassNames",
+      "default" : "*Specification"
+    }, {
+      "name" : "specificationClassNames",
+      "default" : null
+    }, {
+      "name" : "checkAllBlocks",
+      "default" : true
     } ],
     "languages" : [ ],
     "enabled" : false

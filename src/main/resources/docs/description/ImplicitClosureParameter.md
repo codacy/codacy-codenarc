@@ -10,14 +10,14 @@ if an explicit `it` parameter has been specified.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>allowUsingItAsParameterName</td>
 <td>To stop the rule reporting violations when an explicit closure
 parameter called <code>it</code> is used, set this property to
@@ -30,4 +30,4 @@ parameter called <code>it</code> is used, set this property to
 Example of violations:
 
         def closureWithViolation = { it * 10 }
-        def closureWithViolationBecauseOfExplicitItParameter = { it -* it * 10}
+        def closureWithViolationBecauseOfExplicitItParameter = { it -> it * 10}

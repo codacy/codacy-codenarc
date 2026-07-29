@@ -7,8 +7,8 @@ This rule ignores `final` fields (either instance or static). Fields
 that are `static` and non-`final`, however, do cause a violation.
 
 This rule also ignores all classes annotated with the `@Immutable`
-transformation. See
-<http://groovy.codehaus.org/Immutable+transformation>.
+transformation. See [Immutable
+transform](https://groovy-lang.org/releasenotes/groovy-1.6.html#Groovy16releasenotes-Immutable).
 
 This rule also ignores all fields annotated with the `@Inject` or
 `@Value` annotations.
@@ -25,21 +25,21 @@ configuration.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>ignoreFieldNames</td>
 <td>Specifies one or more (comma-separated) field names that should be
 ignored (i.e., that should not cause a rule violation). The names may
 optionally contain wildcards (*,?).</td>
 <td><code>null</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>addToIgnoreFieldNames</td>
 <td>Specifies one or more (comma-separated) field names to be added to
 the <code>ignoreFieldNames</code> property value. This is a special
@@ -48,7 +48,7 @@ write-only property, and each call to
 the list of field names to be ignored.</td>
 <td><code>null</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>ignoreFieldTypes</td>
 <td>Specifies one or more (comma-separated) field types that should be
 ignored (i.e., that should not cause a rule violation). The names may

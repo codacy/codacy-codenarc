@@ -14,14 +14,14 @@ only match class names ending in ‘Spec’, ‘Test’, ‘Tests’ or ‘TestC
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>checkAssertStatements</td>
 <td>If <code>true</code>, then also check assert statements,
 e.g. <code>assert x == true</code>.</td>

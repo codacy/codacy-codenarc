@@ -7,7 +7,7 @@ replaced by `list*.multiply(2)`.
 Examples of violations include:
 
         assert [1, 2, 3].collect { it.multiply(2) }
-        assert [1, 2, 3].collect { x -* x.multiply(2) }
+        assert [1, 2, 3].collect { x -> x.multiply(2) }
         ["1", "2", "3"].collect { it.bytes }
 
 The following code does not produce violations:
@@ -22,7 +22,7 @@ The following code does not produce violations:
         [1, 2, 3].collect { println it; it.multiply(5) }
 
         // OK, closure has too many arguments
-        [1, 2, 3].collect { a, b -* a.multiply(b) }
+        [1, 2, 3].collect { a, b -> a.multiply(b) }
 
         // OK, closure statement references parameter multiple times
         [1, 2, 3].collect { it.multiply(it) }

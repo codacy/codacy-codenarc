@@ -16,19 +16,19 @@ Mismatches](https://www.jenkins.io/doc/book/pipeline/cps-method-mismatches/).
 <col style="width: 16%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>cpsScriptVariableName</td>
 <td>Jenkins pipeline script variable name</td>
 <td>‘script’</td>
 </tr>
-<tr>
+<tr class="even">
 <td>cpsPackages</td>
 <td>Package names of used Jenkins pipeline libraries</td>
 <td>[]</td>
@@ -45,6 +45,11 @@ Known limitations:
   if they are called on a predefined script variable (default is
   `script`).
 - Method calls on dynamic types (Object) can’t be resolved.
+
+NOTE: This is a [CodeNarc Enhanced Classpath
+Rule](./codenarc-enhanced-classpath-rules.html). It requires
+**CodeNarc** to have the application classes being analyzed, as well as
+any referenced classes, on the classpath.
 
 Examples:
 

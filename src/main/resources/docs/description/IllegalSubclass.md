@@ -10,14 +10,14 @@ superclasses.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>superclassNames</td>
 <td>Specifies the comma-separated list of (fully-qualified) class names.
 The class name(s) may optionally include wildcard characters (‘<em>’ or

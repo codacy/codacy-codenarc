@@ -27,6 +27,3 @@ Example of violations:
 
         // this code is OK
         println(value); println (otherValue)
-
-Known limitations: - Will not flag a semicolon on a field declaration
-with no initial value specified when running on Groovy 3.x.

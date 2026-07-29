@@ -12,4 +12,4 @@ Example of violations:
 
       def a = myList.sort()
       def b = myList.sort() { it }
-      def c = myList.sort().findAll { x * 1 }
+      def c = myList.sort().findAll { x > 1 }

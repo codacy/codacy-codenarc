@@ -11,31 +11,31 @@ be set to false to override this.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>sameLine</td>
 <td>If <code>true</code>, then the opening brace ({) for if statement
 should be on the same line.</td>
 <td><code>true</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>validateElse</td>
 <td>To enable else checking, set the property to <code>true</code></td>
 <td><code>false</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>elseOnSameLineAsClosingBrace</td>
 <td>If <code>true</code>, then the else statement should be on the same
 line the same as sameLine as closing brace (})</td>
 <td>the same as <em>sameline</em></td>
 </tr>
-<tr>
+<tr class="even">
 <td>elseOnSameLineAsOpeningBrace</td>
 <td>If <code>true</code>, then the else statement should be on the same
 line the same as sameLine as opening brace ({)</td>

@@ -16,14 +16,14 @@ Do not check dot (‘.’) operator. Do not check unary operators (!, +, -,
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>ignoreParameterDefaultValueAssignments</td>
 <td>If <code>true</code>, then do not check for whitespace around the
 ‘=’ operator within method/constructor default parameter
@@ -42,8 +42,8 @@ Examples of violations:
 
         def myMethod() {
             3+ 5-x*23/ 100              // violation
-            list \*\*123                // violation
-            other\*\* writer            // violation
+            list <<123                // violation
+            other<< writer            // violation
             x=99                        // violation
             x&& y                       // violation
             x ||y                       // violation

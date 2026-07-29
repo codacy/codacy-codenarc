@@ -14,14 +14,14 @@ private instance methods.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>ignoreMethodNames</td>
 <td>Specifies one or more (comma-separated) method names that should be
 ignored. The named methods will not cause a rule violation, and will not

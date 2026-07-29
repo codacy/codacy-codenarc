@@ -11,31 +11,31 @@ the elements or add new elements on the end.
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>Property</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>checkList</td>
 <td>To disable checking List literals, set this property to
 <code>false</code></td>
 <td><code>true</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>checkMap</td>
 <td>To disable checking Map literals, set this property to
 <code>false</code></td>
 <td><code>true</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>ignoreSingleElementList</td>
 <td>If true, skip checking Lists that have only a single element.</td>
 <td><code>true</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td>ignoreSingleElementMap</td>
 <td>If true, skip checking Maps that have only a single element.</td>
 <td><code>true</code></td>

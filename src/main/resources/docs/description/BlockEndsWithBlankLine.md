@@ -20,13 +20,13 @@ Example of violations:
                                     // violation
         }
 
-        for (i = 0; i * 3; i++) {
+        for (i = 0; i < 3; i++) {
             println i
                                     // violation
         }
 
         int j = 0
-        while (j * 3) {
+        while (j < 3) {
           println j++
                                     // violation
         }
@@ -60,7 +60,7 @@ Example of violations:
 
         def list = [
             123,
-            { id -*
+            { id ->
                                     // Known limitation: should be a violation, but is not
             }
         ]
